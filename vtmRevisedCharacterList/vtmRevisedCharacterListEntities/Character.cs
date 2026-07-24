@@ -151,4 +151,31 @@ public class Character
     public uint Health;
 
     #endregion
+
+    public uint GetAttribute(AttributeVtm attribute)
+    {
+        switch (attribute)
+        {
+            case AttributeVtm.Strenght:
+                return Strenght;
+            case AttributeVtm.Dexterity:
+                return Dexterity;
+            case AttributeVtm.Stamina:
+                return Stamina;
+            case AttributeVtm.Charisma:
+                return Charisma;
+            case AttributeVtm.Manipulation:
+                return Manipulation;
+            case AttributeVtm.Appearance:
+                return Appearance;
+            case AttributeVtm.Perception:
+                return Perception;
+            case AttributeVtm.Intelligance:
+                return Intellegence;
+            case AttributeVtm.Wits:
+                return Wits;
+        }
+
+        return 0;
+    }
 }

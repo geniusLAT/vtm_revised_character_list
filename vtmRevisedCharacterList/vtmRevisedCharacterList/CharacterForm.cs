@@ -1,82 +1,32 @@
 using System;
+using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList;
 
-enum Attribute
-{
-    Strenght = 0,
-    Dexterity = 1,
-    Stamina = 2,
-    Charisma = 3,
-    Manipulation = 4,
-    Appearance = 5,
-    Perception = 6,
-    Intelligance = 7,
-    Wits = 8
-}
- 
 public partial class CharacterForm : Form
 {
-    Attribute? _chosenAttribute;
-
-    void ClearAttributeChoice()
-    {
-        StrenghtPanel.BackColor =
-            DexterityPanel1.BackColor =
-            StaminaPanel.BackColor =
-            CharismaPanel.BackColor =
-            ManipulationPanel.BackColor =
-            AppearancePanel.BackColor =
-            PerceptionPanel.BackColor =
-            IntelligecePanel.BackColor =
-            WitsPanel.BackColor =
-            Color.White;
-    }
-
-    Panel? GetAttributePanel(Attribute? attribute)
-    {
-        switch (attribute)
-        {
-            case Attribute.Strenght:
-                return StrenghtPanel;
-            case Attribute.Dexterity:
-                return DexterityPanel1;
-            case Attribute.Stamina:
-                return StaminaPanel;
-            case Attribute.Charisma:
-                return CharismaPanel;
-            case Attribute.Manipulation:
-                return ManipulationPanel;
-            case Attribute.Appearance:
-                return AppearancePanel;
-            case Attribute.Perception:
-                return PerceptionPanel;
-            case Attribute.Intelligance:
-                return IntelligecePanel;
-            case Attribute.Wits:
-                return WitsPanel;
-            case null:
-            default:
-                return null;
-        }
-    }
-
-    void ChooseAttribute(Attribute attribute)
-    {
-        _chosenAttribute = attribute;
-        ClearAttributeChoice();
-        var panel = GetAttributePanel(_chosenAttribute);
-        if (panel != null)
-        {
-            panel.BackColor = Color.Yellow;
-        }
-    }
-
-
     public CharacterForm()
     {
         InitializeComponent();
         ClearAttributeChoice();
+
+        FindButtonsForAttributes();
+
+        var character = new Character()
+        {
+            Strenght = 1,
+            Dexterity = 2,
+            Stamina = 3,
+
+            Charisma = 4,
+            Manipulation = 5,
+            Appearance = 1,
+            Perception = 2,
+            Intellegence = 3,
+            Wits = 4,
+
+        };
+        RenderCharacter(character);
     }
 
     private void label1_Click(object sender, EventArgs e)
@@ -105,7 +55,7 @@ public partial class CharacterForm : Form
     }
     private void StrenghtPanel_Click(object sender, PaintEventArgs e)
     {
-        ChooseAttribute(Attribute.Strenght);
+        ChooseAttribute(AttributeVtm.Strenght);
     }
 
     private void panel13_Paint(object sender, PaintEventArgs e)
@@ -115,46 +65,51 @@ public partial class CharacterForm : Form
 
     private void StrenghtPanel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Strenght);
+        ChooseAttribute(AttributeVtm.Strenght);
     }
 
     private void DexterityPanel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Dexterity);
+        ChooseAttribute(AttributeVtm.Dexterity);
     }
 
     private void StaminaPanel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Stamina);
+        ChooseAttribute(AttributeVtm.Stamina);
     }
 
     private void PerceptionPanel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Perception);
+        ChooseAttribute(AttributeVtm.Perception);
     }
 
     private void IntelligecePanel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Intelligance);
+        ChooseAttribute(AttributeVtm.Intelligance);
     }
 
     private void WitsPanel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Wits);
+        ChooseAttribute(AttributeVtm.Wits);
     }
 
     private void CharismaPanel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Charisma);
+        ChooseAttribute(AttributeVtm.Charisma);
     }
 
     private void ManipulationPanel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Manipulation);
+        ChooseAttribute(AttributeVtm.Manipulation);
     }
 
     private void AppearanceLabel_Click(object sender, EventArgs e)
     {
-        ChooseAttribute(Attribute.Appearance);
+        ChooseAttribute(AttributeVtm.Appearance);
+    }
+
+    private void label56_Click(object sender, EventArgs e)
+    {
+
     }
 }

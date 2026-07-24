@@ -4,5 +4,8 @@
     <Compile Update="CharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CharacterFormLogic.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
