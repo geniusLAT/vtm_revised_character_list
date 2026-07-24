@@ -11,6 +11,7 @@ public partial class CharacterForm : Form
 {
     AttributeVtm? _chosenAttribute;
     Ability? _chosenAbility;
+    Character? _chosenCharacter;
 
     #region RadioButtons
 
@@ -137,7 +138,6 @@ public partial class CharacterForm : Form
 
     void ClearAbilityChoice()
     {
-
         for (int i = 0; i < 30; i++)
         {
             Ability ability = (Ability)i;
@@ -147,77 +147,6 @@ public partial class CharacterForm : Form
                 panel.BackColor = Color.White;
             }
         }
-
-            //return AlertnessPanel;
-        
-            //return AthleticsPanel;
-        
-            //return BrawlPanel;
-        
-            //return DodgePanel;
-        
-            //return EmpathyPanel;
-        
-            //return ExpressionPanel;
-        
-            //return IntimidationPanel;
-        
-            //return LeadershipPanel;
-        
-            //return StreetwisePanel;
-        
-            //return SubterfugePanel;
-        
-            //return AnimalKenPanel;
-        
-            //return CraftsPanel;
-        
-            //return DrivePanel;
-        
-            //return EtiquettePanel;
-        
-            //return FirearmsPanel;
-        
-            //return MeleePanel;
-        
-            //return PerfomancePanel;
-        
-            //return SecurityPanel;
-        
-            //return StealthPanel;
-        
-            //return SurvivalPanel;
-        
-            //return AcademicsPanel;
-        
-            //return ComputerPanel;
-        
-            //return FinancePanel;
-        
-            //return InvestigationPanel;
-        
-            //return LawPanel;
-        
-            //return LinguisticsPanel;
-        
-            //return MedicinePanel;
-        
-            //return OccultPanel;
-        
-            //return PoliticsPanel;
-        
-            //return SciencePanel;
-
-            //StrenghtPanel.BackColor =
-            //DexterityPanel1.BackColor =
-            //StaminaPanel.BackColor =
-            //CharismaPanel.BackColor =
-            //ManipulationPanel.BackColor =
-            //AppearancePanel.BackColor =
-            //PerceptionPanel.BackColor =
-            //IntelligecePanel.BackColor =
-            //WitsPanel.BackColor =
-            //Color.White;
     }
     
     void SetButtonsForNum(RadioButton[] buttons, uint numToSet)
@@ -488,6 +417,7 @@ public partial class CharacterForm : Form
         {
             panel.BackColor = Color.Yellow;
         }
+        CalculateCubes();
     }
 
     void ChooseAbility(Ability ability)
@@ -499,15 +429,47 @@ public partial class CharacterForm : Form
         {
             panel.BackColor = Color.Yellow;
         }
+        CalculateCubes();
+    }
+
+    void CalculateCubes()
+    {
+        uint cubesToRoll = 0;
+        StringBuilder sb = new StringBuilder();
+        if (_chosenAttribute != null)
+        {
+            var attribute = _chosenCharacter?.GetAttribute((AttributeVtm)_chosenAttribute) ?? 0;
+            cubesToRoll += attribute;
+            sb.Append(attribute.ToString());
+        }
+        if (_chosenAbility != null)
+        {
+            var ability = _chosenCharacter?.GetAbility((Ability)_chosenAbility) ?? 0;
+            cubesToRoll += ability;
+            if (sb.Length > 0)
+            {
+                sb.Append(" + ");
+            }
+            sb.Append(ability.ToString());
+        }
+        sb.Append($" = {cubesToRoll}");
+        cubeLabel.Text = sb.ToString();
     }
 
     void RenderCharacter(Character character)
     {
+        _chosenCharacter = character;
         for (int i = 0; i < 9; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
             uint attributeValue = character.GetAttribute(attribute);
-            GetAttributeNumeric(attribute)!.Value = attributeValue;
+            var numeric = GetAttributeNumeric(attribute);
+            if (numeric is not null)
+            {
+                numeric.Value = attributeValue;
+                numeric.Enabled = false;
+            }
+           
             SetButtonsForNum( GetAttributeButtons(attribute), attributeValue);
 
         }
@@ -515,9 +477,14 @@ public partial class CharacterForm : Form
         for (int i = 0; i < 30; i++)
         {
             Ability ability = (Ability)i;
-            uint attributeValue = character.GetAbility(ability);
-            GetAbilityNumeric(ability)!.Value = attributeValue;
-            SetButtonsForNum(GetAbilityButtons(ability), attributeValue);
+            uint abilityValue = character.GetAbility(ability);
+            var numeric = GetAbilityNumeric(ability);
+            if (numeric is not null)
+            {
+                numeric.Value = abilityValue;
+                numeric.Enabled = false;
+            }
+            SetButtonsForNum(GetAbilityButtons(ability), abilityValue);
 
         }
     }

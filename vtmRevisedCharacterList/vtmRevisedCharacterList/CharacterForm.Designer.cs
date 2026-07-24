@@ -435,6 +435,7 @@
             StrenghtLabel = new Label();
             PhysicalAttributesLabel = new Label();
             AttributesLabel = new Label();
+            cubeLabel = new Label();
             characterPanel.SuspendLayout();
             AbilitiesPanel.SuspendLayout();
             panel53.SuspendLayout();
@@ -4871,11 +4872,21 @@
             AttributesLabel.Text = "Атрибуты";
             AttributesLabel.Click += label1_Click;
             // 
+            // cubeLabel
+            // 
+            cubeLabel.AutoSize = true;
+            cubeLabel.Location = new Point(12, 699);
+            cubeLabel.Name = "cubeLabel";
+            cubeLabel.Size = new Size(35, 15);
+            cubeLabel.TabIndex = 1;
+            cubeLabel.Text = "кубы";
+            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 796);
+            Controls.Add(cubeLabel);
             Controls.Add(characterPanel);
             Name = "CharacterForm";
             Text = "Form1";
@@ -5092,6 +5103,7 @@
             DexterityPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)StrenghtNumeric).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -5503,5 +5515,6 @@
         private RadioButton EtiquetteButton2;
         private RadioButton EtiquetteButton1;
         private Label label28;
+        private Label cubeLabel;
     }
 }
