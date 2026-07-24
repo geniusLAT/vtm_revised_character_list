@@ -178,4 +178,73 @@ public class Character
 
         return 0;
     }
+
+    public uint GetAbility(Ability ability)
+    {
+        switch (ability)
+        {
+            case Ability.Alertness:
+                return Alertness;
+            case Ability.Athletics:
+                return Athletics;
+            case Ability.Brawl:
+                return Brawl;
+            case Ability.Dodge:
+                return Dodge;
+            case Ability.Empathy:
+                return Empathy;
+            case Ability.Expression:
+                return Expression;
+            case Ability.Intimidation:
+                return Intimidation;
+            case Ability.Leadership:
+                return Leadership;
+            case Ability.Streetwise:
+                return Streetwise;
+            case Ability.Subterfuge:
+                return Subterfuge;
+            case Ability.AnimalKen:
+                return AnimalKen;
+            case Ability.Crafts:
+                return Crafts;
+            case Ability.Drive:
+                return Drive;
+            case Ability.Etiquette:
+                return Etiquette;
+            case Ability.Firearms:
+                return Firearms;
+            case Ability.Melee:
+                return Melee;
+            case Ability.Perfomance:
+                return Perfomance;
+            case Ability.Security:
+                return Security;
+            case Ability.Stealth:
+                return Stealth;
+            case Ability.Survival:
+                return Survival;
+            case Ability.Academics:
+                return Academics;
+            case Ability.Computer:
+                return Computer;
+            case Ability.Finance:
+                return Finance;
+            case Ability.Investigation:
+                return Investigation;
+            case Ability.Law:
+                return Law;
+            case Ability.Linguistics:
+                return Linguistics;
+            case Ability.Medicine:
+                return Medicine;
+            case Ability.Occult:
+                return Occult;
+            case Ability.Politics:
+                return Politics;
+            case Ability.Science:
+                return Science;
+        }
+
+        return 0;
+    }
 }

@@ -1,0 +1,35 @@
+﻿namespace vtmRevisedCharacterListEntities;
+
+public enum Ability
+{
+    Alertness = 0,
+    Athletics = 1,
+    Brawl = 2,
+    Dodge = 3,
+    Empathy = 4,
+    Expression = 5,
+    Intimidation = 6,
+    Leadership = 7,
+    Streetwise = 8,
+    Subterfuge = 9,
+    AnimalKen = 10,
+    Crafts = 11,
+    Drive = 12,
+    Etiquette = 13,
+    Firearms = 14,
+    Melee = 15,
+    Perfomance = 16,
+    Security = 17,
+    Stealth = 18,
+    Survival = 19,
+    Academics = 20,
+    Computer = 21,
+    Finance = 22,
+    Investigation = 23,
+    Law = 24,
+    Linguistics = 25,
+    Medicine = 26,
+    Occult = 27,
+    Politics = 28,
+    Science = 29
+}

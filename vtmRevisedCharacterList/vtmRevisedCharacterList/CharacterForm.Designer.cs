@@ -29,6 +29,314 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
+            AbilitiesPanel = new Panel();
+            panel53 = new Panel();
+            SciencePanel = new Panel();
+            panel55 = new Panel();
+            label62 = new Label();
+            ScienceNumeric = new NumericUpDown();
+            ScienceButton5 = new RadioButton();
+            ScienceButton4 = new RadioButton();
+            ScienceButton3 = new RadioButton();
+            ScienceButton2 = new RadioButton();
+            ScienceButton1 = new RadioButton();
+            label63 = new Label();
+            PoliticsPanel = new Panel();
+            panel57 = new Panel();
+            label64 = new Label();
+            PoliticsNumeric = new NumericUpDown();
+            PoliticsButton5 = new RadioButton();
+            PoliticsButton4 = new RadioButton();
+            PoliticsButton3 = new RadioButton();
+            PoliticsButton2 = new RadioButton();
+            PoliticsButton1 = new RadioButton();
+            label65 = new Label();
+            OccultPanel = new Panel();
+            panel59 = new Panel();
+            label66 = new Label();
+            OccultNumeric = new NumericUpDown();
+            OccultButton5 = new RadioButton();
+            OccultButton4 = new RadioButton();
+            OccultButton3 = new RadioButton();
+            OccultButton2 = new RadioButton();
+            OccultButton1 = new RadioButton();
+            label67 = new Label();
+            MedicinePanel = new Panel();
+            panel61 = new Panel();
+            label68 = new Label();
+            MedicineNumeric = new NumericUpDown();
+            MedicineButton5 = new RadioButton();
+            MedicineButton4 = new RadioButton();
+            MedicineButton3 = new RadioButton();
+            MedicineButton2 = new RadioButton();
+            MedicineButton1 = new RadioButton();
+            label69 = new Label();
+            LinguisticsPanel = new Panel();
+            panel63 = new Panel();
+            label70 = new Label();
+            LinguisticsNumeric = new NumericUpDown();
+            LinguisticsButton5 = new RadioButton();
+            LinguisticsButton4 = new RadioButton();
+            LinguisticsButton3 = new RadioButton();
+            LinguisticsButton2 = new RadioButton();
+            LinguisticsButton1 = new RadioButton();
+            label71 = new Label();
+            LawPanel = new Panel();
+            panel65 = new Panel();
+            label72 = new Label();
+            LawNumeric = new NumericUpDown();
+            LawButton5 = new RadioButton();
+            LawButton4 = new RadioButton();
+            LawButton3 = new RadioButton();
+            LawButton2 = new RadioButton();
+            LawButton1 = new RadioButton();
+            label73 = new Label();
+            InvestigationPanel = new Panel();
+            panel67 = new Panel();
+            label74 = new Label();
+            InvestigationNumeric = new NumericUpDown();
+            InvestigationButton5 = new RadioButton();
+            InvestigationButton4 = new RadioButton();
+            InvestigationButton3 = new RadioButton();
+            InvestigationButton2 = new RadioButton();
+            InvestigationButton1 = new RadioButton();
+            label75 = new Label();
+            FinancePanel = new Panel();
+            panel69 = new Panel();
+            label76 = new Label();
+            FinanceNumeric = new NumericUpDown();
+            FinanceButton5 = new RadioButton();
+            FinanceButton4 = new RadioButton();
+            FinanceButton3 = new RadioButton();
+            FinanceButton2 = new RadioButton();
+            FinanceButton1 = new RadioButton();
+            label77 = new Label();
+            ComputerPanel = new Panel();
+            panel71 = new Panel();
+            label78 = new Label();
+            ComputerNumeric = new NumericUpDown();
+            ComputerButton5 = new RadioButton();
+            ComputerButton4 = new RadioButton();
+            ComputerButton3 = new RadioButton();
+            ComputerButton2 = new RadioButton();
+            ComputerButton1 = new RadioButton();
+            label79 = new Label();
+            AcademicsPanel = new Panel();
+            panel73 = new Panel();
+            label80 = new Label();
+            AcademicsNumeric = new NumericUpDown();
+            AcademicsButton5 = new RadioButton();
+            AcademicsButton4 = new RadioButton();
+            AcademicsButton3 = new RadioButton();
+            AcademicsButton2 = new RadioButton();
+            AcademicsButton1 = new RadioButton();
+            label81 = new Label();
+            label82 = new Label();
+            panel32 = new Panel();
+            SubterfugePanel = new Panel();
+            panel34 = new Panel();
+            label41 = new Label();
+            SubterfugeNumeric = new NumericUpDown();
+            SubterfugeButton5 = new RadioButton();
+            SubterfugeButton4 = new RadioButton();
+            SubterfugeButton3 = new RadioButton();
+            SubterfugeButton2 = new RadioButton();
+            SubterfugeButton1 = new RadioButton();
+            label42 = new Label();
+            StreetwisePanel = new Panel();
+            panel36 = new Panel();
+            label43 = new Label();
+            StreetwiseNumeric = new NumericUpDown();
+            StreetwiseButton5 = new RadioButton();
+            StreetwiseButton4 = new RadioButton();
+            StreetwiseButton3 = new RadioButton();
+            StreetwiseButton2 = new RadioButton();
+            StreetwiseButton1 = new RadioButton();
+            label44 = new Label();
+            LeadershipPanel = new Panel();
+            panel38 = new Panel();
+            label45 = new Label();
+            LeadershipNumeric = new NumericUpDown();
+            LeadershipButton5 = new RadioButton();
+            LeadershipButton4 = new RadioButton();
+            LeadershipButton3 = new RadioButton();
+            LeadershipButton2 = new RadioButton();
+            LeadershipButton1 = new RadioButton();
+            label46 = new Label();
+            IntimidationPanel = new Panel();
+            panel40 = new Panel();
+            label47 = new Label();
+            IntimidationNumeric = new NumericUpDown();
+            IntimidationButton5 = new RadioButton();
+            IntimidationButton4 = new RadioButton();
+            IntimidationButton3 = new RadioButton();
+            IntimidationButton2 = new RadioButton();
+            IntimidationButton1 = new RadioButton();
+            label48 = new Label();
+            ExpressionPanel = new Panel();
+            panel42 = new Panel();
+            label49 = new Label();
+            ExpressionNumeric = new NumericUpDown();
+            ExpressionButton5 = new RadioButton();
+            ExpressionButton4 = new RadioButton();
+            ExpressionButton3 = new RadioButton();
+            ExpressionButton2 = new RadioButton();
+            ExpressionButton1 = new RadioButton();
+            label50 = new Label();
+            EmpathyPanel = new Panel();
+            panel44 = new Panel();
+            label51 = new Label();
+            EmpathyNumeric = new NumericUpDown();
+            EmpathyButton5 = new RadioButton();
+            EmpathyButton4 = new RadioButton();
+            EmpathyButton3 = new RadioButton();
+            EmpathyButton2 = new RadioButton();
+            EmpathyButton1 = new RadioButton();
+            label52 = new Label();
+            DodgePanel = new Panel();
+            panel46 = new Panel();
+            label53 = new Label();
+            DodgeNumeric = new NumericUpDown();
+            DodgeButton5 = new RadioButton();
+            DodgeButton4 = new RadioButton();
+            DodgeButton3 = new RadioButton();
+            DodgeButton2 = new RadioButton();
+            DodgeButton1 = new RadioButton();
+            label54 = new Label();
+            BrawlPanel = new Panel();
+            panel48 = new Panel();
+            label55 = new Label();
+            BrawlNumeric = new NumericUpDown();
+            BrawlButton5 = new RadioButton();
+            BrawlButton4 = new RadioButton();
+            BrawlButton3 = new RadioButton();
+            BrawlButton2 = new RadioButton();
+            BrawlButton1 = new RadioButton();
+            label56 = new Label();
+            AthleticsPanel = new Panel();
+            panel50 = new Panel();
+            label57 = new Label();
+            AthleticsNumeric = new NumericUpDown();
+            AthleticsButton5 = new RadioButton();
+            AthleticsButton4 = new RadioButton();
+            AthleticsButton3 = new RadioButton();
+            AthleticsButton2 = new RadioButton();
+            AthleticsButton1 = new RadioButton();
+            label58 = new Label();
+            AlertnessPanel = new Panel();
+            panel52 = new Panel();
+            label59 = new Label();
+            AlertnessNumeric = new NumericUpDown();
+            AlertnessButton5 = new RadioButton();
+            AlertnessButton4 = new RadioButton();
+            AlertnessButton3 = new RadioButton();
+            AlertnessButton2 = new RadioButton();
+            AlertnessButton1 = new RadioButton();
+            label60 = new Label();
+            label61 = new Label();
+            panel1 = new Panel();
+            SurvivalPanel = new Panel();
+            panel31 = new Panel();
+            label39 = new Label();
+            SurvivalNumeric = new NumericUpDown();
+            SurvivalButton5 = new RadioButton();
+            SurvivalButton4 = new RadioButton();
+            SurvivalButton3 = new RadioButton();
+            SurvivalButton2 = new RadioButton();
+            SurvivalButton1 = new RadioButton();
+            label40 = new Label();
+            StealthPanel = new Panel();
+            panel29 = new Panel();
+            label37 = new Label();
+            StealthNumeric = new NumericUpDown();
+            StealthButton5 = new RadioButton();
+            StealthButton4 = new RadioButton();
+            StealthButton3 = new RadioButton();
+            StealthButton2 = new RadioButton();
+            StealthButton1 = new RadioButton();
+            label38 = new Label();
+            SecurityPanel = new Panel();
+            panel27 = new Panel();
+            label35 = new Label();
+            SecurityNumeric = new NumericUpDown();
+            SecurityButton5 = new RadioButton();
+            SecurityButton4 = new RadioButton();
+            SecurityButton3 = new RadioButton();
+            SecurityButton2 = new RadioButton();
+            SecurityButton1 = new RadioButton();
+            label36 = new Label();
+            PerfomancePanel = new Panel();
+            panel25 = new Panel();
+            label33 = new Label();
+            PerfomanceNumeric = new NumericUpDown();
+            PerfomanceButton5 = new RadioButton();
+            PerfomanceButton4 = new RadioButton();
+            PerfomanceButton3 = new RadioButton();
+            PerfomanceButton2 = new RadioButton();
+            PerfomanceButton1 = new RadioButton();
+            label34 = new Label();
+            MeleePanel = new Panel();
+            panel23 = new Panel();
+            label31 = new Label();
+            MeleeNumeric = new NumericUpDown();
+            MeleeButton5 = new RadioButton();
+            MeleeButton4 = new RadioButton();
+            MeleeButton3 = new RadioButton();
+            MeleeButton2 = new RadioButton();
+            MeleeButton1 = new RadioButton();
+            label32 = new Label();
+            FirearmsPanel = new Panel();
+            panel21 = new Panel();
+            label29 = new Label();
+            FirearmsNumeric = new NumericUpDown();
+            FirearmsButton5 = new RadioButton();
+            FirearmsButton4 = new RadioButton();
+            FirearmsButton3 = new RadioButton();
+            FirearmsButton2 = new RadioButton();
+            FirearmsButton1 = new RadioButton();
+            label30 = new Label();
+            EtiquettePanel = new Panel();
+            panel19 = new Panel();
+            label27 = new Label();
+            EtiquetteNumeric = new NumericUpDown();
+            EtiquetteButton5 = new RadioButton();
+            EtiquetteButton4 = new RadioButton();
+            EtiquetteButton3 = new RadioButton();
+            EtiquetteButton2 = new RadioButton();
+            EtiquetteButton1 = new RadioButton();
+            label28 = new Label();
+            DrivePanel = new Panel();
+            panel6 = new Panel();
+            label20 = new Label();
+            DriveNumeric = new NumericUpDown();
+            DriveButton5 = new RadioButton();
+            DriveButton4 = new RadioButton();
+            DriveButton3 = new RadioButton();
+            DriveButton2 = new RadioButton();
+            DriveButton1 = new RadioButton();
+            label21 = new Label();
+            CraftsPanel = new Panel();
+            panel10 = new Panel();
+            label22 = new Label();
+            CraftsNumeric = new NumericUpDown();
+            CraftsButton5 = new RadioButton();
+            CraftsButton4 = new RadioButton();
+            CraftsButton3 = new RadioButton();
+            CraftsButton2 = new RadioButton();
+            CraftsButton1 = new RadioButton();
+            label23 = new Label();
+            AnimalKenPanel = new Panel();
+            panel15 = new Panel();
+            label24 = new Label();
+            AnimalKenNumeric = new NumericUpDown();
+            AnimalKenButton5 = new RadioButton();
+            AnimalKenButton4 = new RadioButton();
+            AnimalKenButton3 = new RadioButton();
+            AnimalKenButton2 = new RadioButton();
+            AnimalKenButton1 = new RadioButton();
+            label25 = new Label();
+            label26 = new Label();
+            label19 = new Label();
             AttributesPanel = new Panel();
             panel12 = new Panel();
             WitsPanel = new Panel();
@@ -127,315 +435,101 @@
             StrenghtLabel = new Label();
             PhysicalAttributesLabel = new Label();
             AttributesLabel = new Label();
-            AbilitiesPanel = new Panel();
-            label19 = new Label();
-            panel1 = new Panel();
-            panel3 = new Panel();
-            panel6 = new Panel();
-            label20 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton5 = new RadioButton();
-            label21 = new Label();
-            panel8 = new Panel();
-            panel10 = new Panel();
-            label22 = new Label();
-            numericUpDown2 = new NumericUpDown();
-            radioButton6 = new RadioButton();
-            radioButton7 = new RadioButton();
-            radioButton8 = new RadioButton();
-            radioButton9 = new RadioButton();
-            radioButton10 = new RadioButton();
-            label23 = new Label();
-            panel13 = new Panel();
-            panel15 = new Panel();
-            label24 = new Label();
-            numericUpDown3 = new NumericUpDown();
-            radioButton11 = new RadioButton();
-            radioButton12 = new RadioButton();
-            radioButton13 = new RadioButton();
-            radioButton14 = new RadioButton();
-            radioButton15 = new RadioButton();
-            label25 = new Label();
-            label26 = new Label();
-            panel17 = new Panel();
-            panel19 = new Panel();
-            label27 = new Label();
-            numericUpDown4 = new NumericUpDown();
-            radioButton16 = new RadioButton();
-            radioButton17 = new RadioButton();
-            radioButton18 = new RadioButton();
-            radioButton19 = new RadioButton();
-            radioButton20 = new RadioButton();
-            label28 = new Label();
-            panel20 = new Panel();
-            panel21 = new Panel();
-            label29 = new Label();
-            numericUpDown5 = new NumericUpDown();
-            radioButton21 = new RadioButton();
-            radioButton22 = new RadioButton();
-            radioButton23 = new RadioButton();
-            radioButton24 = new RadioButton();
-            radioButton25 = new RadioButton();
-            label30 = new Label();
-            panel22 = new Panel();
-            panel23 = new Panel();
-            label31 = new Label();
-            numericUpDown6 = new NumericUpDown();
-            radioButton26 = new RadioButton();
-            radioButton27 = new RadioButton();
-            radioButton28 = new RadioButton();
-            radioButton29 = new RadioButton();
-            radioButton30 = new RadioButton();
-            label32 = new Label();
-            panel24 = new Panel();
-            panel25 = new Panel();
-            label33 = new Label();
-            numericUpDown7 = new NumericUpDown();
-            radioButton31 = new RadioButton();
-            radioButton32 = new RadioButton();
-            radioButton33 = new RadioButton();
-            radioButton34 = new RadioButton();
-            radioButton35 = new RadioButton();
-            label34 = new Label();
-            panel26 = new Panel();
-            panel27 = new Panel();
-            label35 = new Label();
-            numericUpDown8 = new NumericUpDown();
-            radioButton36 = new RadioButton();
-            radioButton37 = new RadioButton();
-            radioButton38 = new RadioButton();
-            radioButton39 = new RadioButton();
-            radioButton40 = new RadioButton();
-            label36 = new Label();
-            panel28 = new Panel();
-            panel29 = new Panel();
-            label37 = new Label();
-            numericUpDown9 = new NumericUpDown();
-            radioButton41 = new RadioButton();
-            radioButton42 = new RadioButton();
-            radioButton43 = new RadioButton();
-            radioButton44 = new RadioButton();
-            radioButton45 = new RadioButton();
-            label38 = new Label();
-            panel30 = new Panel();
-            panel31 = new Panel();
-            label39 = new Label();
-            numericUpDown10 = new NumericUpDown();
-            radioButton46 = new RadioButton();
-            radioButton47 = new RadioButton();
-            radioButton48 = new RadioButton();
-            radioButton49 = new RadioButton();
-            radioButton50 = new RadioButton();
-            label40 = new Label();
-            panel32 = new Panel();
-            panel33 = new Panel();
-            panel34 = new Panel();
-            label41 = new Label();
-            numericUpDown11 = new NumericUpDown();
-            radioButton51 = new RadioButton();
-            radioButton52 = new RadioButton();
-            radioButton53 = new RadioButton();
-            radioButton54 = new RadioButton();
-            radioButton55 = new RadioButton();
-            label42 = new Label();
-            panel35 = new Panel();
-            panel36 = new Panel();
-            label43 = new Label();
-            numericUpDown12 = new NumericUpDown();
-            radioButton56 = new RadioButton();
-            radioButton57 = new RadioButton();
-            radioButton58 = new RadioButton();
-            radioButton59 = new RadioButton();
-            radioButton60 = new RadioButton();
-            label44 = new Label();
-            panel37 = new Panel();
-            panel38 = new Panel();
-            label45 = new Label();
-            numericUpDown13 = new NumericUpDown();
-            radioButton61 = new RadioButton();
-            radioButton62 = new RadioButton();
-            radioButton63 = new RadioButton();
-            radioButton64 = new RadioButton();
-            radioButton65 = new RadioButton();
-            label46 = new Label();
-            panel39 = new Panel();
-            panel40 = new Panel();
-            label47 = new Label();
-            numericUpDown14 = new NumericUpDown();
-            radioButton66 = new RadioButton();
-            radioButton67 = new RadioButton();
-            radioButton68 = new RadioButton();
-            radioButton69 = new RadioButton();
-            radioButton70 = new RadioButton();
-            label48 = new Label();
-            panel41 = new Panel();
-            panel42 = new Panel();
-            label49 = new Label();
-            numericUpDown15 = new NumericUpDown();
-            radioButton71 = new RadioButton();
-            radioButton72 = new RadioButton();
-            radioButton73 = new RadioButton();
-            radioButton74 = new RadioButton();
-            radioButton75 = new RadioButton();
-            label50 = new Label();
-            panel43 = new Panel();
-            panel44 = new Panel();
-            label51 = new Label();
-            numericUpDown16 = new NumericUpDown();
-            radioButton76 = new RadioButton();
-            radioButton77 = new RadioButton();
-            radioButton78 = new RadioButton();
-            radioButton79 = new RadioButton();
-            radioButton80 = new RadioButton();
-            label52 = new Label();
-            panel45 = new Panel();
-            panel46 = new Panel();
-            label53 = new Label();
-            numericUpDown17 = new NumericUpDown();
-            radioButton81 = new RadioButton();
-            radioButton82 = new RadioButton();
-            radioButton83 = new RadioButton();
-            radioButton84 = new RadioButton();
-            radioButton85 = new RadioButton();
-            label54 = new Label();
-            panel47 = new Panel();
-            panel48 = new Panel();
-            label55 = new Label();
-            numericUpDown18 = new NumericUpDown();
-            radioButton86 = new RadioButton();
-            radioButton87 = new RadioButton();
-            radioButton88 = new RadioButton();
-            radioButton89 = new RadioButton();
-            radioButton90 = new RadioButton();
-            label56 = new Label();
-            panel49 = new Panel();
-            panel50 = new Panel();
-            label57 = new Label();
-            numericUpDown19 = new NumericUpDown();
-            radioButton91 = new RadioButton();
-            radioButton92 = new RadioButton();
-            radioButton93 = new RadioButton();
-            radioButton94 = new RadioButton();
-            radioButton95 = new RadioButton();
-            label58 = new Label();
-            panel51 = new Panel();
-            panel52 = new Panel();
-            label59 = new Label();
-            numericUpDown20 = new NumericUpDown();
-            radioButton96 = new RadioButton();
-            radioButton97 = new RadioButton();
-            radioButton98 = new RadioButton();
-            radioButton99 = new RadioButton();
-            radioButton100 = new RadioButton();
-            label60 = new Label();
-            label61 = new Label();
-            panel53 = new Panel();
-            panel54 = new Panel();
-            panel55 = new Panel();
-            label62 = new Label();
-            numericUpDown21 = new NumericUpDown();
-            radioButton101 = new RadioButton();
-            radioButton102 = new RadioButton();
-            radioButton103 = new RadioButton();
-            radioButton104 = new RadioButton();
-            radioButton105 = new RadioButton();
-            label63 = new Label();
-            panel56 = new Panel();
-            panel57 = new Panel();
-            label64 = new Label();
-            numericUpDown22 = new NumericUpDown();
-            radioButton106 = new RadioButton();
-            radioButton107 = new RadioButton();
-            radioButton108 = new RadioButton();
-            radioButton109 = new RadioButton();
-            radioButton110 = new RadioButton();
-            label65 = new Label();
-            panel58 = new Panel();
-            panel59 = new Panel();
-            label66 = new Label();
-            numericUpDown23 = new NumericUpDown();
-            radioButton111 = new RadioButton();
-            radioButton112 = new RadioButton();
-            radioButton113 = new RadioButton();
-            radioButton114 = new RadioButton();
-            radioButton115 = new RadioButton();
-            label67 = new Label();
-            panel60 = new Panel();
-            panel61 = new Panel();
-            label68 = new Label();
-            numericUpDown24 = new NumericUpDown();
-            radioButton116 = new RadioButton();
-            radioButton117 = new RadioButton();
-            radioButton118 = new RadioButton();
-            radioButton119 = new RadioButton();
-            radioButton120 = new RadioButton();
-            label69 = new Label();
-            panel62 = new Panel();
-            panel63 = new Panel();
-            label70 = new Label();
-            numericUpDown25 = new NumericUpDown();
-            radioButton121 = new RadioButton();
-            radioButton122 = new RadioButton();
-            radioButton123 = new RadioButton();
-            radioButton124 = new RadioButton();
-            radioButton125 = new RadioButton();
-            label71 = new Label();
-            panel64 = new Panel();
-            panel65 = new Panel();
-            label72 = new Label();
-            numericUpDown26 = new NumericUpDown();
-            radioButton126 = new RadioButton();
-            radioButton127 = new RadioButton();
-            radioButton128 = new RadioButton();
-            radioButton129 = new RadioButton();
-            radioButton130 = new RadioButton();
-            label73 = new Label();
-            panel66 = new Panel();
-            panel67 = new Panel();
-            label74 = new Label();
-            numericUpDown27 = new NumericUpDown();
-            radioButton131 = new RadioButton();
-            radioButton132 = new RadioButton();
-            radioButton133 = new RadioButton();
-            radioButton134 = new RadioButton();
-            radioButton135 = new RadioButton();
-            label75 = new Label();
-            panel68 = new Panel();
-            panel69 = new Panel();
-            label76 = new Label();
-            numericUpDown28 = new NumericUpDown();
-            radioButton136 = new RadioButton();
-            radioButton137 = new RadioButton();
-            radioButton138 = new RadioButton();
-            radioButton139 = new RadioButton();
-            radioButton140 = new RadioButton();
-            label77 = new Label();
-            panel70 = new Panel();
-            panel71 = new Panel();
-            label78 = new Label();
-            numericUpDown29 = new NumericUpDown();
-            radioButton141 = new RadioButton();
-            radioButton142 = new RadioButton();
-            radioButton143 = new RadioButton();
-            radioButton144 = new RadioButton();
-            radioButton145 = new RadioButton();
-            label79 = new Label();
-            panel72 = new Panel();
-            panel73 = new Panel();
-            label80 = new Label();
-            numericUpDown30 = new NumericUpDown();
-            radioButton146 = new RadioButton();
-            radioButton147 = new RadioButton();
-            radioButton148 = new RadioButton();
-            radioButton149 = new RadioButton();
-            radioButton150 = new RadioButton();
-            label81 = new Label();
-            label82 = new Label();
             characterPanel.SuspendLayout();
+            AbilitiesPanel.SuspendLayout();
+            panel53.SuspendLayout();
+            SciencePanel.SuspendLayout();
+            panel55.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ScienceNumeric).BeginInit();
+            PoliticsPanel.SuspendLayout();
+            panel57.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PoliticsNumeric).BeginInit();
+            OccultPanel.SuspendLayout();
+            panel59.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)OccultNumeric).BeginInit();
+            MedicinePanel.SuspendLayout();
+            panel61.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MedicineNumeric).BeginInit();
+            LinguisticsPanel.SuspendLayout();
+            panel63.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LinguisticsNumeric).BeginInit();
+            LawPanel.SuspendLayout();
+            panel65.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LawNumeric).BeginInit();
+            InvestigationPanel.SuspendLayout();
+            panel67.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)InvestigationNumeric).BeginInit();
+            FinancePanel.SuspendLayout();
+            panel69.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)FinanceNumeric).BeginInit();
+            ComputerPanel.SuspendLayout();
+            panel71.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ComputerNumeric).BeginInit();
+            AcademicsPanel.SuspendLayout();
+            panel73.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AcademicsNumeric).BeginInit();
+            panel32.SuspendLayout();
+            SubterfugePanel.SuspendLayout();
+            panel34.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SubterfugeNumeric).BeginInit();
+            StreetwisePanel.SuspendLayout();
+            panel36.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)StreetwiseNumeric).BeginInit();
+            LeadershipPanel.SuspendLayout();
+            panel38.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LeadershipNumeric).BeginInit();
+            IntimidationPanel.SuspendLayout();
+            panel40.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)IntimidationNumeric).BeginInit();
+            ExpressionPanel.SuspendLayout();
+            panel42.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ExpressionNumeric).BeginInit();
+            EmpathyPanel.SuspendLayout();
+            panel44.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)EmpathyNumeric).BeginInit();
+            DodgePanel.SuspendLayout();
+            panel46.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DodgeNumeric).BeginInit();
+            BrawlPanel.SuspendLayout();
+            panel48.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)BrawlNumeric).BeginInit();
+            AthleticsPanel.SuspendLayout();
+            panel50.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AthleticsNumeric).BeginInit();
+            AlertnessPanel.SuspendLayout();
+            panel52.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AlertnessNumeric).BeginInit();
+            panel1.SuspendLayout();
+            SurvivalPanel.SuspendLayout();
+            panel31.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SurvivalNumeric).BeginInit();
+            StealthPanel.SuspendLayout();
+            panel29.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)StealthNumeric).BeginInit();
+            SecurityPanel.SuspendLayout();
+            panel27.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SecurityNumeric).BeginInit();
+            PerfomancePanel.SuspendLayout();
+            panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PerfomanceNumeric).BeginInit();
+            MeleePanel.SuspendLayout();
+            panel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MeleeNumeric).BeginInit();
+            FirearmsPanel.SuspendLayout();
+            panel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)FirearmsNumeric).BeginInit();
+            EtiquettePanel.SuspendLayout();
+            panel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)EtiquetteNumeric).BeginInit();
+            DrivePanel.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DriveNumeric).BeginInit();
+            CraftsPanel.SuspendLayout();
+            panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CraftsNumeric).BeginInit();
+            AnimalKenPanel.SuspendLayout();
+            panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AnimalKenNumeric).BeginInit();
             AttributesPanel.SuspendLayout();
             panel12.SuspendLayout();
             WitsPanel.SuspendLayout();
@@ -467,100 +561,6 @@
             StrenghtPanel.SuspendLayout();
             DexterityPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)StrenghtNumeric).BeginInit();
-            AbilitiesPanel.SuspendLayout();
-            panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            panel8.SuspendLayout();
-            panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            panel13.SuspendLayout();
-            panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-            panel17.SuspendLayout();
-            panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
-            panel20.SuspendLayout();
-            panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
-            panel22.SuspendLayout();
-            panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown6).BeginInit();
-            panel24.SuspendLayout();
-            panel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown7).BeginInit();
-            panel26.SuspendLayout();
-            panel27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown8).BeginInit();
-            panel28.SuspendLayout();
-            panel29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown9).BeginInit();
-            panel30.SuspendLayout();
-            panel31.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown10).BeginInit();
-            panel32.SuspendLayout();
-            panel33.SuspendLayout();
-            panel34.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown11).BeginInit();
-            panel35.SuspendLayout();
-            panel36.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown12).BeginInit();
-            panel37.SuspendLayout();
-            panel38.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown13).BeginInit();
-            panel39.SuspendLayout();
-            panel40.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown14).BeginInit();
-            panel41.SuspendLayout();
-            panel42.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown15).BeginInit();
-            panel43.SuspendLayout();
-            panel44.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown16).BeginInit();
-            panel45.SuspendLayout();
-            panel46.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown17).BeginInit();
-            panel47.SuspendLayout();
-            panel48.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown18).BeginInit();
-            panel49.SuspendLayout();
-            panel50.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown19).BeginInit();
-            panel51.SuspendLayout();
-            panel52.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown20).BeginInit();
-            panel53.SuspendLayout();
-            panel54.SuspendLayout();
-            panel55.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown21).BeginInit();
-            panel56.SuspendLayout();
-            panel57.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown22).BeginInit();
-            panel58.SuspendLayout();
-            panel59.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown23).BeginInit();
-            panel60.SuspendLayout();
-            panel61.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown24).BeginInit();
-            panel62.SuspendLayout();
-            panel63.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown25).BeginInit();
-            panel64.SuspendLayout();
-            panel65.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown26).BeginInit();
-            panel66.SuspendLayout();
-            panel67.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown27).BeginInit();
-            panel68.SuspendLayout();
-            panel69.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown28).BeginInit();
-            panel70.SuspendLayout();
-            panel71.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown29).BeginInit();
-            panel72.SuspendLayout();
-            panel73.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown30).BeginInit();
             SuspendLayout();
             // 
             // characterPanel
@@ -571,6 +571,3264 @@
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // AbilitiesPanel
+            // 
+            AbilitiesPanel.Controls.Add(panel53);
+            AbilitiesPanel.Controls.Add(panel32);
+            AbilitiesPanel.Controls.Add(panel1);
+            AbilitiesPanel.Controls.Add(label19);
+            AbilitiesPanel.Location = new Point(3, 128);
+            AbilitiesPanel.Name = "AbilitiesPanel";
+            AbilitiesPanel.Size = new Size(700, 255);
+            AbilitiesPanel.TabIndex = 1;
+            // 
+            // panel53
+            // 
+            panel53.Controls.Add(SciencePanel);
+            panel53.Controls.Add(PoliticsPanel);
+            panel53.Controls.Add(OccultPanel);
+            panel53.Controls.Add(MedicinePanel);
+            panel53.Controls.Add(LinguisticsPanel);
+            panel53.Controls.Add(LawPanel);
+            panel53.Controls.Add(InvestigationPanel);
+            panel53.Controls.Add(FinancePanel);
+            panel53.Controls.Add(ComputerPanel);
+            panel53.Controls.Add(AcademicsPanel);
+            panel53.Controls.Add(label82);
+            panel53.Location = new Point(469, 21);
+            panel53.Name = "panel53";
+            panel53.Size = new Size(230, 231);
+            panel53.TabIndex = 14;
+            // 
+            // SciencePanel
+            // 
+            SciencePanel.Controls.Add(panel55);
+            SciencePanel.Controls.Add(ScienceNumeric);
+            SciencePanel.Controls.Add(ScienceButton5);
+            SciencePanel.Controls.Add(ScienceButton4);
+            SciencePanel.Controls.Add(ScienceButton3);
+            SciencePanel.Controls.Add(ScienceButton2);
+            SciencePanel.Controls.Add(ScienceButton1);
+            SciencePanel.Controls.Add(label63);
+            SciencePanel.Location = new Point(3, 208);
+            SciencePanel.Name = "SciencePanel";
+            SciencePanel.Size = new Size(227, 19);
+            SciencePanel.TabIndex = 13;
+            SciencePanel.Click += SciencePanel_Click;
+            // 
+            // panel55
+            // 
+            panel55.Controls.Add(label62);
+            panel55.Location = new Point(3, 18);
+            panel55.Name = "panel55";
+            panel55.Size = new Size(197, 19);
+            panel55.TabIndex = 2;
+            // 
+            // label62
+            // 
+            label62.AutoSize = true;
+            label62.Location = new Point(3, 0);
+            label62.Name = "label62";
+            label62.Size = new Size(58, 15);
+            label62.TabIndex = 0;
+            label62.Text = "Ловкость";
+            // 
+            // ScienceNumeric
+            // 
+            ScienceNumeric.Location = new Point(183, -2);
+            ScienceNumeric.Name = "ScienceNumeric";
+            ScienceNumeric.Size = new Size(41, 23);
+            ScienceNumeric.TabIndex = 8;
+            // 
+            // ScienceButton5
+            // 
+            ScienceButton5.AutoCheck = false;
+            ScienceButton5.AutoSize = true;
+            ScienceButton5.Location = new Point(166, 6);
+            ScienceButton5.Name = "ScienceButton5";
+            ScienceButton5.Size = new Size(14, 13);
+            ScienceButton5.TabIndex = 7;
+            ScienceButton5.UseVisualStyleBackColor = true;
+            // 
+            // ScienceButton4
+            // 
+            ScienceButton4.AutoCheck = false;
+            ScienceButton4.AutoSize = true;
+            ScienceButton4.Location = new Point(146, 6);
+            ScienceButton4.Name = "ScienceButton4";
+            ScienceButton4.Size = new Size(14, 13);
+            ScienceButton4.TabIndex = 6;
+            ScienceButton4.UseVisualStyleBackColor = true;
+            // 
+            // ScienceButton3
+            // 
+            ScienceButton3.AutoCheck = false;
+            ScienceButton3.AutoSize = true;
+            ScienceButton3.Location = new Point(126, 6);
+            ScienceButton3.Name = "ScienceButton3";
+            ScienceButton3.Size = new Size(14, 13);
+            ScienceButton3.TabIndex = 5;
+            ScienceButton3.UseVisualStyleBackColor = true;
+            // 
+            // ScienceButton2
+            // 
+            ScienceButton2.AutoCheck = false;
+            ScienceButton2.AutoSize = true;
+            ScienceButton2.Checked = true;
+            ScienceButton2.Location = new Point(106, 6);
+            ScienceButton2.Name = "ScienceButton2";
+            ScienceButton2.Size = new Size(14, 13);
+            ScienceButton2.TabIndex = 4;
+            ScienceButton2.TabStop = true;
+            ScienceButton2.UseVisualStyleBackColor = true;
+            // 
+            // ScienceButton1
+            // 
+            ScienceButton1.AutoCheck = false;
+            ScienceButton1.AutoSize = true;
+            ScienceButton1.Checked = true;
+            ScienceButton1.Location = new Point(86, 6);
+            ScienceButton1.Name = "ScienceButton1";
+            ScienceButton1.Size = new Size(14, 13);
+            ScienceButton1.TabIndex = 3;
+            ScienceButton1.UseVisualStyleBackColor = true;
+            // 
+            // label63
+            // 
+            label63.AutoSize = true;
+            label63.Font = new Font("Segoe UI", 6F);
+            label63.Location = new Point(3, 4);
+            label63.Name = "label63";
+            label63.Size = new Size(79, 11);
+            label63.TabIndex = 0;
+            label63.Text = "Естественные науки";
+            label63.Click += SciencePanel_Click;
+            // 
+            // PoliticsPanel
+            // 
+            PoliticsPanel.Controls.Add(panel57);
+            PoliticsPanel.Controls.Add(PoliticsNumeric);
+            PoliticsPanel.Controls.Add(PoliticsButton5);
+            PoliticsPanel.Controls.Add(PoliticsButton4);
+            PoliticsPanel.Controls.Add(PoliticsButton3);
+            PoliticsPanel.Controls.Add(PoliticsButton2);
+            PoliticsPanel.Controls.Add(PoliticsButton1);
+            PoliticsPanel.Controls.Add(label65);
+            PoliticsPanel.Location = new Point(3, 187);
+            PoliticsPanel.Name = "PoliticsPanel";
+            PoliticsPanel.Size = new Size(227, 19);
+            PoliticsPanel.TabIndex = 12;
+            PoliticsPanel.Click += PoliticsPanel_Click;
+            // 
+            // panel57
+            // 
+            panel57.Controls.Add(label64);
+            panel57.Location = new Point(3, 18);
+            panel57.Name = "panel57";
+            panel57.Size = new Size(197, 19);
+            panel57.TabIndex = 2;
+            // 
+            // label64
+            // 
+            label64.AutoSize = true;
+            label64.Location = new Point(3, 0);
+            label64.Name = "label64";
+            label64.Size = new Size(58, 15);
+            label64.TabIndex = 0;
+            label64.Text = "Ловкость";
+            // 
+            // PoliticsNumeric
+            // 
+            PoliticsNumeric.Location = new Point(183, -2);
+            PoliticsNumeric.Name = "PoliticsNumeric";
+            PoliticsNumeric.Size = new Size(41, 23);
+            PoliticsNumeric.TabIndex = 8;
+            // 
+            // PoliticsButton5
+            // 
+            PoliticsButton5.AutoCheck = false;
+            PoliticsButton5.AutoSize = true;
+            PoliticsButton5.Location = new Point(166, 6);
+            PoliticsButton5.Name = "PoliticsButton5";
+            PoliticsButton5.Size = new Size(14, 13);
+            PoliticsButton5.TabIndex = 7;
+            PoliticsButton5.UseVisualStyleBackColor = true;
+            // 
+            // PoliticsButton4
+            // 
+            PoliticsButton4.AutoCheck = false;
+            PoliticsButton4.AutoSize = true;
+            PoliticsButton4.Location = new Point(146, 6);
+            PoliticsButton4.Name = "PoliticsButton4";
+            PoliticsButton4.Size = new Size(14, 13);
+            PoliticsButton4.TabIndex = 6;
+            PoliticsButton4.UseVisualStyleBackColor = true;
+            // 
+            // PoliticsButton3
+            // 
+            PoliticsButton3.AutoCheck = false;
+            PoliticsButton3.AutoSize = true;
+            PoliticsButton3.Location = new Point(126, 6);
+            PoliticsButton3.Name = "PoliticsButton3";
+            PoliticsButton3.Size = new Size(14, 13);
+            PoliticsButton3.TabIndex = 5;
+            PoliticsButton3.UseVisualStyleBackColor = true;
+            // 
+            // PoliticsButton2
+            // 
+            PoliticsButton2.AutoCheck = false;
+            PoliticsButton2.AutoSize = true;
+            PoliticsButton2.Checked = true;
+            PoliticsButton2.Location = new Point(106, 6);
+            PoliticsButton2.Name = "PoliticsButton2";
+            PoliticsButton2.Size = new Size(14, 13);
+            PoliticsButton2.TabIndex = 4;
+            PoliticsButton2.TabStop = true;
+            PoliticsButton2.UseVisualStyleBackColor = true;
+            // 
+            // PoliticsButton1
+            // 
+            PoliticsButton1.AutoCheck = false;
+            PoliticsButton1.AutoSize = true;
+            PoliticsButton1.Checked = true;
+            PoliticsButton1.Location = new Point(86, 6);
+            PoliticsButton1.Name = "PoliticsButton1";
+            PoliticsButton1.Size = new Size(14, 13);
+            PoliticsButton1.TabIndex = 3;
+            PoliticsButton1.UseVisualStyleBackColor = true;
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Location = new Point(3, 0);
+            label65.Name = "label65";
+            label65.Size = new Size(61, 15);
+            label65.TabIndex = 0;
+            label65.Text = "Политика";
+            label65.Click += PoliticsPanel_Click;
+            // 
+            // OccultPanel
+            // 
+            OccultPanel.Controls.Add(panel59);
+            OccultPanel.Controls.Add(OccultNumeric);
+            OccultPanel.Controls.Add(OccultButton5);
+            OccultPanel.Controls.Add(OccultButton4);
+            OccultPanel.Controls.Add(OccultButton3);
+            OccultPanel.Controls.Add(OccultButton2);
+            OccultPanel.Controls.Add(OccultButton1);
+            OccultPanel.Controls.Add(label67);
+            OccultPanel.Location = new Point(3, 166);
+            OccultPanel.Name = "OccultPanel";
+            OccultPanel.Size = new Size(227, 19);
+            OccultPanel.TabIndex = 11;
+            OccultPanel.Click += OccultPanel_Click;
+            OccultPanel.Paint += OccultPanel_Paint;
+            // 
+            // panel59
+            // 
+            panel59.Controls.Add(label66);
+            panel59.Location = new Point(3, 18);
+            panel59.Name = "panel59";
+            panel59.Size = new Size(197, 19);
+            panel59.TabIndex = 2;
+            // 
+            // label66
+            // 
+            label66.AutoSize = true;
+            label66.Location = new Point(3, 0);
+            label66.Name = "label66";
+            label66.Size = new Size(58, 15);
+            label66.TabIndex = 0;
+            label66.Text = "Ловкость";
+            // 
+            // OccultNumeric
+            // 
+            OccultNumeric.Location = new Point(183, -2);
+            OccultNumeric.Name = "OccultNumeric";
+            OccultNumeric.Size = new Size(41, 23);
+            OccultNumeric.TabIndex = 8;
+            // 
+            // OccultButton5
+            // 
+            OccultButton5.AutoCheck = false;
+            OccultButton5.AutoSize = true;
+            OccultButton5.Location = new Point(166, 6);
+            OccultButton5.Name = "OccultButton5";
+            OccultButton5.Size = new Size(14, 13);
+            OccultButton5.TabIndex = 7;
+            OccultButton5.UseVisualStyleBackColor = true;
+            // 
+            // OccultButton4
+            // 
+            OccultButton4.AutoCheck = false;
+            OccultButton4.AutoSize = true;
+            OccultButton4.Location = new Point(146, 6);
+            OccultButton4.Name = "OccultButton4";
+            OccultButton4.Size = new Size(14, 13);
+            OccultButton4.TabIndex = 6;
+            OccultButton4.UseVisualStyleBackColor = true;
+            // 
+            // OccultButton3
+            // 
+            OccultButton3.AutoCheck = false;
+            OccultButton3.AutoSize = true;
+            OccultButton3.Location = new Point(126, 6);
+            OccultButton3.Name = "OccultButton3";
+            OccultButton3.Size = new Size(14, 13);
+            OccultButton3.TabIndex = 5;
+            OccultButton3.UseVisualStyleBackColor = true;
+            // 
+            // OccultButton2
+            // 
+            OccultButton2.AutoCheck = false;
+            OccultButton2.AutoSize = true;
+            OccultButton2.Checked = true;
+            OccultButton2.Location = new Point(106, 6);
+            OccultButton2.Name = "OccultButton2";
+            OccultButton2.Size = new Size(14, 13);
+            OccultButton2.TabIndex = 4;
+            OccultButton2.TabStop = true;
+            OccultButton2.UseVisualStyleBackColor = true;
+            // 
+            // OccultButton1
+            // 
+            OccultButton1.AutoCheck = false;
+            OccultButton1.AutoSize = true;
+            OccultButton1.Checked = true;
+            OccultButton1.Location = new Point(86, 6);
+            OccultButton1.Name = "OccultButton1";
+            OccultButton1.Size = new Size(14, 13);
+            OccultButton1.TabIndex = 3;
+            OccultButton1.UseVisualStyleBackColor = true;
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.Location = new Point(3, 0);
+            label67.Name = "label67";
+            label67.Size = new Size(73, 15);
+            label67.TabIndex = 0;
+            label67.Text = "Оккультизм";
+            label67.Click += OccultPanel_Click;
+            // 
+            // MedicinePanel
+            // 
+            MedicinePanel.Controls.Add(panel61);
+            MedicinePanel.Controls.Add(MedicineNumeric);
+            MedicinePanel.Controls.Add(MedicineButton5);
+            MedicinePanel.Controls.Add(MedicineButton4);
+            MedicinePanel.Controls.Add(MedicineButton3);
+            MedicinePanel.Controls.Add(MedicineButton2);
+            MedicinePanel.Controls.Add(MedicineButton1);
+            MedicinePanel.Controls.Add(label69);
+            MedicinePanel.Location = new Point(3, 145);
+            MedicinePanel.Name = "MedicinePanel";
+            MedicinePanel.Size = new Size(227, 19);
+            MedicinePanel.TabIndex = 10;
+            MedicinePanel.Click += MedicinePanel_Click;
+            // 
+            // panel61
+            // 
+            panel61.Controls.Add(label68);
+            panel61.Location = new Point(3, 18);
+            panel61.Name = "panel61";
+            panel61.Size = new Size(197, 19);
+            panel61.TabIndex = 2;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Location = new Point(3, 0);
+            label68.Name = "label68";
+            label68.Size = new Size(58, 15);
+            label68.TabIndex = 0;
+            label68.Text = "Ловкость";
+            // 
+            // MedicineNumeric
+            // 
+            MedicineNumeric.Location = new Point(183, -2);
+            MedicineNumeric.Name = "MedicineNumeric";
+            MedicineNumeric.Size = new Size(41, 23);
+            MedicineNumeric.TabIndex = 8;
+            // 
+            // MedicineButton5
+            // 
+            MedicineButton5.AutoCheck = false;
+            MedicineButton5.AutoSize = true;
+            MedicineButton5.Location = new Point(166, 6);
+            MedicineButton5.Name = "MedicineButton5";
+            MedicineButton5.Size = new Size(14, 13);
+            MedicineButton5.TabIndex = 7;
+            MedicineButton5.UseVisualStyleBackColor = true;
+            // 
+            // MedicineButton4
+            // 
+            MedicineButton4.AutoCheck = false;
+            MedicineButton4.AutoSize = true;
+            MedicineButton4.Location = new Point(146, 6);
+            MedicineButton4.Name = "MedicineButton4";
+            MedicineButton4.Size = new Size(14, 13);
+            MedicineButton4.TabIndex = 6;
+            MedicineButton4.UseVisualStyleBackColor = true;
+            // 
+            // MedicineButton3
+            // 
+            MedicineButton3.AutoCheck = false;
+            MedicineButton3.AutoSize = true;
+            MedicineButton3.Location = new Point(126, 6);
+            MedicineButton3.Name = "MedicineButton3";
+            MedicineButton3.Size = new Size(14, 13);
+            MedicineButton3.TabIndex = 5;
+            MedicineButton3.UseVisualStyleBackColor = true;
+            // 
+            // MedicineButton2
+            // 
+            MedicineButton2.AutoCheck = false;
+            MedicineButton2.AutoSize = true;
+            MedicineButton2.Checked = true;
+            MedicineButton2.Location = new Point(106, 6);
+            MedicineButton2.Name = "MedicineButton2";
+            MedicineButton2.Size = new Size(14, 13);
+            MedicineButton2.TabIndex = 4;
+            MedicineButton2.TabStop = true;
+            MedicineButton2.UseVisualStyleBackColor = true;
+            // 
+            // MedicineButton1
+            // 
+            MedicineButton1.AutoCheck = false;
+            MedicineButton1.AutoSize = true;
+            MedicineButton1.Checked = true;
+            MedicineButton1.Location = new Point(86, 6);
+            MedicineButton1.Name = "MedicineButton1";
+            MedicineButton1.Size = new Size(14, 13);
+            MedicineButton1.TabIndex = 3;
+            MedicineButton1.UseVisualStyleBackColor = true;
+            // 
+            // label69
+            // 
+            label69.AutoSize = true;
+            label69.Location = new Point(3, 0);
+            label69.Name = "label69";
+            label69.Size = new Size(64, 15);
+            label69.TabIndex = 0;
+            label69.Text = "Медицина";
+            label69.Click += MedicinePanel_Click;
+            // 
+            // LinguisticsPanel
+            // 
+            LinguisticsPanel.Controls.Add(panel63);
+            LinguisticsPanel.Controls.Add(LinguisticsNumeric);
+            LinguisticsPanel.Controls.Add(LinguisticsButton5);
+            LinguisticsPanel.Controls.Add(LinguisticsButton4);
+            LinguisticsPanel.Controls.Add(LinguisticsButton3);
+            LinguisticsPanel.Controls.Add(LinguisticsButton2);
+            LinguisticsPanel.Controls.Add(LinguisticsButton1);
+            LinguisticsPanel.Controls.Add(label71);
+            LinguisticsPanel.Location = new Point(3, 124);
+            LinguisticsPanel.Name = "LinguisticsPanel";
+            LinguisticsPanel.Size = new Size(227, 19);
+            LinguisticsPanel.TabIndex = 11;
+            LinguisticsPanel.Click += LinguisticsPanel_Click;
+            // 
+            // panel63
+            // 
+            panel63.Controls.Add(label70);
+            panel63.Location = new Point(3, 18);
+            panel63.Name = "panel63";
+            panel63.Size = new Size(197, 19);
+            panel63.TabIndex = 2;
+            // 
+            // label70
+            // 
+            label70.AutoSize = true;
+            label70.Location = new Point(3, 0);
+            label70.Name = "label70";
+            label70.Size = new Size(58, 15);
+            label70.TabIndex = 0;
+            label70.Text = "Ловкость";
+            // 
+            // LinguisticsNumeric
+            // 
+            LinguisticsNumeric.Location = new Point(183, -2);
+            LinguisticsNumeric.Name = "LinguisticsNumeric";
+            LinguisticsNumeric.Size = new Size(41, 23);
+            LinguisticsNumeric.TabIndex = 8;
+            // 
+            // LinguisticsButton5
+            // 
+            LinguisticsButton5.AutoCheck = false;
+            LinguisticsButton5.AutoSize = true;
+            LinguisticsButton5.Checked = true;
+            LinguisticsButton5.Location = new Point(166, 6);
+            LinguisticsButton5.Name = "LinguisticsButton5";
+            LinguisticsButton5.Size = new Size(14, 13);
+            LinguisticsButton5.TabIndex = 7;
+            LinguisticsButton5.TabStop = true;
+            LinguisticsButton5.UseVisualStyleBackColor = true;
+            // 
+            // LinguisticsButton4
+            // 
+            LinguisticsButton4.AutoCheck = false;
+            LinguisticsButton4.AutoSize = true;
+            LinguisticsButton4.Checked = true;
+            LinguisticsButton4.Location = new Point(146, 6);
+            LinguisticsButton4.Name = "LinguisticsButton4";
+            LinguisticsButton4.Size = new Size(14, 13);
+            LinguisticsButton4.TabIndex = 6;
+            LinguisticsButton4.UseVisualStyleBackColor = true;
+            // 
+            // LinguisticsButton3
+            // 
+            LinguisticsButton3.AutoCheck = false;
+            LinguisticsButton3.AutoSize = true;
+            LinguisticsButton3.Checked = true;
+            LinguisticsButton3.Location = new Point(126, 6);
+            LinguisticsButton3.Name = "LinguisticsButton3";
+            LinguisticsButton3.Size = new Size(14, 13);
+            LinguisticsButton3.TabIndex = 5;
+            LinguisticsButton3.UseVisualStyleBackColor = true;
+            // 
+            // LinguisticsButton2
+            // 
+            LinguisticsButton2.AutoCheck = false;
+            LinguisticsButton2.AutoSize = true;
+            LinguisticsButton2.Checked = true;
+            LinguisticsButton2.Location = new Point(106, 6);
+            LinguisticsButton2.Name = "LinguisticsButton2";
+            LinguisticsButton2.Size = new Size(14, 13);
+            LinguisticsButton2.TabIndex = 4;
+            LinguisticsButton2.UseVisualStyleBackColor = true;
+            // 
+            // LinguisticsButton1
+            // 
+            LinguisticsButton1.AutoCheck = false;
+            LinguisticsButton1.AutoSize = true;
+            LinguisticsButton1.Checked = true;
+            LinguisticsButton1.Location = new Point(86, 6);
+            LinguisticsButton1.Name = "LinguisticsButton1";
+            LinguisticsButton1.Size = new Size(14, 13);
+            LinguisticsButton1.TabIndex = 3;
+            LinguisticsButton1.UseVisualStyleBackColor = true;
+            // 
+            // label71
+            // 
+            label71.AutoSize = true;
+            label71.Location = new Point(3, 0);
+            label71.Name = "label71";
+            label71.Size = new Size(41, 15);
+            label71.TabIndex = 0;
+            label71.Text = "Языки";
+            label71.Click += LinguisticsPanel_Click;
+            // 
+            // LawPanel
+            // 
+            LawPanel.Controls.Add(panel65);
+            LawPanel.Controls.Add(LawNumeric);
+            LawPanel.Controls.Add(LawButton5);
+            LawPanel.Controls.Add(LawButton4);
+            LawPanel.Controls.Add(LawButton3);
+            LawPanel.Controls.Add(LawButton2);
+            LawPanel.Controls.Add(LawButton1);
+            LawPanel.Controls.Add(label73);
+            LawPanel.Location = new Point(3, 103);
+            LawPanel.Name = "LawPanel";
+            LawPanel.Size = new Size(227, 19);
+            LawPanel.TabIndex = 10;
+            LawPanel.Click += LawPanel_Click;
+            // 
+            // panel65
+            // 
+            panel65.Controls.Add(label72);
+            panel65.Location = new Point(3, 18);
+            panel65.Name = "panel65";
+            panel65.Size = new Size(197, 19);
+            panel65.TabIndex = 2;
+            // 
+            // label72
+            // 
+            label72.AutoSize = true;
+            label72.Location = new Point(3, 0);
+            label72.Name = "label72";
+            label72.Size = new Size(58, 15);
+            label72.TabIndex = 0;
+            label72.Text = "Ловкость";
+            // 
+            // LawNumeric
+            // 
+            LawNumeric.Location = new Point(183, -2);
+            LawNumeric.Name = "LawNumeric";
+            LawNumeric.Size = new Size(41, 23);
+            LawNumeric.TabIndex = 8;
+            // 
+            // LawButton5
+            // 
+            LawButton5.AutoCheck = false;
+            LawButton5.AutoSize = true;
+            LawButton5.Checked = true;
+            LawButton5.Location = new Point(166, 6);
+            LawButton5.Name = "LawButton5";
+            LawButton5.Size = new Size(14, 13);
+            LawButton5.TabIndex = 7;
+            LawButton5.TabStop = true;
+            LawButton5.UseVisualStyleBackColor = true;
+            // 
+            // LawButton4
+            // 
+            LawButton4.AutoCheck = false;
+            LawButton4.AutoSize = true;
+            LawButton4.Checked = true;
+            LawButton4.Location = new Point(146, 6);
+            LawButton4.Name = "LawButton4";
+            LawButton4.Size = new Size(14, 13);
+            LawButton4.TabIndex = 6;
+            LawButton4.UseVisualStyleBackColor = true;
+            // 
+            // LawButton3
+            // 
+            LawButton3.AutoCheck = false;
+            LawButton3.AutoSize = true;
+            LawButton3.Checked = true;
+            LawButton3.Location = new Point(126, 6);
+            LawButton3.Name = "LawButton3";
+            LawButton3.Size = new Size(14, 13);
+            LawButton3.TabIndex = 5;
+            LawButton3.UseVisualStyleBackColor = true;
+            // 
+            // LawButton2
+            // 
+            LawButton2.AutoCheck = false;
+            LawButton2.AutoSize = true;
+            LawButton2.Checked = true;
+            LawButton2.Location = new Point(106, 6);
+            LawButton2.Name = "LawButton2";
+            LawButton2.Size = new Size(14, 13);
+            LawButton2.TabIndex = 4;
+            LawButton2.UseVisualStyleBackColor = true;
+            // 
+            // LawButton1
+            // 
+            LawButton1.AutoCheck = false;
+            LawButton1.AutoSize = true;
+            LawButton1.Checked = true;
+            LawButton1.Location = new Point(86, 6);
+            LawButton1.Name = "LawButton1";
+            LawButton1.Size = new Size(14, 13);
+            LawButton1.TabIndex = 3;
+            LawButton1.UseVisualStyleBackColor = true;
+            // 
+            // label73
+            // 
+            label73.AutoSize = true;
+            label73.Location = new Point(3, 0);
+            label73.Name = "label73";
+            label73.Size = new Size(40, 15);
+            label73.TabIndex = 0;
+            label73.Text = "Закон";
+            label73.Click += LawPanel_Click;
+            // 
+            // InvestigationPanel
+            // 
+            InvestigationPanel.Controls.Add(panel67);
+            InvestigationPanel.Controls.Add(InvestigationNumeric);
+            InvestigationPanel.Controls.Add(InvestigationButton5);
+            InvestigationPanel.Controls.Add(InvestigationButton4);
+            InvestigationPanel.Controls.Add(InvestigationButton3);
+            InvestigationPanel.Controls.Add(InvestigationButton2);
+            InvestigationPanel.Controls.Add(InvestigationButton1);
+            InvestigationPanel.Controls.Add(label75);
+            InvestigationPanel.Location = new Point(3, 82);
+            InvestigationPanel.Name = "InvestigationPanel";
+            InvestigationPanel.Size = new Size(227, 19);
+            InvestigationPanel.TabIndex = 9;
+            InvestigationPanel.Click += InvestigationPanel_Click;
+            // 
+            // panel67
+            // 
+            panel67.Controls.Add(label74);
+            panel67.Location = new Point(3, 18);
+            panel67.Name = "panel67";
+            panel67.Size = new Size(197, 19);
+            panel67.TabIndex = 2;
+            // 
+            // label74
+            // 
+            label74.AutoSize = true;
+            label74.Location = new Point(3, 0);
+            label74.Name = "label74";
+            label74.Size = new Size(58, 15);
+            label74.TabIndex = 0;
+            label74.Text = "Ловкость";
+            // 
+            // InvestigationNumeric
+            // 
+            InvestigationNumeric.Location = new Point(183, -2);
+            InvestigationNumeric.Name = "InvestigationNumeric";
+            InvestigationNumeric.Size = new Size(41, 23);
+            InvestigationNumeric.TabIndex = 8;
+            // 
+            // InvestigationButton5
+            // 
+            InvestigationButton5.AutoCheck = false;
+            InvestigationButton5.AutoSize = true;
+            InvestigationButton5.Checked = true;
+            InvestigationButton5.Location = new Point(166, 6);
+            InvestigationButton5.Name = "InvestigationButton5";
+            InvestigationButton5.Size = new Size(14, 13);
+            InvestigationButton5.TabIndex = 7;
+            InvestigationButton5.TabStop = true;
+            InvestigationButton5.UseVisualStyleBackColor = true;
+            // 
+            // InvestigationButton4
+            // 
+            InvestigationButton4.AutoCheck = false;
+            InvestigationButton4.AutoSize = true;
+            InvestigationButton4.Checked = true;
+            InvestigationButton4.Location = new Point(146, 6);
+            InvestigationButton4.Name = "InvestigationButton4";
+            InvestigationButton4.Size = new Size(14, 13);
+            InvestigationButton4.TabIndex = 6;
+            InvestigationButton4.UseVisualStyleBackColor = true;
+            // 
+            // InvestigationButton3
+            // 
+            InvestigationButton3.AutoCheck = false;
+            InvestigationButton3.AutoSize = true;
+            InvestigationButton3.Checked = true;
+            InvestigationButton3.Location = new Point(126, 6);
+            InvestigationButton3.Name = "InvestigationButton3";
+            InvestigationButton3.Size = new Size(14, 13);
+            InvestigationButton3.TabIndex = 5;
+            InvestigationButton3.UseVisualStyleBackColor = true;
+            // 
+            // InvestigationButton2
+            // 
+            InvestigationButton2.AutoCheck = false;
+            InvestigationButton2.AutoSize = true;
+            InvestigationButton2.Checked = true;
+            InvestigationButton2.Location = new Point(106, 6);
+            InvestigationButton2.Name = "InvestigationButton2";
+            InvestigationButton2.Size = new Size(14, 13);
+            InvestigationButton2.TabIndex = 4;
+            InvestigationButton2.UseVisualStyleBackColor = true;
+            // 
+            // InvestigationButton1
+            // 
+            InvestigationButton1.AutoCheck = false;
+            InvestigationButton1.AutoSize = true;
+            InvestigationButton1.Checked = true;
+            InvestigationButton1.Location = new Point(86, 6);
+            InvestigationButton1.Name = "InvestigationButton1";
+            InvestigationButton1.Size = new Size(14, 13);
+            InvestigationButton1.TabIndex = 3;
+            InvestigationButton1.UseVisualStyleBackColor = true;
+            // 
+            // label75
+            // 
+            label75.AutoSize = true;
+            label75.Font = new Font("Segoe UI", 8F);
+            label75.Location = new Point(3, 5);
+            label75.Name = "label75";
+            label75.Size = new Size(86, 13);
+            label75.TabIndex = 0;
+            label75.Text = "Расследование";
+            label75.Click += InvestigationPanel_Click;
+            // 
+            // FinancePanel
+            // 
+            FinancePanel.Controls.Add(panel69);
+            FinancePanel.Controls.Add(FinanceNumeric);
+            FinancePanel.Controls.Add(FinanceButton5);
+            FinancePanel.Controls.Add(FinanceButton4);
+            FinancePanel.Controls.Add(FinanceButton3);
+            FinancePanel.Controls.Add(FinanceButton2);
+            FinancePanel.Controls.Add(FinanceButton1);
+            FinancePanel.Controls.Add(label77);
+            FinancePanel.Location = new Point(3, 61);
+            FinancePanel.Name = "FinancePanel";
+            FinancePanel.Size = new Size(227, 19);
+            FinancePanel.TabIndex = 10;
+            FinancePanel.Click += FinancePanel_Click;
+            // 
+            // panel69
+            // 
+            panel69.Controls.Add(label76);
+            panel69.Location = new Point(3, 18);
+            panel69.Name = "panel69";
+            panel69.Size = new Size(197, 19);
+            panel69.TabIndex = 2;
+            // 
+            // label76
+            // 
+            label76.AutoSize = true;
+            label76.Location = new Point(3, 0);
+            label76.Name = "label76";
+            label76.Size = new Size(58, 15);
+            label76.TabIndex = 0;
+            label76.Text = "Ловкость";
+            // 
+            // FinanceNumeric
+            // 
+            FinanceNumeric.Location = new Point(183, -2);
+            FinanceNumeric.Name = "FinanceNumeric";
+            FinanceNumeric.Size = new Size(41, 23);
+            FinanceNumeric.TabIndex = 8;
+            // 
+            // FinanceButton5
+            // 
+            FinanceButton5.AutoCheck = false;
+            FinanceButton5.AutoSize = true;
+            FinanceButton5.Checked = true;
+            FinanceButton5.Location = new Point(166, 6);
+            FinanceButton5.Name = "FinanceButton5";
+            FinanceButton5.Size = new Size(14, 13);
+            FinanceButton5.TabIndex = 7;
+            FinanceButton5.TabStop = true;
+            FinanceButton5.UseVisualStyleBackColor = true;
+            // 
+            // FinanceButton4
+            // 
+            FinanceButton4.AutoCheck = false;
+            FinanceButton4.AutoSize = true;
+            FinanceButton4.Checked = true;
+            FinanceButton4.Location = new Point(146, 6);
+            FinanceButton4.Name = "FinanceButton4";
+            FinanceButton4.Size = new Size(14, 13);
+            FinanceButton4.TabIndex = 6;
+            FinanceButton4.TabStop = true;
+            FinanceButton4.UseVisualStyleBackColor = true;
+            // 
+            // FinanceButton3
+            // 
+            FinanceButton3.AutoCheck = false;
+            FinanceButton3.AutoSize = true;
+            FinanceButton3.Checked = true;
+            FinanceButton3.Location = new Point(126, 6);
+            FinanceButton3.Name = "FinanceButton3";
+            FinanceButton3.Size = new Size(14, 13);
+            FinanceButton3.TabIndex = 5;
+            FinanceButton3.TabStop = true;
+            FinanceButton3.UseVisualStyleBackColor = true;
+            // 
+            // FinanceButton2
+            // 
+            FinanceButton2.AutoCheck = false;
+            FinanceButton2.AutoSize = true;
+            FinanceButton2.Checked = true;
+            FinanceButton2.Location = new Point(106, 6);
+            FinanceButton2.Name = "FinanceButton2";
+            FinanceButton2.Size = new Size(14, 13);
+            FinanceButton2.TabIndex = 4;
+            FinanceButton2.TabStop = true;
+            FinanceButton2.UseVisualStyleBackColor = true;
+            // 
+            // FinanceButton1
+            // 
+            FinanceButton1.AutoCheck = false;
+            FinanceButton1.AutoSize = true;
+            FinanceButton1.Checked = true;
+            FinanceButton1.Location = new Point(86, 6);
+            FinanceButton1.Name = "FinanceButton1";
+            FinanceButton1.Size = new Size(14, 13);
+            FinanceButton1.TabIndex = 3;
+            FinanceButton1.TabStop = true;
+            FinanceButton1.UseVisualStyleBackColor = true;
+            // 
+            // label77
+            // 
+            label77.AutoSize = true;
+            label77.Location = new Point(3, 0);
+            label77.Name = "label77";
+            label77.Size = new Size(58, 15);
+            label77.TabIndex = 0;
+            label77.Text = "Финансы";
+            label77.Click += FinancePanel_Click;
+            // 
+            // ComputerPanel
+            // 
+            ComputerPanel.Controls.Add(panel71);
+            ComputerPanel.Controls.Add(ComputerNumeric);
+            ComputerPanel.Controls.Add(ComputerButton5);
+            ComputerPanel.Controls.Add(ComputerButton4);
+            ComputerPanel.Controls.Add(ComputerButton3);
+            ComputerPanel.Controls.Add(ComputerButton2);
+            ComputerPanel.Controls.Add(ComputerButton1);
+            ComputerPanel.Controls.Add(label79);
+            ComputerPanel.Location = new Point(3, 39);
+            ComputerPanel.Name = "ComputerPanel";
+            ComputerPanel.Size = new Size(227, 19);
+            ComputerPanel.TabIndex = 9;
+            ComputerPanel.Click += ComputerPanel_Click;
+            // 
+            // panel71
+            // 
+            panel71.Controls.Add(label78);
+            panel71.Location = new Point(3, 18);
+            panel71.Name = "panel71";
+            panel71.Size = new Size(197, 19);
+            panel71.TabIndex = 2;
+            // 
+            // label78
+            // 
+            label78.AutoSize = true;
+            label78.Location = new Point(3, 0);
+            label78.Name = "label78";
+            label78.Size = new Size(58, 15);
+            label78.TabIndex = 0;
+            label78.Text = "Ловкость";
+            // 
+            // ComputerNumeric
+            // 
+            ComputerNumeric.Location = new Point(183, -2);
+            ComputerNumeric.Name = "ComputerNumeric";
+            ComputerNumeric.Size = new Size(41, 23);
+            ComputerNumeric.TabIndex = 8;
+            // 
+            // ComputerButton5
+            // 
+            ComputerButton5.AutoCheck = false;
+            ComputerButton5.AutoSize = true;
+            ComputerButton5.Location = new Point(166, 6);
+            ComputerButton5.Name = "ComputerButton5";
+            ComputerButton5.Size = new Size(14, 13);
+            ComputerButton5.TabIndex = 7;
+            ComputerButton5.UseVisualStyleBackColor = true;
+            // 
+            // ComputerButton4
+            // 
+            ComputerButton4.AutoCheck = false;
+            ComputerButton4.AutoSize = true;
+            ComputerButton4.Location = new Point(146, 6);
+            ComputerButton4.Name = "ComputerButton4";
+            ComputerButton4.Size = new Size(14, 13);
+            ComputerButton4.TabIndex = 6;
+            ComputerButton4.UseVisualStyleBackColor = true;
+            // 
+            // ComputerButton3
+            // 
+            ComputerButton3.AutoCheck = false;
+            ComputerButton3.AutoSize = true;
+            ComputerButton3.Location = new Point(126, 6);
+            ComputerButton3.Name = "ComputerButton3";
+            ComputerButton3.Size = new Size(14, 13);
+            ComputerButton3.TabIndex = 5;
+            ComputerButton3.UseVisualStyleBackColor = true;
+            // 
+            // ComputerButton2
+            // 
+            ComputerButton2.AutoCheck = false;
+            ComputerButton2.AutoSize = true;
+            ComputerButton2.Checked = true;
+            ComputerButton2.Location = new Point(106, 6);
+            ComputerButton2.Name = "ComputerButton2";
+            ComputerButton2.Size = new Size(14, 13);
+            ComputerButton2.TabIndex = 4;
+            ComputerButton2.TabStop = true;
+            ComputerButton2.UseVisualStyleBackColor = true;
+            // 
+            // ComputerButton1
+            // 
+            ComputerButton1.AutoCheck = false;
+            ComputerButton1.AutoSize = true;
+            ComputerButton1.Checked = true;
+            ComputerButton1.Location = new Point(86, 6);
+            ComputerButton1.Name = "ComputerButton1";
+            ComputerButton1.Size = new Size(14, 13);
+            ComputerButton1.TabIndex = 3;
+            ComputerButton1.UseVisualStyleBackColor = true;
+            // 
+            // label79
+            // 
+            label79.AutoSize = true;
+            label79.Location = new Point(3, 0);
+            label79.Name = "label79";
+            label79.Size = new Size(80, 15);
+            label79.TabIndex = 0;
+            label79.Text = "Компьютеры";
+            label79.Click += ComputerPanel_Click;
+            // 
+            // AcademicsPanel
+            // 
+            AcademicsPanel.Controls.Add(panel73);
+            AcademicsPanel.Controls.Add(AcademicsNumeric);
+            AcademicsPanel.Controls.Add(AcademicsButton5);
+            AcademicsPanel.Controls.Add(AcademicsButton4);
+            AcademicsPanel.Controls.Add(AcademicsButton3);
+            AcademicsPanel.Controls.Add(AcademicsButton2);
+            AcademicsPanel.Controls.Add(AcademicsButton1);
+            AcademicsPanel.Controls.Add(label81);
+            AcademicsPanel.Location = new Point(3, 18);
+            AcademicsPanel.Name = "AcademicsPanel";
+            AcademicsPanel.Size = new Size(227, 19);
+            AcademicsPanel.TabIndex = 1;
+            AcademicsPanel.Click += AcademicsPanel_Click;
+            // 
+            // panel73
+            // 
+            panel73.Controls.Add(label80);
+            panel73.Location = new Point(3, 18);
+            panel73.Name = "panel73";
+            panel73.Size = new Size(197, 19);
+            panel73.TabIndex = 2;
+            // 
+            // label80
+            // 
+            label80.AutoSize = true;
+            label80.Location = new Point(3, 0);
+            label80.Name = "label80";
+            label80.Size = new Size(58, 15);
+            label80.TabIndex = 0;
+            label80.Text = "Ловкость";
+            // 
+            // AcademicsNumeric
+            // 
+            AcademicsNumeric.Location = new Point(183, -2);
+            AcademicsNumeric.Name = "AcademicsNumeric";
+            AcademicsNumeric.Size = new Size(41, 23);
+            AcademicsNumeric.TabIndex = 8;
+            // 
+            // AcademicsButton5
+            // 
+            AcademicsButton5.AutoCheck = false;
+            AcademicsButton5.AutoSize = true;
+            AcademicsButton5.Checked = true;
+            AcademicsButton5.Location = new Point(166, 6);
+            AcademicsButton5.Name = "AcademicsButton5";
+            AcademicsButton5.Size = new Size(14, 13);
+            AcademicsButton5.TabIndex = 7;
+            AcademicsButton5.TabStop = true;
+            AcademicsButton5.UseVisualStyleBackColor = true;
+            // 
+            // AcademicsButton4
+            // 
+            AcademicsButton4.AutoCheck = false;
+            AcademicsButton4.AutoSize = true;
+            AcademicsButton4.Checked = true;
+            AcademicsButton4.Location = new Point(146, 6);
+            AcademicsButton4.Name = "AcademicsButton4";
+            AcademicsButton4.Size = new Size(14, 13);
+            AcademicsButton4.TabIndex = 6;
+            AcademicsButton4.UseVisualStyleBackColor = true;
+            // 
+            // AcademicsButton3
+            // 
+            AcademicsButton3.AutoCheck = false;
+            AcademicsButton3.AutoSize = true;
+            AcademicsButton3.Checked = true;
+            AcademicsButton3.Location = new Point(126, 6);
+            AcademicsButton3.Name = "AcademicsButton3";
+            AcademicsButton3.Size = new Size(14, 13);
+            AcademicsButton3.TabIndex = 5;
+            AcademicsButton3.UseVisualStyleBackColor = true;
+            // 
+            // AcademicsButton2
+            // 
+            AcademicsButton2.AutoCheck = false;
+            AcademicsButton2.AutoSize = true;
+            AcademicsButton2.Checked = true;
+            AcademicsButton2.Location = new Point(106, 6);
+            AcademicsButton2.Name = "AcademicsButton2";
+            AcademicsButton2.Size = new Size(14, 13);
+            AcademicsButton2.TabIndex = 4;
+            AcademicsButton2.UseVisualStyleBackColor = true;
+            // 
+            // AcademicsButton1
+            // 
+            AcademicsButton1.AutoCheck = false;
+            AcademicsButton1.AutoSize = true;
+            AcademicsButton1.Checked = true;
+            AcademicsButton1.Location = new Point(86, 6);
+            AcademicsButton1.Name = "AcademicsButton1";
+            AcademicsButton1.Size = new Size(14, 13);
+            AcademicsButton1.TabIndex = 3;
+            AcademicsButton1.UseVisualStyleBackColor = true;
+            // 
+            // label81
+            // 
+            label81.AutoSize = true;
+            label81.Font = new Font("Segoe UI", 6F);
+            label81.Location = new Point(3, 4);
+            label81.Name = "label81";
+            label81.Size = new Size(84, 11);
+            label81.TabIndex = 0;
+            label81.Text = "Гуманитарные науки";
+            label81.Click += AcademicsPanel_Click;
+            // 
+            // label82
+            // 
+            label82.AutoSize = true;
+            label82.Location = new Point(98, 0);
+            label82.Name = "label82";
+            label82.Size = new Size(47, 15);
+            label82.TabIndex = 0;
+            label82.Text = "Знания";
+            label82.Click += label82_Click;
+            // 
+            // panel32
+            // 
+            panel32.Controls.Add(SubterfugePanel);
+            panel32.Controls.Add(StreetwisePanel);
+            panel32.Controls.Add(LeadershipPanel);
+            panel32.Controls.Add(IntimidationPanel);
+            panel32.Controls.Add(ExpressionPanel);
+            panel32.Controls.Add(EmpathyPanel);
+            panel32.Controls.Add(DodgePanel);
+            panel32.Controls.Add(BrawlPanel);
+            panel32.Controls.Add(AthleticsPanel);
+            panel32.Controls.Add(AlertnessPanel);
+            panel32.Controls.Add(label61);
+            panel32.Location = new Point(3, 21);
+            panel32.Name = "panel32";
+            panel32.Size = new Size(230, 231);
+            panel32.TabIndex = 14;
+            // 
+            // SubterfugePanel
+            // 
+            SubterfugePanel.Controls.Add(panel34);
+            SubterfugePanel.Controls.Add(SubterfugeNumeric);
+            SubterfugePanel.Controls.Add(SubterfugeButton5);
+            SubterfugePanel.Controls.Add(SubterfugeButton4);
+            SubterfugePanel.Controls.Add(SubterfugeButton3);
+            SubterfugePanel.Controls.Add(SubterfugeButton2);
+            SubterfugePanel.Controls.Add(SubterfugeButton1);
+            SubterfugePanel.Controls.Add(label42);
+            SubterfugePanel.Location = new Point(3, 208);
+            SubterfugePanel.Name = "SubterfugePanel";
+            SubterfugePanel.Size = new Size(227, 19);
+            SubterfugePanel.TabIndex = 13;
+            SubterfugePanel.Click += SubterfugePanel_Click;
+            // 
+            // panel34
+            // 
+            panel34.Controls.Add(label41);
+            panel34.Location = new Point(3, 18);
+            panel34.Name = "panel34";
+            panel34.Size = new Size(197, 19);
+            panel34.TabIndex = 2;
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Location = new Point(3, 0);
+            label41.Name = "label41";
+            label41.Size = new Size(58, 15);
+            label41.TabIndex = 0;
+            label41.Text = "Ловкость";
+            // 
+            // SubterfugeNumeric
+            // 
+            SubterfugeNumeric.Location = new Point(183, -2);
+            SubterfugeNumeric.Name = "SubterfugeNumeric";
+            SubterfugeNumeric.Size = new Size(41, 23);
+            SubterfugeNumeric.TabIndex = 8;
+            // 
+            // SubterfugeButton5
+            // 
+            SubterfugeButton5.AutoCheck = false;
+            SubterfugeButton5.AutoSize = true;
+            SubterfugeButton5.Location = new Point(166, 6);
+            SubterfugeButton5.Name = "SubterfugeButton5";
+            SubterfugeButton5.Size = new Size(14, 13);
+            SubterfugeButton5.TabIndex = 7;
+            SubterfugeButton5.UseVisualStyleBackColor = true;
+            // 
+            // SubterfugeButton4
+            // 
+            SubterfugeButton4.AutoCheck = false;
+            SubterfugeButton4.AutoSize = true;
+            SubterfugeButton4.Location = new Point(146, 6);
+            SubterfugeButton4.Name = "SubterfugeButton4";
+            SubterfugeButton4.Size = new Size(14, 13);
+            SubterfugeButton4.TabIndex = 6;
+            SubterfugeButton4.UseVisualStyleBackColor = true;
+            // 
+            // SubterfugeButton3
+            // 
+            SubterfugeButton3.AutoCheck = false;
+            SubterfugeButton3.AutoSize = true;
+            SubterfugeButton3.Location = new Point(126, 6);
+            SubterfugeButton3.Name = "SubterfugeButton3";
+            SubterfugeButton3.Size = new Size(14, 13);
+            SubterfugeButton3.TabIndex = 5;
+            SubterfugeButton3.UseVisualStyleBackColor = true;
+            // 
+            // SubterfugeButton2
+            // 
+            SubterfugeButton2.AutoCheck = false;
+            SubterfugeButton2.AutoSize = true;
+            SubterfugeButton2.Checked = true;
+            SubterfugeButton2.Location = new Point(106, 6);
+            SubterfugeButton2.Name = "SubterfugeButton2";
+            SubterfugeButton2.Size = new Size(14, 13);
+            SubterfugeButton2.TabIndex = 4;
+            SubterfugeButton2.TabStop = true;
+            SubterfugeButton2.UseVisualStyleBackColor = true;
+            // 
+            // SubterfugeButton1
+            // 
+            SubterfugeButton1.AutoCheck = false;
+            SubterfugeButton1.AutoSize = true;
+            SubterfugeButton1.Checked = true;
+            SubterfugeButton1.Location = new Point(86, 6);
+            SubterfugeButton1.Name = "SubterfugeButton1";
+            SubterfugeButton1.Size = new Size(14, 13);
+            SubterfugeButton1.TabIndex = 3;
+            SubterfugeButton1.UseVisualStyleBackColor = true;
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Location = new Point(3, 0);
+            label42.Name = "label42";
+            label42.Size = new Size(57, 15);
+            label42.TabIndex = 0;
+            label42.Text = "Хитрость";
+            label42.Click += SubterfugePanel_Click;
+            // 
+            // StreetwisePanel
+            // 
+            StreetwisePanel.Controls.Add(panel36);
+            StreetwisePanel.Controls.Add(StreetwiseNumeric);
+            StreetwisePanel.Controls.Add(StreetwiseButton5);
+            StreetwisePanel.Controls.Add(StreetwiseButton4);
+            StreetwisePanel.Controls.Add(StreetwiseButton3);
+            StreetwisePanel.Controls.Add(StreetwiseButton2);
+            StreetwisePanel.Controls.Add(StreetwiseButton1);
+            StreetwisePanel.Controls.Add(label44);
+            StreetwisePanel.Location = new Point(3, 187);
+            StreetwisePanel.Name = "StreetwisePanel";
+            StreetwisePanel.Size = new Size(227, 19);
+            StreetwisePanel.TabIndex = 12;
+            StreetwisePanel.Click += StreetwisePanel_Click;
+            // 
+            // panel36
+            // 
+            panel36.Controls.Add(label43);
+            panel36.Location = new Point(3, 18);
+            panel36.Name = "panel36";
+            panel36.Size = new Size(197, 19);
+            panel36.TabIndex = 2;
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Location = new Point(3, 0);
+            label43.Name = "label43";
+            label43.Size = new Size(58, 15);
+            label43.TabIndex = 0;
+            label43.Text = "Ловкость";
+            // 
+            // StreetwiseNumeric
+            // 
+            StreetwiseNumeric.Location = new Point(183, -2);
+            StreetwiseNumeric.Name = "StreetwiseNumeric";
+            StreetwiseNumeric.Size = new Size(41, 23);
+            StreetwiseNumeric.TabIndex = 8;
+            // 
+            // StreetwiseButton5
+            // 
+            StreetwiseButton5.AutoCheck = false;
+            StreetwiseButton5.AutoSize = true;
+            StreetwiseButton5.Location = new Point(166, 6);
+            StreetwiseButton5.Name = "StreetwiseButton5";
+            StreetwiseButton5.Size = new Size(14, 13);
+            StreetwiseButton5.TabIndex = 7;
+            StreetwiseButton5.UseVisualStyleBackColor = true;
+            // 
+            // StreetwiseButton4
+            // 
+            StreetwiseButton4.AutoCheck = false;
+            StreetwiseButton4.AutoSize = true;
+            StreetwiseButton4.Location = new Point(146, 6);
+            StreetwiseButton4.Name = "StreetwiseButton4";
+            StreetwiseButton4.Size = new Size(14, 13);
+            StreetwiseButton4.TabIndex = 6;
+            StreetwiseButton4.UseVisualStyleBackColor = true;
+            // 
+            // StreetwiseButton3
+            // 
+            StreetwiseButton3.AutoCheck = false;
+            StreetwiseButton3.AutoSize = true;
+            StreetwiseButton3.Location = new Point(126, 6);
+            StreetwiseButton3.Name = "StreetwiseButton3";
+            StreetwiseButton3.Size = new Size(14, 13);
+            StreetwiseButton3.TabIndex = 5;
+            StreetwiseButton3.UseVisualStyleBackColor = true;
+            // 
+            // StreetwiseButton2
+            // 
+            StreetwiseButton2.AutoCheck = false;
+            StreetwiseButton2.AutoSize = true;
+            StreetwiseButton2.Checked = true;
+            StreetwiseButton2.Location = new Point(106, 6);
+            StreetwiseButton2.Name = "StreetwiseButton2";
+            StreetwiseButton2.Size = new Size(14, 13);
+            StreetwiseButton2.TabIndex = 4;
+            StreetwiseButton2.TabStop = true;
+            StreetwiseButton2.UseVisualStyleBackColor = true;
+            // 
+            // StreetwiseButton1
+            // 
+            StreetwiseButton1.AutoCheck = false;
+            StreetwiseButton1.AutoSize = true;
+            StreetwiseButton1.Checked = true;
+            StreetwiseButton1.Location = new Point(86, 6);
+            StreetwiseButton1.Name = "StreetwiseButton1";
+            StreetwiseButton1.Size = new Size(14, 13);
+            StreetwiseButton1.TabIndex = 3;
+            StreetwiseButton1.UseVisualStyleBackColor = true;
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Segoe UI", 6F);
+            label44.Location = new Point(3, 5);
+            label44.Name = "label44";
+            label44.Size = new Size(73, 11);
+            label44.TabIndex = 0;
+            label44.Text = "Уличные порядки";
+            label44.Click += StreetwisePanel_Click;
+            // 
+            // LeadershipPanel
+            // 
+            LeadershipPanel.Controls.Add(panel38);
+            LeadershipPanel.Controls.Add(LeadershipNumeric);
+            LeadershipPanel.Controls.Add(LeadershipButton5);
+            LeadershipPanel.Controls.Add(LeadershipButton4);
+            LeadershipPanel.Controls.Add(LeadershipButton3);
+            LeadershipPanel.Controls.Add(LeadershipButton2);
+            LeadershipPanel.Controls.Add(LeadershipButton1);
+            LeadershipPanel.Controls.Add(label46);
+            LeadershipPanel.Location = new Point(3, 166);
+            LeadershipPanel.Name = "LeadershipPanel";
+            LeadershipPanel.Size = new Size(227, 19);
+            LeadershipPanel.TabIndex = 11;
+            LeadershipPanel.Click += LeadershipPanel_Click;
+            // 
+            // panel38
+            // 
+            panel38.Controls.Add(label45);
+            panel38.Location = new Point(3, 18);
+            panel38.Name = "panel38";
+            panel38.Size = new Size(197, 19);
+            panel38.TabIndex = 2;
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Location = new Point(3, 0);
+            label45.Name = "label45";
+            label45.Size = new Size(58, 15);
+            label45.TabIndex = 0;
+            label45.Text = "Ловкость";
+            // 
+            // LeadershipNumeric
+            // 
+            LeadershipNumeric.Location = new Point(183, -2);
+            LeadershipNumeric.Name = "LeadershipNumeric";
+            LeadershipNumeric.Size = new Size(41, 23);
+            LeadershipNumeric.TabIndex = 8;
+            // 
+            // LeadershipButton5
+            // 
+            LeadershipButton5.AutoCheck = false;
+            LeadershipButton5.AutoSize = true;
+            LeadershipButton5.Location = new Point(166, 6);
+            LeadershipButton5.Name = "LeadershipButton5";
+            LeadershipButton5.Size = new Size(14, 13);
+            LeadershipButton5.TabIndex = 7;
+            LeadershipButton5.UseVisualStyleBackColor = true;
+            // 
+            // LeadershipButton4
+            // 
+            LeadershipButton4.AutoCheck = false;
+            LeadershipButton4.AutoSize = true;
+            LeadershipButton4.Location = new Point(146, 6);
+            LeadershipButton4.Name = "LeadershipButton4";
+            LeadershipButton4.Size = new Size(14, 13);
+            LeadershipButton4.TabIndex = 6;
+            LeadershipButton4.UseVisualStyleBackColor = true;
+            // 
+            // LeadershipButton3
+            // 
+            LeadershipButton3.AutoCheck = false;
+            LeadershipButton3.AutoSize = true;
+            LeadershipButton3.Location = new Point(126, 6);
+            LeadershipButton3.Name = "LeadershipButton3";
+            LeadershipButton3.Size = new Size(14, 13);
+            LeadershipButton3.TabIndex = 5;
+            LeadershipButton3.UseVisualStyleBackColor = true;
+            // 
+            // LeadershipButton2
+            // 
+            LeadershipButton2.AutoCheck = false;
+            LeadershipButton2.AutoSize = true;
+            LeadershipButton2.Checked = true;
+            LeadershipButton2.Location = new Point(106, 6);
+            LeadershipButton2.Name = "LeadershipButton2";
+            LeadershipButton2.Size = new Size(14, 13);
+            LeadershipButton2.TabIndex = 4;
+            LeadershipButton2.TabStop = true;
+            LeadershipButton2.UseVisualStyleBackColor = true;
+            // 
+            // LeadershipButton1
+            // 
+            LeadershipButton1.AutoCheck = false;
+            LeadershipButton1.AutoSize = true;
+            LeadershipButton1.Checked = true;
+            LeadershipButton1.Location = new Point(86, 6);
+            LeadershipButton1.Name = "LeadershipButton1";
+            LeadershipButton1.Size = new Size(14, 13);
+            LeadershipButton1.TabIndex = 3;
+            LeadershipButton1.UseVisualStyleBackColor = true;
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Location = new Point(3, 0);
+            label46.Name = "label46";
+            label46.Size = new Size(65, 15);
+            label46.TabIndex = 0;
+            label46.Text = "Лидерство";
+            label46.Click += LeadershipPanel_Click;
+            // 
+            // IntimidationPanel
+            // 
+            IntimidationPanel.Controls.Add(panel40);
+            IntimidationPanel.Controls.Add(IntimidationNumeric);
+            IntimidationPanel.Controls.Add(IntimidationButton5);
+            IntimidationPanel.Controls.Add(IntimidationButton4);
+            IntimidationPanel.Controls.Add(IntimidationButton3);
+            IntimidationPanel.Controls.Add(IntimidationButton2);
+            IntimidationPanel.Controls.Add(IntimidationButton1);
+            IntimidationPanel.Controls.Add(label48);
+            IntimidationPanel.Location = new Point(3, 145);
+            IntimidationPanel.Name = "IntimidationPanel";
+            IntimidationPanel.Size = new Size(227, 19);
+            IntimidationPanel.TabIndex = 10;
+            IntimidationPanel.Click += IntimidationPanel_Click;
+            // 
+            // panel40
+            // 
+            panel40.Controls.Add(label47);
+            panel40.Location = new Point(3, 18);
+            panel40.Name = "panel40";
+            panel40.Size = new Size(197, 19);
+            panel40.TabIndex = 2;
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Location = new Point(3, 0);
+            label47.Name = "label47";
+            label47.Size = new Size(58, 15);
+            label47.TabIndex = 0;
+            label47.Text = "Ловкость";
+            // 
+            // IntimidationNumeric
+            // 
+            IntimidationNumeric.Location = new Point(183, -2);
+            IntimidationNumeric.Name = "IntimidationNumeric";
+            IntimidationNumeric.Size = new Size(41, 23);
+            IntimidationNumeric.TabIndex = 8;
+            // 
+            // IntimidationButton5
+            // 
+            IntimidationButton5.AutoCheck = false;
+            IntimidationButton5.AutoSize = true;
+            IntimidationButton5.Location = new Point(166, 6);
+            IntimidationButton5.Name = "IntimidationButton5";
+            IntimidationButton5.Size = new Size(14, 13);
+            IntimidationButton5.TabIndex = 7;
+            IntimidationButton5.UseVisualStyleBackColor = true;
+            // 
+            // IntimidationButton4
+            // 
+            IntimidationButton4.AutoCheck = false;
+            IntimidationButton4.AutoSize = true;
+            IntimidationButton4.Location = new Point(146, 6);
+            IntimidationButton4.Name = "IntimidationButton4";
+            IntimidationButton4.Size = new Size(14, 13);
+            IntimidationButton4.TabIndex = 6;
+            IntimidationButton4.UseVisualStyleBackColor = true;
+            // 
+            // IntimidationButton3
+            // 
+            IntimidationButton3.AutoCheck = false;
+            IntimidationButton3.AutoSize = true;
+            IntimidationButton3.Location = new Point(126, 6);
+            IntimidationButton3.Name = "IntimidationButton3";
+            IntimidationButton3.Size = new Size(14, 13);
+            IntimidationButton3.TabIndex = 5;
+            IntimidationButton3.UseVisualStyleBackColor = true;
+            // 
+            // IntimidationButton2
+            // 
+            IntimidationButton2.AutoCheck = false;
+            IntimidationButton2.AutoSize = true;
+            IntimidationButton2.Checked = true;
+            IntimidationButton2.Location = new Point(106, 6);
+            IntimidationButton2.Name = "IntimidationButton2";
+            IntimidationButton2.Size = new Size(14, 13);
+            IntimidationButton2.TabIndex = 4;
+            IntimidationButton2.TabStop = true;
+            IntimidationButton2.UseVisualStyleBackColor = true;
+            // 
+            // IntimidationButton1
+            // 
+            IntimidationButton1.AutoCheck = false;
+            IntimidationButton1.AutoSize = true;
+            IntimidationButton1.Checked = true;
+            IntimidationButton1.Location = new Point(86, 6);
+            IntimidationButton1.Name = "IntimidationButton1";
+            IntimidationButton1.Size = new Size(14, 13);
+            IntimidationButton1.TabIndex = 3;
+            IntimidationButton1.UseVisualStyleBackColor = true;
+            // 
+            // label48
+            // 
+            label48.AutoSize = true;
+            label48.Location = new Point(3, 0);
+            label48.Name = "label48";
+            label48.Size = new Size(77, 15);
+            label48.TabIndex = 0;
+            label48.Text = "Запугивание";
+            label48.Click += IntimidationPanel_Click;
+            // 
+            // ExpressionPanel
+            // 
+            ExpressionPanel.Controls.Add(panel42);
+            ExpressionPanel.Controls.Add(ExpressionNumeric);
+            ExpressionPanel.Controls.Add(ExpressionButton5);
+            ExpressionPanel.Controls.Add(ExpressionButton4);
+            ExpressionPanel.Controls.Add(ExpressionButton3);
+            ExpressionPanel.Controls.Add(ExpressionButton2);
+            ExpressionPanel.Controls.Add(ExpressionButton1);
+            ExpressionPanel.Controls.Add(label50);
+            ExpressionPanel.Location = new Point(3, 124);
+            ExpressionPanel.Name = "ExpressionPanel";
+            ExpressionPanel.Size = new Size(227, 19);
+            ExpressionPanel.TabIndex = 11;
+            ExpressionPanel.Click += ExpressionPanel_Click;
+            // 
+            // panel42
+            // 
+            panel42.Controls.Add(label49);
+            panel42.Location = new Point(3, 18);
+            panel42.Name = "panel42";
+            panel42.Size = new Size(197, 19);
+            panel42.TabIndex = 2;
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.Location = new Point(3, 0);
+            label49.Name = "label49";
+            label49.Size = new Size(58, 15);
+            label49.TabIndex = 0;
+            label49.Text = "Ловкость";
+            // 
+            // ExpressionNumeric
+            // 
+            ExpressionNumeric.Location = new Point(183, -2);
+            ExpressionNumeric.Name = "ExpressionNumeric";
+            ExpressionNumeric.Size = new Size(41, 23);
+            ExpressionNumeric.TabIndex = 8;
+            // 
+            // ExpressionButton5
+            // 
+            ExpressionButton5.AutoCheck = false;
+            ExpressionButton5.AutoSize = true;
+            ExpressionButton5.Checked = true;
+            ExpressionButton5.Location = new Point(166, 6);
+            ExpressionButton5.Name = "ExpressionButton5";
+            ExpressionButton5.Size = new Size(14, 13);
+            ExpressionButton5.TabIndex = 7;
+            ExpressionButton5.TabStop = true;
+            ExpressionButton5.UseVisualStyleBackColor = true;
+            // 
+            // ExpressionButton4
+            // 
+            ExpressionButton4.AutoCheck = false;
+            ExpressionButton4.AutoSize = true;
+            ExpressionButton4.Checked = true;
+            ExpressionButton4.Location = new Point(146, 6);
+            ExpressionButton4.Name = "ExpressionButton4";
+            ExpressionButton4.Size = new Size(14, 13);
+            ExpressionButton4.TabIndex = 6;
+            ExpressionButton4.UseVisualStyleBackColor = true;
+            // 
+            // ExpressionButton3
+            // 
+            ExpressionButton3.AutoCheck = false;
+            ExpressionButton3.AutoSize = true;
+            ExpressionButton3.Checked = true;
+            ExpressionButton3.Location = new Point(126, 6);
+            ExpressionButton3.Name = "ExpressionButton3";
+            ExpressionButton3.Size = new Size(14, 13);
+            ExpressionButton3.TabIndex = 5;
+            ExpressionButton3.UseVisualStyleBackColor = true;
+            // 
+            // ExpressionButton2
+            // 
+            ExpressionButton2.AutoCheck = false;
+            ExpressionButton2.AutoSize = true;
+            ExpressionButton2.Checked = true;
+            ExpressionButton2.Location = new Point(106, 6);
+            ExpressionButton2.Name = "ExpressionButton2";
+            ExpressionButton2.Size = new Size(14, 13);
+            ExpressionButton2.TabIndex = 4;
+            ExpressionButton2.UseVisualStyleBackColor = true;
+            // 
+            // ExpressionButton1
+            // 
+            ExpressionButton1.AutoCheck = false;
+            ExpressionButton1.AutoSize = true;
+            ExpressionButton1.Checked = true;
+            ExpressionButton1.Location = new Point(86, 6);
+            ExpressionButton1.Name = "ExpressionButton1";
+            ExpressionButton1.Size = new Size(14, 13);
+            ExpressionButton1.TabIndex = 3;
+            ExpressionButton1.UseVisualStyleBackColor = true;
+            // 
+            // label50
+            // 
+            label50.AutoSize = true;
+            label50.Location = new Point(3, 0);
+            label50.Name = "label50";
+            label50.Size = new Size(80, 15);
+            label50.TabIndex = 0;
+            label50.Text = "Красноречие";
+            label50.Click += ExpressionPanel_Click;
+            // 
+            // EmpathyPanel
+            // 
+            EmpathyPanel.Controls.Add(panel44);
+            EmpathyPanel.Controls.Add(EmpathyNumeric);
+            EmpathyPanel.Controls.Add(EmpathyButton5);
+            EmpathyPanel.Controls.Add(EmpathyButton4);
+            EmpathyPanel.Controls.Add(EmpathyButton3);
+            EmpathyPanel.Controls.Add(EmpathyButton2);
+            EmpathyPanel.Controls.Add(EmpathyButton1);
+            EmpathyPanel.Controls.Add(label52);
+            EmpathyPanel.Location = new Point(3, 103);
+            EmpathyPanel.Name = "EmpathyPanel";
+            EmpathyPanel.Size = new Size(227, 19);
+            EmpathyPanel.TabIndex = 10;
+            EmpathyPanel.Click += EmpathyPanel_Click;
+            // 
+            // panel44
+            // 
+            panel44.Controls.Add(label51);
+            panel44.Location = new Point(3, 18);
+            panel44.Name = "panel44";
+            panel44.Size = new Size(197, 19);
+            panel44.TabIndex = 2;
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Location = new Point(3, 0);
+            label51.Name = "label51";
+            label51.Size = new Size(58, 15);
+            label51.TabIndex = 0;
+            label51.Text = "Ловкость";
+            // 
+            // EmpathyNumeric
+            // 
+            EmpathyNumeric.Location = new Point(183, -2);
+            EmpathyNumeric.Name = "EmpathyNumeric";
+            EmpathyNumeric.Size = new Size(41, 23);
+            EmpathyNumeric.TabIndex = 8;
+            // 
+            // EmpathyButton5
+            // 
+            EmpathyButton5.AutoCheck = false;
+            EmpathyButton5.AutoSize = true;
+            EmpathyButton5.Checked = true;
+            EmpathyButton5.Location = new Point(166, 6);
+            EmpathyButton5.Name = "EmpathyButton5";
+            EmpathyButton5.Size = new Size(14, 13);
+            EmpathyButton5.TabIndex = 7;
+            EmpathyButton5.TabStop = true;
+            EmpathyButton5.UseVisualStyleBackColor = true;
+            // 
+            // EmpathyButton4
+            // 
+            EmpathyButton4.AutoCheck = false;
+            EmpathyButton4.AutoSize = true;
+            EmpathyButton4.Checked = true;
+            EmpathyButton4.Location = new Point(146, 6);
+            EmpathyButton4.Name = "EmpathyButton4";
+            EmpathyButton4.Size = new Size(14, 13);
+            EmpathyButton4.TabIndex = 6;
+            EmpathyButton4.UseVisualStyleBackColor = true;
+            // 
+            // EmpathyButton3
+            // 
+            EmpathyButton3.AutoCheck = false;
+            EmpathyButton3.AutoSize = true;
+            EmpathyButton3.Checked = true;
+            EmpathyButton3.Location = new Point(126, 6);
+            EmpathyButton3.Name = "EmpathyButton3";
+            EmpathyButton3.Size = new Size(14, 13);
+            EmpathyButton3.TabIndex = 5;
+            EmpathyButton3.UseVisualStyleBackColor = true;
+            // 
+            // EmpathyButton2
+            // 
+            EmpathyButton2.AutoCheck = false;
+            EmpathyButton2.AutoSize = true;
+            EmpathyButton2.Checked = true;
+            EmpathyButton2.Location = new Point(106, 6);
+            EmpathyButton2.Name = "EmpathyButton2";
+            EmpathyButton2.Size = new Size(14, 13);
+            EmpathyButton2.TabIndex = 4;
+            EmpathyButton2.UseVisualStyleBackColor = true;
+            // 
+            // EmpathyButton1
+            // 
+            EmpathyButton1.AutoCheck = false;
+            EmpathyButton1.AutoSize = true;
+            EmpathyButton1.Checked = true;
+            EmpathyButton1.Location = new Point(86, 6);
+            EmpathyButton1.Name = "EmpathyButton1";
+            EmpathyButton1.Size = new Size(14, 13);
+            EmpathyButton1.TabIndex = 3;
+            EmpathyButton1.UseVisualStyleBackColor = true;
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.Location = new Point(3, 0);
+            label52.Name = "label52";
+            label52.Size = new Size(54, 15);
+            label52.TabIndex = 0;
+            label52.Text = "Эмпатия";
+            label52.Click += EmpathyPanel_Click;
+            // 
+            // DodgePanel
+            // 
+            DodgePanel.Controls.Add(panel46);
+            DodgePanel.Controls.Add(DodgeNumeric);
+            DodgePanel.Controls.Add(DodgeButton5);
+            DodgePanel.Controls.Add(DodgeButton4);
+            DodgePanel.Controls.Add(DodgeButton3);
+            DodgePanel.Controls.Add(DodgeButton2);
+            DodgePanel.Controls.Add(DodgeButton1);
+            DodgePanel.Controls.Add(label54);
+            DodgePanel.Location = new Point(3, 82);
+            DodgePanel.Name = "DodgePanel";
+            DodgePanel.Size = new Size(227, 19);
+            DodgePanel.TabIndex = 9;
+            DodgePanel.Click += DodgePanel_Click;
+            // 
+            // panel46
+            // 
+            panel46.Controls.Add(label53);
+            panel46.Location = new Point(3, 18);
+            panel46.Name = "panel46";
+            panel46.Size = new Size(197, 19);
+            panel46.TabIndex = 2;
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Location = new Point(3, 0);
+            label53.Name = "label53";
+            label53.Size = new Size(58, 15);
+            label53.TabIndex = 0;
+            label53.Text = "Ловкость";
+            // 
+            // DodgeNumeric
+            // 
+            DodgeNumeric.Location = new Point(183, -2);
+            DodgeNumeric.Name = "DodgeNumeric";
+            DodgeNumeric.Size = new Size(41, 23);
+            DodgeNumeric.TabIndex = 8;
+            // 
+            // DodgeButton5
+            // 
+            DodgeButton5.AutoCheck = false;
+            DodgeButton5.AutoSize = true;
+            DodgeButton5.Checked = true;
+            DodgeButton5.Location = new Point(166, 6);
+            DodgeButton5.Name = "DodgeButton5";
+            DodgeButton5.Size = new Size(14, 13);
+            DodgeButton5.TabIndex = 7;
+            DodgeButton5.TabStop = true;
+            DodgeButton5.UseVisualStyleBackColor = true;
+            // 
+            // DodgeButton4
+            // 
+            DodgeButton4.AutoCheck = false;
+            DodgeButton4.AutoSize = true;
+            DodgeButton4.Checked = true;
+            DodgeButton4.Location = new Point(146, 6);
+            DodgeButton4.Name = "DodgeButton4";
+            DodgeButton4.Size = new Size(14, 13);
+            DodgeButton4.TabIndex = 6;
+            DodgeButton4.UseVisualStyleBackColor = true;
+            // 
+            // DodgeButton3
+            // 
+            DodgeButton3.AutoCheck = false;
+            DodgeButton3.AutoSize = true;
+            DodgeButton3.Checked = true;
+            DodgeButton3.Location = new Point(126, 6);
+            DodgeButton3.Name = "DodgeButton3";
+            DodgeButton3.Size = new Size(14, 13);
+            DodgeButton3.TabIndex = 5;
+            DodgeButton3.UseVisualStyleBackColor = true;
+            // 
+            // DodgeButton2
+            // 
+            DodgeButton2.AutoCheck = false;
+            DodgeButton2.AutoSize = true;
+            DodgeButton2.Checked = true;
+            DodgeButton2.Location = new Point(106, 6);
+            DodgeButton2.Name = "DodgeButton2";
+            DodgeButton2.Size = new Size(14, 13);
+            DodgeButton2.TabIndex = 4;
+            DodgeButton2.UseVisualStyleBackColor = true;
+            // 
+            // DodgeButton1
+            // 
+            DodgeButton1.AutoCheck = false;
+            DodgeButton1.AutoSize = true;
+            DodgeButton1.Checked = true;
+            DodgeButton1.Location = new Point(86, 6);
+            DodgeButton1.Name = "DodgeButton1";
+            DodgeButton1.Size = new Size(14, 13);
+            DodgeButton1.TabIndex = 3;
+            DodgeButton1.UseVisualStyleBackColor = true;
+            // 
+            // label54
+            // 
+            label54.AutoSize = true;
+            label54.Location = new Point(3, 0);
+            label54.Name = "label54";
+            label54.Size = new Size(67, 15);
+            label54.TabIndex = 0;
+            label54.Text = "Уклонение";
+            label54.Click += DodgePanel_Click;
+            // 
+            // BrawlPanel
+            // 
+            BrawlPanel.Controls.Add(panel48);
+            BrawlPanel.Controls.Add(BrawlNumeric);
+            BrawlPanel.Controls.Add(BrawlButton5);
+            BrawlPanel.Controls.Add(BrawlButton4);
+            BrawlPanel.Controls.Add(BrawlButton3);
+            BrawlPanel.Controls.Add(BrawlButton2);
+            BrawlPanel.Controls.Add(BrawlButton1);
+            BrawlPanel.Controls.Add(label56);
+            BrawlPanel.Location = new Point(3, 61);
+            BrawlPanel.Name = "BrawlPanel";
+            BrawlPanel.Size = new Size(227, 19);
+            BrawlPanel.TabIndex = 10;
+            BrawlPanel.Click += BrawlPanel_Click;
+            // 
+            // panel48
+            // 
+            panel48.Controls.Add(label55);
+            panel48.Location = new Point(3, 18);
+            panel48.Name = "panel48";
+            panel48.Size = new Size(197, 19);
+            panel48.TabIndex = 2;
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Location = new Point(3, 0);
+            label55.Name = "label55";
+            label55.Size = new Size(58, 15);
+            label55.TabIndex = 0;
+            label55.Text = "Ловкость";
+            // 
+            // BrawlNumeric
+            // 
+            BrawlNumeric.Location = new Point(183, -2);
+            BrawlNumeric.Name = "BrawlNumeric";
+            BrawlNumeric.Size = new Size(41, 23);
+            BrawlNumeric.TabIndex = 8;
+            // 
+            // BrawlButton5
+            // 
+            BrawlButton5.AutoCheck = false;
+            BrawlButton5.AutoSize = true;
+            BrawlButton5.Checked = true;
+            BrawlButton5.Location = new Point(166, 6);
+            BrawlButton5.Name = "BrawlButton5";
+            BrawlButton5.Size = new Size(14, 13);
+            BrawlButton5.TabIndex = 7;
+            BrawlButton5.TabStop = true;
+            BrawlButton5.UseVisualStyleBackColor = true;
+            // 
+            // BrawlButton4
+            // 
+            BrawlButton4.AutoCheck = false;
+            BrawlButton4.AutoSize = true;
+            BrawlButton4.Checked = true;
+            BrawlButton4.Location = new Point(146, 6);
+            BrawlButton4.Name = "BrawlButton4";
+            BrawlButton4.Size = new Size(14, 13);
+            BrawlButton4.TabIndex = 6;
+            BrawlButton4.TabStop = true;
+            BrawlButton4.UseVisualStyleBackColor = true;
+            // 
+            // BrawlButton3
+            // 
+            BrawlButton3.AutoCheck = false;
+            BrawlButton3.AutoSize = true;
+            BrawlButton3.Checked = true;
+            BrawlButton3.Location = new Point(126, 6);
+            BrawlButton3.Name = "BrawlButton3";
+            BrawlButton3.Size = new Size(14, 13);
+            BrawlButton3.TabIndex = 5;
+            BrawlButton3.TabStop = true;
+            BrawlButton3.UseVisualStyleBackColor = true;
+            // 
+            // BrawlButton2
+            // 
+            BrawlButton2.AutoCheck = false;
+            BrawlButton2.AutoSize = true;
+            BrawlButton2.Checked = true;
+            BrawlButton2.Location = new Point(106, 6);
+            BrawlButton2.Name = "BrawlButton2";
+            BrawlButton2.Size = new Size(14, 13);
+            BrawlButton2.TabIndex = 4;
+            BrawlButton2.TabStop = true;
+            BrawlButton2.UseVisualStyleBackColor = true;
+            // 
+            // BrawlButton1
+            // 
+            BrawlButton1.AutoCheck = false;
+            BrawlButton1.AutoSize = true;
+            BrawlButton1.Checked = true;
+            BrawlButton1.Location = new Point(86, 6);
+            BrawlButton1.Name = "BrawlButton1";
+            BrawlButton1.Size = new Size(14, 13);
+            BrawlButton1.TabIndex = 3;
+            BrawlButton1.TabStop = true;
+            BrawlButton1.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Font = new Font("Segoe UI", 7F);
+            label56.Location = new Point(3, 0);
+            label56.Name = "label56";
+            label56.Size = new Size(86, 12);
+            label56.TabIndex = 0;
+            label56.Text = "Рукопашный бой";
+            label56.Click += BrawlPanel_Click;
+            // 
+            // AthleticsPanel
+            // 
+            AthleticsPanel.Controls.Add(panel50);
+            AthleticsPanel.Controls.Add(AthleticsNumeric);
+            AthleticsPanel.Controls.Add(AthleticsButton5);
+            AthleticsPanel.Controls.Add(AthleticsButton4);
+            AthleticsPanel.Controls.Add(AthleticsButton3);
+            AthleticsPanel.Controls.Add(AthleticsButton2);
+            AthleticsPanel.Controls.Add(AthleticsButton1);
+            AthleticsPanel.Controls.Add(label58);
+            AthleticsPanel.Location = new Point(3, 39);
+            AthleticsPanel.Name = "AthleticsPanel";
+            AthleticsPanel.Size = new Size(227, 19);
+            AthleticsPanel.TabIndex = 9;
+            AthleticsPanel.Click += AthleticsPanel_Click;
+            // 
+            // panel50
+            // 
+            panel50.Controls.Add(label57);
+            panel50.Location = new Point(3, 18);
+            panel50.Name = "panel50";
+            panel50.Size = new Size(197, 19);
+            panel50.TabIndex = 2;
+            // 
+            // label57
+            // 
+            label57.AutoSize = true;
+            label57.Location = new Point(3, 0);
+            label57.Name = "label57";
+            label57.Size = new Size(58, 15);
+            label57.TabIndex = 0;
+            label57.Text = "Ловкость";
+            // 
+            // AthleticsNumeric
+            // 
+            AthleticsNumeric.Location = new Point(183, -2);
+            AthleticsNumeric.Name = "AthleticsNumeric";
+            AthleticsNumeric.Size = new Size(41, 23);
+            AthleticsNumeric.TabIndex = 8;
+            // 
+            // AthleticsButton5
+            // 
+            AthleticsButton5.AutoCheck = false;
+            AthleticsButton5.AutoSize = true;
+            AthleticsButton5.Location = new Point(166, 6);
+            AthleticsButton5.Name = "AthleticsButton5";
+            AthleticsButton5.Size = new Size(14, 13);
+            AthleticsButton5.TabIndex = 7;
+            AthleticsButton5.UseVisualStyleBackColor = true;
+            // 
+            // AthleticsButton4
+            // 
+            AthleticsButton4.AutoCheck = false;
+            AthleticsButton4.AutoSize = true;
+            AthleticsButton4.Location = new Point(146, 6);
+            AthleticsButton4.Name = "AthleticsButton4";
+            AthleticsButton4.Size = new Size(14, 13);
+            AthleticsButton4.TabIndex = 6;
+            AthleticsButton4.UseVisualStyleBackColor = true;
+            // 
+            // AthleticsButton3
+            // 
+            AthleticsButton3.AutoCheck = false;
+            AthleticsButton3.AutoSize = true;
+            AthleticsButton3.Location = new Point(126, 6);
+            AthleticsButton3.Name = "AthleticsButton3";
+            AthleticsButton3.Size = new Size(14, 13);
+            AthleticsButton3.TabIndex = 5;
+            AthleticsButton3.UseVisualStyleBackColor = true;
+            // 
+            // AthleticsButton2
+            // 
+            AthleticsButton2.AutoCheck = false;
+            AthleticsButton2.AutoSize = true;
+            AthleticsButton2.Checked = true;
+            AthleticsButton2.Location = new Point(106, 6);
+            AthleticsButton2.Name = "AthleticsButton2";
+            AthleticsButton2.Size = new Size(14, 13);
+            AthleticsButton2.TabIndex = 4;
+            AthleticsButton2.TabStop = true;
+            AthleticsButton2.UseVisualStyleBackColor = true;
+            // 
+            // AthleticsButton1
+            // 
+            AthleticsButton1.AutoCheck = false;
+            AthleticsButton1.AutoSize = true;
+            AthleticsButton1.Checked = true;
+            AthleticsButton1.Location = new Point(86, 6);
+            AthleticsButton1.Name = "AthleticsButton1";
+            AthleticsButton1.Size = new Size(14, 13);
+            AthleticsButton1.TabIndex = 3;
+            AthleticsButton1.UseVisualStyleBackColor = true;
+            // 
+            // label58
+            // 
+            label58.AutoSize = true;
+            label58.Location = new Point(3, 0);
+            label58.Name = "label58";
+            label58.Size = new Size(57, 15);
+            label58.TabIndex = 0;
+            label58.Text = "Атлетика";
+            label58.Click += AthleticsPanel_Click;
+            // 
+            // AlertnessPanel
+            // 
+            AlertnessPanel.Controls.Add(panel52);
+            AlertnessPanel.Controls.Add(AlertnessNumeric);
+            AlertnessPanel.Controls.Add(AlertnessButton5);
+            AlertnessPanel.Controls.Add(AlertnessButton4);
+            AlertnessPanel.Controls.Add(AlertnessButton3);
+            AlertnessPanel.Controls.Add(AlertnessButton2);
+            AlertnessPanel.Controls.Add(AlertnessButton1);
+            AlertnessPanel.Controls.Add(label60);
+            AlertnessPanel.Location = new Point(3, 18);
+            AlertnessPanel.Name = "AlertnessPanel";
+            AlertnessPanel.Size = new Size(227, 19);
+            AlertnessPanel.TabIndex = 1;
+            AlertnessPanel.Click += AlertnessPanel_Click;
+            // 
+            // panel52
+            // 
+            panel52.Controls.Add(label59);
+            panel52.Location = new Point(3, 18);
+            panel52.Name = "panel52";
+            panel52.Size = new Size(197, 19);
+            panel52.TabIndex = 2;
+            // 
+            // label59
+            // 
+            label59.AutoSize = true;
+            label59.Location = new Point(3, 0);
+            label59.Name = "label59";
+            label59.Size = new Size(58, 15);
+            label59.TabIndex = 0;
+            label59.Text = "Ловкость";
+            // 
+            // AlertnessNumeric
+            // 
+            AlertnessNumeric.Location = new Point(183, -2);
+            AlertnessNumeric.Name = "AlertnessNumeric";
+            AlertnessNumeric.Size = new Size(41, 23);
+            AlertnessNumeric.TabIndex = 8;
+            // 
+            // AlertnessButton5
+            // 
+            AlertnessButton5.AutoCheck = false;
+            AlertnessButton5.AutoSize = true;
+            AlertnessButton5.Checked = true;
+            AlertnessButton5.Location = new Point(166, 6);
+            AlertnessButton5.Name = "AlertnessButton5";
+            AlertnessButton5.Size = new Size(14, 13);
+            AlertnessButton5.TabIndex = 7;
+            AlertnessButton5.TabStop = true;
+            AlertnessButton5.UseVisualStyleBackColor = true;
+            // 
+            // AlertnessButton4
+            // 
+            AlertnessButton4.AutoCheck = false;
+            AlertnessButton4.AutoSize = true;
+            AlertnessButton4.Checked = true;
+            AlertnessButton4.Location = new Point(146, 6);
+            AlertnessButton4.Name = "AlertnessButton4";
+            AlertnessButton4.Size = new Size(14, 13);
+            AlertnessButton4.TabIndex = 6;
+            AlertnessButton4.UseVisualStyleBackColor = true;
+            // 
+            // AlertnessButton3
+            // 
+            AlertnessButton3.AutoCheck = false;
+            AlertnessButton3.AutoSize = true;
+            AlertnessButton3.Checked = true;
+            AlertnessButton3.Location = new Point(126, 6);
+            AlertnessButton3.Name = "AlertnessButton3";
+            AlertnessButton3.Size = new Size(14, 13);
+            AlertnessButton3.TabIndex = 5;
+            AlertnessButton3.UseVisualStyleBackColor = true;
+            // 
+            // AlertnessButton2
+            // 
+            AlertnessButton2.AutoCheck = false;
+            AlertnessButton2.AutoSize = true;
+            AlertnessButton2.Checked = true;
+            AlertnessButton2.Location = new Point(106, 6);
+            AlertnessButton2.Name = "AlertnessButton2";
+            AlertnessButton2.Size = new Size(14, 13);
+            AlertnessButton2.TabIndex = 4;
+            AlertnessButton2.UseVisualStyleBackColor = true;
+            // 
+            // AlertnessButton1
+            // 
+            AlertnessButton1.AutoCheck = false;
+            AlertnessButton1.AutoSize = true;
+            AlertnessButton1.Checked = true;
+            AlertnessButton1.Location = new Point(86, 6);
+            AlertnessButton1.Name = "AlertnessButton1";
+            AlertnessButton1.Size = new Size(14, 13);
+            AlertnessButton1.TabIndex = 3;
+            AlertnessButton1.UseVisualStyleBackColor = true;
+            // 
+            // label60
+            // 
+            label60.AutoSize = true;
+            label60.Location = new Point(3, 0);
+            label60.Name = "label60";
+            label60.Size = new Size(82, 15);
+            label60.TabIndex = 0;
+            label60.Text = "Бдительность";
+            label60.Click += AlertnessPanel_Click;
+            // 
+            // label61
+            // 
+            label61.AutoSize = true;
+            label61.Location = new Point(98, 0);
+            label61.Name = "label61";
+            label61.Size = new Size(53, 15);
+            label61.TabIndex = 0;
+            label61.Text = "Таланты";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(SurvivalPanel);
+            panel1.Controls.Add(StealthPanel);
+            panel1.Controls.Add(SecurityPanel);
+            panel1.Controls.Add(PerfomancePanel);
+            panel1.Controls.Add(MeleePanel);
+            panel1.Controls.Add(FirearmsPanel);
+            panel1.Controls.Add(EtiquettePanel);
+            panel1.Controls.Add(DrivePanel);
+            panel1.Controls.Add(CraftsPanel);
+            panel1.Controls.Add(AnimalKenPanel);
+            panel1.Controls.Add(label26);
+            panel1.Location = new Point(236, 21);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(230, 231);
+            panel1.TabIndex = 11;
+            // 
+            // SurvivalPanel
+            // 
+            SurvivalPanel.Controls.Add(panel31);
+            SurvivalPanel.Controls.Add(SurvivalNumeric);
+            SurvivalPanel.Controls.Add(SurvivalButton5);
+            SurvivalPanel.Controls.Add(SurvivalButton4);
+            SurvivalPanel.Controls.Add(SurvivalButton3);
+            SurvivalPanel.Controls.Add(SurvivalButton2);
+            SurvivalPanel.Controls.Add(SurvivalButton1);
+            SurvivalPanel.Controls.Add(label40);
+            SurvivalPanel.Location = new Point(3, 208);
+            SurvivalPanel.Name = "SurvivalPanel";
+            SurvivalPanel.Size = new Size(227, 19);
+            SurvivalPanel.TabIndex = 13;
+            SurvivalPanel.Click += SurvivalPanel_Click;
+            // 
+            // panel31
+            // 
+            panel31.Controls.Add(label39);
+            panel31.Location = new Point(3, 18);
+            panel31.Name = "panel31";
+            panel31.Size = new Size(197, 19);
+            panel31.TabIndex = 2;
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(3, 0);
+            label39.Name = "label39";
+            label39.Size = new Size(58, 15);
+            label39.TabIndex = 0;
+            label39.Text = "Ловкость";
+            // 
+            // SurvivalNumeric
+            // 
+            SurvivalNumeric.Location = new Point(183, -2);
+            SurvivalNumeric.Name = "SurvivalNumeric";
+            SurvivalNumeric.Size = new Size(41, 23);
+            SurvivalNumeric.TabIndex = 8;
+            // 
+            // SurvivalButton5
+            // 
+            SurvivalButton5.AutoCheck = false;
+            SurvivalButton5.AutoSize = true;
+            SurvivalButton5.Location = new Point(166, 6);
+            SurvivalButton5.Name = "SurvivalButton5";
+            SurvivalButton5.Size = new Size(14, 13);
+            SurvivalButton5.TabIndex = 7;
+            SurvivalButton5.UseVisualStyleBackColor = true;
+            // 
+            // SurvivalButton4
+            // 
+            SurvivalButton4.AutoCheck = false;
+            SurvivalButton4.AutoSize = true;
+            SurvivalButton4.Location = new Point(146, 6);
+            SurvivalButton4.Name = "SurvivalButton4";
+            SurvivalButton4.Size = new Size(14, 13);
+            SurvivalButton4.TabIndex = 6;
+            SurvivalButton4.UseVisualStyleBackColor = true;
+            // 
+            // SurvivalButton3
+            // 
+            SurvivalButton3.AutoCheck = false;
+            SurvivalButton3.AutoSize = true;
+            SurvivalButton3.Location = new Point(126, 6);
+            SurvivalButton3.Name = "SurvivalButton3";
+            SurvivalButton3.Size = new Size(14, 13);
+            SurvivalButton3.TabIndex = 5;
+            SurvivalButton3.UseVisualStyleBackColor = true;
+            // 
+            // SurvivalButton2
+            // 
+            SurvivalButton2.AutoCheck = false;
+            SurvivalButton2.AutoSize = true;
+            SurvivalButton2.Checked = true;
+            SurvivalButton2.Location = new Point(106, 6);
+            SurvivalButton2.Name = "SurvivalButton2";
+            SurvivalButton2.Size = new Size(14, 13);
+            SurvivalButton2.TabIndex = 4;
+            SurvivalButton2.TabStop = true;
+            SurvivalButton2.UseVisualStyleBackColor = true;
+            // 
+            // SurvivalButton1
+            // 
+            SurvivalButton1.AutoCheck = false;
+            SurvivalButton1.AutoSize = true;
+            SurvivalButton1.Checked = true;
+            SurvivalButton1.Location = new Point(86, 6);
+            SurvivalButton1.Name = "SurvivalButton1";
+            SurvivalButton1.Size = new Size(14, 13);
+            SurvivalButton1.TabIndex = 3;
+            SurvivalButton1.UseVisualStyleBackColor = true;
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Location = new Point(3, 0);
+            label40.Name = "label40";
+            label40.Size = new Size(71, 15);
+            label40.TabIndex = 0;
+            label40.Text = "Выживание";
+            label40.Click += SurvivalPanel_Click;
+            // 
+            // StealthPanel
+            // 
+            StealthPanel.Controls.Add(panel29);
+            StealthPanel.Controls.Add(StealthNumeric);
+            StealthPanel.Controls.Add(StealthButton5);
+            StealthPanel.Controls.Add(StealthButton4);
+            StealthPanel.Controls.Add(StealthButton3);
+            StealthPanel.Controls.Add(StealthButton2);
+            StealthPanel.Controls.Add(StealthButton1);
+            StealthPanel.Controls.Add(label38);
+            StealthPanel.Location = new Point(3, 187);
+            StealthPanel.Name = "StealthPanel";
+            StealthPanel.Size = new Size(227, 19);
+            StealthPanel.TabIndex = 12;
+            StealthPanel.Click += StealthPanel_Click;
+            // 
+            // panel29
+            // 
+            panel29.Controls.Add(label37);
+            panel29.Location = new Point(3, 18);
+            panel29.Name = "panel29";
+            panel29.Size = new Size(197, 19);
+            panel29.TabIndex = 2;
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Location = new Point(3, 0);
+            label37.Name = "label37";
+            label37.Size = new Size(58, 15);
+            label37.TabIndex = 0;
+            label37.Text = "Ловкость";
+            // 
+            // StealthNumeric
+            // 
+            StealthNumeric.Location = new Point(183, -2);
+            StealthNumeric.Name = "StealthNumeric";
+            StealthNumeric.Size = new Size(41, 23);
+            StealthNumeric.TabIndex = 8;
+            // 
+            // StealthButton5
+            // 
+            StealthButton5.AutoCheck = false;
+            StealthButton5.AutoSize = true;
+            StealthButton5.Location = new Point(166, 6);
+            StealthButton5.Name = "StealthButton5";
+            StealthButton5.Size = new Size(14, 13);
+            StealthButton5.TabIndex = 7;
+            StealthButton5.UseVisualStyleBackColor = true;
+            // 
+            // StealthButton4
+            // 
+            StealthButton4.AutoCheck = false;
+            StealthButton4.AutoSize = true;
+            StealthButton4.Location = new Point(146, 6);
+            StealthButton4.Name = "StealthButton4";
+            StealthButton4.Size = new Size(14, 13);
+            StealthButton4.TabIndex = 6;
+            StealthButton4.UseVisualStyleBackColor = true;
+            // 
+            // StealthButton3
+            // 
+            StealthButton3.AutoCheck = false;
+            StealthButton3.AutoSize = true;
+            StealthButton3.Location = new Point(126, 6);
+            StealthButton3.Name = "StealthButton3";
+            StealthButton3.Size = new Size(14, 13);
+            StealthButton3.TabIndex = 5;
+            StealthButton3.UseVisualStyleBackColor = true;
+            // 
+            // StealthButton2
+            // 
+            StealthButton2.AutoCheck = false;
+            StealthButton2.AutoSize = true;
+            StealthButton2.Checked = true;
+            StealthButton2.Location = new Point(106, 6);
+            StealthButton2.Name = "StealthButton2";
+            StealthButton2.Size = new Size(14, 13);
+            StealthButton2.TabIndex = 4;
+            StealthButton2.TabStop = true;
+            StealthButton2.UseVisualStyleBackColor = true;
+            // 
+            // StealthButton1
+            // 
+            StealthButton1.AutoCheck = false;
+            StealthButton1.AutoSize = true;
+            StealthButton1.Checked = true;
+            StealthButton1.Location = new Point(86, 6);
+            StealthButton1.Name = "StealthButton1";
+            StealthButton1.Size = new Size(14, 13);
+            StealthButton1.TabIndex = 3;
+            StealthButton1.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(3, 0);
+            label38.Name = "label38";
+            label38.Size = new Size(73, 15);
+            label38.TabIndex = 0;
+            label38.Text = "Скрытность";
+            label38.Click += StealthPanel_Click;
+            // 
+            // SecurityPanel
+            // 
+            SecurityPanel.Controls.Add(panel27);
+            SecurityPanel.Controls.Add(SecurityNumeric);
+            SecurityPanel.Controls.Add(SecurityButton5);
+            SecurityPanel.Controls.Add(SecurityButton4);
+            SecurityPanel.Controls.Add(SecurityButton3);
+            SecurityPanel.Controls.Add(SecurityButton2);
+            SecurityPanel.Controls.Add(SecurityButton1);
+            SecurityPanel.Controls.Add(label36);
+            SecurityPanel.Location = new Point(3, 166);
+            SecurityPanel.Name = "SecurityPanel";
+            SecurityPanel.Size = new Size(227, 19);
+            SecurityPanel.TabIndex = 11;
+            SecurityPanel.Click += SecurityPanel_Click;
+            // 
+            // panel27
+            // 
+            panel27.Controls.Add(label35);
+            panel27.Location = new Point(3, 18);
+            panel27.Name = "panel27";
+            panel27.Size = new Size(197, 19);
+            panel27.TabIndex = 2;
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Location = new Point(3, 0);
+            label35.Name = "label35";
+            label35.Size = new Size(58, 15);
+            label35.TabIndex = 0;
+            label35.Text = "Ловкость";
+            // 
+            // SecurityNumeric
+            // 
+            SecurityNumeric.Location = new Point(183, -2);
+            SecurityNumeric.Name = "SecurityNumeric";
+            SecurityNumeric.Size = new Size(41, 23);
+            SecurityNumeric.TabIndex = 8;
+            // 
+            // SecurityButton5
+            // 
+            SecurityButton5.AutoCheck = false;
+            SecurityButton5.AutoSize = true;
+            SecurityButton5.Location = new Point(166, 6);
+            SecurityButton5.Name = "SecurityButton5";
+            SecurityButton5.Size = new Size(14, 13);
+            SecurityButton5.TabIndex = 7;
+            SecurityButton5.UseVisualStyleBackColor = true;
+            // 
+            // SecurityButton4
+            // 
+            SecurityButton4.AutoCheck = false;
+            SecurityButton4.AutoSize = true;
+            SecurityButton4.Location = new Point(146, 6);
+            SecurityButton4.Name = "SecurityButton4";
+            SecurityButton4.Size = new Size(14, 13);
+            SecurityButton4.TabIndex = 6;
+            SecurityButton4.UseVisualStyleBackColor = true;
+            // 
+            // SecurityButton3
+            // 
+            SecurityButton3.AutoCheck = false;
+            SecurityButton3.AutoSize = true;
+            SecurityButton3.Location = new Point(126, 6);
+            SecurityButton3.Name = "SecurityButton3";
+            SecurityButton3.Size = new Size(14, 13);
+            SecurityButton3.TabIndex = 5;
+            SecurityButton3.UseVisualStyleBackColor = true;
+            // 
+            // SecurityButton2
+            // 
+            SecurityButton2.AutoCheck = false;
+            SecurityButton2.AutoSize = true;
+            SecurityButton2.Checked = true;
+            SecurityButton2.Location = new Point(106, 6);
+            SecurityButton2.Name = "SecurityButton2";
+            SecurityButton2.Size = new Size(14, 13);
+            SecurityButton2.TabIndex = 4;
+            SecurityButton2.TabStop = true;
+            SecurityButton2.UseVisualStyleBackColor = true;
+            // 
+            // SecurityButton1
+            // 
+            SecurityButton1.AutoCheck = false;
+            SecurityButton1.AutoSize = true;
+            SecurityButton1.Checked = true;
+            SecurityButton1.Location = new Point(86, 6);
+            SecurityButton1.Name = "SecurityButton1";
+            SecurityButton1.Size = new Size(14, 13);
+            SecurityButton1.TabIndex = 3;
+            SecurityButton1.UseVisualStyleBackColor = true;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Location = new Point(3, 0);
+            label36.Name = "label36";
+            label36.Size = new Size(82, 15);
+            label36.TabIndex = 0;
+            label36.Text = "Безопасность";
+            label36.Click += SecurityPanel_Click;
+            // 
+            // PerfomancePanel
+            // 
+            PerfomancePanel.Controls.Add(panel25);
+            PerfomancePanel.Controls.Add(PerfomanceNumeric);
+            PerfomancePanel.Controls.Add(PerfomanceButton5);
+            PerfomancePanel.Controls.Add(PerfomanceButton4);
+            PerfomancePanel.Controls.Add(PerfomanceButton3);
+            PerfomancePanel.Controls.Add(PerfomanceButton2);
+            PerfomancePanel.Controls.Add(PerfomanceButton1);
+            PerfomancePanel.Controls.Add(label34);
+            PerfomancePanel.Location = new Point(3, 145);
+            PerfomancePanel.Name = "PerfomancePanel";
+            PerfomancePanel.Size = new Size(227, 19);
+            PerfomancePanel.TabIndex = 10;
+            PerfomancePanel.Click += PerfomancePanel_Click;
+            // 
+            // panel25
+            // 
+            panel25.Controls.Add(label33);
+            panel25.Location = new Point(3, 18);
+            panel25.Name = "panel25";
+            panel25.Size = new Size(197, 19);
+            panel25.TabIndex = 2;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Location = new Point(3, 0);
+            label33.Name = "label33";
+            label33.Size = new Size(58, 15);
+            label33.TabIndex = 0;
+            label33.Text = "Ловкость";
+            // 
+            // PerfomanceNumeric
+            // 
+            PerfomanceNumeric.Location = new Point(183, -2);
+            PerfomanceNumeric.Name = "PerfomanceNumeric";
+            PerfomanceNumeric.Size = new Size(41, 23);
+            PerfomanceNumeric.TabIndex = 8;
+            // 
+            // PerfomanceButton5
+            // 
+            PerfomanceButton5.AutoCheck = false;
+            PerfomanceButton5.AutoSize = true;
+            PerfomanceButton5.Location = new Point(166, 6);
+            PerfomanceButton5.Name = "PerfomanceButton5";
+            PerfomanceButton5.Size = new Size(14, 13);
+            PerfomanceButton5.TabIndex = 7;
+            PerfomanceButton5.UseVisualStyleBackColor = true;
+            // 
+            // PerfomanceButton4
+            // 
+            PerfomanceButton4.AutoCheck = false;
+            PerfomanceButton4.AutoSize = true;
+            PerfomanceButton4.Location = new Point(146, 6);
+            PerfomanceButton4.Name = "PerfomanceButton4";
+            PerfomanceButton4.Size = new Size(14, 13);
+            PerfomanceButton4.TabIndex = 6;
+            PerfomanceButton4.UseVisualStyleBackColor = true;
+            // 
+            // PerfomanceButton3
+            // 
+            PerfomanceButton3.AutoCheck = false;
+            PerfomanceButton3.AutoSize = true;
+            PerfomanceButton3.Location = new Point(126, 6);
+            PerfomanceButton3.Name = "PerfomanceButton3";
+            PerfomanceButton3.Size = new Size(14, 13);
+            PerfomanceButton3.TabIndex = 5;
+            PerfomanceButton3.UseVisualStyleBackColor = true;
+            // 
+            // PerfomanceButton2
+            // 
+            PerfomanceButton2.AutoCheck = false;
+            PerfomanceButton2.AutoSize = true;
+            PerfomanceButton2.Checked = true;
+            PerfomanceButton2.Location = new Point(106, 6);
+            PerfomanceButton2.Name = "PerfomanceButton2";
+            PerfomanceButton2.Size = new Size(14, 13);
+            PerfomanceButton2.TabIndex = 4;
+            PerfomanceButton2.TabStop = true;
+            PerfomanceButton2.UseVisualStyleBackColor = true;
+            // 
+            // PerfomanceButton1
+            // 
+            PerfomanceButton1.AutoCheck = false;
+            PerfomanceButton1.AutoSize = true;
+            PerfomanceButton1.Checked = true;
+            PerfomanceButton1.Location = new Point(86, 6);
+            PerfomanceButton1.Name = "PerfomanceButton1";
+            PerfomanceButton1.Size = new Size(14, 13);
+            PerfomanceButton1.TabIndex = 3;
+            PerfomanceButton1.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Location = new Point(3, 0);
+            label34.Name = "label34";
+            label34.Size = new Size(76, 15);
+            label34.TabIndex = 0;
+            label34.Text = "Исполнение";
+            label34.Click += PerfomancePanel_Click;
+            // 
+            // MeleePanel
+            // 
+            MeleePanel.Controls.Add(panel23);
+            MeleePanel.Controls.Add(MeleeNumeric);
+            MeleePanel.Controls.Add(MeleeButton5);
+            MeleePanel.Controls.Add(MeleeButton4);
+            MeleePanel.Controls.Add(MeleeButton3);
+            MeleePanel.Controls.Add(MeleeButton2);
+            MeleePanel.Controls.Add(MeleeButton1);
+            MeleePanel.Controls.Add(label32);
+            MeleePanel.Location = new Point(3, 124);
+            MeleePanel.Name = "MeleePanel";
+            MeleePanel.Size = new Size(227, 19);
+            MeleePanel.TabIndex = 11;
+            MeleePanel.Click += MeleePanel_Click;
+            // 
+            // panel23
+            // 
+            panel23.Controls.Add(label31);
+            panel23.Location = new Point(3, 18);
+            panel23.Name = "panel23";
+            panel23.Size = new Size(197, 19);
+            panel23.TabIndex = 2;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(3, 0);
+            label31.Name = "label31";
+            label31.Size = new Size(58, 15);
+            label31.TabIndex = 0;
+            label31.Text = "Ловкость";
+            // 
+            // MeleeNumeric
+            // 
+            MeleeNumeric.Location = new Point(183, -2);
+            MeleeNumeric.Name = "MeleeNumeric";
+            MeleeNumeric.Size = new Size(41, 23);
+            MeleeNumeric.TabIndex = 8;
+            // 
+            // MeleeButton5
+            // 
+            MeleeButton5.AutoCheck = false;
+            MeleeButton5.AutoSize = true;
+            MeleeButton5.Checked = true;
+            MeleeButton5.Location = new Point(166, 6);
+            MeleeButton5.Name = "MeleeButton5";
+            MeleeButton5.Size = new Size(14, 13);
+            MeleeButton5.TabIndex = 7;
+            MeleeButton5.TabStop = true;
+            MeleeButton5.UseVisualStyleBackColor = true;
+            // 
+            // MeleeButton4
+            // 
+            MeleeButton4.AutoCheck = false;
+            MeleeButton4.AutoSize = true;
+            MeleeButton4.Checked = true;
+            MeleeButton4.Location = new Point(146, 6);
+            MeleeButton4.Name = "MeleeButton4";
+            MeleeButton4.Size = new Size(14, 13);
+            MeleeButton4.TabIndex = 6;
+            MeleeButton4.UseVisualStyleBackColor = true;
+            // 
+            // MeleeButton3
+            // 
+            MeleeButton3.AutoCheck = false;
+            MeleeButton3.AutoSize = true;
+            MeleeButton3.Checked = true;
+            MeleeButton3.Location = new Point(126, 6);
+            MeleeButton3.Name = "MeleeButton3";
+            MeleeButton3.Size = new Size(14, 13);
+            MeleeButton3.TabIndex = 5;
+            MeleeButton3.UseVisualStyleBackColor = true;
+            // 
+            // MeleeButton2
+            // 
+            MeleeButton2.AutoCheck = false;
+            MeleeButton2.AutoSize = true;
+            MeleeButton2.Checked = true;
+            MeleeButton2.Location = new Point(106, 6);
+            MeleeButton2.Name = "MeleeButton2";
+            MeleeButton2.Size = new Size(14, 13);
+            MeleeButton2.TabIndex = 4;
+            MeleeButton2.UseVisualStyleBackColor = true;
+            // 
+            // MeleeButton1
+            // 
+            MeleeButton1.AutoCheck = false;
+            MeleeButton1.AutoSize = true;
+            MeleeButton1.Checked = true;
+            MeleeButton1.Location = new Point(86, 6);
+            MeleeButton1.Name = "MeleeButton1";
+            MeleeButton1.Size = new Size(14, 13);
+            MeleeButton1.TabIndex = 3;
+            MeleeButton1.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Segoe UI", 6F);
+            label32.Location = new Point(3, 5);
+            label32.Name = "label32";
+            label32.Size = new Size(73, 11);
+            label32.TabIndex = 0;
+            label32.Text = "Холодное оружие";
+            label32.Click += MeleePanel_Click;
+            // 
+            // FirearmsPanel
+            // 
+            FirearmsPanel.Controls.Add(panel21);
+            FirearmsPanel.Controls.Add(FirearmsNumeric);
+            FirearmsPanel.Controls.Add(FirearmsButton5);
+            FirearmsPanel.Controls.Add(FirearmsButton4);
+            FirearmsPanel.Controls.Add(FirearmsButton3);
+            FirearmsPanel.Controls.Add(FirearmsButton2);
+            FirearmsPanel.Controls.Add(FirearmsButton1);
+            FirearmsPanel.Controls.Add(label30);
+            FirearmsPanel.Location = new Point(3, 103);
+            FirearmsPanel.Name = "FirearmsPanel";
+            FirearmsPanel.Size = new Size(227, 19);
+            FirearmsPanel.TabIndex = 10;
+            FirearmsPanel.Click += FirearmsPanel_Click;
+            // 
+            // panel21
+            // 
+            panel21.Controls.Add(label29);
+            panel21.Location = new Point(3, 18);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(197, 19);
+            panel21.TabIndex = 2;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(3, 0);
+            label29.Name = "label29";
+            label29.Size = new Size(58, 15);
+            label29.TabIndex = 0;
+            label29.Text = "Ловкость";
+            // 
+            // FirearmsNumeric
+            // 
+            FirearmsNumeric.Location = new Point(183, -2);
+            FirearmsNumeric.Name = "FirearmsNumeric";
+            FirearmsNumeric.Size = new Size(41, 23);
+            FirearmsNumeric.TabIndex = 8;
+            // 
+            // FirearmsButton5
+            // 
+            FirearmsButton5.AutoCheck = false;
+            FirearmsButton5.AutoSize = true;
+            FirearmsButton5.Checked = true;
+            FirearmsButton5.Location = new Point(166, 6);
+            FirearmsButton5.Name = "FirearmsButton5";
+            FirearmsButton5.Size = new Size(14, 13);
+            FirearmsButton5.TabIndex = 7;
+            FirearmsButton5.TabStop = true;
+            FirearmsButton5.UseVisualStyleBackColor = true;
+            // 
+            // FirearmsButton4
+            // 
+            FirearmsButton4.AutoCheck = false;
+            FirearmsButton4.AutoSize = true;
+            FirearmsButton4.Checked = true;
+            FirearmsButton4.Location = new Point(146, 6);
+            FirearmsButton4.Name = "FirearmsButton4";
+            FirearmsButton4.Size = new Size(14, 13);
+            FirearmsButton4.TabIndex = 6;
+            FirearmsButton4.UseVisualStyleBackColor = true;
+            // 
+            // FirearmsButton3
+            // 
+            FirearmsButton3.AutoCheck = false;
+            FirearmsButton3.AutoSize = true;
+            FirearmsButton3.Checked = true;
+            FirearmsButton3.Location = new Point(126, 6);
+            FirearmsButton3.Name = "FirearmsButton3";
+            FirearmsButton3.Size = new Size(14, 13);
+            FirearmsButton3.TabIndex = 5;
+            FirearmsButton3.UseVisualStyleBackColor = true;
+            // 
+            // FirearmsButton2
+            // 
+            FirearmsButton2.AutoCheck = false;
+            FirearmsButton2.AutoSize = true;
+            FirearmsButton2.Checked = true;
+            FirearmsButton2.Location = new Point(106, 6);
+            FirearmsButton2.Name = "FirearmsButton2";
+            FirearmsButton2.Size = new Size(14, 13);
+            FirearmsButton2.TabIndex = 4;
+            FirearmsButton2.UseVisualStyleBackColor = true;
+            // 
+            // FirearmsButton1
+            // 
+            FirearmsButton1.AutoCheck = false;
+            FirearmsButton1.AutoSize = true;
+            FirearmsButton1.Checked = true;
+            FirearmsButton1.Location = new Point(86, 6);
+            FirearmsButton1.Name = "FirearmsButton1";
+            FirearmsButton1.Size = new Size(14, 13);
+            FirearmsButton1.TabIndex = 3;
+            FirearmsButton1.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Font = new Font("Segoe UI", 5F);
+            label30.Location = new Point(3, 6);
+            label30.Name = "label30";
+            label30.Size = new Size(81, 10);
+            label30.TabIndex = 0;
+            label30.Text = "Огнестрельное оружие";
+            label30.Click += FirearmsPanel_Click;
+            // 
+            // EtiquettePanel
+            // 
+            EtiquettePanel.Controls.Add(panel19);
+            EtiquettePanel.Controls.Add(EtiquetteNumeric);
+            EtiquettePanel.Controls.Add(EtiquetteButton5);
+            EtiquettePanel.Controls.Add(EtiquetteButton4);
+            EtiquettePanel.Controls.Add(EtiquetteButton3);
+            EtiquettePanel.Controls.Add(EtiquetteButton2);
+            EtiquettePanel.Controls.Add(EtiquetteButton1);
+            EtiquettePanel.Controls.Add(label28);
+            EtiquettePanel.Location = new Point(3, 82);
+            EtiquettePanel.Name = "EtiquettePanel";
+            EtiquettePanel.Size = new Size(227, 19);
+            EtiquettePanel.TabIndex = 9;
+            EtiquettePanel.Click += EtiquettePanel_Click;
+            // 
+            // panel19
+            // 
+            panel19.Controls.Add(label27);
+            panel19.Location = new Point(3, 18);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(197, 19);
+            panel19.TabIndex = 2;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(3, 0);
+            label27.Name = "label27";
+            label27.Size = new Size(58, 15);
+            label27.TabIndex = 0;
+            label27.Text = "Ловкость";
+            // 
+            // EtiquetteNumeric
+            // 
+            EtiquetteNumeric.Location = new Point(183, -2);
+            EtiquetteNumeric.Name = "EtiquetteNumeric";
+            EtiquetteNumeric.Size = new Size(41, 23);
+            EtiquetteNumeric.TabIndex = 8;
+            // 
+            // EtiquetteButton5
+            // 
+            EtiquetteButton5.AutoCheck = false;
+            EtiquetteButton5.AutoSize = true;
+            EtiquetteButton5.Checked = true;
+            EtiquetteButton5.Location = new Point(166, 6);
+            EtiquetteButton5.Name = "EtiquetteButton5";
+            EtiquetteButton5.Size = new Size(14, 13);
+            EtiquetteButton5.TabIndex = 7;
+            EtiquetteButton5.TabStop = true;
+            EtiquetteButton5.UseVisualStyleBackColor = true;
+            // 
+            // EtiquetteButton4
+            // 
+            EtiquetteButton4.AutoCheck = false;
+            EtiquetteButton4.AutoSize = true;
+            EtiquetteButton4.Checked = true;
+            EtiquetteButton4.Location = new Point(146, 6);
+            EtiquetteButton4.Name = "EtiquetteButton4";
+            EtiquetteButton4.Size = new Size(14, 13);
+            EtiquetteButton4.TabIndex = 6;
+            EtiquetteButton4.UseVisualStyleBackColor = true;
+            // 
+            // EtiquetteButton3
+            // 
+            EtiquetteButton3.AutoCheck = false;
+            EtiquetteButton3.AutoSize = true;
+            EtiquetteButton3.Checked = true;
+            EtiquetteButton3.Location = new Point(126, 6);
+            EtiquetteButton3.Name = "EtiquetteButton3";
+            EtiquetteButton3.Size = new Size(14, 13);
+            EtiquetteButton3.TabIndex = 5;
+            EtiquetteButton3.UseVisualStyleBackColor = true;
+            // 
+            // EtiquetteButton2
+            // 
+            EtiquetteButton2.AutoCheck = false;
+            EtiquetteButton2.AutoSize = true;
+            EtiquetteButton2.Checked = true;
+            EtiquetteButton2.Location = new Point(106, 6);
+            EtiquetteButton2.Name = "EtiquetteButton2";
+            EtiquetteButton2.Size = new Size(14, 13);
+            EtiquetteButton2.TabIndex = 4;
+            EtiquetteButton2.UseVisualStyleBackColor = true;
+            // 
+            // EtiquetteButton1
+            // 
+            EtiquetteButton1.AutoCheck = false;
+            EtiquetteButton1.AutoSize = true;
+            EtiquetteButton1.Checked = true;
+            EtiquetteButton1.Location = new Point(86, 6);
+            EtiquetteButton1.Name = "EtiquetteButton1";
+            EtiquetteButton1.Size = new Size(14, 13);
+            EtiquetteButton1.TabIndex = 3;
+            EtiquetteButton1.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(3, 0);
+            label28.Name = "label28";
+            label28.Size = new Size(43, 15);
+            label28.TabIndex = 0;
+            label28.Text = "Этикет";
+            label28.Click += EtiquettePanel_Click;
+            // 
+            // DrivePanel
+            // 
+            DrivePanel.Controls.Add(panel6);
+            DrivePanel.Controls.Add(DriveNumeric);
+            DrivePanel.Controls.Add(DriveButton5);
+            DrivePanel.Controls.Add(DriveButton4);
+            DrivePanel.Controls.Add(DriveButton3);
+            DrivePanel.Controls.Add(DriveButton2);
+            DrivePanel.Controls.Add(DriveButton1);
+            DrivePanel.Controls.Add(label21);
+            DrivePanel.Location = new Point(3, 61);
+            DrivePanel.Name = "DrivePanel";
+            DrivePanel.Size = new Size(227, 19);
+            DrivePanel.TabIndex = 10;
+            DrivePanel.Click += DrivePanel_Click;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(label20);
+            panel6.Location = new Point(3, 18);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(197, 19);
+            panel6.TabIndex = 2;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(3, 0);
+            label20.Name = "label20";
+            label20.Size = new Size(58, 15);
+            label20.TabIndex = 0;
+            label20.Text = "Ловкость";
+            // 
+            // DriveNumeric
+            // 
+            DriveNumeric.Location = new Point(183, -2);
+            DriveNumeric.Name = "DriveNumeric";
+            DriveNumeric.Size = new Size(41, 23);
+            DriveNumeric.TabIndex = 8;
+            // 
+            // DriveButton5
+            // 
+            DriveButton5.AutoCheck = false;
+            DriveButton5.AutoSize = true;
+            DriveButton5.Checked = true;
+            DriveButton5.Location = new Point(166, 6);
+            DriveButton5.Name = "DriveButton5";
+            DriveButton5.Size = new Size(14, 13);
+            DriveButton5.TabIndex = 7;
+            DriveButton5.TabStop = true;
+            DriveButton5.UseVisualStyleBackColor = true;
+            // 
+            // DriveButton4
+            // 
+            DriveButton4.AutoCheck = false;
+            DriveButton4.AutoSize = true;
+            DriveButton4.Checked = true;
+            DriveButton4.Location = new Point(146, 6);
+            DriveButton4.Name = "DriveButton4";
+            DriveButton4.Size = new Size(14, 13);
+            DriveButton4.TabIndex = 6;
+            DriveButton4.TabStop = true;
+            DriveButton4.UseVisualStyleBackColor = true;
+            // 
+            // DriveButton3
+            // 
+            DriveButton3.AutoCheck = false;
+            DriveButton3.AutoSize = true;
+            DriveButton3.Checked = true;
+            DriveButton3.Location = new Point(126, 6);
+            DriveButton3.Name = "DriveButton3";
+            DriveButton3.Size = new Size(14, 13);
+            DriveButton3.TabIndex = 5;
+            DriveButton3.TabStop = true;
+            DriveButton3.UseVisualStyleBackColor = true;
+            // 
+            // DriveButton2
+            // 
+            DriveButton2.AutoCheck = false;
+            DriveButton2.AutoSize = true;
+            DriveButton2.Checked = true;
+            DriveButton2.Location = new Point(106, 6);
+            DriveButton2.Name = "DriveButton2";
+            DriveButton2.Size = new Size(14, 13);
+            DriveButton2.TabIndex = 4;
+            DriveButton2.TabStop = true;
+            DriveButton2.UseVisualStyleBackColor = true;
+            // 
+            // DriveButton1
+            // 
+            DriveButton1.AutoCheck = false;
+            DriveButton1.AutoSize = true;
+            DriveButton1.Checked = true;
+            DriveButton1.Location = new Point(86, 6);
+            DriveButton1.Name = "DriveButton1";
+            DriveButton1.Size = new Size(14, 13);
+            DriveButton1.TabIndex = 3;
+            DriveButton1.TabStop = true;
+            DriveButton1.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(3, 0);
+            label21.Name = "label21";
+            label21.Size = new Size(62, 15);
+            label21.TabIndex = 0;
+            label21.Text = "Вождение";
+            label21.Click += DrivePanel_Click;
+            // 
+            // CraftsPanel
+            // 
+            CraftsPanel.Controls.Add(panel10);
+            CraftsPanel.Controls.Add(CraftsNumeric);
+            CraftsPanel.Controls.Add(CraftsButton5);
+            CraftsPanel.Controls.Add(CraftsButton4);
+            CraftsPanel.Controls.Add(CraftsButton3);
+            CraftsPanel.Controls.Add(CraftsButton2);
+            CraftsPanel.Controls.Add(CraftsButton1);
+            CraftsPanel.Controls.Add(label23);
+            CraftsPanel.Location = new Point(3, 39);
+            CraftsPanel.Name = "CraftsPanel";
+            CraftsPanel.Size = new Size(227, 19);
+            CraftsPanel.TabIndex = 9;
+            CraftsPanel.Click += CraftsPanel_Click;
+            // 
+            // panel10
+            // 
+            panel10.Controls.Add(label22);
+            panel10.Location = new Point(3, 18);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(197, 19);
+            panel10.TabIndex = 2;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(3, 0);
+            label22.Name = "label22";
+            label22.Size = new Size(58, 15);
+            label22.TabIndex = 0;
+            label22.Text = "Ловкость";
+            // 
+            // CraftsNumeric
+            // 
+            CraftsNumeric.Location = new Point(183, -2);
+            CraftsNumeric.Name = "CraftsNumeric";
+            CraftsNumeric.Size = new Size(41, 23);
+            CraftsNumeric.TabIndex = 8;
+            // 
+            // CraftsButton5
+            // 
+            CraftsButton5.AutoCheck = false;
+            CraftsButton5.AutoSize = true;
+            CraftsButton5.Location = new Point(166, 6);
+            CraftsButton5.Name = "CraftsButton5";
+            CraftsButton5.Size = new Size(14, 13);
+            CraftsButton5.TabIndex = 7;
+            CraftsButton5.UseVisualStyleBackColor = true;
+            // 
+            // CraftsButton4
+            // 
+            CraftsButton4.AutoCheck = false;
+            CraftsButton4.AutoSize = true;
+            CraftsButton4.Location = new Point(146, 6);
+            CraftsButton4.Name = "CraftsButton4";
+            CraftsButton4.Size = new Size(14, 13);
+            CraftsButton4.TabIndex = 6;
+            CraftsButton4.UseVisualStyleBackColor = true;
+            // 
+            // CraftsButton3
+            // 
+            CraftsButton3.AutoCheck = false;
+            CraftsButton3.AutoSize = true;
+            CraftsButton3.Location = new Point(126, 6);
+            CraftsButton3.Name = "CraftsButton3";
+            CraftsButton3.Size = new Size(14, 13);
+            CraftsButton3.TabIndex = 5;
+            CraftsButton3.UseVisualStyleBackColor = true;
+            // 
+            // CraftsButton2
+            // 
+            CraftsButton2.AutoCheck = false;
+            CraftsButton2.AutoSize = true;
+            CraftsButton2.Checked = true;
+            CraftsButton2.Location = new Point(106, 6);
+            CraftsButton2.Name = "CraftsButton2";
+            CraftsButton2.Size = new Size(14, 13);
+            CraftsButton2.TabIndex = 4;
+            CraftsButton2.TabStop = true;
+            CraftsButton2.UseVisualStyleBackColor = true;
+            // 
+            // CraftsButton1
+            // 
+            CraftsButton1.AutoCheck = false;
+            CraftsButton1.AutoSize = true;
+            CraftsButton1.Checked = true;
+            CraftsButton1.Location = new Point(86, 6);
+            CraftsButton1.Name = "CraftsButton1";
+            CraftsButton1.Size = new Size(14, 13);
+            CraftsButton1.TabIndex = 3;
+            CraftsButton1.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(3, 0);
+            label23.Name = "label23";
+            label23.Size = new Size(55, 15);
+            label23.TabIndex = 0;
+            label23.Text = "Ремесло";
+            label23.Click += CraftsPanel_Click;
+            // 
+            // AnimalKenPanel
+            // 
+            AnimalKenPanel.Controls.Add(panel15);
+            AnimalKenPanel.Controls.Add(AnimalKenNumeric);
+            AnimalKenPanel.Controls.Add(AnimalKenButton5);
+            AnimalKenPanel.Controls.Add(AnimalKenButton4);
+            AnimalKenPanel.Controls.Add(AnimalKenButton3);
+            AnimalKenPanel.Controls.Add(AnimalKenButton2);
+            AnimalKenPanel.Controls.Add(AnimalKenButton1);
+            AnimalKenPanel.Controls.Add(label25);
+            AnimalKenPanel.Location = new Point(3, 18);
+            AnimalKenPanel.Name = "AnimalKenPanel";
+            AnimalKenPanel.Size = new Size(227, 19);
+            AnimalKenPanel.TabIndex = 1;
+            AnimalKenPanel.Click += AnimalKenPanel_Click;
+            // 
+            // panel15
+            // 
+            panel15.Controls.Add(label24);
+            panel15.Location = new Point(3, 18);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(197, 19);
+            panel15.TabIndex = 2;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(3, 0);
+            label24.Name = "label24";
+            label24.Size = new Size(58, 15);
+            label24.TabIndex = 0;
+            label24.Text = "Ловкость";
+            // 
+            // AnimalKenNumeric
+            // 
+            AnimalKenNumeric.Location = new Point(183, -2);
+            AnimalKenNumeric.Name = "AnimalKenNumeric";
+            AnimalKenNumeric.Size = new Size(41, 23);
+            AnimalKenNumeric.TabIndex = 8;
+            // 
+            // AnimalKenButton5
+            // 
+            AnimalKenButton5.AutoCheck = false;
+            AnimalKenButton5.AutoSize = true;
+            AnimalKenButton5.Checked = true;
+            AnimalKenButton5.Location = new Point(166, 6);
+            AnimalKenButton5.Name = "AnimalKenButton5";
+            AnimalKenButton5.Size = new Size(14, 13);
+            AnimalKenButton5.TabIndex = 7;
+            AnimalKenButton5.TabStop = true;
+            AnimalKenButton5.UseVisualStyleBackColor = true;
+            // 
+            // AnimalKenButton4
+            // 
+            AnimalKenButton4.AutoCheck = false;
+            AnimalKenButton4.AutoSize = true;
+            AnimalKenButton4.Checked = true;
+            AnimalKenButton4.Location = new Point(146, 6);
+            AnimalKenButton4.Name = "AnimalKenButton4";
+            AnimalKenButton4.Size = new Size(14, 13);
+            AnimalKenButton4.TabIndex = 6;
+            AnimalKenButton4.UseVisualStyleBackColor = true;
+            // 
+            // AnimalKenButton3
+            // 
+            AnimalKenButton3.AutoCheck = false;
+            AnimalKenButton3.AutoSize = true;
+            AnimalKenButton3.Checked = true;
+            AnimalKenButton3.Location = new Point(126, 6);
+            AnimalKenButton3.Name = "AnimalKenButton3";
+            AnimalKenButton3.Size = new Size(14, 13);
+            AnimalKenButton3.TabIndex = 5;
+            AnimalKenButton3.UseVisualStyleBackColor = true;
+            // 
+            // AnimalKenButton2
+            // 
+            AnimalKenButton2.AutoCheck = false;
+            AnimalKenButton2.AutoSize = true;
+            AnimalKenButton2.Checked = true;
+            AnimalKenButton2.Location = new Point(106, 6);
+            AnimalKenButton2.Name = "AnimalKenButton2";
+            AnimalKenButton2.Size = new Size(14, 13);
+            AnimalKenButton2.TabIndex = 4;
+            AnimalKenButton2.UseVisualStyleBackColor = true;
+            // 
+            // AnimalKenButton1
+            // 
+            AnimalKenButton1.AutoCheck = false;
+            AnimalKenButton1.AutoSize = true;
+            AnimalKenButton1.Checked = true;
+            AnimalKenButton1.Location = new Point(86, 6);
+            AnimalKenButton1.Name = "AnimalKenButton1";
+            AnimalKenButton1.Size = new Size(14, 13);
+            AnimalKenButton1.TabIndex = 3;
+            AnimalKenButton1.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 6F);
+            label25.Location = new Point(3, 4);
+            label25.Name = "label25";
+            label25.Size = new Size(78, 11);
+            label25.TabIndex = 0;
+            label25.Text = "Понимание зверей";
+            label25.Click += AnimalKenPanel_Click;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(98, 0);
+            label26.Name = "label26";
+            label26.Size = new Size(50, 15);
+            label26.TabIndex = 0;
+            label26.Text = "Навыки";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(303, 3);
+            label19.Name = "label19";
+            label19.Size = new Size(81, 15);
+            label19.TabIndex = 13;
+            label19.Text = "Способности";
             // 
             // AttributesPanel
             // 
@@ -1613,3203 +4871,6 @@
             AttributesLabel.Text = "Атрибуты";
             AttributesLabel.Click += label1_Click;
             // 
-            // AbilitiesPanel
-            // 
-            AbilitiesPanel.Controls.Add(panel53);
-            AbilitiesPanel.Controls.Add(panel32);
-            AbilitiesPanel.Controls.Add(panel1);
-            AbilitiesPanel.Controls.Add(label19);
-            AbilitiesPanel.Location = new Point(3, 128);
-            AbilitiesPanel.Name = "AbilitiesPanel";
-            AbilitiesPanel.Size = new Size(700, 255);
-            AbilitiesPanel.TabIndex = 1;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(303, 3);
-            label19.Name = "label19";
-            label19.Size = new Size(81, 15);
-            label19.TabIndex = 13;
-            label19.Text = "Способности";
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(panel30);
-            panel1.Controls.Add(panel28);
-            panel1.Controls.Add(panel26);
-            panel1.Controls.Add(panel24);
-            panel1.Controls.Add(panel22);
-            panel1.Controls.Add(panel20);
-            panel1.Controls.Add(panel17);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel8);
-            panel1.Controls.Add(panel13);
-            panel1.Controls.Add(label26);
-            panel1.Location = new Point(236, 21);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(230, 231);
-            panel1.TabIndex = 11;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(panel6);
-            panel3.Controls.Add(numericUpDown1);
-            panel3.Controls.Add(radioButton1);
-            panel3.Controls.Add(radioButton2);
-            panel3.Controls.Add(radioButton3);
-            panel3.Controls.Add(radioButton4);
-            panel3.Controls.Add(radioButton5);
-            panel3.Controls.Add(label21);
-            panel3.Location = new Point(3, 61);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(227, 19);
-            panel3.TabIndex = 10;
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(label20);
-            panel6.Location = new Point(3, 18);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(197, 19);
-            panel6.TabIndex = 2;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(3, 0);
-            label20.Name = "label20";
-            label20.Size = new Size(58, 15);
-            label20.TabIndex = 0;
-            label20.Text = "Ловкость";
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(183, -2);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(41, 23);
-            numericUpDown1.TabIndex = 8;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoCheck = false;
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(166, 6);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(14, 13);
-            radioButton1.TabIndex = 7;
-            radioButton1.TabStop = true;
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoCheck = false;
-            radioButton2.AutoSize = true;
-            radioButton2.Checked = true;
-            radioButton2.Location = new Point(146, 6);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(14, 13);
-            radioButton2.TabIndex = 6;
-            radioButton2.TabStop = true;
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoCheck = false;
-            radioButton3.AutoSize = true;
-            radioButton3.Checked = true;
-            radioButton3.Location = new Point(126, 6);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(14, 13);
-            radioButton3.TabIndex = 5;
-            radioButton3.TabStop = true;
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoCheck = false;
-            radioButton4.AutoSize = true;
-            radioButton4.Checked = true;
-            radioButton4.Location = new Point(106, 6);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(14, 13);
-            radioButton4.TabIndex = 4;
-            radioButton4.TabStop = true;
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            radioButton5.AutoCheck = false;
-            radioButton5.AutoSize = true;
-            radioButton5.Checked = true;
-            radioButton5.Location = new Point(86, 6);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(14, 13);
-            radioButton5.TabIndex = 3;
-            radioButton5.TabStop = true;
-            radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(3, 0);
-            label21.Name = "label21";
-            label21.Size = new Size(62, 15);
-            label21.TabIndex = 0;
-            label21.Text = "Вождение";
-            // 
-            // panel8
-            // 
-            panel8.Controls.Add(panel10);
-            panel8.Controls.Add(numericUpDown2);
-            panel8.Controls.Add(radioButton6);
-            panel8.Controls.Add(radioButton7);
-            panel8.Controls.Add(radioButton8);
-            panel8.Controls.Add(radioButton9);
-            panel8.Controls.Add(radioButton10);
-            panel8.Controls.Add(label23);
-            panel8.Location = new Point(3, 39);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(227, 19);
-            panel8.TabIndex = 9;
-            // 
-            // panel10
-            // 
-            panel10.Controls.Add(label22);
-            panel10.Location = new Point(3, 18);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(197, 19);
-            panel10.TabIndex = 2;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(3, 0);
-            label22.Name = "label22";
-            label22.Size = new Size(58, 15);
-            label22.TabIndex = 0;
-            label22.Text = "Ловкость";
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Location = new Point(183, -2);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(41, 23);
-            numericUpDown2.TabIndex = 8;
-            // 
-            // radioButton6
-            // 
-            radioButton6.AutoCheck = false;
-            radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(166, 6);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(14, 13);
-            radioButton6.TabIndex = 7;
-            radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            radioButton7.AutoCheck = false;
-            radioButton7.AutoSize = true;
-            radioButton7.Location = new Point(146, 6);
-            radioButton7.Name = "radioButton7";
-            radioButton7.Size = new Size(14, 13);
-            radioButton7.TabIndex = 6;
-            radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            radioButton8.AutoCheck = false;
-            radioButton8.AutoSize = true;
-            radioButton8.Location = new Point(126, 6);
-            radioButton8.Name = "radioButton8";
-            radioButton8.Size = new Size(14, 13);
-            radioButton8.TabIndex = 5;
-            radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            radioButton9.AutoCheck = false;
-            radioButton9.AutoSize = true;
-            radioButton9.Checked = true;
-            radioButton9.Location = new Point(106, 6);
-            radioButton9.Name = "radioButton9";
-            radioButton9.Size = new Size(14, 13);
-            radioButton9.TabIndex = 4;
-            radioButton9.TabStop = true;
-            radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            radioButton10.AutoCheck = false;
-            radioButton10.AutoSize = true;
-            radioButton10.Checked = true;
-            radioButton10.Location = new Point(86, 6);
-            radioButton10.Name = "radioButton10";
-            radioButton10.Size = new Size(14, 13);
-            radioButton10.TabIndex = 3;
-            radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(3, 0);
-            label23.Name = "label23";
-            label23.Size = new Size(55, 15);
-            label23.TabIndex = 0;
-            label23.Text = "Ремесло";
-            // 
-            // panel13
-            // 
-            panel13.Controls.Add(panel15);
-            panel13.Controls.Add(numericUpDown3);
-            panel13.Controls.Add(radioButton11);
-            panel13.Controls.Add(radioButton12);
-            panel13.Controls.Add(radioButton13);
-            panel13.Controls.Add(radioButton14);
-            panel13.Controls.Add(radioButton15);
-            panel13.Controls.Add(label25);
-            panel13.Location = new Point(3, 18);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(227, 19);
-            panel13.TabIndex = 1;
-            // 
-            // panel15
-            // 
-            panel15.Controls.Add(label24);
-            panel15.Location = new Point(3, 18);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(197, 19);
-            panel15.TabIndex = 2;
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(3, 0);
-            label24.Name = "label24";
-            label24.Size = new Size(58, 15);
-            label24.TabIndex = 0;
-            label24.Text = "Ловкость";
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.Location = new Point(183, -2);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(41, 23);
-            numericUpDown3.TabIndex = 8;
-            // 
-            // radioButton11
-            // 
-            radioButton11.AutoCheck = false;
-            radioButton11.AutoSize = true;
-            radioButton11.Checked = true;
-            radioButton11.Location = new Point(166, 6);
-            radioButton11.Name = "radioButton11";
-            radioButton11.Size = new Size(14, 13);
-            radioButton11.TabIndex = 7;
-            radioButton11.TabStop = true;
-            radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton12
-            // 
-            radioButton12.AutoCheck = false;
-            radioButton12.AutoSize = true;
-            radioButton12.Checked = true;
-            radioButton12.Location = new Point(146, 6);
-            radioButton12.Name = "radioButton12";
-            radioButton12.Size = new Size(14, 13);
-            radioButton12.TabIndex = 6;
-            radioButton12.UseVisualStyleBackColor = true;
-            // 
-            // radioButton13
-            // 
-            radioButton13.AutoCheck = false;
-            radioButton13.AutoSize = true;
-            radioButton13.Checked = true;
-            radioButton13.Location = new Point(126, 6);
-            radioButton13.Name = "radioButton13";
-            radioButton13.Size = new Size(14, 13);
-            radioButton13.TabIndex = 5;
-            radioButton13.UseVisualStyleBackColor = true;
-            // 
-            // radioButton14
-            // 
-            radioButton14.AutoCheck = false;
-            radioButton14.AutoSize = true;
-            radioButton14.Checked = true;
-            radioButton14.Location = new Point(106, 6);
-            radioButton14.Name = "radioButton14";
-            radioButton14.Size = new Size(14, 13);
-            radioButton14.TabIndex = 4;
-            radioButton14.UseVisualStyleBackColor = true;
-            // 
-            // radioButton15
-            // 
-            radioButton15.AutoCheck = false;
-            radioButton15.AutoSize = true;
-            radioButton15.Checked = true;
-            radioButton15.Location = new Point(86, 6);
-            radioButton15.Name = "radioButton15";
-            radioButton15.Size = new Size(14, 13);
-            radioButton15.TabIndex = 3;
-            radioButton15.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Segoe UI", 6F);
-            label25.Location = new Point(3, 4);
-            label25.Name = "label25";
-            label25.Size = new Size(78, 11);
-            label25.TabIndex = 0;
-            label25.Text = "Понимание зверей";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(98, 0);
-            label26.Name = "label26";
-            label26.Size = new Size(50, 15);
-            label26.TabIndex = 0;
-            label26.Text = "Навыки";
-            // 
-            // panel17
-            // 
-            panel17.Controls.Add(panel19);
-            panel17.Controls.Add(numericUpDown4);
-            panel17.Controls.Add(radioButton16);
-            panel17.Controls.Add(radioButton17);
-            panel17.Controls.Add(radioButton18);
-            panel17.Controls.Add(radioButton19);
-            panel17.Controls.Add(radioButton20);
-            panel17.Controls.Add(label28);
-            panel17.Location = new Point(3, 82);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(227, 19);
-            panel17.TabIndex = 9;
-            // 
-            // panel19
-            // 
-            panel19.Controls.Add(label27);
-            panel19.Location = new Point(3, 18);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(197, 19);
-            panel19.TabIndex = 2;
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(3, 0);
-            label27.Name = "label27";
-            label27.Size = new Size(58, 15);
-            label27.TabIndex = 0;
-            label27.Text = "Ловкость";
-            // 
-            // numericUpDown4
-            // 
-            numericUpDown4.Location = new Point(183, -2);
-            numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(41, 23);
-            numericUpDown4.TabIndex = 8;
-            // 
-            // radioButton16
-            // 
-            radioButton16.AutoCheck = false;
-            radioButton16.AutoSize = true;
-            radioButton16.Checked = true;
-            radioButton16.Location = new Point(166, 6);
-            radioButton16.Name = "radioButton16";
-            radioButton16.Size = new Size(14, 13);
-            radioButton16.TabIndex = 7;
-            radioButton16.TabStop = true;
-            radioButton16.UseVisualStyleBackColor = true;
-            // 
-            // radioButton17
-            // 
-            radioButton17.AutoCheck = false;
-            radioButton17.AutoSize = true;
-            radioButton17.Checked = true;
-            radioButton17.Location = new Point(146, 6);
-            radioButton17.Name = "radioButton17";
-            radioButton17.Size = new Size(14, 13);
-            radioButton17.TabIndex = 6;
-            radioButton17.UseVisualStyleBackColor = true;
-            // 
-            // radioButton18
-            // 
-            radioButton18.AutoCheck = false;
-            radioButton18.AutoSize = true;
-            radioButton18.Checked = true;
-            radioButton18.Location = new Point(126, 6);
-            radioButton18.Name = "radioButton18";
-            radioButton18.Size = new Size(14, 13);
-            radioButton18.TabIndex = 5;
-            radioButton18.UseVisualStyleBackColor = true;
-            // 
-            // radioButton19
-            // 
-            radioButton19.AutoCheck = false;
-            radioButton19.AutoSize = true;
-            radioButton19.Checked = true;
-            radioButton19.Location = new Point(106, 6);
-            radioButton19.Name = "radioButton19";
-            radioButton19.Size = new Size(14, 13);
-            radioButton19.TabIndex = 4;
-            radioButton19.UseVisualStyleBackColor = true;
-            // 
-            // radioButton20
-            // 
-            radioButton20.AutoCheck = false;
-            radioButton20.AutoSize = true;
-            radioButton20.Checked = true;
-            radioButton20.Location = new Point(86, 6);
-            radioButton20.Name = "radioButton20";
-            radioButton20.Size = new Size(14, 13);
-            radioButton20.TabIndex = 3;
-            radioButton20.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Location = new Point(3, 0);
-            label28.Name = "label28";
-            label28.Size = new Size(43, 15);
-            label28.TabIndex = 0;
-            label28.Text = "Этикет";
-            // 
-            // panel20
-            // 
-            panel20.Controls.Add(panel21);
-            panel20.Controls.Add(numericUpDown5);
-            panel20.Controls.Add(radioButton21);
-            panel20.Controls.Add(radioButton22);
-            panel20.Controls.Add(radioButton23);
-            panel20.Controls.Add(radioButton24);
-            panel20.Controls.Add(radioButton25);
-            panel20.Controls.Add(label30);
-            panel20.Location = new Point(3, 103);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(227, 19);
-            panel20.TabIndex = 10;
-            // 
-            // panel21
-            // 
-            panel21.Controls.Add(label29);
-            panel21.Location = new Point(3, 18);
-            panel21.Name = "panel21";
-            panel21.Size = new Size(197, 19);
-            panel21.TabIndex = 2;
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Location = new Point(3, 0);
-            label29.Name = "label29";
-            label29.Size = new Size(58, 15);
-            label29.TabIndex = 0;
-            label29.Text = "Ловкость";
-            // 
-            // numericUpDown5
-            // 
-            numericUpDown5.Location = new Point(183, -2);
-            numericUpDown5.Name = "numericUpDown5";
-            numericUpDown5.Size = new Size(41, 23);
-            numericUpDown5.TabIndex = 8;
-            // 
-            // radioButton21
-            // 
-            radioButton21.AutoCheck = false;
-            radioButton21.AutoSize = true;
-            radioButton21.Checked = true;
-            radioButton21.Location = new Point(166, 6);
-            radioButton21.Name = "radioButton21";
-            radioButton21.Size = new Size(14, 13);
-            radioButton21.TabIndex = 7;
-            radioButton21.TabStop = true;
-            radioButton21.UseVisualStyleBackColor = true;
-            // 
-            // radioButton22
-            // 
-            radioButton22.AutoCheck = false;
-            radioButton22.AutoSize = true;
-            radioButton22.Checked = true;
-            radioButton22.Location = new Point(146, 6);
-            radioButton22.Name = "radioButton22";
-            radioButton22.Size = new Size(14, 13);
-            radioButton22.TabIndex = 6;
-            radioButton22.UseVisualStyleBackColor = true;
-            // 
-            // radioButton23
-            // 
-            radioButton23.AutoCheck = false;
-            radioButton23.AutoSize = true;
-            radioButton23.Checked = true;
-            radioButton23.Location = new Point(126, 6);
-            radioButton23.Name = "radioButton23";
-            radioButton23.Size = new Size(14, 13);
-            radioButton23.TabIndex = 5;
-            radioButton23.UseVisualStyleBackColor = true;
-            // 
-            // radioButton24
-            // 
-            radioButton24.AutoCheck = false;
-            radioButton24.AutoSize = true;
-            radioButton24.Checked = true;
-            radioButton24.Location = new Point(106, 6);
-            radioButton24.Name = "radioButton24";
-            radioButton24.Size = new Size(14, 13);
-            radioButton24.TabIndex = 4;
-            radioButton24.UseVisualStyleBackColor = true;
-            // 
-            // radioButton25
-            // 
-            radioButton25.AutoCheck = false;
-            radioButton25.AutoSize = true;
-            radioButton25.Checked = true;
-            radioButton25.Location = new Point(86, 6);
-            radioButton25.Name = "radioButton25";
-            radioButton25.Size = new Size(14, 13);
-            radioButton25.TabIndex = 3;
-            radioButton25.UseVisualStyleBackColor = true;
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Font = new Font("Segoe UI", 5F);
-            label30.Location = new Point(3, 6);
-            label30.Name = "label30";
-            label30.Size = new Size(81, 10);
-            label30.TabIndex = 0;
-            label30.Text = "Огнестрельное оружие";
-            // 
-            // panel22
-            // 
-            panel22.Controls.Add(panel23);
-            panel22.Controls.Add(numericUpDown6);
-            panel22.Controls.Add(radioButton26);
-            panel22.Controls.Add(radioButton27);
-            panel22.Controls.Add(radioButton28);
-            panel22.Controls.Add(radioButton29);
-            panel22.Controls.Add(radioButton30);
-            panel22.Controls.Add(label32);
-            panel22.Location = new Point(3, 124);
-            panel22.Name = "panel22";
-            panel22.Size = new Size(227, 19);
-            panel22.TabIndex = 11;
-            // 
-            // panel23
-            // 
-            panel23.Controls.Add(label31);
-            panel23.Location = new Point(3, 18);
-            panel23.Name = "panel23";
-            panel23.Size = new Size(197, 19);
-            panel23.TabIndex = 2;
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Location = new Point(3, 0);
-            label31.Name = "label31";
-            label31.Size = new Size(58, 15);
-            label31.TabIndex = 0;
-            label31.Text = "Ловкость";
-            // 
-            // numericUpDown6
-            // 
-            numericUpDown6.Location = new Point(183, -2);
-            numericUpDown6.Name = "numericUpDown6";
-            numericUpDown6.Size = new Size(41, 23);
-            numericUpDown6.TabIndex = 8;
-            // 
-            // radioButton26
-            // 
-            radioButton26.AutoCheck = false;
-            radioButton26.AutoSize = true;
-            radioButton26.Checked = true;
-            radioButton26.Location = new Point(166, 6);
-            radioButton26.Name = "radioButton26";
-            radioButton26.Size = new Size(14, 13);
-            radioButton26.TabIndex = 7;
-            radioButton26.TabStop = true;
-            radioButton26.UseVisualStyleBackColor = true;
-            // 
-            // radioButton27
-            // 
-            radioButton27.AutoCheck = false;
-            radioButton27.AutoSize = true;
-            radioButton27.Checked = true;
-            radioButton27.Location = new Point(146, 6);
-            radioButton27.Name = "radioButton27";
-            radioButton27.Size = new Size(14, 13);
-            radioButton27.TabIndex = 6;
-            radioButton27.UseVisualStyleBackColor = true;
-            // 
-            // radioButton28
-            // 
-            radioButton28.AutoCheck = false;
-            radioButton28.AutoSize = true;
-            radioButton28.Checked = true;
-            radioButton28.Location = new Point(126, 6);
-            radioButton28.Name = "radioButton28";
-            radioButton28.Size = new Size(14, 13);
-            radioButton28.TabIndex = 5;
-            radioButton28.UseVisualStyleBackColor = true;
-            // 
-            // radioButton29
-            // 
-            radioButton29.AutoCheck = false;
-            radioButton29.AutoSize = true;
-            radioButton29.Checked = true;
-            radioButton29.Location = new Point(106, 6);
-            radioButton29.Name = "radioButton29";
-            radioButton29.Size = new Size(14, 13);
-            radioButton29.TabIndex = 4;
-            radioButton29.UseVisualStyleBackColor = true;
-            // 
-            // radioButton30
-            // 
-            radioButton30.AutoCheck = false;
-            radioButton30.AutoSize = true;
-            radioButton30.Checked = true;
-            radioButton30.Location = new Point(86, 6);
-            radioButton30.Name = "radioButton30";
-            radioButton30.Size = new Size(14, 13);
-            radioButton30.TabIndex = 3;
-            radioButton30.UseVisualStyleBackColor = true;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Font = new Font("Segoe UI", 6F);
-            label32.Location = new Point(3, 5);
-            label32.Name = "label32";
-            label32.Size = new Size(73, 11);
-            label32.TabIndex = 0;
-            label32.Text = "Холодное оружие";
-            // 
-            // panel24
-            // 
-            panel24.Controls.Add(panel25);
-            panel24.Controls.Add(numericUpDown7);
-            panel24.Controls.Add(radioButton31);
-            panel24.Controls.Add(radioButton32);
-            panel24.Controls.Add(radioButton33);
-            panel24.Controls.Add(radioButton34);
-            panel24.Controls.Add(radioButton35);
-            panel24.Controls.Add(label34);
-            panel24.Location = new Point(3, 145);
-            panel24.Name = "panel24";
-            panel24.Size = new Size(227, 19);
-            panel24.TabIndex = 10;
-            // 
-            // panel25
-            // 
-            panel25.Controls.Add(label33);
-            panel25.Location = new Point(3, 18);
-            panel25.Name = "panel25";
-            panel25.Size = new Size(197, 19);
-            panel25.TabIndex = 2;
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Location = new Point(3, 0);
-            label33.Name = "label33";
-            label33.Size = new Size(58, 15);
-            label33.TabIndex = 0;
-            label33.Text = "Ловкость";
-            // 
-            // numericUpDown7
-            // 
-            numericUpDown7.Location = new Point(183, -2);
-            numericUpDown7.Name = "numericUpDown7";
-            numericUpDown7.Size = new Size(41, 23);
-            numericUpDown7.TabIndex = 8;
-            // 
-            // radioButton31
-            // 
-            radioButton31.AutoCheck = false;
-            radioButton31.AutoSize = true;
-            radioButton31.Location = new Point(166, 6);
-            radioButton31.Name = "radioButton31";
-            radioButton31.Size = new Size(14, 13);
-            radioButton31.TabIndex = 7;
-            radioButton31.UseVisualStyleBackColor = true;
-            // 
-            // radioButton32
-            // 
-            radioButton32.AutoCheck = false;
-            radioButton32.AutoSize = true;
-            radioButton32.Location = new Point(146, 6);
-            radioButton32.Name = "radioButton32";
-            radioButton32.Size = new Size(14, 13);
-            radioButton32.TabIndex = 6;
-            radioButton32.UseVisualStyleBackColor = true;
-            // 
-            // radioButton33
-            // 
-            radioButton33.AutoCheck = false;
-            radioButton33.AutoSize = true;
-            radioButton33.Location = new Point(126, 6);
-            radioButton33.Name = "radioButton33";
-            radioButton33.Size = new Size(14, 13);
-            radioButton33.TabIndex = 5;
-            radioButton33.UseVisualStyleBackColor = true;
-            // 
-            // radioButton34
-            // 
-            radioButton34.AutoCheck = false;
-            radioButton34.AutoSize = true;
-            radioButton34.Checked = true;
-            radioButton34.Location = new Point(106, 6);
-            radioButton34.Name = "radioButton34";
-            radioButton34.Size = new Size(14, 13);
-            radioButton34.TabIndex = 4;
-            radioButton34.TabStop = true;
-            radioButton34.UseVisualStyleBackColor = true;
-            // 
-            // radioButton35
-            // 
-            radioButton35.AutoCheck = false;
-            radioButton35.AutoSize = true;
-            radioButton35.Checked = true;
-            radioButton35.Location = new Point(86, 6);
-            radioButton35.Name = "radioButton35";
-            radioButton35.Size = new Size(14, 13);
-            radioButton35.TabIndex = 3;
-            radioButton35.UseVisualStyleBackColor = true;
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Location = new Point(3, 0);
-            label34.Name = "label34";
-            label34.Size = new Size(76, 15);
-            label34.TabIndex = 0;
-            label34.Text = "Исполнение";
-            // 
-            // panel26
-            // 
-            panel26.Controls.Add(panel27);
-            panel26.Controls.Add(numericUpDown8);
-            panel26.Controls.Add(radioButton36);
-            panel26.Controls.Add(radioButton37);
-            panel26.Controls.Add(radioButton38);
-            panel26.Controls.Add(radioButton39);
-            panel26.Controls.Add(radioButton40);
-            panel26.Controls.Add(label36);
-            panel26.Location = new Point(3, 166);
-            panel26.Name = "panel26";
-            panel26.Size = new Size(227, 19);
-            panel26.TabIndex = 11;
-            // 
-            // panel27
-            // 
-            panel27.Controls.Add(label35);
-            panel27.Location = new Point(3, 18);
-            panel27.Name = "panel27";
-            panel27.Size = new Size(197, 19);
-            panel27.TabIndex = 2;
-            // 
-            // label35
-            // 
-            label35.AutoSize = true;
-            label35.Location = new Point(3, 0);
-            label35.Name = "label35";
-            label35.Size = new Size(58, 15);
-            label35.TabIndex = 0;
-            label35.Text = "Ловкость";
-            // 
-            // numericUpDown8
-            // 
-            numericUpDown8.Location = new Point(183, -2);
-            numericUpDown8.Name = "numericUpDown8";
-            numericUpDown8.Size = new Size(41, 23);
-            numericUpDown8.TabIndex = 8;
-            // 
-            // radioButton36
-            // 
-            radioButton36.AutoCheck = false;
-            radioButton36.AutoSize = true;
-            radioButton36.Location = new Point(166, 6);
-            radioButton36.Name = "radioButton36";
-            radioButton36.Size = new Size(14, 13);
-            radioButton36.TabIndex = 7;
-            radioButton36.UseVisualStyleBackColor = true;
-            // 
-            // radioButton37
-            // 
-            radioButton37.AutoCheck = false;
-            radioButton37.AutoSize = true;
-            radioButton37.Location = new Point(146, 6);
-            radioButton37.Name = "radioButton37";
-            radioButton37.Size = new Size(14, 13);
-            radioButton37.TabIndex = 6;
-            radioButton37.UseVisualStyleBackColor = true;
-            // 
-            // radioButton38
-            // 
-            radioButton38.AutoCheck = false;
-            radioButton38.AutoSize = true;
-            radioButton38.Location = new Point(126, 6);
-            radioButton38.Name = "radioButton38";
-            radioButton38.Size = new Size(14, 13);
-            radioButton38.TabIndex = 5;
-            radioButton38.UseVisualStyleBackColor = true;
-            // 
-            // radioButton39
-            // 
-            radioButton39.AutoCheck = false;
-            radioButton39.AutoSize = true;
-            radioButton39.Checked = true;
-            radioButton39.Location = new Point(106, 6);
-            radioButton39.Name = "radioButton39";
-            radioButton39.Size = new Size(14, 13);
-            radioButton39.TabIndex = 4;
-            radioButton39.TabStop = true;
-            radioButton39.UseVisualStyleBackColor = true;
-            // 
-            // radioButton40
-            // 
-            radioButton40.AutoCheck = false;
-            radioButton40.AutoSize = true;
-            radioButton40.Checked = true;
-            radioButton40.Location = new Point(86, 6);
-            radioButton40.Name = "radioButton40";
-            radioButton40.Size = new Size(14, 13);
-            radioButton40.TabIndex = 3;
-            radioButton40.UseVisualStyleBackColor = true;
-            // 
-            // label36
-            // 
-            label36.AutoSize = true;
-            label36.Location = new Point(3, 0);
-            label36.Name = "label36";
-            label36.Size = new Size(82, 15);
-            label36.TabIndex = 0;
-            label36.Text = "Безопасность";
-            // 
-            // panel28
-            // 
-            panel28.Controls.Add(panel29);
-            panel28.Controls.Add(numericUpDown9);
-            panel28.Controls.Add(radioButton41);
-            panel28.Controls.Add(radioButton42);
-            panel28.Controls.Add(radioButton43);
-            panel28.Controls.Add(radioButton44);
-            panel28.Controls.Add(radioButton45);
-            panel28.Controls.Add(label38);
-            panel28.Location = new Point(3, 187);
-            panel28.Name = "panel28";
-            panel28.Size = new Size(227, 19);
-            panel28.TabIndex = 12;
-            // 
-            // panel29
-            // 
-            panel29.Controls.Add(label37);
-            panel29.Location = new Point(3, 18);
-            panel29.Name = "panel29";
-            panel29.Size = new Size(197, 19);
-            panel29.TabIndex = 2;
-            // 
-            // label37
-            // 
-            label37.AutoSize = true;
-            label37.Location = new Point(3, 0);
-            label37.Name = "label37";
-            label37.Size = new Size(58, 15);
-            label37.TabIndex = 0;
-            label37.Text = "Ловкость";
-            // 
-            // numericUpDown9
-            // 
-            numericUpDown9.Location = new Point(183, -2);
-            numericUpDown9.Name = "numericUpDown9";
-            numericUpDown9.Size = new Size(41, 23);
-            numericUpDown9.TabIndex = 8;
-            // 
-            // radioButton41
-            // 
-            radioButton41.AutoCheck = false;
-            radioButton41.AutoSize = true;
-            radioButton41.Location = new Point(166, 6);
-            radioButton41.Name = "radioButton41";
-            radioButton41.Size = new Size(14, 13);
-            radioButton41.TabIndex = 7;
-            radioButton41.UseVisualStyleBackColor = true;
-            // 
-            // radioButton42
-            // 
-            radioButton42.AutoCheck = false;
-            radioButton42.AutoSize = true;
-            radioButton42.Location = new Point(146, 6);
-            radioButton42.Name = "radioButton42";
-            radioButton42.Size = new Size(14, 13);
-            radioButton42.TabIndex = 6;
-            radioButton42.UseVisualStyleBackColor = true;
-            // 
-            // radioButton43
-            // 
-            radioButton43.AutoCheck = false;
-            radioButton43.AutoSize = true;
-            radioButton43.Location = new Point(126, 6);
-            radioButton43.Name = "radioButton43";
-            radioButton43.Size = new Size(14, 13);
-            radioButton43.TabIndex = 5;
-            radioButton43.UseVisualStyleBackColor = true;
-            // 
-            // radioButton44
-            // 
-            radioButton44.AutoCheck = false;
-            radioButton44.AutoSize = true;
-            radioButton44.Checked = true;
-            radioButton44.Location = new Point(106, 6);
-            radioButton44.Name = "radioButton44";
-            radioButton44.Size = new Size(14, 13);
-            radioButton44.TabIndex = 4;
-            radioButton44.TabStop = true;
-            radioButton44.UseVisualStyleBackColor = true;
-            // 
-            // radioButton45
-            // 
-            radioButton45.AutoCheck = false;
-            radioButton45.AutoSize = true;
-            radioButton45.Checked = true;
-            radioButton45.Location = new Point(86, 6);
-            radioButton45.Name = "radioButton45";
-            radioButton45.Size = new Size(14, 13);
-            radioButton45.TabIndex = 3;
-            radioButton45.UseVisualStyleBackColor = true;
-            // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Location = new Point(3, 0);
-            label38.Name = "label38";
-            label38.Size = new Size(73, 15);
-            label38.TabIndex = 0;
-            label38.Text = "Скрытность";
-            // 
-            // panel30
-            // 
-            panel30.Controls.Add(panel31);
-            panel30.Controls.Add(numericUpDown10);
-            panel30.Controls.Add(radioButton46);
-            panel30.Controls.Add(radioButton47);
-            panel30.Controls.Add(radioButton48);
-            panel30.Controls.Add(radioButton49);
-            panel30.Controls.Add(radioButton50);
-            panel30.Controls.Add(label40);
-            panel30.Location = new Point(3, 208);
-            panel30.Name = "panel30";
-            panel30.Size = new Size(227, 19);
-            panel30.TabIndex = 13;
-            // 
-            // panel31
-            // 
-            panel31.Controls.Add(label39);
-            panel31.Location = new Point(3, 18);
-            panel31.Name = "panel31";
-            panel31.Size = new Size(197, 19);
-            panel31.TabIndex = 2;
-            // 
-            // label39
-            // 
-            label39.AutoSize = true;
-            label39.Location = new Point(3, 0);
-            label39.Name = "label39";
-            label39.Size = new Size(58, 15);
-            label39.TabIndex = 0;
-            label39.Text = "Ловкость";
-            // 
-            // numericUpDown10
-            // 
-            numericUpDown10.Location = new Point(183, -2);
-            numericUpDown10.Name = "numericUpDown10";
-            numericUpDown10.Size = new Size(41, 23);
-            numericUpDown10.TabIndex = 8;
-            // 
-            // radioButton46
-            // 
-            radioButton46.AutoCheck = false;
-            radioButton46.AutoSize = true;
-            radioButton46.Location = new Point(166, 6);
-            radioButton46.Name = "radioButton46";
-            radioButton46.Size = new Size(14, 13);
-            radioButton46.TabIndex = 7;
-            radioButton46.UseVisualStyleBackColor = true;
-            // 
-            // radioButton47
-            // 
-            radioButton47.AutoCheck = false;
-            radioButton47.AutoSize = true;
-            radioButton47.Location = new Point(146, 6);
-            radioButton47.Name = "radioButton47";
-            radioButton47.Size = new Size(14, 13);
-            radioButton47.TabIndex = 6;
-            radioButton47.UseVisualStyleBackColor = true;
-            // 
-            // radioButton48
-            // 
-            radioButton48.AutoCheck = false;
-            radioButton48.AutoSize = true;
-            radioButton48.Location = new Point(126, 6);
-            radioButton48.Name = "radioButton48";
-            radioButton48.Size = new Size(14, 13);
-            radioButton48.TabIndex = 5;
-            radioButton48.UseVisualStyleBackColor = true;
-            // 
-            // radioButton49
-            // 
-            radioButton49.AutoCheck = false;
-            radioButton49.AutoSize = true;
-            radioButton49.Checked = true;
-            radioButton49.Location = new Point(106, 6);
-            radioButton49.Name = "radioButton49";
-            radioButton49.Size = new Size(14, 13);
-            radioButton49.TabIndex = 4;
-            radioButton49.TabStop = true;
-            radioButton49.UseVisualStyleBackColor = true;
-            // 
-            // radioButton50
-            // 
-            radioButton50.AutoCheck = false;
-            radioButton50.AutoSize = true;
-            radioButton50.Checked = true;
-            radioButton50.Location = new Point(86, 6);
-            radioButton50.Name = "radioButton50";
-            radioButton50.Size = new Size(14, 13);
-            radioButton50.TabIndex = 3;
-            radioButton50.UseVisualStyleBackColor = true;
-            // 
-            // label40
-            // 
-            label40.AutoSize = true;
-            label40.Location = new Point(3, 0);
-            label40.Name = "label40";
-            label40.Size = new Size(71, 15);
-            label40.TabIndex = 0;
-            label40.Text = "Выживание";
-            // 
-            // panel32
-            // 
-            panel32.Controls.Add(panel33);
-            panel32.Controls.Add(panel35);
-            panel32.Controls.Add(panel37);
-            panel32.Controls.Add(panel39);
-            panel32.Controls.Add(panel41);
-            panel32.Controls.Add(panel43);
-            panel32.Controls.Add(panel45);
-            panel32.Controls.Add(panel47);
-            panel32.Controls.Add(panel49);
-            panel32.Controls.Add(panel51);
-            panel32.Controls.Add(label61);
-            panel32.Location = new Point(3, 21);
-            panel32.Name = "panel32";
-            panel32.Size = new Size(230, 231);
-            panel32.TabIndex = 14;
-            // 
-            // panel33
-            // 
-            panel33.Controls.Add(panel34);
-            panel33.Controls.Add(numericUpDown11);
-            panel33.Controls.Add(radioButton51);
-            panel33.Controls.Add(radioButton52);
-            panel33.Controls.Add(radioButton53);
-            panel33.Controls.Add(radioButton54);
-            panel33.Controls.Add(radioButton55);
-            panel33.Controls.Add(label42);
-            panel33.Location = new Point(3, 208);
-            panel33.Name = "panel33";
-            panel33.Size = new Size(227, 19);
-            panel33.TabIndex = 13;
-            // 
-            // panel34
-            // 
-            panel34.Controls.Add(label41);
-            panel34.Location = new Point(3, 18);
-            panel34.Name = "panel34";
-            panel34.Size = new Size(197, 19);
-            panel34.TabIndex = 2;
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Location = new Point(3, 0);
-            label41.Name = "label41";
-            label41.Size = new Size(58, 15);
-            label41.TabIndex = 0;
-            label41.Text = "Ловкость";
-            // 
-            // numericUpDown11
-            // 
-            numericUpDown11.Location = new Point(183, -2);
-            numericUpDown11.Name = "numericUpDown11";
-            numericUpDown11.Size = new Size(41, 23);
-            numericUpDown11.TabIndex = 8;
-            // 
-            // radioButton51
-            // 
-            radioButton51.AutoCheck = false;
-            radioButton51.AutoSize = true;
-            radioButton51.Location = new Point(166, 6);
-            radioButton51.Name = "radioButton51";
-            radioButton51.Size = new Size(14, 13);
-            radioButton51.TabIndex = 7;
-            radioButton51.UseVisualStyleBackColor = true;
-            // 
-            // radioButton52
-            // 
-            radioButton52.AutoCheck = false;
-            radioButton52.AutoSize = true;
-            radioButton52.Location = new Point(146, 6);
-            radioButton52.Name = "radioButton52";
-            radioButton52.Size = new Size(14, 13);
-            radioButton52.TabIndex = 6;
-            radioButton52.UseVisualStyleBackColor = true;
-            // 
-            // radioButton53
-            // 
-            radioButton53.AutoCheck = false;
-            radioButton53.AutoSize = true;
-            radioButton53.Location = new Point(126, 6);
-            radioButton53.Name = "radioButton53";
-            radioButton53.Size = new Size(14, 13);
-            radioButton53.TabIndex = 5;
-            radioButton53.UseVisualStyleBackColor = true;
-            // 
-            // radioButton54
-            // 
-            radioButton54.AutoCheck = false;
-            radioButton54.AutoSize = true;
-            radioButton54.Checked = true;
-            radioButton54.Location = new Point(106, 6);
-            radioButton54.Name = "radioButton54";
-            radioButton54.Size = new Size(14, 13);
-            radioButton54.TabIndex = 4;
-            radioButton54.TabStop = true;
-            radioButton54.UseVisualStyleBackColor = true;
-            // 
-            // radioButton55
-            // 
-            radioButton55.AutoCheck = false;
-            radioButton55.AutoSize = true;
-            radioButton55.Checked = true;
-            radioButton55.Location = new Point(86, 6);
-            radioButton55.Name = "radioButton55";
-            radioButton55.Size = new Size(14, 13);
-            radioButton55.TabIndex = 3;
-            radioButton55.UseVisualStyleBackColor = true;
-            // 
-            // label42
-            // 
-            label42.AutoSize = true;
-            label42.Location = new Point(3, 0);
-            label42.Name = "label42";
-            label42.Size = new Size(57, 15);
-            label42.TabIndex = 0;
-            label42.Text = "Хитрость";
-            // 
-            // panel35
-            // 
-            panel35.Controls.Add(panel36);
-            panel35.Controls.Add(numericUpDown12);
-            panel35.Controls.Add(radioButton56);
-            panel35.Controls.Add(radioButton57);
-            panel35.Controls.Add(radioButton58);
-            panel35.Controls.Add(radioButton59);
-            panel35.Controls.Add(radioButton60);
-            panel35.Controls.Add(label44);
-            panel35.Location = new Point(3, 187);
-            panel35.Name = "panel35";
-            panel35.Size = new Size(227, 19);
-            panel35.TabIndex = 12;
-            // 
-            // panel36
-            // 
-            panel36.Controls.Add(label43);
-            panel36.Location = new Point(3, 18);
-            panel36.Name = "panel36";
-            panel36.Size = new Size(197, 19);
-            panel36.TabIndex = 2;
-            // 
-            // label43
-            // 
-            label43.AutoSize = true;
-            label43.Location = new Point(3, 0);
-            label43.Name = "label43";
-            label43.Size = new Size(58, 15);
-            label43.TabIndex = 0;
-            label43.Text = "Ловкость";
-            // 
-            // numericUpDown12
-            // 
-            numericUpDown12.Location = new Point(183, -2);
-            numericUpDown12.Name = "numericUpDown12";
-            numericUpDown12.Size = new Size(41, 23);
-            numericUpDown12.TabIndex = 8;
-            // 
-            // radioButton56
-            // 
-            radioButton56.AutoCheck = false;
-            radioButton56.AutoSize = true;
-            radioButton56.Location = new Point(166, 6);
-            radioButton56.Name = "radioButton56";
-            radioButton56.Size = new Size(14, 13);
-            radioButton56.TabIndex = 7;
-            radioButton56.UseVisualStyleBackColor = true;
-            // 
-            // radioButton57
-            // 
-            radioButton57.AutoCheck = false;
-            radioButton57.AutoSize = true;
-            radioButton57.Location = new Point(146, 6);
-            radioButton57.Name = "radioButton57";
-            radioButton57.Size = new Size(14, 13);
-            radioButton57.TabIndex = 6;
-            radioButton57.UseVisualStyleBackColor = true;
-            // 
-            // radioButton58
-            // 
-            radioButton58.AutoCheck = false;
-            radioButton58.AutoSize = true;
-            radioButton58.Location = new Point(126, 6);
-            radioButton58.Name = "radioButton58";
-            radioButton58.Size = new Size(14, 13);
-            radioButton58.TabIndex = 5;
-            radioButton58.UseVisualStyleBackColor = true;
-            // 
-            // radioButton59
-            // 
-            radioButton59.AutoCheck = false;
-            radioButton59.AutoSize = true;
-            radioButton59.Checked = true;
-            radioButton59.Location = new Point(106, 6);
-            radioButton59.Name = "radioButton59";
-            radioButton59.Size = new Size(14, 13);
-            radioButton59.TabIndex = 4;
-            radioButton59.TabStop = true;
-            radioButton59.UseVisualStyleBackColor = true;
-            // 
-            // radioButton60
-            // 
-            radioButton60.AutoCheck = false;
-            radioButton60.AutoSize = true;
-            radioButton60.Checked = true;
-            radioButton60.Location = new Point(86, 6);
-            radioButton60.Name = "radioButton60";
-            radioButton60.Size = new Size(14, 13);
-            radioButton60.TabIndex = 3;
-            radioButton60.UseVisualStyleBackColor = true;
-            // 
-            // label44
-            // 
-            label44.AutoSize = true;
-            label44.Font = new Font("Segoe UI", 6F);
-            label44.Location = new Point(3, 5);
-            label44.Name = "label44";
-            label44.Size = new Size(73, 11);
-            label44.TabIndex = 0;
-            label44.Text = "Уличные порядки";
-            // 
-            // panel37
-            // 
-            panel37.Controls.Add(panel38);
-            panel37.Controls.Add(numericUpDown13);
-            panel37.Controls.Add(radioButton61);
-            panel37.Controls.Add(radioButton62);
-            panel37.Controls.Add(radioButton63);
-            panel37.Controls.Add(radioButton64);
-            panel37.Controls.Add(radioButton65);
-            panel37.Controls.Add(label46);
-            panel37.Location = new Point(3, 166);
-            panel37.Name = "panel37";
-            panel37.Size = new Size(227, 19);
-            panel37.TabIndex = 11;
-            // 
-            // panel38
-            // 
-            panel38.Controls.Add(label45);
-            panel38.Location = new Point(3, 18);
-            panel38.Name = "panel38";
-            panel38.Size = new Size(197, 19);
-            panel38.TabIndex = 2;
-            // 
-            // label45
-            // 
-            label45.AutoSize = true;
-            label45.Location = new Point(3, 0);
-            label45.Name = "label45";
-            label45.Size = new Size(58, 15);
-            label45.TabIndex = 0;
-            label45.Text = "Ловкость";
-            // 
-            // numericUpDown13
-            // 
-            numericUpDown13.Location = new Point(183, -2);
-            numericUpDown13.Name = "numericUpDown13";
-            numericUpDown13.Size = new Size(41, 23);
-            numericUpDown13.TabIndex = 8;
-            // 
-            // radioButton61
-            // 
-            radioButton61.AutoCheck = false;
-            radioButton61.AutoSize = true;
-            radioButton61.Location = new Point(166, 6);
-            radioButton61.Name = "radioButton61";
-            radioButton61.Size = new Size(14, 13);
-            radioButton61.TabIndex = 7;
-            radioButton61.UseVisualStyleBackColor = true;
-            // 
-            // radioButton62
-            // 
-            radioButton62.AutoCheck = false;
-            radioButton62.AutoSize = true;
-            radioButton62.Location = new Point(146, 6);
-            radioButton62.Name = "radioButton62";
-            radioButton62.Size = new Size(14, 13);
-            radioButton62.TabIndex = 6;
-            radioButton62.UseVisualStyleBackColor = true;
-            // 
-            // radioButton63
-            // 
-            radioButton63.AutoCheck = false;
-            radioButton63.AutoSize = true;
-            radioButton63.Location = new Point(126, 6);
-            radioButton63.Name = "radioButton63";
-            radioButton63.Size = new Size(14, 13);
-            radioButton63.TabIndex = 5;
-            radioButton63.UseVisualStyleBackColor = true;
-            // 
-            // radioButton64
-            // 
-            radioButton64.AutoCheck = false;
-            radioButton64.AutoSize = true;
-            radioButton64.Checked = true;
-            radioButton64.Location = new Point(106, 6);
-            radioButton64.Name = "radioButton64";
-            radioButton64.Size = new Size(14, 13);
-            radioButton64.TabIndex = 4;
-            radioButton64.TabStop = true;
-            radioButton64.UseVisualStyleBackColor = true;
-            // 
-            // radioButton65
-            // 
-            radioButton65.AutoCheck = false;
-            radioButton65.AutoSize = true;
-            radioButton65.Checked = true;
-            radioButton65.Location = new Point(86, 6);
-            radioButton65.Name = "radioButton65";
-            radioButton65.Size = new Size(14, 13);
-            radioButton65.TabIndex = 3;
-            radioButton65.UseVisualStyleBackColor = true;
-            // 
-            // label46
-            // 
-            label46.AutoSize = true;
-            label46.Location = new Point(3, 0);
-            label46.Name = "label46";
-            label46.Size = new Size(65, 15);
-            label46.TabIndex = 0;
-            label46.Text = "Лидерство";
-            // 
-            // panel39
-            // 
-            panel39.Controls.Add(panel40);
-            panel39.Controls.Add(numericUpDown14);
-            panel39.Controls.Add(radioButton66);
-            panel39.Controls.Add(radioButton67);
-            panel39.Controls.Add(radioButton68);
-            panel39.Controls.Add(radioButton69);
-            panel39.Controls.Add(radioButton70);
-            panel39.Controls.Add(label48);
-            panel39.Location = new Point(3, 145);
-            panel39.Name = "panel39";
-            panel39.Size = new Size(227, 19);
-            panel39.TabIndex = 10;
-            // 
-            // panel40
-            // 
-            panel40.Controls.Add(label47);
-            panel40.Location = new Point(3, 18);
-            panel40.Name = "panel40";
-            panel40.Size = new Size(197, 19);
-            panel40.TabIndex = 2;
-            // 
-            // label47
-            // 
-            label47.AutoSize = true;
-            label47.Location = new Point(3, 0);
-            label47.Name = "label47";
-            label47.Size = new Size(58, 15);
-            label47.TabIndex = 0;
-            label47.Text = "Ловкость";
-            // 
-            // numericUpDown14
-            // 
-            numericUpDown14.Location = new Point(183, -2);
-            numericUpDown14.Name = "numericUpDown14";
-            numericUpDown14.Size = new Size(41, 23);
-            numericUpDown14.TabIndex = 8;
-            // 
-            // radioButton66
-            // 
-            radioButton66.AutoCheck = false;
-            radioButton66.AutoSize = true;
-            radioButton66.Location = new Point(166, 6);
-            radioButton66.Name = "radioButton66";
-            radioButton66.Size = new Size(14, 13);
-            radioButton66.TabIndex = 7;
-            radioButton66.UseVisualStyleBackColor = true;
-            // 
-            // radioButton67
-            // 
-            radioButton67.AutoCheck = false;
-            radioButton67.AutoSize = true;
-            radioButton67.Location = new Point(146, 6);
-            radioButton67.Name = "radioButton67";
-            radioButton67.Size = new Size(14, 13);
-            radioButton67.TabIndex = 6;
-            radioButton67.UseVisualStyleBackColor = true;
-            // 
-            // radioButton68
-            // 
-            radioButton68.AutoCheck = false;
-            radioButton68.AutoSize = true;
-            radioButton68.Location = new Point(126, 6);
-            radioButton68.Name = "radioButton68";
-            radioButton68.Size = new Size(14, 13);
-            radioButton68.TabIndex = 5;
-            radioButton68.UseVisualStyleBackColor = true;
-            // 
-            // radioButton69
-            // 
-            radioButton69.AutoCheck = false;
-            radioButton69.AutoSize = true;
-            radioButton69.Checked = true;
-            radioButton69.Location = new Point(106, 6);
-            radioButton69.Name = "radioButton69";
-            radioButton69.Size = new Size(14, 13);
-            radioButton69.TabIndex = 4;
-            radioButton69.TabStop = true;
-            radioButton69.UseVisualStyleBackColor = true;
-            // 
-            // radioButton70
-            // 
-            radioButton70.AutoCheck = false;
-            radioButton70.AutoSize = true;
-            radioButton70.Checked = true;
-            radioButton70.Location = new Point(86, 6);
-            radioButton70.Name = "radioButton70";
-            radioButton70.Size = new Size(14, 13);
-            radioButton70.TabIndex = 3;
-            radioButton70.UseVisualStyleBackColor = true;
-            // 
-            // label48
-            // 
-            label48.AutoSize = true;
-            label48.Location = new Point(3, 0);
-            label48.Name = "label48";
-            label48.Size = new Size(77, 15);
-            label48.TabIndex = 0;
-            label48.Text = "Запугивание";
-            // 
-            // panel41
-            // 
-            panel41.Controls.Add(panel42);
-            panel41.Controls.Add(numericUpDown15);
-            panel41.Controls.Add(radioButton71);
-            panel41.Controls.Add(radioButton72);
-            panel41.Controls.Add(radioButton73);
-            panel41.Controls.Add(radioButton74);
-            panel41.Controls.Add(radioButton75);
-            panel41.Controls.Add(label50);
-            panel41.Location = new Point(3, 124);
-            panel41.Name = "panel41";
-            panel41.Size = new Size(227, 19);
-            panel41.TabIndex = 11;
-            // 
-            // panel42
-            // 
-            panel42.Controls.Add(label49);
-            panel42.Location = new Point(3, 18);
-            panel42.Name = "panel42";
-            panel42.Size = new Size(197, 19);
-            panel42.TabIndex = 2;
-            // 
-            // label49
-            // 
-            label49.AutoSize = true;
-            label49.Location = new Point(3, 0);
-            label49.Name = "label49";
-            label49.Size = new Size(58, 15);
-            label49.TabIndex = 0;
-            label49.Text = "Ловкость";
-            // 
-            // numericUpDown15
-            // 
-            numericUpDown15.Location = new Point(183, -2);
-            numericUpDown15.Name = "numericUpDown15";
-            numericUpDown15.Size = new Size(41, 23);
-            numericUpDown15.TabIndex = 8;
-            // 
-            // radioButton71
-            // 
-            radioButton71.AutoCheck = false;
-            radioButton71.AutoSize = true;
-            radioButton71.Checked = true;
-            radioButton71.Location = new Point(166, 6);
-            radioButton71.Name = "radioButton71";
-            radioButton71.Size = new Size(14, 13);
-            radioButton71.TabIndex = 7;
-            radioButton71.TabStop = true;
-            radioButton71.UseVisualStyleBackColor = true;
-            // 
-            // radioButton72
-            // 
-            radioButton72.AutoCheck = false;
-            radioButton72.AutoSize = true;
-            radioButton72.Checked = true;
-            radioButton72.Location = new Point(146, 6);
-            radioButton72.Name = "radioButton72";
-            radioButton72.Size = new Size(14, 13);
-            radioButton72.TabIndex = 6;
-            radioButton72.UseVisualStyleBackColor = true;
-            // 
-            // radioButton73
-            // 
-            radioButton73.AutoCheck = false;
-            radioButton73.AutoSize = true;
-            radioButton73.Checked = true;
-            radioButton73.Location = new Point(126, 6);
-            radioButton73.Name = "radioButton73";
-            radioButton73.Size = new Size(14, 13);
-            radioButton73.TabIndex = 5;
-            radioButton73.UseVisualStyleBackColor = true;
-            // 
-            // radioButton74
-            // 
-            radioButton74.AutoCheck = false;
-            radioButton74.AutoSize = true;
-            radioButton74.Checked = true;
-            radioButton74.Location = new Point(106, 6);
-            radioButton74.Name = "radioButton74";
-            radioButton74.Size = new Size(14, 13);
-            radioButton74.TabIndex = 4;
-            radioButton74.UseVisualStyleBackColor = true;
-            // 
-            // radioButton75
-            // 
-            radioButton75.AutoCheck = false;
-            radioButton75.AutoSize = true;
-            radioButton75.Checked = true;
-            radioButton75.Location = new Point(86, 6);
-            radioButton75.Name = "radioButton75";
-            radioButton75.Size = new Size(14, 13);
-            radioButton75.TabIndex = 3;
-            radioButton75.UseVisualStyleBackColor = true;
-            // 
-            // label50
-            // 
-            label50.AutoSize = true;
-            label50.Location = new Point(3, 0);
-            label50.Name = "label50";
-            label50.Size = new Size(80, 15);
-            label50.TabIndex = 0;
-            label50.Text = "Красноречие";
-            // 
-            // panel43
-            // 
-            panel43.Controls.Add(panel44);
-            panel43.Controls.Add(numericUpDown16);
-            panel43.Controls.Add(radioButton76);
-            panel43.Controls.Add(radioButton77);
-            panel43.Controls.Add(radioButton78);
-            panel43.Controls.Add(radioButton79);
-            panel43.Controls.Add(radioButton80);
-            panel43.Controls.Add(label52);
-            panel43.Location = new Point(3, 103);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(227, 19);
-            panel43.TabIndex = 10;
-            // 
-            // panel44
-            // 
-            panel44.Controls.Add(label51);
-            panel44.Location = new Point(3, 18);
-            panel44.Name = "panel44";
-            panel44.Size = new Size(197, 19);
-            panel44.TabIndex = 2;
-            // 
-            // label51
-            // 
-            label51.AutoSize = true;
-            label51.Location = new Point(3, 0);
-            label51.Name = "label51";
-            label51.Size = new Size(58, 15);
-            label51.TabIndex = 0;
-            label51.Text = "Ловкость";
-            // 
-            // numericUpDown16
-            // 
-            numericUpDown16.Location = new Point(183, -2);
-            numericUpDown16.Name = "numericUpDown16";
-            numericUpDown16.Size = new Size(41, 23);
-            numericUpDown16.TabIndex = 8;
-            // 
-            // radioButton76
-            // 
-            radioButton76.AutoCheck = false;
-            radioButton76.AutoSize = true;
-            radioButton76.Checked = true;
-            radioButton76.Location = new Point(166, 6);
-            radioButton76.Name = "radioButton76";
-            radioButton76.Size = new Size(14, 13);
-            radioButton76.TabIndex = 7;
-            radioButton76.TabStop = true;
-            radioButton76.UseVisualStyleBackColor = true;
-            // 
-            // radioButton77
-            // 
-            radioButton77.AutoCheck = false;
-            radioButton77.AutoSize = true;
-            radioButton77.Checked = true;
-            radioButton77.Location = new Point(146, 6);
-            radioButton77.Name = "radioButton77";
-            radioButton77.Size = new Size(14, 13);
-            radioButton77.TabIndex = 6;
-            radioButton77.UseVisualStyleBackColor = true;
-            // 
-            // radioButton78
-            // 
-            radioButton78.AutoCheck = false;
-            radioButton78.AutoSize = true;
-            radioButton78.Checked = true;
-            radioButton78.Location = new Point(126, 6);
-            radioButton78.Name = "radioButton78";
-            radioButton78.Size = new Size(14, 13);
-            radioButton78.TabIndex = 5;
-            radioButton78.UseVisualStyleBackColor = true;
-            // 
-            // radioButton79
-            // 
-            radioButton79.AutoCheck = false;
-            radioButton79.AutoSize = true;
-            radioButton79.Checked = true;
-            radioButton79.Location = new Point(106, 6);
-            radioButton79.Name = "radioButton79";
-            radioButton79.Size = new Size(14, 13);
-            radioButton79.TabIndex = 4;
-            radioButton79.UseVisualStyleBackColor = true;
-            // 
-            // radioButton80
-            // 
-            radioButton80.AutoCheck = false;
-            radioButton80.AutoSize = true;
-            radioButton80.Checked = true;
-            radioButton80.Location = new Point(86, 6);
-            radioButton80.Name = "radioButton80";
-            radioButton80.Size = new Size(14, 13);
-            radioButton80.TabIndex = 3;
-            radioButton80.UseVisualStyleBackColor = true;
-            // 
-            // label52
-            // 
-            label52.AutoSize = true;
-            label52.Location = new Point(3, 0);
-            label52.Name = "label52";
-            label52.Size = new Size(54, 15);
-            label52.TabIndex = 0;
-            label52.Text = "Эмпатия";
-            // 
-            // panel45
-            // 
-            panel45.Controls.Add(panel46);
-            panel45.Controls.Add(numericUpDown17);
-            panel45.Controls.Add(radioButton81);
-            panel45.Controls.Add(radioButton82);
-            panel45.Controls.Add(radioButton83);
-            panel45.Controls.Add(radioButton84);
-            panel45.Controls.Add(radioButton85);
-            panel45.Controls.Add(label54);
-            panel45.Location = new Point(3, 82);
-            panel45.Name = "panel45";
-            panel45.Size = new Size(227, 19);
-            panel45.TabIndex = 9;
-            // 
-            // panel46
-            // 
-            panel46.Controls.Add(label53);
-            panel46.Location = new Point(3, 18);
-            panel46.Name = "panel46";
-            panel46.Size = new Size(197, 19);
-            panel46.TabIndex = 2;
-            // 
-            // label53
-            // 
-            label53.AutoSize = true;
-            label53.Location = new Point(3, 0);
-            label53.Name = "label53";
-            label53.Size = new Size(58, 15);
-            label53.TabIndex = 0;
-            label53.Text = "Ловкость";
-            // 
-            // numericUpDown17
-            // 
-            numericUpDown17.Location = new Point(183, -2);
-            numericUpDown17.Name = "numericUpDown17";
-            numericUpDown17.Size = new Size(41, 23);
-            numericUpDown17.TabIndex = 8;
-            // 
-            // radioButton81
-            // 
-            radioButton81.AutoCheck = false;
-            radioButton81.AutoSize = true;
-            radioButton81.Checked = true;
-            radioButton81.Location = new Point(166, 6);
-            radioButton81.Name = "radioButton81";
-            radioButton81.Size = new Size(14, 13);
-            radioButton81.TabIndex = 7;
-            radioButton81.TabStop = true;
-            radioButton81.UseVisualStyleBackColor = true;
-            // 
-            // radioButton82
-            // 
-            radioButton82.AutoCheck = false;
-            radioButton82.AutoSize = true;
-            radioButton82.Checked = true;
-            radioButton82.Location = new Point(146, 6);
-            radioButton82.Name = "radioButton82";
-            radioButton82.Size = new Size(14, 13);
-            radioButton82.TabIndex = 6;
-            radioButton82.UseVisualStyleBackColor = true;
-            // 
-            // radioButton83
-            // 
-            radioButton83.AutoCheck = false;
-            radioButton83.AutoSize = true;
-            radioButton83.Checked = true;
-            radioButton83.Location = new Point(126, 6);
-            radioButton83.Name = "radioButton83";
-            radioButton83.Size = new Size(14, 13);
-            radioButton83.TabIndex = 5;
-            radioButton83.UseVisualStyleBackColor = true;
-            // 
-            // radioButton84
-            // 
-            radioButton84.AutoCheck = false;
-            radioButton84.AutoSize = true;
-            radioButton84.Checked = true;
-            radioButton84.Location = new Point(106, 6);
-            radioButton84.Name = "radioButton84";
-            radioButton84.Size = new Size(14, 13);
-            radioButton84.TabIndex = 4;
-            radioButton84.UseVisualStyleBackColor = true;
-            // 
-            // radioButton85
-            // 
-            radioButton85.AutoCheck = false;
-            radioButton85.AutoSize = true;
-            radioButton85.Checked = true;
-            radioButton85.Location = new Point(86, 6);
-            radioButton85.Name = "radioButton85";
-            radioButton85.Size = new Size(14, 13);
-            radioButton85.TabIndex = 3;
-            radioButton85.UseVisualStyleBackColor = true;
-            // 
-            // label54
-            // 
-            label54.AutoSize = true;
-            label54.Location = new Point(3, 0);
-            label54.Name = "label54";
-            label54.Size = new Size(67, 15);
-            label54.TabIndex = 0;
-            label54.Text = "Уклонение";
-            // 
-            // panel47
-            // 
-            panel47.Controls.Add(panel48);
-            panel47.Controls.Add(numericUpDown18);
-            panel47.Controls.Add(radioButton86);
-            panel47.Controls.Add(radioButton87);
-            panel47.Controls.Add(radioButton88);
-            panel47.Controls.Add(radioButton89);
-            panel47.Controls.Add(radioButton90);
-            panel47.Controls.Add(label56);
-            panel47.Location = new Point(3, 61);
-            panel47.Name = "panel47";
-            panel47.Size = new Size(227, 19);
-            panel47.TabIndex = 10;
-            // 
-            // panel48
-            // 
-            panel48.Controls.Add(label55);
-            panel48.Location = new Point(3, 18);
-            panel48.Name = "panel48";
-            panel48.Size = new Size(197, 19);
-            panel48.TabIndex = 2;
-            // 
-            // label55
-            // 
-            label55.AutoSize = true;
-            label55.Location = new Point(3, 0);
-            label55.Name = "label55";
-            label55.Size = new Size(58, 15);
-            label55.TabIndex = 0;
-            label55.Text = "Ловкость";
-            // 
-            // numericUpDown18
-            // 
-            numericUpDown18.Location = new Point(183, -2);
-            numericUpDown18.Name = "numericUpDown18";
-            numericUpDown18.Size = new Size(41, 23);
-            numericUpDown18.TabIndex = 8;
-            // 
-            // radioButton86
-            // 
-            radioButton86.AutoCheck = false;
-            radioButton86.AutoSize = true;
-            radioButton86.Checked = true;
-            radioButton86.Location = new Point(166, 6);
-            radioButton86.Name = "radioButton86";
-            radioButton86.Size = new Size(14, 13);
-            radioButton86.TabIndex = 7;
-            radioButton86.TabStop = true;
-            radioButton86.UseVisualStyleBackColor = true;
-            // 
-            // radioButton87
-            // 
-            radioButton87.AutoCheck = false;
-            radioButton87.AutoSize = true;
-            radioButton87.Checked = true;
-            radioButton87.Location = new Point(146, 6);
-            radioButton87.Name = "radioButton87";
-            radioButton87.Size = new Size(14, 13);
-            radioButton87.TabIndex = 6;
-            radioButton87.TabStop = true;
-            radioButton87.UseVisualStyleBackColor = true;
-            // 
-            // radioButton88
-            // 
-            radioButton88.AutoCheck = false;
-            radioButton88.AutoSize = true;
-            radioButton88.Checked = true;
-            radioButton88.Location = new Point(126, 6);
-            radioButton88.Name = "radioButton88";
-            radioButton88.Size = new Size(14, 13);
-            radioButton88.TabIndex = 5;
-            radioButton88.TabStop = true;
-            radioButton88.UseVisualStyleBackColor = true;
-            // 
-            // radioButton89
-            // 
-            radioButton89.AutoCheck = false;
-            radioButton89.AutoSize = true;
-            radioButton89.Checked = true;
-            radioButton89.Location = new Point(106, 6);
-            radioButton89.Name = "radioButton89";
-            radioButton89.Size = new Size(14, 13);
-            radioButton89.TabIndex = 4;
-            radioButton89.TabStop = true;
-            radioButton89.UseVisualStyleBackColor = true;
-            // 
-            // radioButton90
-            // 
-            radioButton90.AutoCheck = false;
-            radioButton90.AutoSize = true;
-            radioButton90.Checked = true;
-            radioButton90.Location = new Point(86, 6);
-            radioButton90.Name = "radioButton90";
-            radioButton90.Size = new Size(14, 13);
-            radioButton90.TabIndex = 3;
-            radioButton90.TabStop = true;
-            radioButton90.UseVisualStyleBackColor = true;
-            // 
-            // label56
-            // 
-            label56.AutoSize = true;
-            label56.Font = new Font("Segoe UI", 7F);
-            label56.Location = new Point(3, 0);
-            label56.Name = "label56";
-            label56.Size = new Size(86, 12);
-            label56.TabIndex = 0;
-            label56.Text = "Рукопашный бой";
-            label56.Click += label56_Click;
-            // 
-            // panel49
-            // 
-            panel49.Controls.Add(panel50);
-            panel49.Controls.Add(numericUpDown19);
-            panel49.Controls.Add(radioButton91);
-            panel49.Controls.Add(radioButton92);
-            panel49.Controls.Add(radioButton93);
-            panel49.Controls.Add(radioButton94);
-            panel49.Controls.Add(radioButton95);
-            panel49.Controls.Add(label58);
-            panel49.Location = new Point(3, 39);
-            panel49.Name = "panel49";
-            panel49.Size = new Size(227, 19);
-            panel49.TabIndex = 9;
-            // 
-            // panel50
-            // 
-            panel50.Controls.Add(label57);
-            panel50.Location = new Point(3, 18);
-            panel50.Name = "panel50";
-            panel50.Size = new Size(197, 19);
-            panel50.TabIndex = 2;
-            // 
-            // label57
-            // 
-            label57.AutoSize = true;
-            label57.Location = new Point(3, 0);
-            label57.Name = "label57";
-            label57.Size = new Size(58, 15);
-            label57.TabIndex = 0;
-            label57.Text = "Ловкость";
-            // 
-            // numericUpDown19
-            // 
-            numericUpDown19.Location = new Point(183, -2);
-            numericUpDown19.Name = "numericUpDown19";
-            numericUpDown19.Size = new Size(41, 23);
-            numericUpDown19.TabIndex = 8;
-            // 
-            // radioButton91
-            // 
-            radioButton91.AutoCheck = false;
-            radioButton91.AutoSize = true;
-            radioButton91.Location = new Point(166, 6);
-            radioButton91.Name = "radioButton91";
-            radioButton91.Size = new Size(14, 13);
-            radioButton91.TabIndex = 7;
-            radioButton91.UseVisualStyleBackColor = true;
-            // 
-            // radioButton92
-            // 
-            radioButton92.AutoCheck = false;
-            radioButton92.AutoSize = true;
-            radioButton92.Location = new Point(146, 6);
-            radioButton92.Name = "radioButton92";
-            radioButton92.Size = new Size(14, 13);
-            radioButton92.TabIndex = 6;
-            radioButton92.UseVisualStyleBackColor = true;
-            // 
-            // radioButton93
-            // 
-            radioButton93.AutoCheck = false;
-            radioButton93.AutoSize = true;
-            radioButton93.Location = new Point(126, 6);
-            radioButton93.Name = "radioButton93";
-            radioButton93.Size = new Size(14, 13);
-            radioButton93.TabIndex = 5;
-            radioButton93.UseVisualStyleBackColor = true;
-            // 
-            // radioButton94
-            // 
-            radioButton94.AutoCheck = false;
-            radioButton94.AutoSize = true;
-            radioButton94.Checked = true;
-            radioButton94.Location = new Point(106, 6);
-            radioButton94.Name = "radioButton94";
-            radioButton94.Size = new Size(14, 13);
-            radioButton94.TabIndex = 4;
-            radioButton94.TabStop = true;
-            radioButton94.UseVisualStyleBackColor = true;
-            // 
-            // radioButton95
-            // 
-            radioButton95.AutoCheck = false;
-            radioButton95.AutoSize = true;
-            radioButton95.Checked = true;
-            radioButton95.Location = new Point(86, 6);
-            radioButton95.Name = "radioButton95";
-            radioButton95.Size = new Size(14, 13);
-            radioButton95.TabIndex = 3;
-            radioButton95.UseVisualStyleBackColor = true;
-            // 
-            // label58
-            // 
-            label58.AutoSize = true;
-            label58.Location = new Point(3, 0);
-            label58.Name = "label58";
-            label58.Size = new Size(57, 15);
-            label58.TabIndex = 0;
-            label58.Text = "Атлетика";
-            // 
-            // panel51
-            // 
-            panel51.Controls.Add(panel52);
-            panel51.Controls.Add(numericUpDown20);
-            panel51.Controls.Add(radioButton96);
-            panel51.Controls.Add(radioButton97);
-            panel51.Controls.Add(radioButton98);
-            panel51.Controls.Add(radioButton99);
-            panel51.Controls.Add(radioButton100);
-            panel51.Controls.Add(label60);
-            panel51.Location = new Point(3, 18);
-            panel51.Name = "panel51";
-            panel51.Size = new Size(227, 19);
-            panel51.TabIndex = 1;
-            // 
-            // panel52
-            // 
-            panel52.Controls.Add(label59);
-            panel52.Location = new Point(3, 18);
-            panel52.Name = "panel52";
-            panel52.Size = new Size(197, 19);
-            panel52.TabIndex = 2;
-            // 
-            // label59
-            // 
-            label59.AutoSize = true;
-            label59.Location = new Point(3, 0);
-            label59.Name = "label59";
-            label59.Size = new Size(58, 15);
-            label59.TabIndex = 0;
-            label59.Text = "Ловкость";
-            // 
-            // numericUpDown20
-            // 
-            numericUpDown20.Location = new Point(183, -2);
-            numericUpDown20.Name = "numericUpDown20";
-            numericUpDown20.Size = new Size(41, 23);
-            numericUpDown20.TabIndex = 8;
-            // 
-            // radioButton96
-            // 
-            radioButton96.AutoCheck = false;
-            radioButton96.AutoSize = true;
-            radioButton96.Checked = true;
-            radioButton96.Location = new Point(166, 6);
-            radioButton96.Name = "radioButton96";
-            radioButton96.Size = new Size(14, 13);
-            radioButton96.TabIndex = 7;
-            radioButton96.TabStop = true;
-            radioButton96.UseVisualStyleBackColor = true;
-            // 
-            // radioButton97
-            // 
-            radioButton97.AutoCheck = false;
-            radioButton97.AutoSize = true;
-            radioButton97.Checked = true;
-            radioButton97.Location = new Point(146, 6);
-            radioButton97.Name = "radioButton97";
-            radioButton97.Size = new Size(14, 13);
-            radioButton97.TabIndex = 6;
-            radioButton97.UseVisualStyleBackColor = true;
-            // 
-            // radioButton98
-            // 
-            radioButton98.AutoCheck = false;
-            radioButton98.AutoSize = true;
-            radioButton98.Checked = true;
-            radioButton98.Location = new Point(126, 6);
-            radioButton98.Name = "radioButton98";
-            radioButton98.Size = new Size(14, 13);
-            radioButton98.TabIndex = 5;
-            radioButton98.UseVisualStyleBackColor = true;
-            // 
-            // radioButton99
-            // 
-            radioButton99.AutoCheck = false;
-            radioButton99.AutoSize = true;
-            radioButton99.Checked = true;
-            radioButton99.Location = new Point(106, 6);
-            radioButton99.Name = "radioButton99";
-            radioButton99.Size = new Size(14, 13);
-            radioButton99.TabIndex = 4;
-            radioButton99.UseVisualStyleBackColor = true;
-            // 
-            // radioButton100
-            // 
-            radioButton100.AutoCheck = false;
-            radioButton100.AutoSize = true;
-            radioButton100.Checked = true;
-            radioButton100.Location = new Point(86, 6);
-            radioButton100.Name = "radioButton100";
-            radioButton100.Size = new Size(14, 13);
-            radioButton100.TabIndex = 3;
-            radioButton100.UseVisualStyleBackColor = true;
-            // 
-            // label60
-            // 
-            label60.AutoSize = true;
-            label60.Location = new Point(3, 0);
-            label60.Name = "label60";
-            label60.Size = new Size(82, 15);
-            label60.TabIndex = 0;
-            label60.Text = "Бдительность";
-            // 
-            // label61
-            // 
-            label61.AutoSize = true;
-            label61.Location = new Point(98, 0);
-            label61.Name = "label61";
-            label61.Size = new Size(50, 15);
-            label61.TabIndex = 0;
-            label61.Text = "Навыки";
-            // 
-            // panel53
-            // 
-            panel53.Controls.Add(panel54);
-            panel53.Controls.Add(panel56);
-            panel53.Controls.Add(panel58);
-            panel53.Controls.Add(panel60);
-            panel53.Controls.Add(panel62);
-            panel53.Controls.Add(panel64);
-            panel53.Controls.Add(panel66);
-            panel53.Controls.Add(panel68);
-            panel53.Controls.Add(panel70);
-            panel53.Controls.Add(panel72);
-            panel53.Controls.Add(label82);
-            panel53.Location = new Point(469, 21);
-            panel53.Name = "panel53";
-            panel53.Size = new Size(230, 231);
-            panel53.TabIndex = 14;
-            // 
-            // panel54
-            // 
-            panel54.Controls.Add(panel55);
-            panel54.Controls.Add(numericUpDown21);
-            panel54.Controls.Add(radioButton101);
-            panel54.Controls.Add(radioButton102);
-            panel54.Controls.Add(radioButton103);
-            panel54.Controls.Add(radioButton104);
-            panel54.Controls.Add(radioButton105);
-            panel54.Controls.Add(label63);
-            panel54.Location = new Point(3, 208);
-            panel54.Name = "panel54";
-            panel54.Size = new Size(227, 19);
-            panel54.TabIndex = 13;
-            // 
-            // panel55
-            // 
-            panel55.Controls.Add(label62);
-            panel55.Location = new Point(3, 18);
-            panel55.Name = "panel55";
-            panel55.Size = new Size(197, 19);
-            panel55.TabIndex = 2;
-            // 
-            // label62
-            // 
-            label62.AutoSize = true;
-            label62.Location = new Point(3, 0);
-            label62.Name = "label62";
-            label62.Size = new Size(58, 15);
-            label62.TabIndex = 0;
-            label62.Text = "Ловкость";
-            // 
-            // numericUpDown21
-            // 
-            numericUpDown21.Location = new Point(183, -2);
-            numericUpDown21.Name = "numericUpDown21";
-            numericUpDown21.Size = new Size(41, 23);
-            numericUpDown21.TabIndex = 8;
-            // 
-            // radioButton101
-            // 
-            radioButton101.AutoCheck = false;
-            radioButton101.AutoSize = true;
-            radioButton101.Location = new Point(166, 6);
-            radioButton101.Name = "radioButton101";
-            radioButton101.Size = new Size(14, 13);
-            radioButton101.TabIndex = 7;
-            radioButton101.UseVisualStyleBackColor = true;
-            // 
-            // radioButton102
-            // 
-            radioButton102.AutoCheck = false;
-            radioButton102.AutoSize = true;
-            radioButton102.Location = new Point(146, 6);
-            radioButton102.Name = "radioButton102";
-            radioButton102.Size = new Size(14, 13);
-            radioButton102.TabIndex = 6;
-            radioButton102.UseVisualStyleBackColor = true;
-            // 
-            // radioButton103
-            // 
-            radioButton103.AutoCheck = false;
-            radioButton103.AutoSize = true;
-            radioButton103.Location = new Point(126, 6);
-            radioButton103.Name = "radioButton103";
-            radioButton103.Size = new Size(14, 13);
-            radioButton103.TabIndex = 5;
-            radioButton103.UseVisualStyleBackColor = true;
-            // 
-            // radioButton104
-            // 
-            radioButton104.AutoCheck = false;
-            radioButton104.AutoSize = true;
-            radioButton104.Checked = true;
-            radioButton104.Location = new Point(106, 6);
-            radioButton104.Name = "radioButton104";
-            radioButton104.Size = new Size(14, 13);
-            radioButton104.TabIndex = 4;
-            radioButton104.TabStop = true;
-            radioButton104.UseVisualStyleBackColor = true;
-            // 
-            // radioButton105
-            // 
-            radioButton105.AutoCheck = false;
-            radioButton105.AutoSize = true;
-            radioButton105.Checked = true;
-            radioButton105.Location = new Point(86, 6);
-            radioButton105.Name = "radioButton105";
-            radioButton105.Size = new Size(14, 13);
-            radioButton105.TabIndex = 3;
-            radioButton105.UseVisualStyleBackColor = true;
-            // 
-            // label63
-            // 
-            label63.AutoSize = true;
-            label63.Font = new Font("Segoe UI", 6F);
-            label63.Location = new Point(3, 4);
-            label63.Name = "label63";
-            label63.Size = new Size(79, 11);
-            label63.TabIndex = 0;
-            label63.Text = "Естественные науки";
-            // 
-            // panel56
-            // 
-            panel56.Controls.Add(panel57);
-            panel56.Controls.Add(numericUpDown22);
-            panel56.Controls.Add(radioButton106);
-            panel56.Controls.Add(radioButton107);
-            panel56.Controls.Add(radioButton108);
-            panel56.Controls.Add(radioButton109);
-            panel56.Controls.Add(radioButton110);
-            panel56.Controls.Add(label65);
-            panel56.Location = new Point(3, 187);
-            panel56.Name = "panel56";
-            panel56.Size = new Size(227, 19);
-            panel56.TabIndex = 12;
-            // 
-            // panel57
-            // 
-            panel57.Controls.Add(label64);
-            panel57.Location = new Point(3, 18);
-            panel57.Name = "panel57";
-            panel57.Size = new Size(197, 19);
-            panel57.TabIndex = 2;
-            // 
-            // label64
-            // 
-            label64.AutoSize = true;
-            label64.Location = new Point(3, 0);
-            label64.Name = "label64";
-            label64.Size = new Size(58, 15);
-            label64.TabIndex = 0;
-            label64.Text = "Ловкость";
-            // 
-            // numericUpDown22
-            // 
-            numericUpDown22.Location = new Point(183, -2);
-            numericUpDown22.Name = "numericUpDown22";
-            numericUpDown22.Size = new Size(41, 23);
-            numericUpDown22.TabIndex = 8;
-            // 
-            // radioButton106
-            // 
-            radioButton106.AutoCheck = false;
-            radioButton106.AutoSize = true;
-            radioButton106.Location = new Point(166, 6);
-            radioButton106.Name = "radioButton106";
-            radioButton106.Size = new Size(14, 13);
-            radioButton106.TabIndex = 7;
-            radioButton106.UseVisualStyleBackColor = true;
-            // 
-            // radioButton107
-            // 
-            radioButton107.AutoCheck = false;
-            radioButton107.AutoSize = true;
-            radioButton107.Location = new Point(146, 6);
-            radioButton107.Name = "radioButton107";
-            radioButton107.Size = new Size(14, 13);
-            radioButton107.TabIndex = 6;
-            radioButton107.UseVisualStyleBackColor = true;
-            // 
-            // radioButton108
-            // 
-            radioButton108.AutoCheck = false;
-            radioButton108.AutoSize = true;
-            radioButton108.Location = new Point(126, 6);
-            radioButton108.Name = "radioButton108";
-            radioButton108.Size = new Size(14, 13);
-            radioButton108.TabIndex = 5;
-            radioButton108.UseVisualStyleBackColor = true;
-            // 
-            // radioButton109
-            // 
-            radioButton109.AutoCheck = false;
-            radioButton109.AutoSize = true;
-            radioButton109.Checked = true;
-            radioButton109.Location = new Point(106, 6);
-            radioButton109.Name = "radioButton109";
-            radioButton109.Size = new Size(14, 13);
-            radioButton109.TabIndex = 4;
-            radioButton109.TabStop = true;
-            radioButton109.UseVisualStyleBackColor = true;
-            // 
-            // radioButton110
-            // 
-            radioButton110.AutoCheck = false;
-            radioButton110.AutoSize = true;
-            radioButton110.Checked = true;
-            radioButton110.Location = new Point(86, 6);
-            radioButton110.Name = "radioButton110";
-            radioButton110.Size = new Size(14, 13);
-            radioButton110.TabIndex = 3;
-            radioButton110.UseVisualStyleBackColor = true;
-            // 
-            // label65
-            // 
-            label65.AutoSize = true;
-            label65.Location = new Point(3, 0);
-            label65.Name = "label65";
-            label65.Size = new Size(61, 15);
-            label65.TabIndex = 0;
-            label65.Text = "Политика";
-            // 
-            // panel58
-            // 
-            panel58.Controls.Add(panel59);
-            panel58.Controls.Add(numericUpDown23);
-            panel58.Controls.Add(radioButton111);
-            panel58.Controls.Add(radioButton112);
-            panel58.Controls.Add(radioButton113);
-            panel58.Controls.Add(radioButton114);
-            panel58.Controls.Add(radioButton115);
-            panel58.Controls.Add(label67);
-            panel58.Location = new Point(3, 166);
-            panel58.Name = "panel58";
-            panel58.Size = new Size(227, 19);
-            panel58.TabIndex = 11;
-            // 
-            // panel59
-            // 
-            panel59.Controls.Add(label66);
-            panel59.Location = new Point(3, 18);
-            panel59.Name = "panel59";
-            panel59.Size = new Size(197, 19);
-            panel59.TabIndex = 2;
-            // 
-            // label66
-            // 
-            label66.AutoSize = true;
-            label66.Location = new Point(3, 0);
-            label66.Name = "label66";
-            label66.Size = new Size(58, 15);
-            label66.TabIndex = 0;
-            label66.Text = "Ловкость";
-            // 
-            // numericUpDown23
-            // 
-            numericUpDown23.Location = new Point(183, -2);
-            numericUpDown23.Name = "numericUpDown23";
-            numericUpDown23.Size = new Size(41, 23);
-            numericUpDown23.TabIndex = 8;
-            // 
-            // radioButton111
-            // 
-            radioButton111.AutoCheck = false;
-            radioButton111.AutoSize = true;
-            radioButton111.Location = new Point(166, 6);
-            radioButton111.Name = "radioButton111";
-            radioButton111.Size = new Size(14, 13);
-            radioButton111.TabIndex = 7;
-            radioButton111.UseVisualStyleBackColor = true;
-            // 
-            // radioButton112
-            // 
-            radioButton112.AutoCheck = false;
-            radioButton112.AutoSize = true;
-            radioButton112.Location = new Point(146, 6);
-            radioButton112.Name = "radioButton112";
-            radioButton112.Size = new Size(14, 13);
-            radioButton112.TabIndex = 6;
-            radioButton112.UseVisualStyleBackColor = true;
-            // 
-            // radioButton113
-            // 
-            radioButton113.AutoCheck = false;
-            radioButton113.AutoSize = true;
-            radioButton113.Location = new Point(126, 6);
-            radioButton113.Name = "radioButton113";
-            radioButton113.Size = new Size(14, 13);
-            radioButton113.TabIndex = 5;
-            radioButton113.UseVisualStyleBackColor = true;
-            // 
-            // radioButton114
-            // 
-            radioButton114.AutoCheck = false;
-            radioButton114.AutoSize = true;
-            radioButton114.Checked = true;
-            radioButton114.Location = new Point(106, 6);
-            radioButton114.Name = "radioButton114";
-            radioButton114.Size = new Size(14, 13);
-            radioButton114.TabIndex = 4;
-            radioButton114.TabStop = true;
-            radioButton114.UseVisualStyleBackColor = true;
-            // 
-            // radioButton115
-            // 
-            radioButton115.AutoCheck = false;
-            radioButton115.AutoSize = true;
-            radioButton115.Checked = true;
-            radioButton115.Location = new Point(86, 6);
-            radioButton115.Name = "radioButton115";
-            radioButton115.Size = new Size(14, 13);
-            radioButton115.TabIndex = 3;
-            radioButton115.UseVisualStyleBackColor = true;
-            // 
-            // label67
-            // 
-            label67.AutoSize = true;
-            label67.Location = new Point(3, 0);
-            label67.Name = "label67";
-            label67.Size = new Size(73, 15);
-            label67.TabIndex = 0;
-            label67.Text = "Оккультизм";
-            // 
-            // panel60
-            // 
-            panel60.Controls.Add(panel61);
-            panel60.Controls.Add(numericUpDown24);
-            panel60.Controls.Add(radioButton116);
-            panel60.Controls.Add(radioButton117);
-            panel60.Controls.Add(radioButton118);
-            panel60.Controls.Add(radioButton119);
-            panel60.Controls.Add(radioButton120);
-            panel60.Controls.Add(label69);
-            panel60.Location = new Point(3, 145);
-            panel60.Name = "panel60";
-            panel60.Size = new Size(227, 19);
-            panel60.TabIndex = 10;
-            // 
-            // panel61
-            // 
-            panel61.Controls.Add(label68);
-            panel61.Location = new Point(3, 18);
-            panel61.Name = "panel61";
-            panel61.Size = new Size(197, 19);
-            panel61.TabIndex = 2;
-            // 
-            // label68
-            // 
-            label68.AutoSize = true;
-            label68.Location = new Point(3, 0);
-            label68.Name = "label68";
-            label68.Size = new Size(58, 15);
-            label68.TabIndex = 0;
-            label68.Text = "Ловкость";
-            // 
-            // numericUpDown24
-            // 
-            numericUpDown24.Location = new Point(183, -2);
-            numericUpDown24.Name = "numericUpDown24";
-            numericUpDown24.Size = new Size(41, 23);
-            numericUpDown24.TabIndex = 8;
-            // 
-            // radioButton116
-            // 
-            radioButton116.AutoCheck = false;
-            radioButton116.AutoSize = true;
-            radioButton116.Location = new Point(166, 6);
-            radioButton116.Name = "radioButton116";
-            radioButton116.Size = new Size(14, 13);
-            radioButton116.TabIndex = 7;
-            radioButton116.UseVisualStyleBackColor = true;
-            // 
-            // radioButton117
-            // 
-            radioButton117.AutoCheck = false;
-            radioButton117.AutoSize = true;
-            radioButton117.Location = new Point(146, 6);
-            radioButton117.Name = "radioButton117";
-            radioButton117.Size = new Size(14, 13);
-            radioButton117.TabIndex = 6;
-            radioButton117.UseVisualStyleBackColor = true;
-            // 
-            // radioButton118
-            // 
-            radioButton118.AutoCheck = false;
-            radioButton118.AutoSize = true;
-            radioButton118.Location = new Point(126, 6);
-            radioButton118.Name = "radioButton118";
-            radioButton118.Size = new Size(14, 13);
-            radioButton118.TabIndex = 5;
-            radioButton118.UseVisualStyleBackColor = true;
-            // 
-            // radioButton119
-            // 
-            radioButton119.AutoCheck = false;
-            radioButton119.AutoSize = true;
-            radioButton119.Checked = true;
-            radioButton119.Location = new Point(106, 6);
-            radioButton119.Name = "radioButton119";
-            radioButton119.Size = new Size(14, 13);
-            radioButton119.TabIndex = 4;
-            radioButton119.TabStop = true;
-            radioButton119.UseVisualStyleBackColor = true;
-            // 
-            // radioButton120
-            // 
-            radioButton120.AutoCheck = false;
-            radioButton120.AutoSize = true;
-            radioButton120.Checked = true;
-            radioButton120.Location = new Point(86, 6);
-            radioButton120.Name = "radioButton120";
-            radioButton120.Size = new Size(14, 13);
-            radioButton120.TabIndex = 3;
-            radioButton120.UseVisualStyleBackColor = true;
-            // 
-            // label69
-            // 
-            label69.AutoSize = true;
-            label69.Location = new Point(3, 0);
-            label69.Name = "label69";
-            label69.Size = new Size(64, 15);
-            label69.TabIndex = 0;
-            label69.Text = "Медицина";
-            // 
-            // panel62
-            // 
-            panel62.Controls.Add(panel63);
-            panel62.Controls.Add(numericUpDown25);
-            panel62.Controls.Add(radioButton121);
-            panel62.Controls.Add(radioButton122);
-            panel62.Controls.Add(radioButton123);
-            panel62.Controls.Add(radioButton124);
-            panel62.Controls.Add(radioButton125);
-            panel62.Controls.Add(label71);
-            panel62.Location = new Point(3, 124);
-            panel62.Name = "panel62";
-            panel62.Size = new Size(227, 19);
-            panel62.TabIndex = 11;
-            // 
-            // panel63
-            // 
-            panel63.Controls.Add(label70);
-            panel63.Location = new Point(3, 18);
-            panel63.Name = "panel63";
-            panel63.Size = new Size(197, 19);
-            panel63.TabIndex = 2;
-            // 
-            // label70
-            // 
-            label70.AutoSize = true;
-            label70.Location = new Point(3, 0);
-            label70.Name = "label70";
-            label70.Size = new Size(58, 15);
-            label70.TabIndex = 0;
-            label70.Text = "Ловкость";
-            // 
-            // numericUpDown25
-            // 
-            numericUpDown25.Location = new Point(183, -2);
-            numericUpDown25.Name = "numericUpDown25";
-            numericUpDown25.Size = new Size(41, 23);
-            numericUpDown25.TabIndex = 8;
-            // 
-            // radioButton121
-            // 
-            radioButton121.AutoCheck = false;
-            radioButton121.AutoSize = true;
-            radioButton121.Checked = true;
-            radioButton121.Location = new Point(166, 6);
-            radioButton121.Name = "radioButton121";
-            radioButton121.Size = new Size(14, 13);
-            radioButton121.TabIndex = 7;
-            radioButton121.TabStop = true;
-            radioButton121.UseVisualStyleBackColor = true;
-            // 
-            // radioButton122
-            // 
-            radioButton122.AutoCheck = false;
-            radioButton122.AutoSize = true;
-            radioButton122.Checked = true;
-            radioButton122.Location = new Point(146, 6);
-            radioButton122.Name = "radioButton122";
-            radioButton122.Size = new Size(14, 13);
-            radioButton122.TabIndex = 6;
-            radioButton122.UseVisualStyleBackColor = true;
-            // 
-            // radioButton123
-            // 
-            radioButton123.AutoCheck = false;
-            radioButton123.AutoSize = true;
-            radioButton123.Checked = true;
-            radioButton123.Location = new Point(126, 6);
-            radioButton123.Name = "radioButton123";
-            radioButton123.Size = new Size(14, 13);
-            radioButton123.TabIndex = 5;
-            radioButton123.UseVisualStyleBackColor = true;
-            // 
-            // radioButton124
-            // 
-            radioButton124.AutoCheck = false;
-            radioButton124.AutoSize = true;
-            radioButton124.Checked = true;
-            radioButton124.Location = new Point(106, 6);
-            radioButton124.Name = "radioButton124";
-            radioButton124.Size = new Size(14, 13);
-            radioButton124.TabIndex = 4;
-            radioButton124.UseVisualStyleBackColor = true;
-            // 
-            // radioButton125
-            // 
-            radioButton125.AutoCheck = false;
-            radioButton125.AutoSize = true;
-            radioButton125.Checked = true;
-            radioButton125.Location = new Point(86, 6);
-            radioButton125.Name = "radioButton125";
-            radioButton125.Size = new Size(14, 13);
-            radioButton125.TabIndex = 3;
-            radioButton125.UseVisualStyleBackColor = true;
-            // 
-            // label71
-            // 
-            label71.AutoSize = true;
-            label71.Location = new Point(3, 0);
-            label71.Name = "label71";
-            label71.Size = new Size(41, 15);
-            label71.TabIndex = 0;
-            label71.Text = "Языки";
-            // 
-            // panel64
-            // 
-            panel64.Controls.Add(panel65);
-            panel64.Controls.Add(numericUpDown26);
-            panel64.Controls.Add(radioButton126);
-            panel64.Controls.Add(radioButton127);
-            panel64.Controls.Add(radioButton128);
-            panel64.Controls.Add(radioButton129);
-            panel64.Controls.Add(radioButton130);
-            panel64.Controls.Add(label73);
-            panel64.Location = new Point(3, 103);
-            panel64.Name = "panel64";
-            panel64.Size = new Size(227, 19);
-            panel64.TabIndex = 10;
-            // 
-            // panel65
-            // 
-            panel65.Controls.Add(label72);
-            panel65.Location = new Point(3, 18);
-            panel65.Name = "panel65";
-            panel65.Size = new Size(197, 19);
-            panel65.TabIndex = 2;
-            // 
-            // label72
-            // 
-            label72.AutoSize = true;
-            label72.Location = new Point(3, 0);
-            label72.Name = "label72";
-            label72.Size = new Size(58, 15);
-            label72.TabIndex = 0;
-            label72.Text = "Ловкость";
-            // 
-            // numericUpDown26
-            // 
-            numericUpDown26.Location = new Point(183, -2);
-            numericUpDown26.Name = "numericUpDown26";
-            numericUpDown26.Size = new Size(41, 23);
-            numericUpDown26.TabIndex = 8;
-            // 
-            // radioButton126
-            // 
-            radioButton126.AutoCheck = false;
-            radioButton126.AutoSize = true;
-            radioButton126.Checked = true;
-            radioButton126.Location = new Point(166, 6);
-            radioButton126.Name = "radioButton126";
-            radioButton126.Size = new Size(14, 13);
-            radioButton126.TabIndex = 7;
-            radioButton126.TabStop = true;
-            radioButton126.UseVisualStyleBackColor = true;
-            // 
-            // radioButton127
-            // 
-            radioButton127.AutoCheck = false;
-            radioButton127.AutoSize = true;
-            radioButton127.Checked = true;
-            radioButton127.Location = new Point(146, 6);
-            radioButton127.Name = "radioButton127";
-            radioButton127.Size = new Size(14, 13);
-            radioButton127.TabIndex = 6;
-            radioButton127.UseVisualStyleBackColor = true;
-            // 
-            // radioButton128
-            // 
-            radioButton128.AutoCheck = false;
-            radioButton128.AutoSize = true;
-            radioButton128.Checked = true;
-            radioButton128.Location = new Point(126, 6);
-            radioButton128.Name = "radioButton128";
-            radioButton128.Size = new Size(14, 13);
-            radioButton128.TabIndex = 5;
-            radioButton128.UseVisualStyleBackColor = true;
-            // 
-            // radioButton129
-            // 
-            radioButton129.AutoCheck = false;
-            radioButton129.AutoSize = true;
-            radioButton129.Checked = true;
-            radioButton129.Location = new Point(106, 6);
-            radioButton129.Name = "radioButton129";
-            radioButton129.Size = new Size(14, 13);
-            radioButton129.TabIndex = 4;
-            radioButton129.UseVisualStyleBackColor = true;
-            // 
-            // radioButton130
-            // 
-            radioButton130.AutoCheck = false;
-            radioButton130.AutoSize = true;
-            radioButton130.Checked = true;
-            radioButton130.Location = new Point(86, 6);
-            radioButton130.Name = "radioButton130";
-            radioButton130.Size = new Size(14, 13);
-            radioButton130.TabIndex = 3;
-            radioButton130.UseVisualStyleBackColor = true;
-            // 
-            // label73
-            // 
-            label73.AutoSize = true;
-            label73.Location = new Point(3, 0);
-            label73.Name = "label73";
-            label73.Size = new Size(40, 15);
-            label73.TabIndex = 0;
-            label73.Text = "Закон";
-            // 
-            // panel66
-            // 
-            panel66.Controls.Add(panel67);
-            panel66.Controls.Add(numericUpDown27);
-            panel66.Controls.Add(radioButton131);
-            panel66.Controls.Add(radioButton132);
-            panel66.Controls.Add(radioButton133);
-            panel66.Controls.Add(radioButton134);
-            panel66.Controls.Add(radioButton135);
-            panel66.Controls.Add(label75);
-            panel66.Location = new Point(3, 82);
-            panel66.Name = "panel66";
-            panel66.Size = new Size(227, 19);
-            panel66.TabIndex = 9;
-            // 
-            // panel67
-            // 
-            panel67.Controls.Add(label74);
-            panel67.Location = new Point(3, 18);
-            panel67.Name = "panel67";
-            panel67.Size = new Size(197, 19);
-            panel67.TabIndex = 2;
-            // 
-            // label74
-            // 
-            label74.AutoSize = true;
-            label74.Location = new Point(3, 0);
-            label74.Name = "label74";
-            label74.Size = new Size(58, 15);
-            label74.TabIndex = 0;
-            label74.Text = "Ловкость";
-            // 
-            // numericUpDown27
-            // 
-            numericUpDown27.Location = new Point(183, -2);
-            numericUpDown27.Name = "numericUpDown27";
-            numericUpDown27.Size = new Size(41, 23);
-            numericUpDown27.TabIndex = 8;
-            // 
-            // radioButton131
-            // 
-            radioButton131.AutoCheck = false;
-            radioButton131.AutoSize = true;
-            radioButton131.Checked = true;
-            radioButton131.Location = new Point(166, 6);
-            radioButton131.Name = "radioButton131";
-            radioButton131.Size = new Size(14, 13);
-            radioButton131.TabIndex = 7;
-            radioButton131.TabStop = true;
-            radioButton131.UseVisualStyleBackColor = true;
-            // 
-            // radioButton132
-            // 
-            radioButton132.AutoCheck = false;
-            radioButton132.AutoSize = true;
-            radioButton132.Checked = true;
-            radioButton132.Location = new Point(146, 6);
-            radioButton132.Name = "radioButton132";
-            radioButton132.Size = new Size(14, 13);
-            radioButton132.TabIndex = 6;
-            radioButton132.UseVisualStyleBackColor = true;
-            // 
-            // radioButton133
-            // 
-            radioButton133.AutoCheck = false;
-            radioButton133.AutoSize = true;
-            radioButton133.Checked = true;
-            radioButton133.Location = new Point(126, 6);
-            radioButton133.Name = "radioButton133";
-            radioButton133.Size = new Size(14, 13);
-            radioButton133.TabIndex = 5;
-            radioButton133.UseVisualStyleBackColor = true;
-            // 
-            // radioButton134
-            // 
-            radioButton134.AutoCheck = false;
-            radioButton134.AutoSize = true;
-            radioButton134.Checked = true;
-            radioButton134.Location = new Point(106, 6);
-            radioButton134.Name = "radioButton134";
-            radioButton134.Size = new Size(14, 13);
-            radioButton134.TabIndex = 4;
-            radioButton134.UseVisualStyleBackColor = true;
-            // 
-            // radioButton135
-            // 
-            radioButton135.AutoCheck = false;
-            radioButton135.AutoSize = true;
-            radioButton135.Checked = true;
-            radioButton135.Location = new Point(86, 6);
-            radioButton135.Name = "radioButton135";
-            radioButton135.Size = new Size(14, 13);
-            radioButton135.TabIndex = 3;
-            radioButton135.UseVisualStyleBackColor = true;
-            // 
-            // label75
-            // 
-            label75.AutoSize = true;
-            label75.Font = new Font("Segoe UI", 8F);
-            label75.Location = new Point(3, 5);
-            label75.Name = "label75";
-            label75.Size = new Size(86, 13);
-            label75.TabIndex = 0;
-            label75.Text = "Расследование";
-            // 
-            // panel68
-            // 
-            panel68.Controls.Add(panel69);
-            panel68.Controls.Add(numericUpDown28);
-            panel68.Controls.Add(radioButton136);
-            panel68.Controls.Add(radioButton137);
-            panel68.Controls.Add(radioButton138);
-            panel68.Controls.Add(radioButton139);
-            panel68.Controls.Add(radioButton140);
-            panel68.Controls.Add(label77);
-            panel68.Location = new Point(3, 61);
-            panel68.Name = "panel68";
-            panel68.Size = new Size(227, 19);
-            panel68.TabIndex = 10;
-            // 
-            // panel69
-            // 
-            panel69.Controls.Add(label76);
-            panel69.Location = new Point(3, 18);
-            panel69.Name = "panel69";
-            panel69.Size = new Size(197, 19);
-            panel69.TabIndex = 2;
-            // 
-            // label76
-            // 
-            label76.AutoSize = true;
-            label76.Location = new Point(3, 0);
-            label76.Name = "label76";
-            label76.Size = new Size(58, 15);
-            label76.TabIndex = 0;
-            label76.Text = "Ловкость";
-            // 
-            // numericUpDown28
-            // 
-            numericUpDown28.Location = new Point(183, -2);
-            numericUpDown28.Name = "numericUpDown28";
-            numericUpDown28.Size = new Size(41, 23);
-            numericUpDown28.TabIndex = 8;
-            // 
-            // radioButton136
-            // 
-            radioButton136.AutoCheck = false;
-            radioButton136.AutoSize = true;
-            radioButton136.Checked = true;
-            radioButton136.Location = new Point(166, 6);
-            radioButton136.Name = "radioButton136";
-            radioButton136.Size = new Size(14, 13);
-            radioButton136.TabIndex = 7;
-            radioButton136.TabStop = true;
-            radioButton136.UseVisualStyleBackColor = true;
-            // 
-            // radioButton137
-            // 
-            radioButton137.AutoCheck = false;
-            radioButton137.AutoSize = true;
-            radioButton137.Checked = true;
-            radioButton137.Location = new Point(146, 6);
-            radioButton137.Name = "radioButton137";
-            radioButton137.Size = new Size(14, 13);
-            radioButton137.TabIndex = 6;
-            radioButton137.TabStop = true;
-            radioButton137.UseVisualStyleBackColor = true;
-            // 
-            // radioButton138
-            // 
-            radioButton138.AutoCheck = false;
-            radioButton138.AutoSize = true;
-            radioButton138.Checked = true;
-            radioButton138.Location = new Point(126, 6);
-            radioButton138.Name = "radioButton138";
-            radioButton138.Size = new Size(14, 13);
-            radioButton138.TabIndex = 5;
-            radioButton138.TabStop = true;
-            radioButton138.UseVisualStyleBackColor = true;
-            // 
-            // radioButton139
-            // 
-            radioButton139.AutoCheck = false;
-            radioButton139.AutoSize = true;
-            radioButton139.Checked = true;
-            radioButton139.Location = new Point(106, 6);
-            radioButton139.Name = "radioButton139";
-            radioButton139.Size = new Size(14, 13);
-            radioButton139.TabIndex = 4;
-            radioButton139.TabStop = true;
-            radioButton139.UseVisualStyleBackColor = true;
-            // 
-            // radioButton140
-            // 
-            radioButton140.AutoCheck = false;
-            radioButton140.AutoSize = true;
-            radioButton140.Checked = true;
-            radioButton140.Location = new Point(86, 6);
-            radioButton140.Name = "radioButton140";
-            radioButton140.Size = new Size(14, 13);
-            radioButton140.TabIndex = 3;
-            radioButton140.TabStop = true;
-            radioButton140.UseVisualStyleBackColor = true;
-            // 
-            // label77
-            // 
-            label77.AutoSize = true;
-            label77.Location = new Point(3, 0);
-            label77.Name = "label77";
-            label77.Size = new Size(58, 15);
-            label77.TabIndex = 0;
-            label77.Text = "Финансы";
-            // 
-            // panel70
-            // 
-            panel70.Controls.Add(panel71);
-            panel70.Controls.Add(numericUpDown29);
-            panel70.Controls.Add(radioButton141);
-            panel70.Controls.Add(radioButton142);
-            panel70.Controls.Add(radioButton143);
-            panel70.Controls.Add(radioButton144);
-            panel70.Controls.Add(radioButton145);
-            panel70.Controls.Add(label79);
-            panel70.Location = new Point(3, 39);
-            panel70.Name = "panel70";
-            panel70.Size = new Size(227, 19);
-            panel70.TabIndex = 9;
-            // 
-            // panel71
-            // 
-            panel71.Controls.Add(label78);
-            panel71.Location = new Point(3, 18);
-            panel71.Name = "panel71";
-            panel71.Size = new Size(197, 19);
-            panel71.TabIndex = 2;
-            // 
-            // label78
-            // 
-            label78.AutoSize = true;
-            label78.Location = new Point(3, 0);
-            label78.Name = "label78";
-            label78.Size = new Size(58, 15);
-            label78.TabIndex = 0;
-            label78.Text = "Ловкость";
-            // 
-            // numericUpDown29
-            // 
-            numericUpDown29.Location = new Point(183, -2);
-            numericUpDown29.Name = "numericUpDown29";
-            numericUpDown29.Size = new Size(41, 23);
-            numericUpDown29.TabIndex = 8;
-            // 
-            // radioButton141
-            // 
-            radioButton141.AutoCheck = false;
-            radioButton141.AutoSize = true;
-            radioButton141.Location = new Point(166, 6);
-            radioButton141.Name = "radioButton141";
-            radioButton141.Size = new Size(14, 13);
-            radioButton141.TabIndex = 7;
-            radioButton141.UseVisualStyleBackColor = true;
-            // 
-            // radioButton142
-            // 
-            radioButton142.AutoCheck = false;
-            radioButton142.AutoSize = true;
-            radioButton142.Location = new Point(146, 6);
-            radioButton142.Name = "radioButton142";
-            radioButton142.Size = new Size(14, 13);
-            radioButton142.TabIndex = 6;
-            radioButton142.UseVisualStyleBackColor = true;
-            // 
-            // radioButton143
-            // 
-            radioButton143.AutoCheck = false;
-            radioButton143.AutoSize = true;
-            radioButton143.Location = new Point(126, 6);
-            radioButton143.Name = "radioButton143";
-            radioButton143.Size = new Size(14, 13);
-            radioButton143.TabIndex = 5;
-            radioButton143.UseVisualStyleBackColor = true;
-            // 
-            // radioButton144
-            // 
-            radioButton144.AutoCheck = false;
-            radioButton144.AutoSize = true;
-            radioButton144.Checked = true;
-            radioButton144.Location = new Point(106, 6);
-            radioButton144.Name = "radioButton144";
-            radioButton144.Size = new Size(14, 13);
-            radioButton144.TabIndex = 4;
-            radioButton144.TabStop = true;
-            radioButton144.UseVisualStyleBackColor = true;
-            // 
-            // radioButton145
-            // 
-            radioButton145.AutoCheck = false;
-            radioButton145.AutoSize = true;
-            radioButton145.Checked = true;
-            radioButton145.Location = new Point(86, 6);
-            radioButton145.Name = "radioButton145";
-            radioButton145.Size = new Size(14, 13);
-            radioButton145.TabIndex = 3;
-            radioButton145.UseVisualStyleBackColor = true;
-            // 
-            // label79
-            // 
-            label79.AutoSize = true;
-            label79.Location = new Point(3, 0);
-            label79.Name = "label79";
-            label79.Size = new Size(80, 15);
-            label79.TabIndex = 0;
-            label79.Text = "Компьютеры";
-            // 
-            // panel72
-            // 
-            panel72.Controls.Add(panel73);
-            panel72.Controls.Add(numericUpDown30);
-            panel72.Controls.Add(radioButton146);
-            panel72.Controls.Add(radioButton147);
-            panel72.Controls.Add(radioButton148);
-            panel72.Controls.Add(radioButton149);
-            panel72.Controls.Add(radioButton150);
-            panel72.Controls.Add(label81);
-            panel72.Location = new Point(3, 18);
-            panel72.Name = "panel72";
-            panel72.Size = new Size(227, 19);
-            panel72.TabIndex = 1;
-            // 
-            // panel73
-            // 
-            panel73.Controls.Add(label80);
-            panel73.Location = new Point(3, 18);
-            panel73.Name = "panel73";
-            panel73.Size = new Size(197, 19);
-            panel73.TabIndex = 2;
-            // 
-            // label80
-            // 
-            label80.AutoSize = true;
-            label80.Location = new Point(3, 0);
-            label80.Name = "label80";
-            label80.Size = new Size(58, 15);
-            label80.TabIndex = 0;
-            label80.Text = "Ловкость";
-            // 
-            // numericUpDown30
-            // 
-            numericUpDown30.Location = new Point(183, -2);
-            numericUpDown30.Name = "numericUpDown30";
-            numericUpDown30.Size = new Size(41, 23);
-            numericUpDown30.TabIndex = 8;
-            // 
-            // radioButton146
-            // 
-            radioButton146.AutoCheck = false;
-            radioButton146.AutoSize = true;
-            radioButton146.Checked = true;
-            radioButton146.Location = new Point(166, 6);
-            radioButton146.Name = "radioButton146";
-            radioButton146.Size = new Size(14, 13);
-            radioButton146.TabIndex = 7;
-            radioButton146.TabStop = true;
-            radioButton146.UseVisualStyleBackColor = true;
-            // 
-            // radioButton147
-            // 
-            radioButton147.AutoCheck = false;
-            radioButton147.AutoSize = true;
-            radioButton147.Checked = true;
-            radioButton147.Location = new Point(146, 6);
-            radioButton147.Name = "radioButton147";
-            radioButton147.Size = new Size(14, 13);
-            radioButton147.TabIndex = 6;
-            radioButton147.UseVisualStyleBackColor = true;
-            // 
-            // radioButton148
-            // 
-            radioButton148.AutoCheck = false;
-            radioButton148.AutoSize = true;
-            radioButton148.Checked = true;
-            radioButton148.Location = new Point(126, 6);
-            radioButton148.Name = "radioButton148";
-            radioButton148.Size = new Size(14, 13);
-            radioButton148.TabIndex = 5;
-            radioButton148.UseVisualStyleBackColor = true;
-            // 
-            // radioButton149
-            // 
-            radioButton149.AutoCheck = false;
-            radioButton149.AutoSize = true;
-            radioButton149.Checked = true;
-            radioButton149.Location = new Point(106, 6);
-            radioButton149.Name = "radioButton149";
-            radioButton149.Size = new Size(14, 13);
-            radioButton149.TabIndex = 4;
-            radioButton149.UseVisualStyleBackColor = true;
-            // 
-            // radioButton150
-            // 
-            radioButton150.AutoCheck = false;
-            radioButton150.AutoSize = true;
-            radioButton150.Checked = true;
-            radioButton150.Location = new Point(86, 6);
-            radioButton150.Name = "radioButton150";
-            radioButton150.Size = new Size(14, 13);
-            radioButton150.TabIndex = 3;
-            radioButton150.UseVisualStyleBackColor = true;
-            // 
-            // label81
-            // 
-            label81.AutoSize = true;
-            label81.Font = new Font("Segoe UI", 6F);
-            label81.Location = new Point(3, 4);
-            label81.Name = "label81";
-            label81.Size = new Size(84, 11);
-            label81.TabIndex = 0;
-            label81.Text = "Гуманитарные науки";
-            // 
-            // label82
-            // 
-            label82.AutoSize = true;
-            label82.Location = new Point(98, 0);
-            label82.Name = "label82";
-            label82.Size = new Size(50, 15);
-            label82.TabIndex = 0;
-            label82.Text = "Навыки";
-            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -4819,6 +4880,164 @@
             Name = "CharacterForm";
             Text = "Form1";
             characterPanel.ResumeLayout(false);
+            AbilitiesPanel.ResumeLayout(false);
+            AbilitiesPanel.PerformLayout();
+            panel53.ResumeLayout(false);
+            panel53.PerformLayout();
+            SciencePanel.ResumeLayout(false);
+            SciencePanel.PerformLayout();
+            panel55.ResumeLayout(false);
+            panel55.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ScienceNumeric).EndInit();
+            PoliticsPanel.ResumeLayout(false);
+            PoliticsPanel.PerformLayout();
+            panel57.ResumeLayout(false);
+            panel57.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PoliticsNumeric).EndInit();
+            OccultPanel.ResumeLayout(false);
+            OccultPanel.PerformLayout();
+            panel59.ResumeLayout(false);
+            panel59.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)OccultNumeric).EndInit();
+            MedicinePanel.ResumeLayout(false);
+            MedicinePanel.PerformLayout();
+            panel61.ResumeLayout(false);
+            panel61.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MedicineNumeric).EndInit();
+            LinguisticsPanel.ResumeLayout(false);
+            LinguisticsPanel.PerformLayout();
+            panel63.ResumeLayout(false);
+            panel63.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)LinguisticsNumeric).EndInit();
+            LawPanel.ResumeLayout(false);
+            LawPanel.PerformLayout();
+            panel65.ResumeLayout(false);
+            panel65.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)LawNumeric).EndInit();
+            InvestigationPanel.ResumeLayout(false);
+            InvestigationPanel.PerformLayout();
+            panel67.ResumeLayout(false);
+            panel67.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)InvestigationNumeric).EndInit();
+            FinancePanel.ResumeLayout(false);
+            FinancePanel.PerformLayout();
+            panel69.ResumeLayout(false);
+            panel69.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)FinanceNumeric).EndInit();
+            ComputerPanel.ResumeLayout(false);
+            ComputerPanel.PerformLayout();
+            panel71.ResumeLayout(false);
+            panel71.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ComputerNumeric).EndInit();
+            AcademicsPanel.ResumeLayout(false);
+            AcademicsPanel.PerformLayout();
+            panel73.ResumeLayout(false);
+            panel73.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)AcademicsNumeric).EndInit();
+            panel32.ResumeLayout(false);
+            panel32.PerformLayout();
+            SubterfugePanel.ResumeLayout(false);
+            SubterfugePanel.PerformLayout();
+            panel34.ResumeLayout(false);
+            panel34.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SubterfugeNumeric).EndInit();
+            StreetwisePanel.ResumeLayout(false);
+            StreetwisePanel.PerformLayout();
+            panel36.ResumeLayout(false);
+            panel36.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)StreetwiseNumeric).EndInit();
+            LeadershipPanel.ResumeLayout(false);
+            LeadershipPanel.PerformLayout();
+            panel38.ResumeLayout(false);
+            panel38.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)LeadershipNumeric).EndInit();
+            IntimidationPanel.ResumeLayout(false);
+            IntimidationPanel.PerformLayout();
+            panel40.ResumeLayout(false);
+            panel40.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)IntimidationNumeric).EndInit();
+            ExpressionPanel.ResumeLayout(false);
+            ExpressionPanel.PerformLayout();
+            panel42.ResumeLayout(false);
+            panel42.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ExpressionNumeric).EndInit();
+            EmpathyPanel.ResumeLayout(false);
+            EmpathyPanel.PerformLayout();
+            panel44.ResumeLayout(false);
+            panel44.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)EmpathyNumeric).EndInit();
+            DodgePanel.ResumeLayout(false);
+            DodgePanel.PerformLayout();
+            panel46.ResumeLayout(false);
+            panel46.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DodgeNumeric).EndInit();
+            BrawlPanel.ResumeLayout(false);
+            BrawlPanel.PerformLayout();
+            panel48.ResumeLayout(false);
+            panel48.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)BrawlNumeric).EndInit();
+            AthleticsPanel.ResumeLayout(false);
+            AthleticsPanel.PerformLayout();
+            panel50.ResumeLayout(false);
+            panel50.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)AthleticsNumeric).EndInit();
+            AlertnessPanel.ResumeLayout(false);
+            AlertnessPanel.PerformLayout();
+            panel52.ResumeLayout(false);
+            panel52.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)AlertnessNumeric).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            SurvivalPanel.ResumeLayout(false);
+            SurvivalPanel.PerformLayout();
+            panel31.ResumeLayout(false);
+            panel31.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SurvivalNumeric).EndInit();
+            StealthPanel.ResumeLayout(false);
+            StealthPanel.PerformLayout();
+            panel29.ResumeLayout(false);
+            panel29.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)StealthNumeric).EndInit();
+            SecurityPanel.ResumeLayout(false);
+            SecurityPanel.PerformLayout();
+            panel27.ResumeLayout(false);
+            panel27.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SecurityNumeric).EndInit();
+            PerfomancePanel.ResumeLayout(false);
+            PerfomancePanel.PerformLayout();
+            panel25.ResumeLayout(false);
+            panel25.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PerfomanceNumeric).EndInit();
+            MeleePanel.ResumeLayout(false);
+            MeleePanel.PerformLayout();
+            panel23.ResumeLayout(false);
+            panel23.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MeleeNumeric).EndInit();
+            FirearmsPanel.ResumeLayout(false);
+            FirearmsPanel.PerformLayout();
+            panel21.ResumeLayout(false);
+            panel21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)FirearmsNumeric).EndInit();
+            EtiquettePanel.ResumeLayout(false);
+            EtiquettePanel.PerformLayout();
+            panel19.ResumeLayout(false);
+            panel19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)EtiquetteNumeric).EndInit();
+            DrivePanel.ResumeLayout(false);
+            DrivePanel.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DriveNumeric).EndInit();
+            CraftsPanel.ResumeLayout(false);
+            CraftsPanel.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)CraftsNumeric).EndInit();
+            AnimalKenPanel.ResumeLayout(false);
+            AnimalKenPanel.PerformLayout();
+            panel15.ResumeLayout(false);
+            panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)AnimalKenNumeric).EndInit();
             AttributesPanel.ResumeLayout(false);
             AttributesPanel.PerformLayout();
             panel12.ResumeLayout(false);
@@ -4872,164 +5091,6 @@
             DexterityPanel.ResumeLayout(false);
             DexterityPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)StrenghtNumeric).EndInit();
-            AbilitiesPanel.ResumeLayout(false);
-            AbilitiesPanel.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-            panel17.ResumeLayout(false);
-            panel17.PerformLayout();
-            panel19.ResumeLayout(false);
-            panel19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
-            panel20.ResumeLayout(false);
-            panel20.PerformLayout();
-            panel21.ResumeLayout(false);
-            panel21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
-            panel22.ResumeLayout(false);
-            panel22.PerformLayout();
-            panel23.ResumeLayout(false);
-            panel23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown6).EndInit();
-            panel24.ResumeLayout(false);
-            panel24.PerformLayout();
-            panel25.ResumeLayout(false);
-            panel25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown7).EndInit();
-            panel26.ResumeLayout(false);
-            panel26.PerformLayout();
-            panel27.ResumeLayout(false);
-            panel27.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown8).EndInit();
-            panel28.ResumeLayout(false);
-            panel28.PerformLayout();
-            panel29.ResumeLayout(false);
-            panel29.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown9).EndInit();
-            panel30.ResumeLayout(false);
-            panel30.PerformLayout();
-            panel31.ResumeLayout(false);
-            panel31.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown10).EndInit();
-            panel32.ResumeLayout(false);
-            panel32.PerformLayout();
-            panel33.ResumeLayout(false);
-            panel33.PerformLayout();
-            panel34.ResumeLayout(false);
-            panel34.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown11).EndInit();
-            panel35.ResumeLayout(false);
-            panel35.PerformLayout();
-            panel36.ResumeLayout(false);
-            panel36.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown12).EndInit();
-            panel37.ResumeLayout(false);
-            panel37.PerformLayout();
-            panel38.ResumeLayout(false);
-            panel38.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown13).EndInit();
-            panel39.ResumeLayout(false);
-            panel39.PerformLayout();
-            panel40.ResumeLayout(false);
-            panel40.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown14).EndInit();
-            panel41.ResumeLayout(false);
-            panel41.PerformLayout();
-            panel42.ResumeLayout(false);
-            panel42.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown15).EndInit();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel44.ResumeLayout(false);
-            panel44.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown16).EndInit();
-            panel45.ResumeLayout(false);
-            panel45.PerformLayout();
-            panel46.ResumeLayout(false);
-            panel46.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown17).EndInit();
-            panel47.ResumeLayout(false);
-            panel47.PerformLayout();
-            panel48.ResumeLayout(false);
-            panel48.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown18).EndInit();
-            panel49.ResumeLayout(false);
-            panel49.PerformLayout();
-            panel50.ResumeLayout(false);
-            panel50.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown19).EndInit();
-            panel51.ResumeLayout(false);
-            panel51.PerformLayout();
-            panel52.ResumeLayout(false);
-            panel52.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown20).EndInit();
-            panel53.ResumeLayout(false);
-            panel53.PerformLayout();
-            panel54.ResumeLayout(false);
-            panel54.PerformLayout();
-            panel55.ResumeLayout(false);
-            panel55.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown21).EndInit();
-            panel56.ResumeLayout(false);
-            panel56.PerformLayout();
-            panel57.ResumeLayout(false);
-            panel57.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown22).EndInit();
-            panel58.ResumeLayout(false);
-            panel58.PerformLayout();
-            panel59.ResumeLayout(false);
-            panel59.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown23).EndInit();
-            panel60.ResumeLayout(false);
-            panel60.PerformLayout();
-            panel61.ResumeLayout(false);
-            panel61.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown24).EndInit();
-            panel62.ResumeLayout(false);
-            panel62.PerformLayout();
-            panel63.ResumeLayout(false);
-            panel63.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown25).EndInit();
-            panel64.ResumeLayout(false);
-            panel64.PerformLayout();
-            panel65.ResumeLayout(false);
-            panel65.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown26).EndInit();
-            panel66.ResumeLayout(false);
-            panel66.PerformLayout();
-            panel67.ResumeLayout(false);
-            panel67.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown27).EndInit();
-            panel68.ResumeLayout(false);
-            panel68.PerformLayout();
-            panel69.ResumeLayout(false);
-            panel69.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown28).EndInit();
-            panel70.ResumeLayout(false);
-            panel70.PerformLayout();
-            panel71.ResumeLayout(false);
-            panel71.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown29).EndInit();
-            panel72.ResumeLayout(false);
-            panel72.PerformLayout();
-            panel73.ResumeLayout(false);
-            panel73.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown30).EndInit();
             ResumeLayout(false);
         }
 
@@ -5136,311 +5197,311 @@
         private Label label18;
         private Panel AbilitiesPanel;
         private Panel panel1;
-        private Panel panel3;
+        private Panel DrivePanel;
         private Panel panel6;
         private Label label20;
-        private NumericUpDown numericUpDown1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
-        private RadioButton radioButton5;
+        private NumericUpDown DriveNumeric;
+        private RadioButton DriveButton5;
+        private RadioButton DriveButton4;
+        private RadioButton DriveButton3;
+        private RadioButton DriveButton2;
+        private RadioButton DriveButton1;
         private Label label21;
-        private Panel panel8;
+        private Panel CraftsPanel;
         private Panel panel10;
         private Label label22;
-        private NumericUpDown numericUpDown2;
-        private RadioButton radioButton6;
-        private RadioButton radioButton7;
-        private RadioButton radioButton8;
-        private RadioButton radioButton9;
-        private RadioButton radioButton10;
+        private NumericUpDown CraftsNumeric;
+        private RadioButton CraftsButton5;
+        private RadioButton CraftsButton4;
+        private RadioButton CraftsButton3;
+        private RadioButton CraftsButton2;
+        private RadioButton CraftsButton1;
         private Label label23;
-        private Panel panel13;
+        private Panel AnimalKenPanel;
         private Panel panel15;
         private Label label24;
-        private NumericUpDown numericUpDown3;
-        private RadioButton radioButton11;
-        private RadioButton radioButton12;
-        private RadioButton radioButton13;
-        private RadioButton radioButton14;
-        private RadioButton radioButton15;
+        private NumericUpDown AnimalKenNumeric;
+        private RadioButton AnimalKenButton5;
+        private RadioButton AnimalKenButton4;
+        private RadioButton AnimalKenButton3;
+        private RadioButton AnimalKenButton2;
+        private RadioButton AnimalKenButton1;
         private Label label25;
         private Label label26;
         private Label label19;
         private Panel panel53;
-        private Panel panel54;
+        private Panel SciencePanel;
         private Panel panel55;
         private Label label62;
-        private NumericUpDown numericUpDown21;
-        private RadioButton radioButton101;
-        private RadioButton radioButton102;
-        private RadioButton radioButton103;
-        private RadioButton radioButton104;
-        private RadioButton radioButton105;
+        private NumericUpDown ScienceNumeric;
+        private RadioButton ScienceButton5;
+        private RadioButton ScienceButton4;
+        private RadioButton ScienceButton3;
+        private RadioButton ScienceButton2;
+        private RadioButton ScienceButton1;
         private Label label63;
-        private Panel panel56;
+        private Panel PoliticsPanel;
         private Panel panel57;
         private Label label64;
-        private NumericUpDown numericUpDown22;
-        private RadioButton radioButton106;
-        private RadioButton radioButton107;
-        private RadioButton radioButton108;
-        private RadioButton radioButton109;
-        private RadioButton radioButton110;
+        private NumericUpDown PoliticsNumeric;
+        private RadioButton PoliticsButton5;
+        private RadioButton PoliticsButton4;
+        private RadioButton PoliticsButton3;
+        private RadioButton PoliticsButton2;
+        private RadioButton PoliticsButton1;
         private Label label65;
-        private Panel panel58;
+        private Panel OccultPanel;
         private Panel panel59;
         private Label label66;
-        private NumericUpDown numericUpDown23;
-        private RadioButton radioButton111;
-        private RadioButton radioButton112;
-        private RadioButton radioButton113;
-        private RadioButton radioButton114;
-        private RadioButton radioButton115;
+        private NumericUpDown OccultNumeric;
+        private RadioButton OccultButton5;
+        private RadioButton OccultButton4;
+        private RadioButton OccultButton3;
+        private RadioButton OccultButton2;
+        private RadioButton OccultButton1;
         private Label label67;
-        private Panel panel60;
+        private Panel MedicinePanel;
         private Panel panel61;
         private Label label68;
-        private NumericUpDown numericUpDown24;
-        private RadioButton radioButton116;
-        private RadioButton radioButton117;
-        private RadioButton radioButton118;
-        private RadioButton radioButton119;
-        private RadioButton radioButton120;
+        private NumericUpDown MedicineNumeric;
+        private RadioButton MedicineButton5;
+        private RadioButton MedicineButton4;
+        private RadioButton MedicineButton3;
+        private RadioButton MedicineButton2;
+        private RadioButton MedicineButton1;
         private Label label69;
-        private Panel panel62;
+        private Panel LinguisticsPanel;
         private Panel panel63;
         private Label label70;
-        private NumericUpDown numericUpDown25;
-        private RadioButton radioButton121;
-        private RadioButton radioButton122;
-        private RadioButton radioButton123;
-        private RadioButton radioButton124;
-        private RadioButton radioButton125;
+        private NumericUpDown LinguisticsNumeric;
+        private RadioButton LinguisticsButton5;
+        private RadioButton LinguisticsButton4;
+        private RadioButton LinguisticsButton3;
+        private RadioButton LinguisticsButton2;
+        private RadioButton LinguisticsButton1;
         private Label label71;
-        private Panel panel64;
+        private Panel LawPanel;
         private Panel panel65;
         private Label label72;
-        private NumericUpDown numericUpDown26;
-        private RadioButton radioButton126;
-        private RadioButton radioButton127;
-        private RadioButton radioButton128;
-        private RadioButton radioButton129;
-        private RadioButton radioButton130;
+        private NumericUpDown LawNumeric;
+        private RadioButton LawButton5;
+        private RadioButton LawButton4;
+        private RadioButton LawButton3;
+        private RadioButton LawButton2;
+        private RadioButton LawButton1;
         private Label label73;
-        private Panel panel66;
+        private Panel InvestigationPanel;
         private Panel panel67;
         private Label label74;
-        private NumericUpDown numericUpDown27;
-        private RadioButton radioButton131;
-        private RadioButton radioButton132;
-        private RadioButton radioButton133;
-        private RadioButton radioButton134;
-        private RadioButton radioButton135;
+        private NumericUpDown InvestigationNumeric;
+        private RadioButton InvestigationButton5;
+        private RadioButton InvestigationButton4;
+        private RadioButton InvestigationButton3;
+        private RadioButton InvestigationButton2;
+        private RadioButton InvestigationButton1;
         private Label label75;
-        private Panel panel68;
+        private Panel FinancePanel;
         private Panel panel69;
         private Label label76;
-        private NumericUpDown numericUpDown28;
-        private RadioButton radioButton136;
-        private RadioButton radioButton137;
-        private RadioButton radioButton138;
-        private RadioButton radioButton139;
-        private RadioButton radioButton140;
+        private NumericUpDown FinanceNumeric;
+        private RadioButton FinanceButton5;
+        private RadioButton FinanceButton4;
+        private RadioButton FinanceButton3;
+        private RadioButton FinanceButton2;
+        private RadioButton FinanceButton1;
         private Label label77;
-        private Panel panel70;
+        private Panel ComputerPanel;
         private Panel panel71;
         private Label label78;
-        private NumericUpDown numericUpDown29;
-        private RadioButton radioButton141;
-        private RadioButton radioButton142;
-        private RadioButton radioButton143;
-        private RadioButton radioButton144;
-        private RadioButton radioButton145;
+        private NumericUpDown ComputerNumeric;
+        private RadioButton ComputerButton5;
+        private RadioButton ComputerButton4;
+        private RadioButton ComputerButton3;
+        private RadioButton ComputerButton2;
+        private RadioButton ComputerButton1;
         private Label label79;
-        private Panel panel72;
+        private Panel AcademicsPanel;
         private Panel panel73;
         private Label label80;
-        private NumericUpDown numericUpDown30;
-        private RadioButton radioButton146;
-        private RadioButton radioButton147;
-        private RadioButton radioButton148;
-        private RadioButton radioButton149;
-        private RadioButton radioButton150;
+        private NumericUpDown AcademicsNumeric;
+        private RadioButton AcademicsButton5;
+        private RadioButton AcademicsButton4;
+        private RadioButton AcademicsButton3;
+        private RadioButton AcademicsButton2;
+        private RadioButton AcademicsButton1;
         private Label label81;
         private Label label82;
         private Panel panel32;
-        private Panel panel33;
+        private Panel SubterfugePanel;
         private Panel panel34;
         private Label label41;
-        private NumericUpDown numericUpDown11;
-        private RadioButton radioButton51;
-        private RadioButton radioButton52;
-        private RadioButton radioButton53;
-        private RadioButton radioButton54;
-        private RadioButton radioButton55;
+        private NumericUpDown SubterfugeNumeric;
+        private RadioButton SubterfugeButton5;
+        private RadioButton SubterfugeButton4;
+        private RadioButton SubterfugeButton3;
+        private RadioButton SubterfugeButton2;
+        private RadioButton SubterfugeButton1;
         private Label label42;
-        private Panel panel35;
+        private Panel StreetwisePanel;
         private Panel panel36;
         private Label label43;
-        private NumericUpDown numericUpDown12;
-        private RadioButton radioButton56;
-        private RadioButton radioButton57;
-        private RadioButton radioButton58;
-        private RadioButton radioButton59;
-        private RadioButton radioButton60;
+        private NumericUpDown StreetwiseNumeric;
+        private RadioButton StreetwiseButton5;
+        private RadioButton StreetwiseButton4;
+        private RadioButton StreetwiseButton3;
+        private RadioButton StreetwiseButton2;
+        private RadioButton StreetwiseButton1;
         private Label label44;
-        private Panel panel37;
+        private Panel LeadershipPanel;
         private Panel panel38;
         private Label label45;
-        private NumericUpDown numericUpDown13;
-        private RadioButton radioButton61;
-        private RadioButton radioButton62;
-        private RadioButton radioButton63;
-        private RadioButton radioButton64;
-        private RadioButton radioButton65;
+        private NumericUpDown LeadershipNumeric;
+        private RadioButton LeadershipButton5;
+        private RadioButton LeadershipButton4;
+        private RadioButton LeadershipButton3;
+        private RadioButton LeadershipButton2;
+        private RadioButton LeadershipButton1;
         private Label label46;
-        private Panel panel39;
+        private Panel IntimidationPanel;
         private Panel panel40;
         private Label label47;
-        private NumericUpDown numericUpDown14;
-        private RadioButton radioButton66;
-        private RadioButton radioButton67;
-        private RadioButton radioButton68;
-        private RadioButton radioButton69;
-        private RadioButton radioButton70;
+        private NumericUpDown IntimidationNumeric;
+        private RadioButton IntimidationButton5;
+        private RadioButton IntimidationButton4;
+        private RadioButton IntimidationButton3;
+        private RadioButton IntimidationButton2;
+        private RadioButton IntimidationButton1;
         private Label label48;
-        private Panel panel41;
+        private Panel ExpressionPanel;
         private Panel panel42;
         private Label label49;
-        private NumericUpDown numericUpDown15;
-        private RadioButton radioButton71;
-        private RadioButton radioButton72;
-        private RadioButton radioButton73;
-        private RadioButton radioButton74;
-        private RadioButton radioButton75;
+        private NumericUpDown ExpressionNumeric;
+        private RadioButton ExpressionButton5;
+        private RadioButton ExpressionButton4;
+        private RadioButton ExpressionButton3;
+        private RadioButton ExpressionButton2;
+        private RadioButton ExpressionButton1;
         private Label label50;
-        private Panel panel43;
+        private Panel EmpathyPanel;
         private Panel panel44;
         private Label label51;
-        private NumericUpDown numericUpDown16;
-        private RadioButton radioButton76;
-        private RadioButton radioButton77;
-        private RadioButton radioButton78;
-        private RadioButton radioButton79;
-        private RadioButton radioButton80;
+        private NumericUpDown EmpathyNumeric;
+        private RadioButton EmpathyButton5;
+        private RadioButton EmpathyButton4;
+        private RadioButton EmpathyButton3;
+        private RadioButton EmpathyButton2;
+        private RadioButton EmpathyButton1;
         private Label label52;
-        private Panel panel45;
+        private Panel DodgePanel;
         private Panel panel46;
         private Label label53;
-        private NumericUpDown numericUpDown17;
-        private RadioButton radioButton81;
-        private RadioButton radioButton82;
-        private RadioButton radioButton83;
-        private RadioButton radioButton84;
-        private RadioButton radioButton85;
+        private NumericUpDown DodgeNumeric;
+        private RadioButton DodgeButton5;
+        private RadioButton DodgeButton4;
+        private RadioButton DodgeButton3;
+        private RadioButton DodgeButton2;
+        private RadioButton DodgeButton1;
         private Label label54;
-        private Panel panel47;
+        private Panel BrawlPanel;
         private Panel panel48;
         private Label label55;
-        private NumericUpDown numericUpDown18;
-        private RadioButton radioButton86;
-        private RadioButton radioButton87;
-        private RadioButton radioButton88;
-        private RadioButton radioButton89;
-        private RadioButton radioButton90;
+        private NumericUpDown BrawlNumeric;
+        private RadioButton BrawlButton5;
+        private RadioButton BrawlButton4;
+        private RadioButton BrawlButton3;
+        private RadioButton BrawlButton2;
+        private RadioButton BrawlButton1;
         private Label label56;
-        private Panel panel49;
+        private Panel AthleticsPanel;
         private Panel panel50;
         private Label label57;
-        private NumericUpDown numericUpDown19;
-        private RadioButton radioButton91;
-        private RadioButton radioButton92;
-        private RadioButton radioButton93;
-        private RadioButton radioButton94;
-        private RadioButton radioButton95;
+        private NumericUpDown AthleticsNumeric;
+        private RadioButton AthleticsButton5;
+        private RadioButton AthleticsButton4;
+        private RadioButton AthleticsButton3;
+        private RadioButton AthleticsButton2;
+        private RadioButton AthleticsButton1;
         private Label label58;
-        private Panel panel51;
+        private Panel AlertnessPanel;
         private Panel panel52;
         private Label label59;
-        private NumericUpDown numericUpDown20;
-        private RadioButton radioButton96;
-        private RadioButton radioButton97;
-        private RadioButton radioButton98;
-        private RadioButton radioButton99;
-        private RadioButton radioButton100;
+        private NumericUpDown AlertnessNumeric;
+        private RadioButton AlertnessButton5;
+        private RadioButton AlertnessButton4;
+        private RadioButton AlertnessButton3;
+        private RadioButton AlertnessButton2;
+        private RadioButton AlertnessButton1;
         private Label label60;
         private Label label61;
-        private Panel panel30;
+        private Panel SurvivalPanel;
         private Panel panel31;
         private Label label39;
-        private NumericUpDown numericUpDown10;
-        private RadioButton radioButton46;
-        private RadioButton radioButton47;
-        private RadioButton radioButton48;
-        private RadioButton radioButton49;
-        private RadioButton radioButton50;
+        private NumericUpDown SurvivalNumeric;
+        private RadioButton SurvivalButton5;
+        private RadioButton SurvivalButton4;
+        private RadioButton SurvivalButton3;
+        private RadioButton SurvivalButton2;
+        private RadioButton SurvivalButton1;
         private Label label40;
-        private Panel panel28;
+        private Panel StealthPanel;
         private Panel panel29;
         private Label label37;
-        private NumericUpDown numericUpDown9;
-        private RadioButton radioButton41;
-        private RadioButton radioButton42;
-        private RadioButton radioButton43;
-        private RadioButton radioButton44;
-        private RadioButton radioButton45;
+        private NumericUpDown StealthNumeric;
+        private RadioButton StealthButton5;
+        private RadioButton StealthButton4;
+        private RadioButton StealthButton3;
+        private RadioButton StealthButton2;
+        private RadioButton StealthButton1;
         private Label label38;
-        private Panel panel26;
+        private Panel SecurityPanel;
         private Panel panel27;
         private Label label35;
-        private NumericUpDown numericUpDown8;
-        private RadioButton radioButton36;
-        private RadioButton radioButton37;
-        private RadioButton radioButton38;
-        private RadioButton radioButton39;
-        private RadioButton radioButton40;
+        private NumericUpDown SecurityNumeric;
+        private RadioButton SecurityButton5;
+        private RadioButton SecurityButton4;
+        private RadioButton SecurityButton3;
+        private RadioButton SecurityButton2;
+        private RadioButton SecurityButton1;
         private Label label36;
-        private Panel panel24;
+        private Panel PerfomancePanel;
         private Panel panel25;
         private Label label33;
-        private NumericUpDown numericUpDown7;
-        private RadioButton radioButton31;
-        private RadioButton radioButton32;
-        private RadioButton radioButton33;
-        private RadioButton radioButton34;
-        private RadioButton radioButton35;
+        private NumericUpDown PerfomanceNumeric;
+        private RadioButton PerfomanceButton5;
+        private RadioButton PerfomanceButton4;
+        private RadioButton PerfomanceButton3;
+        private RadioButton PerfomanceButton2;
+        private RadioButton PerfomanceButton1;
         private Label label34;
-        private Panel panel22;
+        private Panel MeleePanel;
         private Panel panel23;
         private Label label31;
-        private NumericUpDown numericUpDown6;
-        private RadioButton radioButton26;
-        private RadioButton radioButton27;
-        private RadioButton radioButton28;
-        private RadioButton radioButton29;
-        private RadioButton radioButton30;
+        private NumericUpDown MeleeNumeric;
+        private RadioButton MeleeButton5;
+        private RadioButton MeleeButton4;
+        private RadioButton MeleeButton3;
+        private RadioButton MeleeButton2;
+        private RadioButton MeleeButton1;
         private Label label32;
-        private Panel panel20;
+        private Panel FirearmsPanel;
         private Panel panel21;
         private Label label29;
-        private NumericUpDown numericUpDown5;
-        private RadioButton radioButton21;
-        private RadioButton radioButton22;
-        private RadioButton radioButton23;
-        private RadioButton radioButton24;
-        private RadioButton radioButton25;
+        private NumericUpDown FirearmsNumeric;
+        private RadioButton FirearmsButton5;
+        private RadioButton FirearmsButton4;
+        private RadioButton FirearmsButton3;
+        private RadioButton FirearmsButton2;
+        private RadioButton FirearmsButton1;
         private Label label30;
-        private Panel panel17;
+        private Panel EtiquettePanel;
         private Panel panel19;
         private Label label27;
-        private NumericUpDown numericUpDown4;
-        private RadioButton radioButton16;
-        private RadioButton radioButton17;
-        private RadioButton radioButton18;
-        private RadioButton radioButton19;
-        private RadioButton radioButton20;
+        private NumericUpDown EtiquetteNumeric;
+        private RadioButton EtiquetteButton5;
+        private RadioButton EtiquetteButton4;
+        private RadioButton EtiquetteButton3;
+        private RadioButton EtiquetteButton2;
+        private RadioButton EtiquetteButton1;
         private Label label28;
     }
 }
