@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vtmRevisedCharacterList", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vtmRevisedCharacterListEntities", "vtmRevisedCharacterListEntities\vtmRevisedCharacterListEntities.csproj", "{1D77406D-67E8-4251-8338-16C2161C0BDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vtmRevisedWebServer", "vtmRevisedWebServer\vtmRevisedWebServer.csproj", "{6F0987CE-8D71-4A11-8AF1-808B2D6A1D77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1D77406D-67E8-4251-8338-16C2161C0BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D77406D-67E8-4251-8338-16C2161C0BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D77406D-67E8-4251-8338-16C2161C0BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0987CE-8D71-4A11-8AF1-808B2D6A1D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0987CE-8D71-4A11-8AF1-808B2D6A1D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0987CE-8D71-4A11-8AF1-808B2D6A1D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0987CE-8D71-4A11-8AF1-808B2D6A1D77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
