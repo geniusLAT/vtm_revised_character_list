@@ -2,6 +2,12 @@
 
 public class Character
 {
+    public string CharacterName { get; set; } = string.Empty;
+
+    public string PlayerName { get; set; } = string.Empty;
+
+    public string ChronicleName { get; set; } = string.Empty;
+
     #region Attributes
 
     #region Physical

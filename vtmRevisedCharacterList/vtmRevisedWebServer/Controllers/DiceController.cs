@@ -16,10 +16,12 @@ namespace vtmRevisedWebServer.Controllers
         }
 
         [HttpPost(Name = "RollDices")]
-        public string Post([FromBody] DicesRollRequest request)
+        public ActionResult<DicesRollRequest> Post([FromBody] DicesRollRequest request)
         {
             var result = DiceManager.EnqueueRequest(request);
-            return $"{result} text test {request.DicesToRoll} {request.Difficulty} {request.Comment}";
+            request.Roll();
+
+            return Ok(request);
         }
 
         [HttpGet(Name = "GetDiceStats")]

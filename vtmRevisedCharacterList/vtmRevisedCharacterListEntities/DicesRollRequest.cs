@@ -14,6 +14,23 @@ public class DicesRollRequest
 
     public bool Specialization { get; set; }
 
+    public RollResult? RollResult {
+        get
+        {
+            //if (_rollResult is null)
+            //{
+            //    return Roll();
+            //}
+            return _rollResult;
+        }
+        set
+        {
+            _rollResult = value;
+        }
+    }
+
+    private RollResult? _rollResult;
+
     public RollResult Roll()
     {
         Random rnd = new Random();
@@ -52,11 +69,13 @@ public class DicesRollRequest
         succeses += (int)AutoSuccesses;
         var criticalFailed = potentialCritical && succeses < 0;
 
-        return new()
+        _rollResult = new()
         {
             Rolls = rolls.ToArray(),
             Succeses = succeses,
             CriticallyFailed = criticalFailed,
         };
+
+        return _rollResult;
     }
 }

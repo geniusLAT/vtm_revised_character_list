@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using vtmRevisedCharacterListEntities;
@@ -9,6 +11,15 @@ namespace vtmRevisedCharacterList;
 
 public partial class CharacterForm : Form
 {
+    private static readonly HttpClientHandler handler = new HttpClientHandler
+    {
+        ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
+    };
+    private static readonly HttpClient _httpClient = new HttpClient(handler)
+    {
+        BaseAddress = new Uri("https://localhost:44320/")
+    };
+
     AttributeVtm? _chosenAttribute;
     Ability? _chosenAbility;
     Character? _chosenCharacter;
@@ -91,6 +102,8 @@ public partial class CharacterForm : Form
 
     void FindButtonsForAttributes()
     {
+        
+
         StrenghtButtons = [SButton, SButton2, SButton3, SButton4, SButton5];
         DexterityButtons = [DexterityButton1, DexterityButton2 , DexterityButton3, DexterityButton4, DexterityButton5];
         StaminaButtons = [StaminaButton1, StaminaButton2, StaminaButton3 , StaminaButton4, StaminaButton5];
@@ -482,7 +495,12 @@ public partial class CharacterForm : Form
 
         }
         sb.Append($" = {_dicesToRoll}");
-        DiceLabel.Text = sb.ToString();
+        var name = _chosenCharacter?.CharacterName ?? "Кто-то";
+        var daredevilCommentary = _daredevil ? ",сорвиголова " : string.Empty;
+        var specializationCommentary = _specialization ? ",специализация " : string.Empty;
+        var autoSuccessCommentary = _additionalAutoSuccess > 0 ? $", {_additionalAutoSuccess} автоуспехов" : string.Empty;
+        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {_difficulty
+            }{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
     }
 
     void RenderCharacter(Character character)
@@ -518,7 +536,8 @@ public partial class CharacterForm : Form
         }
     }
 
-    public void RollDice()
+   
+    public async Task RollDiceAsync()
     {
         DicesRollRequest request = new DicesRollRequest()
         {
@@ -526,14 +545,34 @@ public partial class CharacterForm : Form
             DicesToRoll = _dicesToRoll,
             Difficulty = _difficulty,
             Specialization = _specialization,
-            RemoveCriticalFailure = (uint)( _daredevil ? 1 : 0),
+            RemoveCriticalFailure = (uint)(_daredevil ? 1 : 0),
             Comment = _rollComment
-
         };
 
-        //TODO net code
+        try
+        {
+            var response = await _httpClient.PostAsJsonAsync("Dice", request);
+            response.EnsureSuccessStatusCode();
 
-        var result = request.Roll();
-        logLabel.Text += result.ToString() + '\n';
+            DicesRollRequest? responseRequest = await response.Content.ReadFromJsonAsync<DicesRollRequest>();
+
+            if (responseRequest != null)
+            {
+                var result = responseRequest.RollResult;
+
+                logLabel.Text += responseRequest.Comment + result.ToString() + '\n';
+                ScrollLogToBottom();
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+private void ScrollLogToBottom()
+    {
+        LogPanel.PerformLayout();
+        LogPanel.AutoScrollPosition = new Point(0, LogPanel.DisplayRectangle.Height);
     }
 }

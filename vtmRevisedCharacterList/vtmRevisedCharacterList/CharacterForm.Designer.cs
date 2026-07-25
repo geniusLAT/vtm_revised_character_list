@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
+            DaredevilCheckBox = new CheckBox();
             AbilitiesPanel = new Panel();
             panel53 = new Panel();
             SciencePanel = new Panel();
@@ -442,10 +443,10 @@
             DifficultyLabel = new Label();
             additionalAutoSuccessNumeric = new NumericUpDown();
             AdditionalAutoSuccessLabel = new Label();
-            DaredevilCheckBox = new CheckBox();
             RollDiceButton = new Button();
             LogPanel = new Panel();
             logLabel = new Label();
+            SpecializationCheckBox = new CheckBox();
             characterPanel.SuspendLayout();
             AbilitiesPanel.SuspendLayout();
             panel53.SuspendLayout();
@@ -587,6 +588,17 @@
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // DaredevilCheckBox
+            // 
+            DaredevilCheckBox.AutoSize = true;
+            DaredevilCheckBox.Location = new Point(7, 662);
+            DaredevilCheckBox.Name = "DaredevilCheckBox";
+            DaredevilCheckBox.Size = new Size(99, 19);
+            DaredevilCheckBox.TabIndex = 2;
+            DaredevilCheckBox.Text = "Сорвиголова";
+            DaredevilCheckBox.UseVisualStyleBackColor = true;
+            DaredevilCheckBox.CheckedChanged += DaredevilCheckBox_CheckedChanged;
             // 
             // AbilitiesPanel
             // 
@@ -4887,11 +4899,11 @@
             AttributesLabel.Text = "Атрибуты";
             AttributesLabel.Click += label1_Click;
             // 
-            // cubeLabel
+            // DiceLabel
             // 
             DiceLabel.AutoSize = true;
             DiceLabel.Location = new Point(12, 699);
-            DiceLabel.Name = "cubeLabel";
+            DiceLabel.Name = "DiceLabel";
             DiceLabel.Size = new Size(35, 15);
             DiceLabel.TabIndex = 1;
             DiceLabel.Text = "кубы";
@@ -4951,16 +4963,6 @@
             AdditionalAutoSuccessLabel.Text = "Дополнительные автоуспехи";
             AdditionalAutoSuccessLabel.Click += AdditionalAutoSuccessLabel_Click;
             // 
-            // DaredevilCheckBox
-            // 
-            DaredevilCheckBox.AutoSize = true;
-            DaredevilCheckBox.Location = new Point(7, 662);
-            DaredevilCheckBox.Name = "DaredevilCheckBox";
-            DaredevilCheckBox.Size = new Size(99, 19);
-            DaredevilCheckBox.TabIndex = 2;
-            DaredevilCheckBox.Text = "Сорвиголова";
-            DaredevilCheckBox.UseVisualStyleBackColor = true;
-            // 
             // RollDiceButton
             // 
             RollDiceButton.Location = new Point(419, 715);
@@ -4985,18 +4987,29 @@
             // logLabel
             // 
             logLabel.AutoSize = true;
-            logLabel.Location = new Point(0, 759);
+            logLabel.Location = new Point(0, 0);
             logLabel.Name = "logLabel";
-            logLabel.Size = new Size(44, 15);
+            logLabel.Size = new Size(0, 15);
             logLabel.TabIndex = 0;
-            logLabel.Text = "label83";
             logLabel.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // SpecializationCheckBox
+            // 
+            SpecializationCheckBox.AutoSize = true;
+            SpecializationCheckBox.Location = new Point(199, 750);
+            SpecializationCheckBox.Name = "SpecializationCheckBox";
+            SpecializationCheckBox.Size = new Size(112, 19);
+            SpecializationCheckBox.TabIndex = 3;
+            SpecializationCheckBox.Text = "Специализация";
+            SpecializationCheckBox.UseVisualStyleBackColor = true;
+            SpecializationCheckBox.CheckedChanged += SpecializationCheckBox_CheckedChanged;
             // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 796);
+            Controls.Add(SpecializationCheckBox);
             Controls.Add(LogPanel);
             Controls.Add(RollDiceButton);
             Controls.Add(AdditionalAutoSuccessLabel);
@@ -5651,5 +5664,6 @@
         private Button RollDiceButton;
         private Panel LogPanel;
         private Label logLabel;
+        private CheckBox SpecializationCheckBox;
     }
 }

@@ -315,8 +315,23 @@ public partial class CharacterForm : Form
         CalculateDices();
     }
 
-    private void RollDiceButton_Click(object sender, EventArgs e)
+    private async void RollDiceButton_Click(object sender, EventArgs e)
     {
-        RollDice();
+        //RollDice();
+        RollDiceButton.Enabled = false;
+
+        await RollDiceAsync();
+
+        RollDiceButton.Enabled = true;
+    }
+
+    private void DaredevilCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+        _daredevil = DaredevilCheckBox.Checked;
+    }
+
+    private void SpecializationCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+        _specialization = SpecializationCheckBox.Checked;
     }
 }
