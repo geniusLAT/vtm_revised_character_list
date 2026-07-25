@@ -447,6 +447,7 @@
             LogPanel = new Panel();
             logLabel = new Label();
             SpecializationCheckBox = new CheckBox();
+            characterNameLabel = new Label();
             characterPanel.SuspendLayout();
             AbilitiesPanel.SuspendLayout();
             panel53.SuspendLayout();
@@ -581,6 +582,7 @@
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(characterNameLabel);
             characterPanel.Controls.Add(DaredevilCheckBox);
             characterPanel.Controls.Add(AbilitiesPanel);
             characterPanel.Controls.Add(AttributesPanel);
@@ -3980,9 +3982,10 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(3, 0);
+            label13.Font = new Font("Segoe UI", 6F);
+            label13.Location = new Point(1, 4);
             label13.Name = "label13";
-            label13.Size = new Size(116, 15);
+            label13.Size = new Size(79, 11);
             label13.TabIndex = 0;
             label13.Text = "Сообразительность";
             label13.Click += WitsPanel_Click;
@@ -4424,11 +4427,12 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(3, 0);
+            label8.Font = new Font("Segoe UI", 6F);
+            label8.Location = new Point(0, 4);
             label8.Name = "label8";
-            label8.Size = new Size(84, 15);
+            label8.Size = new Size(76, 11);
             label8.TabIndex = 0;
-            label8.Text = "Манипуляция";
+            label8.Text = "Манипулирование";
             label8.Click += ManipulationPanel_Click;
             // 
             // CharismaPanel
@@ -4532,9 +4536,9 @@
             label10.AutoSize = true;
             label10.Location = new Point(3, 0);
             label10.Name = "label10";
-            label10.Size = new Size(54, 15);
+            label10.Size = new Size(55, 15);
             label10.TabIndex = 0;
-            label10.Text = "Харизма";
+            label10.Text = "Обаяние";
             label10.Click += CharismaPanel_Click;
             // 
             // label11
@@ -5003,6 +5007,15 @@
             SpecializationCheckBox.Text = "Специализация";
             SpecializationCheckBox.UseVisualStyleBackColor = true;
             SpecializationCheckBox.CheckedChanged += SpecializationCheckBox_CheckedChanged;
+            // 
+            // characterNameLabel
+            // 
+            characterNameLabel.AutoSize = true;
+            characterNameLabel.Location = new Point(6, 4);
+            characterNameLabel.Name = "characterNameLabel";
+            characterNameLabel.Size = new Size(95, 15);
+            characterNameLabel.TabIndex = 9;
+            characterNameLabel.Text = "Имя персонажа";
             // 
             // CharacterForm
             // 
@@ -5665,5 +5678,6 @@
         private Panel LogPanel;
         private Label logLabel;
         private CheckBox SpecializationCheckBox;
+        private Label characterNameLabel;
     }
 }
