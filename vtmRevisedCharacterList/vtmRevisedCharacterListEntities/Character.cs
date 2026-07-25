@@ -12,31 +12,31 @@ public class Character
 
     #region Physical
 
-    public uint Strenght;
+    public uint Strenght { get; set; }
 
-    public uint Dexterity;
+    public uint Dexterity { get; set; }
 
-    public uint Stamina;
+    public uint Stamina { get; set; }
 
     #endregion
 
     #region Social
 
-    public uint Charisma;
+    public uint Charisma { get; set; }
 
-    public uint Manipulation;
+    public uint Manipulation { get; set; }
 
-    public uint Appearance;
+    public uint Appearance { get; set; }
 
     #endregion
 
     #region Mental
 
-    public uint Perception;
+    public uint Perception { get; set; }
 
-    public uint Intellegence;
+    public uint Intellegence { get; set; }
 
-    public uint Wits;
+    public uint Wits { get; set; }
 
     #endregion
 
@@ -46,73 +46,73 @@ public class Character
 
     #region Talents
 
-    public uint Alertness;
+    public uint Alertness { get; set; }
 
-    public uint Athletics;
+    public uint Athletics { get; set; }
 
-    public uint Brawl;
+    public uint Brawl { get; set; }
 
-    public uint Dodge;
+    public uint Dodge { get; set; }
 
-    public uint Empathy;
+    public uint Empathy { get; set; }
 
-    public uint Expression;
+    public uint Expression { get; set; }
 
-    public uint Intimidation;
+    public uint Intimidation { get; set; }
 
-    public uint Leadership;
+    public uint Leadership { get; set; }
 
-    public uint Streetwise;
+    public uint Streetwise { get; set; }
 
-    public uint Subterfuge;
+    public uint Subterfuge { get; set; }
 
     #endregion
 
     #region Skills
 
-    public uint AnimalKen;
+    public uint AnimalKen { get; set; }
 
-    public uint Crafts;
+    public uint Crafts { get; set; }
 
-    public uint Drive;
+    public uint Drive { get; set; }
 
-    public uint Etiquette;
+    public uint Etiquette { get; set; }
 
-    public uint Firearms;
+    public uint Firearms { get; set; }
 
-    public uint Melee;
+    public uint Melee { get; set; }
 
-    public uint Perfomance;
+    public uint Perfomance { get; set; }
 
-    public uint Security;
+    public uint Security { get; set; }
 
-    public uint Stealth;
+    public uint Stealth { get; set; }
 
-    public uint Survival;
+    public uint Survival { get; set; }
 
     #endregion
 
     #region Knowledges
 
-    public uint Academics;
+    public uint Academics { get; set; }
 
-    public uint Computer;
+    public uint Computer { get; set; }
 
-    public uint Finance;
+    public uint Finance { get; set; }
 
-    public uint Investigation;
+    public uint Investigation { get; set; }
 
-    public uint Law;
+    public uint Law { get; set; }
 
-    public uint Linguistics;
+    public uint Linguistics { get; set; }
 
-    public uint Medicine;
+    public uint Medicine { get; set; }
 
-    public uint Occult;
+    public uint Occult { get; set; }
 
-    public uint Politics;
+    public uint Politics { get; set; }
 
-    public uint Science;
+    public uint Science { get; set; }
 
     #endregion
 
@@ -134,11 +134,11 @@ public class Character
 
     #region Virtues
 
-    public uint ConscienceConviction;
+    public uint ConscienceConviction { get; set; }
 
-    public uint SelfControlInstincts;
+    public uint SelfControlInstincts { get; set; }
 
-    public uint Courage;
+    public uint Courage { get; set; }
 
     #endregion
 

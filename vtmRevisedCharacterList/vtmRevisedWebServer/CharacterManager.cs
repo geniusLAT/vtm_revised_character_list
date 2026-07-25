@@ -52,6 +52,8 @@ public static class CharacterManager
             // Десериализуем JSON в объект Character
             Character? character = JsonSerializer.Deserialize<Character>(content);
 
+            Console.WriteLine(character!.CharacterName);
+
             return character;
         }
         catch (Exception)

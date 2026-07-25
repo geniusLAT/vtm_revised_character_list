@@ -3,51 +3,70 @@ using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using vtmRevisedCharacterListEntities;
 
-namespace vtmRevisedWebServer.Controllers
+namespace vtmRevisedWebServer.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+public class CharacterController : ControllerBase
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class CharacterController : ControllerBase
+
+    private readonly ILogger<CharacterController> _logger;
+
+    public CharacterController(ILogger<CharacterController> logger)
     {
-        
-        private readonly ILogger<DiceController> _logger;
+        _logger = logger;
+    }
 
-        public CharacterController(ILogger<DiceController> logger)
+    [HttpPost("serializeCharacter")]
+    public ActionResult<string> SerializeCharacter([FromBody] Character request)
+    {
+        var serialized = JsonConvert.SerializeObject(request);
+        return Ok(serialized);
+    }
+
+    [HttpPost("GetCharacterList")]
+    public ActionResult<List<CharacterListMember>> GetCharacterList([FromBody] CharacterListRequest request)
+    {
+        List<CharacterListMember> result = [];
+
+        var charactersToAccess = CharacterManager.GetUserRights(request.UserUuid);
+
+        foreach (var characterUuid in charactersToAccess)
         {
-            _logger = logger;
-        }
-
-        [Route("serializeCharacter")]
-        public ActionResult<string> Get([FromBody] Character request)
-        {
-            var serialized = JsonConvert.SerializeObject(request);
-            return Ok(serialized);
-        }
-
-        [HttpGet(Name = "GetCharacterList")]
-        public ActionResult<List<CharacterListMember>> Get([FromBody] CharacterListRequest request)
-        {
-            List<CharacterListMember> result = [];
-
-            var charactersToAccess = CharacterManager.GetUserRights(request.UserUuid);
-
-            foreach (var characterUuid in charactersToAccess)
+            var character = CharacterManager.GetCharacter(characterUuid);
+            if (character == null)
             {
-                var character = CharacterManager.GetCharacter(characterUuid);
-                if (character == null)
-                {
-                    Console.WriteLine($"no character {characterUuid}");
-                    continue;
-                }
-                result.Add(new()
-                {
-                    CharacterName = character.CharacterName,
-                    CharacterUuid = characterUuid
-                    
-                }
-                    );
+                Console.WriteLine($"no character {characterUuid}");
+                continue;
             }
-            return result;
+            result.Add(new()
+            {
+                CharacterName = character.CharacterName,
+                CharacterUuid = characterUuid
+
+            }
+                );
         }
+        return result;
+    }
+
+    [HttpPost("GetCharacter")]
+    public ActionResult<Character> GetCharacter([FromBody] CharacterRequest request)
+    {
+        var charactersToAccess = CharacterManager.GetUserRights(request.UserUuid);
+
+        if (!charactersToAccess.Contains(request.CharacterUuid))
+        {
+            return BadRequest("not your character");
+        }
+
+        var character = CharacterManager.GetCharacter(request.CharacterUuid);
+
+        if (character == null)
+        {
+            return NotFound();
+        }
+
+        return character;
     }
 }
