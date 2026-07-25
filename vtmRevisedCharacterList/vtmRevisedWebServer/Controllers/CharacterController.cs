@@ -28,8 +28,18 @@ public class CharacterController : ControllerBase
     public ActionResult<List<CharacterListMember>> GetCharacterList([FromBody] CharacterListRequest request)
     {
         List<CharacterListMember> result = [];
-
-        var charactersToAccess = CharacterManager.GetUserRights(request.UserUuid);
+        Guid[] charactersToAccess;
+        
+        var adminGuid = CharacterManager.GetAdminGuid();
+        //throw new NotImplementedException($"{adminGuid}");
+        if (adminGuid != request.UserUuid)
+        {
+            charactersToAccess = CharacterManager.GetUserRights(request.UserUuid);
+        }
+        else
+        {
+            charactersToAccess = CharacterManager.GetAllCharacters();
+        }
 
         foreach (var characterUuid in charactersToAccess)
         {
@@ -53,15 +63,18 @@ public class CharacterController : ControllerBase
     [HttpPost("GetCharacter")]
     public ActionResult<Character> GetCharacter([FromBody] CharacterRequest request)
     {
-        var charactersToAccess = CharacterManager.GetUserRights(request.UserUuid);
-
-        if (!charactersToAccess.Contains(request.CharacterUuid))
+        var adminGuid = CharacterManager.GetAdminGuid();
+        if (adminGuid != request.UserUuid)
         {
-            return BadRequest("not your character");
+            var charactersToAccess = CharacterManager.GetUserRights(request.UserUuid);
+
+            if (!charactersToAccess.Contains(request.CharacterUuid))
+            {
+                return BadRequest("not your character");
+            }
         }
 
         var character = CharacterManager.GetCharacter(request.CharacterUuid);
-
         if (character == null)
         {
             return NotFound();

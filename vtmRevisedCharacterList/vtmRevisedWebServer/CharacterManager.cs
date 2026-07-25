@@ -5,6 +5,42 @@ namespace vtmRevisedWebServer;
 
 public static class CharacterManager
 {
+    public static Guid[] GetAllCharacters() // или GetUserRightsAdmin()
+    {
+        string folderPath = "characters";
+
+        // Если папки с персонажами нет, сразу возвращаем пустой массив
+        if (!Directory.Exists(folderPath))
+        {
+            return Array.Empty<Guid>();
+        }
+
+        try
+        {
+            List<Guid> characterGuids = new();
+
+            // Перебираем все файлы с расширением .txt
+            foreach (string filePath in Directory.EnumerateFiles(folderPath, "*.txt"))
+            {
+                // Получаем имя файла без пути и без расширения .txt
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+
+                // Валидируем: проверяем, что имя файла — это корректный GUID
+                if (Guid.TryParse(fileName, out Guid characterGuid))
+                {
+                    characterGuids.Add(characterGuid);
+                }
+            }
+
+            return characterGuids.ToArray();
+        }
+        catch (Exception)
+        {
+            // При ошибках доступа к ФС или вводу/выводу возвращаем пустой массив
+            return Array.Empty<Guid>();
+        }
+    }
+
     public static Guid[] GetUserRights(Guid userGuid)
     {
         // Формируем путь к файлу с учетом операционной системы
@@ -31,6 +67,35 @@ public static class CharacterManager
             // В случае любых ошибок чтения или поврежденного JSON 
             // (например, JsonException, IOException) возвращаем пустой массив
             return Array.Empty<Guid>();
+        }
+    }
+
+    public static Guid? GetAdminGuid()
+    {
+        // Формируем путь к файлу с учетом операционной системы
+        string filePath = "admin.txt";
+
+        // Если файла нет, сразу возвращаем пустой массив
+        if (!File.Exists(filePath))
+        {
+            return null;
+        }
+
+        try
+        {
+            string content = File.ReadAllText(filePath);
+
+            // Десериализуем JSON-массив в Guid[]
+            Guid adminGuid = Guid.Parse(content);//JsonSerializer.Deserialize<Guid>(content);
+
+            // Если файл содержал "null" или десериализация вернула null
+            return adminGuid;
+        }
+        catch (Exception)
+        {
+            // В случае любых ошибок чтения или поврежденного JSON 
+            // (например, JsonException, IOException) возвращаем пустой массив
+            return null;
         }
     }
 
