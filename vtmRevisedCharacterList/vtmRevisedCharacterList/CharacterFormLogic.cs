@@ -13,6 +13,24 @@ public partial class CharacterForm : Form
     Ability? _chosenAbility;
     Character? _chosenCharacter;
 
+    #region
+
+    uint _dicesToRoll = 0;
+
+    uint _extraDicePool = 0;
+
+    uint _difficulty = 6;
+
+    uint _additionalAutoSuccess = 0;
+
+    bool _daredevil = false;
+
+    bool _specialization = false;
+
+    string _rollComment = string.Empty;
+
+    #endregion
+
     #region RadioButtons
 
     #region AttributeButtons;
@@ -417,7 +435,7 @@ public partial class CharacterForm : Form
         {
             panel.BackColor = Color.Yellow;
         }
-        CalculateCubes();
+        CalculateDices();
     }
 
     void ChooseAbility(Ability ability)
@@ -429,31 +447,42 @@ public partial class CharacterForm : Form
         {
             panel.BackColor = Color.Yellow;
         }
-        CalculateCubes();
+        CalculateDices();
     }
 
-    void CalculateCubes()
+    void CalculateDices()
     {
-        uint cubesToRoll = 0;
+        _dicesToRoll = 0;
         StringBuilder sb = new StringBuilder();
         if (_chosenAttribute != null)
         {
             var attribute = _chosenCharacter?.GetAttribute((AttributeVtm)_chosenAttribute) ?? 0;
-            cubesToRoll += attribute;
-            sb.Append(attribute.ToString());
+            _dicesToRoll += attribute;
+            sb.Append($" {RussianTranslator.TranslateAttribute(_chosenAttribute)} {attribute.ToString()}");
         }
         if (_chosenAbility != null)
         {
             var ability = _chosenCharacter?.GetAbility((Ability)_chosenAbility) ?? 0;
-            cubesToRoll += ability;
+            _dicesToRoll += ability;
             if (sb.Length > 0)
             {
                 sb.Append(" + ");
             }
-            sb.Append(ability.ToString());
+            sb.Append($" {RussianTranslator.TranslateAbility(_chosenAbility)} {ability.ToString()}");
+
         }
-        sb.Append($" = {cubesToRoll}");
-        cubeLabel.Text = sb.ToString();
+        if (_extraDicePool > 0)
+        {
+            _dicesToRoll += _extraDicePool;
+            if (sb.Length > 0)
+            {
+                sb.Append(" + ");
+            }
+            sb.Append($" доп кубы {_extraDicePool.ToString()}");
+
+        }
+        sb.Append($" = {_dicesToRoll}");
+        DiceLabel.Text = sb.ToString();
     }
 
     void RenderCharacter(Character character)
@@ -487,5 +516,24 @@ public partial class CharacterForm : Form
             SetButtonsForNum(GetAbilityButtons(ability), abilityValue);
 
         }
+    }
+
+    public void RollDice()
+    {
+        DicesRollRequest request = new DicesRollRequest()
+        {
+            AutoSuccesses = _additionalAutoSuccess,
+            DicesToRoll = _dicesToRoll,
+            Difficulty = _difficulty,
+            Specialization = _specialization,
+            RemoveCriticalFailure = (uint)( _daredevil ? 1 : 0),
+            Comment = _rollComment
+
+        };
+
+        //TODO net code
+
+        var result = request.Roll();
+        logLabel.Text += result.ToString() + '\n';
     }
 }

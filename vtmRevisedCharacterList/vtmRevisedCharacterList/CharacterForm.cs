@@ -281,4 +281,42 @@ public partial class CharacterForm : Form
     {
 
     }
+    private void ExtraDicePoolLabel_Click(object sender, EventArgs e)
+    {
+        _extraDicePool = (uint)(ExtraDicePoolNumeric.Value = 0);
+        CalculateDices();
+    }
+
+    private void ExtraDicePoolNumeric_ValueChanged(object sender, EventArgs e)
+    {
+        _extraDicePool = (uint)(ExtraDicePoolNumeric.Value);
+        CalculateDices();
+    }
+
+    private void label84_Click(object sender, EventArgs e)
+    {
+        _difficulty = (uint)(DifficultyNumeric.Value = 6);
+    }
+
+    private void DifficultyNumeric_ValueChanged(object sender, EventArgs e)
+    {
+        _difficulty = (uint)(DifficultyNumeric.Value);
+    }
+
+    private void additionalAutoSuccessNumeric_ValueChanged(object sender, EventArgs e)
+    {
+        _additionalAutoSuccess = (uint)(additionalAutoSuccessNumeric.Value);
+        CalculateDices();
+    }
+
+    private void AdditionalAutoSuccessLabel_Click(object sender, EventArgs e)
+    {
+        _additionalAutoSuccess = (uint)(additionalAutoSuccessNumeric.Value = 0);
+        CalculateDices();
+    }
+
+    private void RollDiceButton_Click(object sender, EventArgs e)
+    {
+        RollDice();
+    }
 }

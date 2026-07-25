@@ -435,7 +435,17 @@
             StrenghtLabel = new Label();
             PhysicalAttributesLabel = new Label();
             AttributesLabel = new Label();
-            cubeLabel = new Label();
+            DiceLabel = new Label();
+            ExtraDicePoolNumeric = new NumericUpDown();
+            ExtraDicePoolLabel = new Label();
+            DifficultyNumeric = new NumericUpDown();
+            DifficultyLabel = new Label();
+            additionalAutoSuccessNumeric = new NumericUpDown();
+            AdditionalAutoSuccessLabel = new Label();
+            DaredevilCheckBox = new CheckBox();
+            RollDiceButton = new Button();
+            LogPanel = new Panel();
+            logLabel = new Label();
             characterPanel.SuspendLayout();
             AbilitiesPanel.SuspendLayout();
             panel53.SuspendLayout();
@@ -562,10 +572,15 @@
             StrenghtPanel.SuspendLayout();
             DexterityPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)StrenghtNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ExtraDicePoolNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DifficultyNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).BeginInit();
+            LogPanel.SuspendLayout();
             SuspendLayout();
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(DaredevilCheckBox);
             characterPanel.Controls.Add(AbilitiesPanel);
             characterPanel.Controls.Add(AttributesPanel);
             characterPanel.Location = new Point(12, 12);
@@ -4874,23 +4889,128 @@
             // 
             // cubeLabel
             // 
-            cubeLabel.AutoSize = true;
-            cubeLabel.Location = new Point(12, 699);
-            cubeLabel.Name = "cubeLabel";
-            cubeLabel.Size = new Size(35, 15);
-            cubeLabel.TabIndex = 1;
-            cubeLabel.Text = "кубы";
+            DiceLabel.AutoSize = true;
+            DiceLabel.Location = new Point(12, 699);
+            DiceLabel.Name = "cubeLabel";
+            DiceLabel.Size = new Size(35, 15);
+            DiceLabel.TabIndex = 1;
+            DiceLabel.Text = "кубы";
+            // 
+            // ExtraDicePoolNumeric
+            // 
+            ExtraDicePoolNumeric.Location = new Point(12, 717);
+            ExtraDicePoolNumeric.Name = "ExtraDicePoolNumeric";
+            ExtraDicePoolNumeric.Size = new Size(41, 23);
+            ExtraDicePoolNumeric.TabIndex = 9;
+            ExtraDicePoolNumeric.ValueChanged += ExtraDicePoolNumeric_ValueChanged;
+            // 
+            // ExtraDicePoolLabel
+            // 
+            ExtraDicePoolLabel.AutoSize = true;
+            ExtraDicePoolLabel.Location = new Point(59, 719);
+            ExtraDicePoolLabel.Name = "ExtraDicePoolLabel";
+            ExtraDicePoolLabel.Size = new Size(134, 15);
+            ExtraDicePoolLabel.TabIndex = 9;
+            ExtraDicePoolLabel.Text = "Дополнительные кубы";
+            ExtraDicePoolLabel.Click += ExtraDicePoolLabel_Click;
+            // 
+            // DifficultyNumeric
+            // 
+            DifficultyNumeric.Location = new Point(12, 746);
+            DifficultyNumeric.Name = "DifficultyNumeric";
+            DifficultyNumeric.Size = new Size(41, 23);
+            DifficultyNumeric.TabIndex = 10;
+            DifficultyNumeric.Value = new decimal(new int[] { 6, 0, 0, 0 });
+            DifficultyNumeric.ValueChanged += DifficultyNumeric_ValueChanged;
+            // 
+            // DifficultyLabel
+            // 
+            DifficultyLabel.AutoSize = true;
+            DifficultyLabel.Location = new Point(59, 748);
+            DifficultyLabel.Name = "DifficultyLabel";
+            DifficultyLabel.Size = new Size(69, 15);
+            DifficultyLabel.TabIndex = 11;
+            DifficultyLabel.Text = "Сложность";
+            DifficultyLabel.Click += label84_Click;
+            // 
+            // additionalAutoSuccessNumeric
+            // 
+            additionalAutoSuccessNumeric.Location = new Point(199, 717);
+            additionalAutoSuccessNumeric.Name = "additionalAutoSuccessNumeric";
+            additionalAutoSuccessNumeric.Size = new Size(41, 23);
+            additionalAutoSuccessNumeric.TabIndex = 12;
+            additionalAutoSuccessNumeric.ValueChanged += additionalAutoSuccessNumeric_ValueChanged;
+            // 
+            // AdditionalAutoSuccessLabel
+            // 
+            AdditionalAutoSuccessLabel.AutoSize = true;
+            AdditionalAutoSuccessLabel.Location = new Point(245, 719);
+            AdditionalAutoSuccessLabel.Name = "AdditionalAutoSuccessLabel";
+            AdditionalAutoSuccessLabel.Size = new Size(168, 15);
+            AdditionalAutoSuccessLabel.TabIndex = 13;
+            AdditionalAutoSuccessLabel.Text = "Дополнительные автоуспехи";
+            AdditionalAutoSuccessLabel.Click += AdditionalAutoSuccessLabel_Click;
+            // 
+            // DaredevilCheckBox
+            // 
+            DaredevilCheckBox.AutoSize = true;
+            DaredevilCheckBox.Location = new Point(7, 662);
+            DaredevilCheckBox.Name = "DaredevilCheckBox";
+            DaredevilCheckBox.Size = new Size(99, 19);
+            DaredevilCheckBox.TabIndex = 2;
+            DaredevilCheckBox.Text = "Сорвиголова";
+            DaredevilCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // RollDiceButton
+            // 
+            RollDiceButton.Location = new Point(419, 715);
+            RollDiceButton.Name = "RollDiceButton";
+            RollDiceButton.Size = new Size(90, 23);
+            RollDiceButton.TabIndex = 14;
+            RollDiceButton.Text = "Кинуть кубы";
+            RollDiceButton.UseVisualStyleBackColor = true;
+            RollDiceButton.Click += RollDiceButton_Click;
+            // 
+            // LogPanel
+            // 
+            LogPanel.AutoScroll = true;
+            LogPanel.BackColor = SystemColors.ActiveCaption;
+            LogPanel.Controls.Add(logLabel);
+            LogPanel.ForeColor = SystemColors.Window;
+            LogPanel.Location = new Point(720, 12);
+            LogPanel.Name = "LogPanel";
+            LogPanel.Size = new Size(229, 774);
+            LogPanel.TabIndex = 15;
+            // 
+            // logLabel
+            // 
+            logLabel.AutoSize = true;
+            logLabel.Location = new Point(0, 759);
+            logLabel.Name = "logLabel";
+            logLabel.Size = new Size(44, 15);
+            logLabel.TabIndex = 0;
+            logLabel.Text = "label83";
+            logLabel.TextAlign = ContentAlignment.BottomLeft;
             // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 796);
-            Controls.Add(cubeLabel);
+            Controls.Add(LogPanel);
+            Controls.Add(RollDiceButton);
+            Controls.Add(AdditionalAutoSuccessLabel);
+            Controls.Add(additionalAutoSuccessNumeric);
+            Controls.Add(DifficultyLabel);
+            Controls.Add(DifficultyNumeric);
+            Controls.Add(ExtraDicePoolLabel);
+            Controls.Add(ExtraDicePoolNumeric);
+            Controls.Add(DiceLabel);
             Controls.Add(characterPanel);
             Name = "CharacterForm";
             Text = "Form1";
             characterPanel.ResumeLayout(false);
+            characterPanel.PerformLayout();
             AbilitiesPanel.ResumeLayout(false);
             AbilitiesPanel.PerformLayout();
             panel53.ResumeLayout(false);
@@ -5102,6 +5222,11 @@
             DexterityPanel.ResumeLayout(false);
             DexterityPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)StrenghtNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ExtraDicePoolNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DifficultyNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).EndInit();
+            LogPanel.ResumeLayout(false);
+            LogPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -5515,6 +5640,16 @@
         private RadioButton EtiquetteButton2;
         private RadioButton EtiquetteButton1;
         private Label label28;
-        private Label cubeLabel;
+        private Label DiceLabel;
+        private NumericUpDown ExtraDicePoolNumeric;
+        private Label ExtraDicePoolLabel;
+        private NumericUpDown DifficultyNumeric;
+        private Label DifficultyLabel;
+        private NumericUpDown additionalAutoSuccessNumeric;
+        private Label AdditionalAutoSuccessLabel;
+        private CheckBox DaredevilCheckBox;
+        private Button RollDiceButton;
+        private Panel LogPanel;
+        private Label logLabel;
     }
 }

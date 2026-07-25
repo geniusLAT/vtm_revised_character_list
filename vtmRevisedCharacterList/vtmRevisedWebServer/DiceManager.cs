@@ -2,11 +2,11 @@
 
 namespace vtmRevisedWebServer;
 
-public static class CubeManager
+public static class DiceManager
 {
-    public static Queue<CubeRollRequest> queue = new Queue<CubeRollRequest>();
+    public static Queue<DicesRollRequest> queue = new Queue<DicesRollRequest>();
 
-    public static CubeRollRequest? DequeueRequest()
+    public static DicesRollRequest? DequeueRequest()
     {
         if (queue.Count == 0)
         {
@@ -16,7 +16,7 @@ public static class CubeManager
         return queue.Dequeue();
     }
 
-    public static bool EnqueueRequest(CubeRollRequest request)
+    public static bool EnqueueRequest(DicesRollRequest request)
     {
         if (queue.Count > 1000)
         {
