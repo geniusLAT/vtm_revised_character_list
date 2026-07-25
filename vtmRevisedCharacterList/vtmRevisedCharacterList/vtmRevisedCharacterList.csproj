@@ -12,4 +12,10 @@
     <ProjectReference Include="..\vtmRevisedCharacterListEntities\vtmRevisedCharacterListEntities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

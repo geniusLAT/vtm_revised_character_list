@@ -1,0 +1,54 @@
+{
+  "CharacterName": "Michael4",
+  "PlayerName": "example",
+  "ChronicleName": "Miami",
+
+  "Strenght": 1,
+  "Dexterity": 2,
+  "Stamina": 3,
+
+  "Charisma": 4,
+  "Manipulation": 5,
+  "Appearance": 4,
+
+  "Perception": 3,
+  "Intellegence": 2,
+  "Wits": 1,
+
+  "Alertness": 5,
+  "Athletics": 5,
+  "Brawl": 5,
+  "Dodge": 5,
+  "Empathy": 5,
+  "Expression": 5,
+  "Intimidation": 5,
+  "Leadership": 5,
+  "Streetwise": 5,
+  "Subterfuge": 5,
+
+  "AnimalKen": 0,
+  "Crafts": 1,
+  "Drive": 2,
+  "Etiquette": 3,
+  "Firearms": 4,
+  "Melee": 5,
+  "Perfomance": 4,
+  "Security": 3,
+  "Stealth": 2,
+  "Survival": 1,
+
+  "Academics": 0,
+  "Computer": 0,
+  "Finance": 0,
+  "Investigation": 0,
+  "Law": 0,
+  "Linguistics": 0,
+  "Medicine": 0,
+  "Occult": 0,
+  "Politics": 0,
+  "Science": 5,
+
+  "ConscienceConviction": 3,
+  "SelfControlInstincts": 2,
+  "Courage": 1
+}

@@ -512,6 +512,7 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
+            UsernameLabel = new Label();
             characterPanel.SuspendLayout();
             TempWillpowerPanel.SuspendLayout();
             panel20.SuspendLayout();
@@ -663,6 +664,7 @@
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(UsernameLabel);
             characterPanel.Controls.Add(TempWillpowerPanel);
             characterPanel.Controls.Add(panel3);
             characterPanel.Controls.Add(ConstWillpowerPanel);
@@ -5796,6 +5798,15 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
+            // UsernameLabel
+            // 
+            UsernameLabel.AutoSize = true;
+            UsernameLabel.Location = new Point(107, 4);
+            UsernameLabel.Name = "UsernameLabel";
+            UsernameLabel.Size = new Size(62, 15);
+            UsernameLabel.TabIndex = 15;
+            UsernameLabel.Text = "Игрок: ???";
+            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -5815,7 +5826,7 @@
             Controls.Add(DiceLabel);
             Controls.Add(characterPanel);
             Name = "CharacterForm";
-            Text = "Form1";
+            Text = "VTM бот для кубов";
             characterPanel.ResumeLayout(false);
             characterPanel.PerformLayout();
             TempWillpowerPanel.ResumeLayout(false);
@@ -6552,5 +6563,6 @@
         private Label label91;
         private NumericUpDown debuffDicePoolNumeric;
         private Label debuffDicePoolLabel;
+        private Label UsernameLabel;
     }
 }

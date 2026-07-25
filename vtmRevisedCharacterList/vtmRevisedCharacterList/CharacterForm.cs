@@ -8,40 +8,7 @@ public partial class CharacterForm : Form
     public CharacterForm()
     {
         InitializeComponent();
-        ClearAttributeChoice();
-        ClearAbilityChoice();
-        FindButtonsForAttributes();
-        FindButtonsForAbilities();
-        FindButtonsForOthers();
-
-        var character = new Character()
-        {
-            CharacterName = "Марвин",
-
-            Strenght = 1,
-            Dexterity = 2,
-            Stamina = 3,
-
-            Charisma = 4,
-            Manipulation = 5,
-            Appearance = 1,
-            Perception = 2,
-            Intellegence = 3,
-            Wits = 4,
-
-
-            Drive = 5,
-            Intimidation = 1,
-            Firearms = 2,
-
-            WillpowerMax = 7,
-            Willpower = 2,
-
-            ConscienceConviction = 3,
-            SelfControlInstincts = 1,
-            Courage = 5,
-        };
-        RenderCharacter(character);
+        StartIt();
     }
 
     private void label1_Click(object sender, EventArgs e)

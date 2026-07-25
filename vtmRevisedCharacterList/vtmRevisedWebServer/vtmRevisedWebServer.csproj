@@ -31,6 +31,9 @@
     <None Update="characters\A03594A7-5239-4D9C-A8E7-C2CC5FCDA5E1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="characters\B03594A7-5239-4D9C-A8E7-C2CC5FCDA5E1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="userRights\0F28FAEF-04AE-4711-A7EA-3704F2210A9E.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

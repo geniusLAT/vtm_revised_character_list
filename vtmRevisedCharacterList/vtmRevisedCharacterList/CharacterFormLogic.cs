@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using vtmRevisedCharacterListEntities;
 
@@ -15,10 +17,7 @@ public partial class CharacterForm : Form
     {
         ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
     };
-    private static readonly HttpClient _httpClient = new HttpClient(handler)
-    {
-        BaseAddress = new Uri("https://localhost:44320/")
-    };
+    private HttpClient? _httpClient;
 
     AttributeVtm? _chosenAttribute;
     Ability? _chosenAbility;
@@ -725,9 +724,159 @@ public partial class CharacterForm : Form
         }
     }
 
-private void ScrollLogToBottom()
+    private void ScrollLogToBottom()
     {
         LogPanel.PerformLayout();
         LogPanel.AutoScrollPosition = new Point(0, LogPanel.DisplayRectangle.Height);
     }
+
+    #region firstInit
+
+    public void StartIt()
+    {
+        var config = GetConfig();
+        if (config is null)
+        {
+            MessageBox.Show($"Ты куда его дел?", "А где config?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.Close();
+            return;
+        }
+        UsernameLabel.Text = $"Игрок:{config.UserName} {config.UserId}";
+
+        _httpClient = new HttpClient(handler)
+        {
+            //BaseAddress = new Uri("https://localhost:44320/")
+            BaseAddress = new Uri(config.Path)
+        };
+
+        var task = Task.Run(() => GetCharacterListAsync(config.UserId));
+
+        //while server thinks
+        ClearAttributeChoice();
+        ClearAbilityChoice();
+        FindButtonsForAttributes();
+        FindButtonsForAbilities();
+        FindButtonsForOthers();
+
+        task.Wait();
+
+        var avaliableCharacters = task.Result;
+        MessageBox.Show($"Найдено персонажей: {avaliableCharacters.Count.ToString()}");
+
+        if (avaliableCharacters.Count > 0) {
+            var task2 = Task.Run(() => GetCharacterAsync(avaliableCharacters.First(), config.UserId));
+            task2.Wait();
+
+            _chosenCharacter = task2.Result;
+            RenderCharacter(_chosenCharacter);
+        }
+        
+
+       
+
+
+
+        //var character = new Character()
+        //{
+        //    CharacterName = "Марвин",
+
+        //    Strenght = 1,
+        //    Dexterity = 2,
+        //    Stamina = 3,
+
+        //    Charisma = 4,
+        //    Manipulation = 5,
+        //    Appearance = 1,
+        //    Perception = 2,
+        //    Intellegence = 3,
+        //    Wits = 4,
+
+
+        //    Drive = 5,
+        //    Intimidation = 1,
+        //    Firearms = 2,
+
+        //    WillpowerMax = 7,
+        //    Willpower = 2,
+
+        //    ConscienceConviction = 3,
+        //    SelfControlInstincts = 1,
+        //    Courage = 5,
+        //};
+        //RenderCharacter(character);
+    }
+
+    public static GuiConfig? GetConfig()
+    {
+        string filePath = "config";
+
+        if (!File.Exists(filePath))
+        {
+            return null;
+        }
+
+        try
+        {
+            string content = File.ReadAllText(filePath);
+
+            GuiConfig adminGuid = JsonSerializer.Deserialize<GuiConfig>(content);
+
+            return adminGuid;
+        }
+        catch (Exception)
+        {
+          
+            return null;
+        }
+    }
+
+    public async Task<List<CharacterListMember>> GetCharacterListAsync(Guid userId)
+    {
+        CharacterListRequest request = new()
+        {
+            UserUuid = userId
+        };
+
+        try
+        {
+            var response = await _httpClient.PostAsJsonAsync("/Character/GetCharacterList", request);
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<List<CharacterListMember>>();
+
+           return responseRequest.ToList();
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return [];
+    }
+
+    public async Task<Character?> GetCharacterAsync(CharacterListMember characterToRequest, Guid userId)
+    {
+        CharacterRequest request = new()
+        {
+            UserUuid = userId,
+            CharacterUuid = characterToRequest.CharacterUuid
+        };
+
+        try
+        {
+            var response = await _httpClient.PostAsJsonAsync("/Character/GetCharacter", request);
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<Character>();
+
+            return responseRequest;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        MessageBox.Show($"Какая-то шляпа на этапе серализации", "Как это вообще случилось?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return null;
+    }
+
+    #endregion
 }
