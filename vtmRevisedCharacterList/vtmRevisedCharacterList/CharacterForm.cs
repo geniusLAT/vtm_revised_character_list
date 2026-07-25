@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList;
@@ -15,6 +15,8 @@ public partial class CharacterForm : Form
 
         var character = new Character()
         {
+            CharacterName = "Марвин",
+
             Strenght = 1,
             Dexterity = 2,
             Stamina = 3,
