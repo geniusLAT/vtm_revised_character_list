@@ -12,6 +12,7 @@ public partial class CharacterForm : Form
         ClearAbilityChoice();
         FindButtonsForAttributes();
         FindButtonsForAbilities();
+        FindButtonsForOthers();
 
         var character = new Character()
         {
@@ -31,7 +32,14 @@ public partial class CharacterForm : Form
 
             Drive = 5,
             Intimidation = 1,
-            Firearms = 2
+            Firearms = 2,
+
+            WillpowerMax = 7,
+            Willpower = 2,
+
+            ConscienceConviction = 3,
+            SelfControlInstincts = 1,
+            Courage = 5,
         };
         RenderCharacter(character);
     }
@@ -298,11 +306,13 @@ public partial class CharacterForm : Form
     private void label84_Click(object sender, EventArgs e)
     {
         _difficulty = (uint)(DifficultyNumeric.Value = 6);
+        CalculateDices();
     }
 
     private void DifficultyNumeric_ValueChanged(object sender, EventArgs e)
     {
         _difficulty = (uint)(DifficultyNumeric.Value);
+        CalculateDices();
     }
 
     private void additionalAutoSuccessNumeric_ValueChanged(object sender, EventArgs e)
@@ -335,5 +345,42 @@ public partial class CharacterForm : Form
     private void SpecializationCheckBox_CheckedChanged(object sender, EventArgs e)
     {
         _specialization = SpecializationCheckBox.Checked;
+    }
+
+    private void ConstWillpowerPanel_Click(object sender, EventArgs e)
+    {
+        ChooseOther(OtherRollable.ConstWillpower);
+    }
+
+    private void ConscienceConvictionPanel_Click(object sender, EventArgs e)
+    {
+        ChooseOther(OtherRollable.ConscienceConviction);
+    }
+
+    private void SelfControlInstinctPanel_Click(object sender, EventArgs e)
+    {
+        ChooseOther(OtherRollable.SelfControlInstinct);
+    }
+
+    private void CouragePanel_Click(object sender, EventArgs e)
+    {
+        ChooseOther(OtherRollable.Courage);
+    }
+
+    private void TempWillpowerPanel_Click(object sender, EventArgs e)
+    {
+        ChooseOther(OtherRollable.TempWillpower);
+    }
+
+    private void debuffDicePoolNumeric_ValueChanged(object sender, EventArgs e)
+    {
+        _debuffDicePool = (uint)debuffDicePoolNumeric.Value;
+        CalculateDices();
+    }
+
+    private void debuffDicePoolLabel_Click(object sender, EventArgs e)
+    {
+        _debuffDicePool = (uint)(debuffDicePoolNumeric.Value = 0);
+        CalculateDices();
     }
 }

@@ -29,6 +29,69 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
+            TempWillpowerPanel = new Panel();
+            TempWillpowerButton7 = new RadioButton();
+            TempWillpowerButton10 = new RadioButton();
+            TempWillpowerButton9 = new RadioButton();
+            TempWillpowerButton8 = new RadioButton();
+            TempWillpowerButton6 = new RadioButton();
+            panel20 = new Panel();
+            label90 = new Label();
+            TempWillpowerNumeric = new NumericUpDown();
+            TempWillpowerButton5 = new RadioButton();
+            TempWillpowerButton4 = new RadioButton();
+            TempWillpowerButton3 = new RadioButton();
+            TempWillpowerButton2 = new RadioButton();
+            TempWillpowerButton1 = new RadioButton();
+            label91 = new Label();
+            panel3 = new Panel();
+            CouragePanel = new Panel();
+            panel17 = new Panel();
+            label84 = new Label();
+            CourageNumeric = new NumericUpDown();
+            CourageButton5 = new RadioButton();
+            CourageButton4 = new RadioButton();
+            CourageButton3 = new RadioButton();
+            CourageButton2 = new RadioButton();
+            CourageButton1 = new RadioButton();
+            label85 = new Label();
+            SelfControlInstinctPanel = new Panel();
+            panel22 = new Panel();
+            label86 = new Label();
+            SelfControlInstinctNumeric = new NumericUpDown();
+            SelfControlInstinctButton5 = new RadioButton();
+            SelfControlInstinctButton4 = new RadioButton();
+            SelfControlInstinctButton3 = new RadioButton();
+            SelfControlInstinctButton2 = new RadioButton();
+            SelfControlInstinctButton1 = new RadioButton();
+            label87 = new Label();
+            ConscienceConvictionPanel = new Panel();
+            panel26 = new Panel();
+            label88 = new Label();
+            ConscienceConvictionNumeric = new NumericUpDown();
+            ConscienceConvictionButton5 = new RadioButton();
+            ConscienceConvictionButton4 = new RadioButton();
+            ConscienceConvictionButton3 = new RadioButton();
+            ConscienceConvictionButton2 = new RadioButton();
+            ConscienceConvictionButton1 = new RadioButton();
+            label89 = new Label();
+            VirtuesLabel = new Label();
+            ConstWillpowerPanel = new Panel();
+            constWillpowerButton7 = new RadioButton();
+            constWillpowerButton10 = new RadioButton();
+            constWillpowerButton9 = new RadioButton();
+            constWillpowerButton8 = new RadioButton();
+            constWillpowerButton6 = new RadioButton();
+            panel8 = new Panel();
+            label83 = new Label();
+            ConstWillpowerNumeric = new NumericUpDown();
+            constWillpowerButton5 = new RadioButton();
+            constWillpowerButton4 = new RadioButton();
+            constWillpowerButton3 = new RadioButton();
+            constWillpowerButton2 = new RadioButton();
+            constWillpowerButton1 = new RadioButton();
+            WillpowerLabel = new Label();
+            characterNameLabel = new Label();
             DaredevilCheckBox = new CheckBox();
             AbilitiesPanel = new Panel();
             panel53 = new Panel();
@@ -447,8 +510,25 @@
             LogPanel = new Panel();
             logLabel = new Label();
             SpecializationCheckBox = new CheckBox();
-            characterNameLabel = new Label();
+            debuffDicePoolNumeric = new NumericUpDown();
+            debuffDicePoolLabel = new Label();
             characterPanel.SuspendLayout();
+            TempWillpowerPanel.SuspendLayout();
+            panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TempWillpowerNumeric).BeginInit();
+            panel3.SuspendLayout();
+            CouragePanel.SuspendLayout();
+            panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CourageNumeric).BeginInit();
+            SelfControlInstinctPanel.SuspendLayout();
+            panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SelfControlInstinctNumeric).BeginInit();
+            ConscienceConvictionPanel.SuspendLayout();
+            panel26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ConscienceConvictionNumeric).BeginInit();
+            ConstWillpowerPanel.SuspendLayout();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ConstWillpowerNumeric).BeginInit();
             AbilitiesPanel.SuspendLayout();
             panel53.SuspendLayout();
             SciencePanel.SuspendLayout();
@@ -578,10 +658,14 @@
             ((System.ComponentModel.ISupportInitialize)DifficultyNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).BeginInit();
             LogPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).BeginInit();
             SuspendLayout();
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(TempWillpowerPanel);
+            characterPanel.Controls.Add(panel3);
+            characterPanel.Controls.Add(ConstWillpowerPanel);
             characterPanel.Controls.Add(characterNameLabel);
             characterPanel.Controls.Add(DaredevilCheckBox);
             characterPanel.Controls.Add(AbilitiesPanel);
@@ -590,6 +674,692 @@
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // TempWillpowerPanel
+            // 
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton7);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton10);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton9);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton8);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton6);
+            TempWillpowerPanel.Controls.Add(panel20);
+            TempWillpowerPanel.Controls.Add(TempWillpowerNumeric);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton5);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton4);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton3);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton2);
+            TempWillpowerPanel.Controls.Add(TempWillpowerButton1);
+            TempWillpowerPanel.Controls.Add(label91);
+            TempWillpowerPanel.Location = new Point(239, 507);
+            TempWillpowerPanel.Name = "TempWillpowerPanel";
+            TempWillpowerPanel.Size = new Size(227, 19);
+            TempWillpowerPanel.TabIndex = 14;
+            TempWillpowerPanel.Click += TempWillpowerPanel_Click;
+            // 
+            // TempWillpowerButton7
+            // 
+            TempWillpowerButton7.AutoCheck = false;
+            TempWillpowerButton7.AutoSize = true;
+            TempWillpowerButton7.Checked = true;
+            TempWillpowerButton7.Location = new Point(139, 6);
+            TempWillpowerButton7.Name = "TempWillpowerButton7";
+            TempWillpowerButton7.Size = new Size(14, 13);
+            TempWillpowerButton7.TabIndex = 13;
+            TempWillpowerButton7.UseVisualStyleBackColor = true;
+            // 
+            // TempWillpowerButton10
+            // 
+            TempWillpowerButton10.AutoCheck = false;
+            TempWillpowerButton10.AutoSize = true;
+            TempWillpowerButton10.Checked = true;
+            TempWillpowerButton10.Location = new Point(170, 6);
+            TempWillpowerButton10.Name = "TempWillpowerButton10";
+            TempWillpowerButton10.Size = new Size(14, 13);
+            TempWillpowerButton10.TabIndex = 12;
+            TempWillpowerButton10.TabStop = true;
+            TempWillpowerButton10.UseVisualStyleBackColor = true;
+            // 
+            // TempWillpowerButton9
+            // 
+            TempWillpowerButton9.AutoCheck = false;
+            TempWillpowerButton9.AutoSize = true;
+            TempWillpowerButton9.Checked = true;
+            TempWillpowerButton9.Location = new Point(159, 6);
+            TempWillpowerButton9.Name = "TempWillpowerButton9";
+            TempWillpowerButton9.Size = new Size(14, 13);
+            TempWillpowerButton9.TabIndex = 11;
+            TempWillpowerButton9.UseVisualStyleBackColor = true;
+            // 
+            // TempWillpowerButton8
+            // 
+            TempWillpowerButton8.AutoCheck = false;
+            TempWillpowerButton8.AutoSize = true;
+            TempWillpowerButton8.Checked = true;
+            TempWillpowerButton8.Location = new Point(150, 6);
+            TempWillpowerButton8.Name = "TempWillpowerButton8";
+            TempWillpowerButton8.Size = new Size(14, 13);
+            TempWillpowerButton8.TabIndex = 10;
+            TempWillpowerButton8.UseVisualStyleBackColor = true;
+            // 
+            // TempWillpowerButton6
+            // 
+            TempWillpowerButton6.AutoCheck = false;
+            TempWillpowerButton6.AutoSize = true;
+            TempWillpowerButton6.Checked = true;
+            TempWillpowerButton6.Location = new Point(129, 6);
+            TempWillpowerButton6.Name = "TempWillpowerButton6";
+            TempWillpowerButton6.Size = new Size(14, 13);
+            TempWillpowerButton6.TabIndex = 9;
+            TempWillpowerButton6.UseVisualStyleBackColor = true;
+            // 
+            // panel20
+            // 
+            panel20.Controls.Add(label90);
+            panel20.Location = new Point(3, 18);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(197, 19);
+            panel20.TabIndex = 2;
+            // 
+            // label90
+            // 
+            label90.AutoSize = true;
+            label90.Location = new Point(3, 0);
+            label90.Name = "label90";
+            label90.Size = new Size(58, 15);
+            label90.TabIndex = 0;
+            label90.Text = "Ловкость";
+            // 
+            // TempWillpowerNumeric
+            // 
+            TempWillpowerNumeric.Location = new Point(183, -2);
+            TempWillpowerNumeric.Name = "TempWillpowerNumeric";
+            TempWillpowerNumeric.Size = new Size(41, 23);
+            TempWillpowerNumeric.TabIndex = 8;
+            // 
+            // TempWillpowerButton5
+            // 
+            TempWillpowerButton5.AutoCheck = false;
+            TempWillpowerButton5.AutoSize = true;
+            TempWillpowerButton5.Checked = true;
+            TempWillpowerButton5.Location = new Point(109, 6);
+            TempWillpowerButton5.Name = "TempWillpowerButton5";
+            TempWillpowerButton5.Size = new Size(14, 13);
+            TempWillpowerButton5.TabIndex = 7;
+            TempWillpowerButton5.TabStop = true;
+            TempWillpowerButton5.UseVisualStyleBackColor = true;
+            // 
+            // TempWillpowerButton4
+            // 
+            TempWillpowerButton4.AutoCheck = false;
+            TempWillpowerButton4.AutoSize = true;
+            TempWillpowerButton4.Checked = true;
+            TempWillpowerButton4.Location = new Point(98, 6);
+            TempWillpowerButton4.Name = "TempWillpowerButton4";
+            TempWillpowerButton4.Size = new Size(14, 13);
+            TempWillpowerButton4.TabIndex = 6;
+            TempWillpowerButton4.UseVisualStyleBackColor = true;
+            // 
+            // TempWillpowerButton3
+            // 
+            TempWillpowerButton3.AutoCheck = false;
+            TempWillpowerButton3.AutoSize = true;
+            TempWillpowerButton3.Checked = true;
+            TempWillpowerButton3.Location = new Point(89, 6);
+            TempWillpowerButton3.Name = "TempWillpowerButton3";
+            TempWillpowerButton3.Size = new Size(14, 13);
+            TempWillpowerButton3.TabIndex = 5;
+            TempWillpowerButton3.UseVisualStyleBackColor = true;
+            // 
+            // TempWillpowerButton2
+            // 
+            TempWillpowerButton2.AutoCheck = false;
+            TempWillpowerButton2.AutoSize = true;
+            TempWillpowerButton2.Checked = true;
+            TempWillpowerButton2.Location = new Point(78, 6);
+            TempWillpowerButton2.Name = "TempWillpowerButton2";
+            TempWillpowerButton2.Size = new Size(14, 13);
+            TempWillpowerButton2.TabIndex = 4;
+            TempWillpowerButton2.UseVisualStyleBackColor = true;
+            // 
+            // TempWillpowerButton1
+            // 
+            TempWillpowerButton1.AutoCheck = false;
+            TempWillpowerButton1.AutoSize = true;
+            TempWillpowerButton1.Checked = true;
+            TempWillpowerButton1.Location = new Point(68, 6);
+            TempWillpowerButton1.Name = "TempWillpowerButton1";
+            TempWillpowerButton1.Size = new Size(14, 13);
+            TempWillpowerButton1.TabIndex = 3;
+            TempWillpowerButton1.UseVisualStyleBackColor = true;
+            // 
+            // label91
+            // 
+            label91.AutoSize = true;
+            label91.Font = new Font("Segoe UI", 6F);
+            label91.Location = new Point(3, 4);
+            label91.Name = "label91";
+            label91.Size = new Size(66, 11);
+            label91.TabIndex = 0;
+            label91.Text = "Временная воля";
+            label91.Click += TempWillpowerPanel_Click;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(CouragePanel);
+            panel3.Controls.Add(SelfControlInstinctPanel);
+            panel3.Controls.Add(ConscienceConvictionPanel);
+            panel3.Controls.Add(VirtuesLabel);
+            panel3.Location = new Point(475, 384);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(230, 82);
+            panel3.TabIndex = 13;
+            // 
+            // CouragePanel
+            // 
+            CouragePanel.Controls.Add(panel17);
+            CouragePanel.Controls.Add(CourageNumeric);
+            CouragePanel.Controls.Add(CourageButton5);
+            CouragePanel.Controls.Add(CourageButton4);
+            CouragePanel.Controls.Add(CourageButton3);
+            CouragePanel.Controls.Add(CourageButton2);
+            CouragePanel.Controls.Add(CourageButton1);
+            CouragePanel.Controls.Add(label85);
+            CouragePanel.Location = new Point(3, 61);
+            CouragePanel.Name = "CouragePanel";
+            CouragePanel.Size = new Size(227, 19);
+            CouragePanel.TabIndex = 10;
+            CouragePanel.Click += CouragePanel_Click;
+            // 
+            // panel17
+            // 
+            panel17.Controls.Add(label84);
+            panel17.Location = new Point(3, 18);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(197, 19);
+            panel17.TabIndex = 2;
+            // 
+            // label84
+            // 
+            label84.AutoSize = true;
+            label84.Location = new Point(3, 0);
+            label84.Name = "label84";
+            label84.Size = new Size(58, 15);
+            label84.TabIndex = 0;
+            label84.Text = "Ловкость";
+            // 
+            // CourageNumeric
+            // 
+            CourageNumeric.Location = new Point(183, -2);
+            CourageNumeric.Name = "CourageNumeric";
+            CourageNumeric.Size = new Size(41, 23);
+            CourageNumeric.TabIndex = 8;
+            // 
+            // CourageButton5
+            // 
+            CourageButton5.AutoCheck = false;
+            CourageButton5.AutoSize = true;
+            CourageButton5.Checked = true;
+            CourageButton5.Location = new Point(166, 6);
+            CourageButton5.Name = "CourageButton5";
+            CourageButton5.Size = new Size(14, 13);
+            CourageButton5.TabIndex = 7;
+            CourageButton5.TabStop = true;
+            CourageButton5.UseVisualStyleBackColor = true;
+            // 
+            // CourageButton4
+            // 
+            CourageButton4.AutoCheck = false;
+            CourageButton4.AutoSize = true;
+            CourageButton4.Checked = true;
+            CourageButton4.Location = new Point(146, 6);
+            CourageButton4.Name = "CourageButton4";
+            CourageButton4.Size = new Size(14, 13);
+            CourageButton4.TabIndex = 6;
+            CourageButton4.UseVisualStyleBackColor = true;
+            // 
+            // CourageButton3
+            // 
+            CourageButton3.AutoCheck = false;
+            CourageButton3.AutoSize = true;
+            CourageButton3.Checked = true;
+            CourageButton3.Location = new Point(126, 6);
+            CourageButton3.Name = "CourageButton3";
+            CourageButton3.Size = new Size(14, 13);
+            CourageButton3.TabIndex = 5;
+            CourageButton3.UseVisualStyleBackColor = true;
+            // 
+            // CourageButton2
+            // 
+            CourageButton2.AutoCheck = false;
+            CourageButton2.AutoSize = true;
+            CourageButton2.Checked = true;
+            CourageButton2.Location = new Point(106, 6);
+            CourageButton2.Name = "CourageButton2";
+            CourageButton2.Size = new Size(14, 13);
+            CourageButton2.TabIndex = 4;
+            CourageButton2.UseVisualStyleBackColor = true;
+            // 
+            // CourageButton1
+            // 
+            CourageButton1.AutoCheck = false;
+            CourageButton1.AutoSize = true;
+            CourageButton1.Checked = true;
+            CourageButton1.Location = new Point(86, 6);
+            CourageButton1.Name = "CourageButton1";
+            CourageButton1.Size = new Size(14, 13);
+            CourageButton1.TabIndex = 3;
+            CourageButton1.UseVisualStyleBackColor = true;
+            // 
+            // label85
+            // 
+            label85.AutoSize = true;
+            label85.Font = new Font("Segoe UI", 9F);
+            label85.Location = new Point(6, 4);
+            label85.Name = "label85";
+            label85.Size = new Size(65, 15);
+            label85.TabIndex = 0;
+            label85.Text = "Храбрость";
+            label85.Click += CouragePanel_Click;
+            // 
+            // SelfControlInstinctPanel
+            // 
+            SelfControlInstinctPanel.Controls.Add(panel22);
+            SelfControlInstinctPanel.Controls.Add(SelfControlInstinctNumeric);
+            SelfControlInstinctPanel.Controls.Add(SelfControlInstinctButton5);
+            SelfControlInstinctPanel.Controls.Add(SelfControlInstinctButton4);
+            SelfControlInstinctPanel.Controls.Add(SelfControlInstinctButton3);
+            SelfControlInstinctPanel.Controls.Add(SelfControlInstinctButton2);
+            SelfControlInstinctPanel.Controls.Add(SelfControlInstinctButton1);
+            SelfControlInstinctPanel.Controls.Add(label87);
+            SelfControlInstinctPanel.Location = new Point(3, 39);
+            SelfControlInstinctPanel.Name = "SelfControlInstinctPanel";
+            SelfControlInstinctPanel.Size = new Size(227, 19);
+            SelfControlInstinctPanel.TabIndex = 9;
+            SelfControlInstinctPanel.Click += SelfControlInstinctPanel_Click;
+            // 
+            // panel22
+            // 
+            panel22.Controls.Add(label86);
+            panel22.Location = new Point(3, 18);
+            panel22.Name = "panel22";
+            panel22.Size = new Size(197, 19);
+            panel22.TabIndex = 2;
+            // 
+            // label86
+            // 
+            label86.AutoSize = true;
+            label86.Location = new Point(3, 0);
+            label86.Name = "label86";
+            label86.Size = new Size(58, 15);
+            label86.TabIndex = 0;
+            label86.Text = "Ловкость";
+            // 
+            // SelfControlInstinctNumeric
+            // 
+            SelfControlInstinctNumeric.Location = new Point(183, -2);
+            SelfControlInstinctNumeric.Name = "SelfControlInstinctNumeric";
+            SelfControlInstinctNumeric.Size = new Size(41, 23);
+            SelfControlInstinctNumeric.TabIndex = 8;
+            // 
+            // SelfControlInstinctButton5
+            // 
+            SelfControlInstinctButton5.AutoCheck = false;
+            SelfControlInstinctButton5.AutoSize = true;
+            SelfControlInstinctButton5.Checked = true;
+            SelfControlInstinctButton5.Location = new Point(166, 6);
+            SelfControlInstinctButton5.Name = "SelfControlInstinctButton5";
+            SelfControlInstinctButton5.Size = new Size(14, 13);
+            SelfControlInstinctButton5.TabIndex = 7;
+            SelfControlInstinctButton5.UseVisualStyleBackColor = true;
+            // 
+            // SelfControlInstinctButton4
+            // 
+            SelfControlInstinctButton4.AutoCheck = false;
+            SelfControlInstinctButton4.AutoSize = true;
+            SelfControlInstinctButton4.Checked = true;
+            SelfControlInstinctButton4.Location = new Point(146, 6);
+            SelfControlInstinctButton4.Name = "SelfControlInstinctButton4";
+            SelfControlInstinctButton4.Size = new Size(14, 13);
+            SelfControlInstinctButton4.TabIndex = 6;
+            SelfControlInstinctButton4.UseVisualStyleBackColor = true;
+            // 
+            // SelfControlInstinctButton3
+            // 
+            SelfControlInstinctButton3.AutoCheck = false;
+            SelfControlInstinctButton3.AutoSize = true;
+            SelfControlInstinctButton3.Checked = true;
+            SelfControlInstinctButton3.Location = new Point(126, 6);
+            SelfControlInstinctButton3.Name = "SelfControlInstinctButton3";
+            SelfControlInstinctButton3.Size = new Size(14, 13);
+            SelfControlInstinctButton3.TabIndex = 5;
+            SelfControlInstinctButton3.UseVisualStyleBackColor = true;
+            // 
+            // SelfControlInstinctButton2
+            // 
+            SelfControlInstinctButton2.AutoCheck = false;
+            SelfControlInstinctButton2.AutoSize = true;
+            SelfControlInstinctButton2.Checked = true;
+            SelfControlInstinctButton2.Location = new Point(106, 6);
+            SelfControlInstinctButton2.Name = "SelfControlInstinctButton2";
+            SelfControlInstinctButton2.Size = new Size(14, 13);
+            SelfControlInstinctButton2.TabIndex = 4;
+            SelfControlInstinctButton2.UseVisualStyleBackColor = true;
+            // 
+            // SelfControlInstinctButton1
+            // 
+            SelfControlInstinctButton1.AutoCheck = false;
+            SelfControlInstinctButton1.AutoSize = true;
+            SelfControlInstinctButton1.Checked = true;
+            SelfControlInstinctButton1.Location = new Point(86, 6);
+            SelfControlInstinctButton1.Name = "SelfControlInstinctButton1";
+            SelfControlInstinctButton1.Size = new Size(14, 13);
+            SelfControlInstinctButton1.TabIndex = 3;
+            SelfControlInstinctButton1.TabStop = true;
+            SelfControlInstinctButton1.UseVisualStyleBackColor = true;
+            // 
+            // label87
+            // 
+            label87.AutoSize = true;
+            label87.Font = new Font("Segoe UI", 5F);
+            label87.Location = new Point(3, 6);
+            label87.Name = "label87";
+            label87.Size = new Size(89, 10);
+            label87.TabIndex = 0;
+            label87.Text = "Самоконтроль\\Инстинкты";
+            label87.Click += SelfControlInstinctPanel_Click;
+            // 
+            // ConscienceConvictionPanel
+            // 
+            ConscienceConvictionPanel.Controls.Add(panel26);
+            ConscienceConvictionPanel.Controls.Add(ConscienceConvictionNumeric);
+            ConscienceConvictionPanel.Controls.Add(ConscienceConvictionButton5);
+            ConscienceConvictionPanel.Controls.Add(ConscienceConvictionButton4);
+            ConscienceConvictionPanel.Controls.Add(ConscienceConvictionButton3);
+            ConscienceConvictionPanel.Controls.Add(ConscienceConvictionButton2);
+            ConscienceConvictionPanel.Controls.Add(ConscienceConvictionButton1);
+            ConscienceConvictionPanel.Controls.Add(label89);
+            ConscienceConvictionPanel.Location = new Point(3, 18);
+            ConscienceConvictionPanel.Name = "ConscienceConvictionPanel";
+            ConscienceConvictionPanel.Size = new Size(227, 19);
+            ConscienceConvictionPanel.TabIndex = 1;
+            ConscienceConvictionPanel.Click += ConscienceConvictionPanel_Click;
+            // 
+            // panel26
+            // 
+            panel26.Controls.Add(label88);
+            panel26.Location = new Point(3, 18);
+            panel26.Name = "panel26";
+            panel26.Size = new Size(197, 19);
+            panel26.TabIndex = 2;
+            // 
+            // label88
+            // 
+            label88.AutoSize = true;
+            label88.Location = new Point(3, 0);
+            label88.Name = "label88";
+            label88.Size = new Size(58, 15);
+            label88.TabIndex = 0;
+            label88.Text = "Ловкость";
+            // 
+            // ConscienceConvictionNumeric
+            // 
+            ConscienceConvictionNumeric.Location = new Point(183, -2);
+            ConscienceConvictionNumeric.Name = "ConscienceConvictionNumeric";
+            ConscienceConvictionNumeric.Size = new Size(41, 23);
+            ConscienceConvictionNumeric.TabIndex = 8;
+            // 
+            // ConscienceConvictionButton5
+            // 
+            ConscienceConvictionButton5.AutoCheck = false;
+            ConscienceConvictionButton5.AutoSize = true;
+            ConscienceConvictionButton5.Checked = true;
+            ConscienceConvictionButton5.Location = new Point(166, 6);
+            ConscienceConvictionButton5.Name = "ConscienceConvictionButton5";
+            ConscienceConvictionButton5.Size = new Size(14, 13);
+            ConscienceConvictionButton5.TabIndex = 7;
+            ConscienceConvictionButton5.TabStop = true;
+            ConscienceConvictionButton5.UseVisualStyleBackColor = true;
+            // 
+            // ConscienceConvictionButton4
+            // 
+            ConscienceConvictionButton4.AutoCheck = false;
+            ConscienceConvictionButton4.AutoSize = true;
+            ConscienceConvictionButton4.Checked = true;
+            ConscienceConvictionButton4.Location = new Point(146, 6);
+            ConscienceConvictionButton4.Name = "ConscienceConvictionButton4";
+            ConscienceConvictionButton4.Size = new Size(14, 13);
+            ConscienceConvictionButton4.TabIndex = 6;
+            ConscienceConvictionButton4.UseVisualStyleBackColor = true;
+            // 
+            // ConscienceConvictionButton3
+            // 
+            ConscienceConvictionButton3.AutoCheck = false;
+            ConscienceConvictionButton3.AutoSize = true;
+            ConscienceConvictionButton3.Checked = true;
+            ConscienceConvictionButton3.Location = new Point(126, 6);
+            ConscienceConvictionButton3.Name = "ConscienceConvictionButton3";
+            ConscienceConvictionButton3.Size = new Size(14, 13);
+            ConscienceConvictionButton3.TabIndex = 5;
+            ConscienceConvictionButton3.UseVisualStyleBackColor = true;
+            // 
+            // ConscienceConvictionButton2
+            // 
+            ConscienceConvictionButton2.AutoCheck = false;
+            ConscienceConvictionButton2.AutoSize = true;
+            ConscienceConvictionButton2.Checked = true;
+            ConscienceConvictionButton2.Location = new Point(106, 6);
+            ConscienceConvictionButton2.Name = "ConscienceConvictionButton2";
+            ConscienceConvictionButton2.Size = new Size(14, 13);
+            ConscienceConvictionButton2.TabIndex = 4;
+            ConscienceConvictionButton2.UseVisualStyleBackColor = true;
+            // 
+            // ConscienceConvictionButton1
+            // 
+            ConscienceConvictionButton1.AutoCheck = false;
+            ConscienceConvictionButton1.AutoSize = true;
+            ConscienceConvictionButton1.Checked = true;
+            ConscienceConvictionButton1.Location = new Point(86, 6);
+            ConscienceConvictionButton1.Name = "ConscienceConvictionButton1";
+            ConscienceConvictionButton1.Size = new Size(14, 13);
+            ConscienceConvictionButton1.TabIndex = 3;
+            ConscienceConvictionButton1.UseVisualStyleBackColor = true;
+            // 
+            // label89
+            // 
+            label89.AutoSize = true;
+            label89.Font = new Font("Segoe UI", 5F);
+            label89.Location = new Point(3, 6);
+            label89.Name = "label89";
+            label89.Size = new Size(81, 10);
+            label89.TabIndex = 0;
+            label89.Text = "Совесть\\Убеждённость";
+            label89.Click += ConscienceConvictionPanel_Click;
+            // 
+            // VirtuesLabel
+            // 
+            VirtuesLabel.AutoSize = true;
+            VirtuesLabel.Location = new Point(67, 0);
+            VirtuesLabel.Name = "VirtuesLabel";
+            VirtuesLabel.Size = new Size(80, 15);
+            VirtuesLabel.TabIndex = 0;
+            VirtuesLabel.Text = "Добродетели";
+            // 
+            // ConstWillpowerPanel
+            // 
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton7);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton10);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton9);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton8);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton6);
+            ConstWillpowerPanel.Controls.Add(panel8);
+            ConstWillpowerPanel.Controls.Add(ConstWillpowerNumeric);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton5);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton4);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton3);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton2);
+            ConstWillpowerPanel.Controls.Add(constWillpowerButton1);
+            ConstWillpowerPanel.Controls.Add(WillpowerLabel);
+            ConstWillpowerPanel.Location = new Point(239, 486);
+            ConstWillpowerPanel.Name = "ConstWillpowerPanel";
+            ConstWillpowerPanel.Size = new Size(227, 19);
+            ConstWillpowerPanel.TabIndex = 9;
+            ConstWillpowerPanel.Click += ConstWillpowerPanel_Click;
+            // 
+            // constWillpowerButton7
+            // 
+            constWillpowerButton7.AutoCheck = false;
+            constWillpowerButton7.AutoSize = true;
+            constWillpowerButton7.Checked = true;
+            constWillpowerButton7.Location = new Point(139, 6);
+            constWillpowerButton7.Name = "constWillpowerButton7";
+            constWillpowerButton7.Size = new Size(14, 13);
+            constWillpowerButton7.TabIndex = 13;
+            constWillpowerButton7.UseVisualStyleBackColor = true;
+            // 
+            // constWillpowerButton10
+            // 
+            constWillpowerButton10.AutoCheck = false;
+            constWillpowerButton10.AutoSize = true;
+            constWillpowerButton10.Checked = true;
+            constWillpowerButton10.Location = new Point(170, 6);
+            constWillpowerButton10.Name = "constWillpowerButton10";
+            constWillpowerButton10.Size = new Size(14, 13);
+            constWillpowerButton10.TabIndex = 12;
+            constWillpowerButton10.TabStop = true;
+            constWillpowerButton10.UseVisualStyleBackColor = true;
+            // 
+            // constWillpowerButton9
+            // 
+            constWillpowerButton9.AutoCheck = false;
+            constWillpowerButton9.AutoSize = true;
+            constWillpowerButton9.Checked = true;
+            constWillpowerButton9.Location = new Point(159, 6);
+            constWillpowerButton9.Name = "constWillpowerButton9";
+            constWillpowerButton9.Size = new Size(14, 13);
+            constWillpowerButton9.TabIndex = 11;
+            constWillpowerButton9.UseVisualStyleBackColor = true;
+            // 
+            // constWillpowerButton8
+            // 
+            constWillpowerButton8.AutoCheck = false;
+            constWillpowerButton8.AutoSize = true;
+            constWillpowerButton8.Checked = true;
+            constWillpowerButton8.Location = new Point(150, 6);
+            constWillpowerButton8.Name = "constWillpowerButton8";
+            constWillpowerButton8.Size = new Size(14, 13);
+            constWillpowerButton8.TabIndex = 10;
+            constWillpowerButton8.UseVisualStyleBackColor = true;
+            // 
+            // constWillpowerButton6
+            // 
+            constWillpowerButton6.AutoCheck = false;
+            constWillpowerButton6.AutoSize = true;
+            constWillpowerButton6.Checked = true;
+            constWillpowerButton6.Location = new Point(129, 6);
+            constWillpowerButton6.Name = "constWillpowerButton6";
+            constWillpowerButton6.Size = new Size(14, 13);
+            constWillpowerButton6.TabIndex = 9;
+            constWillpowerButton6.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(label83);
+            panel8.Location = new Point(3, 18);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(197, 19);
+            panel8.TabIndex = 2;
+            // 
+            // label83
+            // 
+            label83.AutoSize = true;
+            label83.Location = new Point(3, 0);
+            label83.Name = "label83";
+            label83.Size = new Size(58, 15);
+            label83.TabIndex = 0;
+            label83.Text = "Ловкость";
+            // 
+            // ConstWillpowerNumeric
+            // 
+            ConstWillpowerNumeric.Location = new Point(183, -2);
+            ConstWillpowerNumeric.Name = "ConstWillpowerNumeric";
+            ConstWillpowerNumeric.Size = new Size(41, 23);
+            ConstWillpowerNumeric.TabIndex = 8;
+            // 
+            // constWillpowerButton5
+            // 
+            constWillpowerButton5.AutoCheck = false;
+            constWillpowerButton5.AutoSize = true;
+            constWillpowerButton5.Checked = true;
+            constWillpowerButton5.Location = new Point(109, 6);
+            constWillpowerButton5.Name = "constWillpowerButton5";
+            constWillpowerButton5.Size = new Size(14, 13);
+            constWillpowerButton5.TabIndex = 7;
+            constWillpowerButton5.TabStop = true;
+            constWillpowerButton5.UseVisualStyleBackColor = true;
+            // 
+            // constWillpowerButton4
+            // 
+            constWillpowerButton4.AutoCheck = false;
+            constWillpowerButton4.AutoSize = true;
+            constWillpowerButton4.Checked = true;
+            constWillpowerButton4.Location = new Point(98, 6);
+            constWillpowerButton4.Name = "constWillpowerButton4";
+            constWillpowerButton4.Size = new Size(14, 13);
+            constWillpowerButton4.TabIndex = 6;
+            constWillpowerButton4.UseVisualStyleBackColor = true;
+            // 
+            // constWillpowerButton3
+            // 
+            constWillpowerButton3.AutoCheck = false;
+            constWillpowerButton3.AutoSize = true;
+            constWillpowerButton3.Checked = true;
+            constWillpowerButton3.Location = new Point(89, 6);
+            constWillpowerButton3.Name = "constWillpowerButton3";
+            constWillpowerButton3.Size = new Size(14, 13);
+            constWillpowerButton3.TabIndex = 5;
+            constWillpowerButton3.UseVisualStyleBackColor = true;
+            // 
+            // constWillpowerButton2
+            // 
+            constWillpowerButton2.AutoCheck = false;
+            constWillpowerButton2.AutoSize = true;
+            constWillpowerButton2.Checked = true;
+            constWillpowerButton2.Location = new Point(78, 6);
+            constWillpowerButton2.Name = "constWillpowerButton2";
+            constWillpowerButton2.Size = new Size(14, 13);
+            constWillpowerButton2.TabIndex = 4;
+            constWillpowerButton2.UseVisualStyleBackColor = true;
+            // 
+            // constWillpowerButton1
+            // 
+            constWillpowerButton1.AutoCheck = false;
+            constWillpowerButton1.AutoSize = true;
+            constWillpowerButton1.Checked = true;
+            constWillpowerButton1.Location = new Point(68, 6);
+            constWillpowerButton1.Name = "constWillpowerButton1";
+            constWillpowerButton1.Size = new Size(14, 13);
+            constWillpowerButton1.TabIndex = 3;
+            constWillpowerButton1.UseVisualStyleBackColor = true;
+            // 
+            // WillpowerLabel
+            // 
+            WillpowerLabel.AutoSize = true;
+            WillpowerLabel.Font = new Font("Segoe UI", 6F);
+            WillpowerLabel.Location = new Point(3, 4);
+            WillpowerLabel.Name = "WillpowerLabel";
+            WillpowerLabel.Size = new Size(69, 11);
+            WillpowerLabel.TabIndex = 0;
+            WillpowerLabel.Text = "Постоянная воля";
+            WillpowerLabel.Click += ConstWillpowerPanel_Click;
+            // 
+            // characterNameLabel
+            // 
+            characterNameLabel.AutoSize = true;
+            characterNameLabel.Location = new Point(6, 4);
+            characterNameLabel.Name = "characterNameLabel";
+            characterNameLabel.Size = new Size(95, 15);
+            characterNameLabel.TabIndex = 9;
+            characterNameLabel.Text = "Имя персонажа";
             // 
             // DaredevilCheckBox
             // 
@@ -5000,7 +5770,7 @@
             // SpecializationCheckBox
             // 
             SpecializationCheckBox.AutoSize = true;
-            SpecializationCheckBox.Location = new Point(199, 750);
+            SpecializationCheckBox.Location = new Point(420, 750);
             SpecializationCheckBox.Name = "SpecializationCheckBox";
             SpecializationCheckBox.Size = new Size(112, 19);
             SpecializationCheckBox.TabIndex = 3;
@@ -5008,20 +5778,31 @@
             SpecializationCheckBox.UseVisualStyleBackColor = true;
             SpecializationCheckBox.CheckedChanged += SpecializationCheckBox_CheckedChanged;
             // 
-            // characterNameLabel
+            // debuffDicePoolNumeric
             // 
-            characterNameLabel.AutoSize = true;
-            characterNameLabel.Location = new Point(6, 4);
-            characterNameLabel.Name = "characterNameLabel";
-            characterNameLabel.Size = new Size(95, 15);
-            characterNameLabel.TabIndex = 9;
-            characterNameLabel.Text = "Имя персонажа";
+            debuffDicePoolNumeric.Location = new Point(199, 746);
+            debuffDicePoolNumeric.Name = "debuffDicePoolNumeric";
+            debuffDicePoolNumeric.Size = new Size(41, 23);
+            debuffDicePoolNumeric.TabIndex = 16;
+            debuffDicePoolNumeric.ValueChanged += debuffDicePoolNumeric_ValueChanged;
+            // 
+            // debuffDicePoolLabel
+            // 
+            debuffDicePoolLabel.AutoSize = true;
+            debuffDicePoolLabel.Location = new Point(246, 748);
+            debuffDicePoolLabel.Name = "debuffDicePoolLabel";
+            debuffDicePoolLabel.Size = new Size(98, 15);
+            debuffDicePoolLabel.TabIndex = 17;
+            debuffDicePoolLabel.Text = "Штрафные кубы";
+            debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 796);
+            Controls.Add(debuffDicePoolLabel);
+            Controls.Add(debuffDicePoolNumeric);
             Controls.Add(SpecializationCheckBox);
             Controls.Add(LogPanel);
             Controls.Add(RollDiceButton);
@@ -5037,6 +5818,33 @@
             Text = "Form1";
             characterPanel.ResumeLayout(false);
             characterPanel.PerformLayout();
+            TempWillpowerPanel.ResumeLayout(false);
+            TempWillpowerPanel.PerformLayout();
+            panel20.ResumeLayout(false);
+            panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)TempWillpowerNumeric).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            CouragePanel.ResumeLayout(false);
+            CouragePanel.PerformLayout();
+            panel17.ResumeLayout(false);
+            panel17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)CourageNumeric).EndInit();
+            SelfControlInstinctPanel.ResumeLayout(false);
+            SelfControlInstinctPanel.PerformLayout();
+            panel22.ResumeLayout(false);
+            panel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SelfControlInstinctNumeric).EndInit();
+            ConscienceConvictionPanel.ResumeLayout(false);
+            ConscienceConvictionPanel.PerformLayout();
+            panel26.ResumeLayout(false);
+            panel26.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ConscienceConvictionNumeric).EndInit();
+            ConstWillpowerPanel.ResumeLayout(false);
+            ConstWillpowerPanel.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ConstWillpowerNumeric).EndInit();
             AbilitiesPanel.ResumeLayout(false);
             AbilitiesPanel.PerformLayout();
             panel53.ResumeLayout(false);
@@ -5253,6 +6061,7 @@
             ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).EndInit();
             LogPanel.ResumeLayout(false);
             LogPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -5679,5 +6488,69 @@
         private Label logLabel;
         private CheckBox SpecializationCheckBox;
         private Label characterNameLabel;
+        private Panel ConstWillpowerPanel;
+        private RadioButton constWillpowerButton10;
+        private RadioButton constWillpowerButton9;
+        private RadioButton constWillpowerButton8;
+        private RadioButton constWillpowerButton6;
+        private Panel panel8;
+        private Label label83;
+        private NumericUpDown ConstWillpowerNumeric;
+        private RadioButton constWillpowerButton5;
+        private RadioButton constWillpowerButton4;
+        private RadioButton constWillpowerButton3;
+        private RadioButton constWillpowerButton2;
+        private RadioButton constWillpowerButton1;
+        private Label WillpowerLabel;
+        private RadioButton constWillpowerButton7;
+        private Panel panel3;
+        private Panel CouragePanel;
+        private Panel panel17;
+        private Label label84;
+        private NumericUpDown CourageNumeric;
+        private RadioButton CourageButton5;
+        private RadioButton CourageButton4;
+        private RadioButton CourageButton3;
+        private RadioButton CourageButton2;
+        private RadioButton CourageButton1;
+        private Label label85;
+        private Panel SelfControlInstinctPanel;
+        private Panel panel22;
+        private Label label86;
+        private NumericUpDown SelfControlInstinctNumeric;
+        private RadioButton SelfControlInstinctButton5;
+        private RadioButton SelfControlInstinctButton4;
+        private RadioButton SelfControlInstinctButton3;
+        private RadioButton SelfControlInstinctButton2;
+        private RadioButton SelfControlInstinctButton1;
+        private Label label87;
+        private Panel ConscienceConvictionPanel;
+        private Panel panel26;
+        private Label label88;
+        private NumericUpDown ConscienceConvictionNumeric;
+        private RadioButton ConscienceConvictionButton5;
+        private RadioButton ConscienceConvictionButton4;
+        private RadioButton ConscienceConvictionButton3;
+        private RadioButton ConscienceConvictionButton2;
+        private RadioButton ConscienceConvictionButton1;
+        private Label label89;
+        private Label VirtuesLabel;
+        private Panel TempWillpowerPanel;
+        private RadioButton TempWillpowerButton7;
+        private RadioButton TempWillpowerButton10;
+        private RadioButton TempWillpowerButton9;
+        private RadioButton TempWillpowerButton8;
+        private RadioButton TempWillpowerButton6;
+        private Panel panel20;
+        private Label label90;
+        private NumericUpDown TempWillpowerNumeric;
+        private RadioButton TempWillpowerButton5;
+        private RadioButton TempWillpowerButton4;
+        private RadioButton TempWillpowerButton3;
+        private RadioButton TempWillpowerButton2;
+        private RadioButton TempWillpowerButton1;
+        private Label label91;
+        private NumericUpDown debuffDicePoolNumeric;
+        private Label debuffDicePoolLabel;
     }
 }

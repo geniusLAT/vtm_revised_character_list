@@ -22,13 +22,16 @@ public partial class CharacterForm : Form
 
     AttributeVtm? _chosenAttribute;
     Ability? _chosenAbility;
+    OtherRollable? _otherRollable;
     Character? _chosenCharacter;
 
     #region
 
-    uint _dicesToRoll = 0;
+    int _dicesToRoll = 0;
 
     uint _extraDicePool = 0;
+
+    uint _debuffDicePool = 0;
 
     uint _difficulty = 6;
 
@@ -98,12 +101,31 @@ public partial class CharacterForm : Form
     RadioButton[] ScienceButtons = [];
     #endregion
     #endregion
-#endregion
+
+    #region OtherButtons
+    RadioButton[] ConstWillpowerButtons = [];
+    RadioButton[] TempWillpowerButtons = [];
+    RadioButton[] ConscienceConvictionButtons = [];
+    RadioButton[] SelfControlInstinctButtons = [];
+    RadioButton[] CourageButtons = [];
+    #endregion
+
+    #endregion
+
+    void FindButtonsForOthers()
+    {
+        ConstWillpowerButtons = [constWillpowerButton1, constWillpowerButton2, constWillpowerButton3, constWillpowerButton4, constWillpowerButton5,
+        constWillpowerButton6, constWillpowerButton7, constWillpowerButton8, constWillpowerButton9, constWillpowerButton10];
+        TempWillpowerButtons = [TempWillpowerButton1, TempWillpowerButton2, TempWillpowerButton3, TempWillpowerButton4, TempWillpowerButton5,
+        TempWillpowerButton6, TempWillpowerButton7, TempWillpowerButton8, TempWillpowerButton9, TempWillpowerButton10];
+
+        ConscienceConvictionButtons = [ConscienceConvictionButton1, ConscienceConvictionButton2, ConscienceConvictionButton3, ConscienceConvictionButton4, ConscienceConvictionButton5];
+        SelfControlInstinctButtons = [SelfControlInstinctButton1, SelfControlInstinctButton2, SelfControlInstinctButton3, SelfControlInstinctButton4, SelfControlInstinctButton5];
+        CourageButtons = [CourageButton1, CourageButton2, CourageButton3, CourageButton4, CourageButton5];
+    }
 
     void FindButtonsForAttributes()
     {
-        
-
         StrenghtButtons = [SButton, SButton2, SButton3, SButton4, SButton5];
         DexterityButtons = [DexterityButton1, DexterityButton2 , DexterityButton3, DexterityButton4, DexterityButton5];
         StaminaButtons = [StaminaButton1, StaminaButton2, StaminaButton3 , StaminaButton4, StaminaButton5];
@@ -179,7 +201,21 @@ public partial class CharacterForm : Form
             }
         }
     }
-    
+
+    void ClearOtherRollableChoice()
+    {
+        _otherRollable = null;
+        for (int i = 0; i < 5; i++)
+        {
+            OtherRollable rollable = (OtherRollable)i;
+            var panel = GetOtherRollablePanel(rollable);
+            if (panel != null)
+            {
+                panel.BackColor = Color.White;
+            }
+        }
+    }
+
     void SetButtonsForNum(RadioButton[] buttons, uint numToSet)
     {
         for (int i = 0; i < buttons.Length; i++)
@@ -216,6 +252,26 @@ public partial class CharacterForm : Form
                 return IntelligecePanel;
             case AttributeVtm.Wits:
                 return WitsPanel;
+            case null:
+            default:
+                return null;
+        }
+    }
+
+    Panel? GetOtherRollablePanel(OtherRollable? rollable)
+    {
+        switch (rollable)
+        {
+            case OtherRollable.ConstWillpower:
+                return ConstWillpowerPanel;
+            case OtherRollable.TempWillpower:
+                return TempWillpowerPanel;
+            case OtherRollable.ConscienceConviction:
+                return ConscienceConvictionPanel;
+            case OtherRollable.SelfControlInstinct:
+                return SelfControlInstinctPanel;
+            case OtherRollable.Courage:
+                return CouragePanel;
             case null:
             default:
                 return null;
@@ -292,6 +348,17 @@ public partial class CharacterForm : Form
         }
     }
 
+    RadioButton[]? GetOtherButtons(OtherRollable? other) => other switch
+    {
+        OtherRollable.ConstWillpower => ConstWillpowerButtons,
+        OtherRollable.TempWillpower => TempWillpowerButtons,
+        OtherRollable.ConscienceConviction => ConscienceConvictionButtons,
+        OtherRollable.SelfControlInstinct => SelfControlInstinctButtons,
+        OtherRollable.Courage => CourageButtons,
+        null => throw new NotImplementedException(),
+        _ => null
+    };
+
     RadioButton[]? GetAttributeButtons(AttributeVtm? attribute) => attribute switch
     {
         AttributeVtm.Strenght => StrenghtButtons,
@@ -340,6 +407,26 @@ public partial class CharacterForm : Form
         Ability.Science => ScienceButtons,
         _ => null
     };
+
+    NumericUpDown? GetOtherNumeric(OtherRollable? other)
+    {
+        switch (other)
+        {
+            case OtherRollable.ConstWillpower:
+                return ConstWillpowerNumeric;
+            case OtherRollable.TempWillpower:
+                return TempWillpowerNumeric;
+            case OtherRollable.ConscienceConviction:
+                return ConscienceConvictionNumeric;
+            case OtherRollable.SelfControlInstinct:
+                return SelfControlInstinctNumeric;
+            case OtherRollable.Courage:
+                return CourageNumeric;
+            case null:
+            default:
+                return null;
+        }
+    }
 
     NumericUpDown? GetAttributeNumeric(AttributeVtm? attribute)
     {
@@ -442,8 +529,28 @@ public partial class CharacterForm : Form
     void ChooseAttribute(AttributeVtm attribute)
     {
         _chosenAttribute = attribute;
+        _otherRollable = null;
         ClearAttributeChoice();
+        ClearOtherRollableChoice();
         var panel = GetAttributePanel(_chosenAttribute);
+        if (panel != null)
+        {
+            panel.BackColor = Color.Yellow;
+        }
+        CalculateDices();
+    }
+
+    void ChooseOther(OtherRollable rollable)
+    {
+        _chosenAbility = null;
+        _chosenAttribute = null;
+        ClearAbilityChoice();
+        ClearAttributeChoice();
+
+        ClearOtherRollableChoice();
+
+        _otherRollable = rollable;
+        var panel = GetOtherRollablePanel(_otherRollable);
         if (panel != null)
         {
             panel.BackColor = Color.Yellow;
@@ -454,7 +561,9 @@ public partial class CharacterForm : Form
     void ChooseAbility(Ability ability)
     {
         _chosenAbility = ability;
+        _otherRollable = null;
         ClearAbilityChoice();
+        ClearOtherRollableChoice();
         var panel = GetAbilityPanel(_chosenAbility);
         if (panel != null)
         {
@@ -467,16 +576,24 @@ public partial class CharacterForm : Form
     {
         _dicesToRoll = 0;
         StringBuilder sb = new StringBuilder();
+
+        if (_otherRollable != null)
+        {
+            var other = _chosenCharacter?.GetOther((OtherRollable)_otherRollable) ?? 0;
+            _dicesToRoll += (int)other;
+            sb.Append($" {RussianTranslator.TranslateOther(_otherRollable)} {other.ToString()}");
+        }
+
         if (_chosenAttribute != null)
         {
             var attribute = _chosenCharacter?.GetAttribute((AttributeVtm)_chosenAttribute) ?? 0;
-            _dicesToRoll += attribute;
+            _dicesToRoll += (int)attribute;
             sb.Append($" {RussianTranslator.TranslateAttribute(_chosenAttribute)} {attribute.ToString()}");
         }
         if (_chosenAbility != null)
         {
             var ability = _chosenCharacter?.GetAbility((Ability)_chosenAbility) ?? 0;
-            _dicesToRoll += ability;
+            _dicesToRoll += (int)ability;
             if (sb.Length > 0)
             {
                 sb.Append(" + ");
@@ -486,7 +603,7 @@ public partial class CharacterForm : Form
         }
         if (_extraDicePool > 0)
         {
-            _dicesToRoll += _extraDicePool;
+            _dicesToRoll += (int)_extraDicePool;
             if (sb.Length > 0)
             {
                 sb.Append(" + ");
@@ -494,6 +611,18 @@ public partial class CharacterForm : Form
             sb.Append($" доп кубы {_extraDicePool.ToString()}");
 
         }
+
+        if (_debuffDicePool > 0)
+        {
+            _dicesToRoll -= (int)_debuffDicePool;
+            if (sb.Length > 0)
+            {
+                sb.Append(" + ");
+            }
+            sb.Append($" штрафные кубы {_debuffDicePool.ToString()}");
+
+        }
+
         sb.Append($" = {_dicesToRoll}");
         var name = _chosenCharacter?.CharacterName ?? "Кто-то";
         var daredevilCommentary = _daredevil ? ",сорвиголова " : string.Empty;
@@ -506,6 +635,9 @@ public partial class CharacterForm : Form
     void RenderCharacter(Character character)
     {
         _chosenCharacter = character;
+
+        characterNameLabel.Text = character.CharacterName ?? "Новый персонаж";
+
         for (int i = 0; i < 9; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
@@ -534,15 +666,38 @@ public partial class CharacterForm : Form
             SetButtonsForNum(GetAbilityButtons(ability), abilityValue);
 
         }
+
+        for (int i = 0; i < 5; i++)
+        {
+            OtherRollable other = (OtherRollable)i;
+            uint otherValue = character.GetOther(other);
+            var numeric = GetOtherNumeric(other);
+            if (numeric is not null)
+            {
+                numeric.Value = otherValue;
+                numeric.Enabled = false;
+            }
+            var buttons = GetOtherButtons(other);
+            if (buttons is not null)
+            {
+                SetButtonsForNum(buttons, otherValue);
+            }
+            else
+            {
+                MessageBox.Show($"{other} {i}");
+            }
+
+        }
     }
 
    
     public async Task RollDiceAsync()
     {
+        uint positiveDicesToRoll = _dicesToRoll < 0 ? 0 : (uint)_dicesToRoll;
         DicesRollRequest request = new DicesRollRequest()
         {
             AutoSuccesses = _additionalAutoSuccess,
-            DicesToRoll = _dicesToRoll,
+            DicesToRoll = positiveDicesToRoll,
             Difficulty = _difficulty,
             Specialization = _specialization,
             RemoveCriticalFailure = (uint)(_daredevil ? 1 : 0),

@@ -158,6 +158,25 @@ public class Character
 
     #endregion
 
+    public uint GetOther(OtherRollable other)
+    {
+        switch (other)
+        {
+            case OtherRollable.ConstWillpower:
+                return WillpowerMax;
+            case OtherRollable.TempWillpower:
+                return Willpower;
+            case OtherRollable.ConscienceConviction:
+                return ConscienceConviction;
+            case OtherRollable.SelfControlInstinct:
+                return SelfControlInstincts;
+            case OtherRollable.Courage:
+                return Courage;
+        }
+
+        return 0;
+    }
+
     public uint GetAttribute(AttributeVtm attribute)
     {
         switch (attribute)

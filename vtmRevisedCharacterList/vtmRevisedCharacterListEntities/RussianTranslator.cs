@@ -3,6 +3,20 @@
 public static class RussianTranslator
 {
 
+    public static string TranslateOther(OtherRollable? other)
+    {
+        return other switch
+        {
+            OtherRollable.ConstWillpower => "Постоянная сила воли",
+            OtherRollable.TempWillpower => "Временная сила воли",
+            OtherRollable.ConscienceConviction => "Совесть/убеждённость",
+            OtherRollable.SelfControlInstinct => "Самоконтроль/Инстинкты",
+            OtherRollable.Courage => "Храбрость",
+            null => throw new NotImplementedException(),
+            _ => "Неназванный аттрибут",
+        };
+    }
+
     public static string TranslateAttribute(AttributeVtm? attribute)
     {
         return attribute switch
