@@ -146,15 +146,15 @@ public class Character
 
     #region Other
 
-    public uint HumanityPath;
+    public uint HumanityPath { get; set; }
 
-    public uint WillpowerMax;
+    public uint WillpowerMax { get; set; }
 
-    public uint Willpower;
+    public uint Willpower { get; set; }
 
-    public uint Bloodpool;
+    public uint Bloodpool { get; set; }
 
-    public uint Health;
+    public uint Health { get; set; }
 
     #endregion
 
