@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
+            characterComboBox = new ComboBox();
+            UsernameLabel = new Label();
             TempWillpowerPanel = new Panel();
             TempWillpowerButton7 = new RadioButton();
             TempWillpowerButton10 = new RadioButton();
@@ -512,7 +514,6 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
-            UsernameLabel = new Label();
             characterPanel.SuspendLayout();
             TempWillpowerPanel.SuspendLayout();
             panel20.SuspendLayout();
@@ -664,6 +665,7 @@
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(characterComboBox);
             characterPanel.Controls.Add(UsernameLabel);
             characterPanel.Controls.Add(TempWillpowerPanel);
             characterPanel.Controls.Add(panel3);
@@ -676,6 +678,24 @@
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // characterComboBox
+            // 
+            characterComboBox.FormattingEnabled = true;
+            characterComboBox.Location = new Point(472, 0);
+            characterComboBox.Name = "characterComboBox";
+            characterComboBox.Size = new Size(233, 23);
+            characterComboBox.TabIndex = 16;
+            characterComboBox.SelectedIndexChanged += characterComboBox_SelectedIndexChanged;
+            // 
+            // UsernameLabel
+            // 
+            UsernameLabel.AutoSize = true;
+            UsernameLabel.Location = new Point(107, 4);
+            UsernameLabel.Name = "UsernameLabel";
+            UsernameLabel.Size = new Size(62, 15);
+            UsernameLabel.TabIndex = 15;
+            UsernameLabel.Text = "Игрок: ???";
             // 
             // TempWillpowerPanel
             // 
@@ -5798,15 +5818,6 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
-            // UsernameLabel
-            // 
-            UsernameLabel.AutoSize = true;
-            UsernameLabel.Location = new Point(107, 4);
-            UsernameLabel.Name = "UsernameLabel";
-            UsernameLabel.Size = new Size(62, 15);
-            UsernameLabel.TabIndex = 15;
-            UsernameLabel.Text = "Игрок: ???";
-            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -6564,5 +6575,6 @@
         private NumericUpDown debuffDicePoolNumeric;
         private Label debuffDicePoolLabel;
         private Label UsernameLabel;
+        private ComboBox characterComboBox;
     }
 }

@@ -350,4 +350,10 @@ public partial class CharacterForm : Form
         _debuffDicePool = (uint)(debuffDicePoolNumeric.Value = 0);
         CalculateDices();
     }
+
+    private async void characterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var characterClickedIndex = characterComboBox.SelectedIndex;
+        await ChooseAnotherCharacter(characterClickedIndex);
+    }
 }

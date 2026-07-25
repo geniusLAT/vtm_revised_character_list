@@ -19,9 +19,16 @@ public partial class CharacterForm : Form
     };
     private HttpClient? _httpClient;
 
+    GuiConfig? _config;
+
+    List<CharacterListMember> _avaliableCharacters = new List<CharacterListMember>();
+
     AttributeVtm? _chosenAttribute;
+
     Ability? _chosenAbility;
+
     OtherRollable? _otherRollable;
+
     Character? _chosenCharacter;
 
     #region
@@ -730,26 +737,48 @@ public partial class CharacterForm : Form
         LogPanel.AutoScrollPosition = new Point(0, LogPanel.DisplayRectangle.Height);
     }
 
-    #region firstInit
-
-    public void StartIt()
+    private async Task ChooseAnotherCharacter(int characterIndex)
     {
-        var config = GetConfig();
-        if (config is null)
+        if (_config is null)
         {
             MessageBox.Show($"Ты куда его дел?", "А где config?", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.Close();
             return;
         }
-        UsernameLabel.Text = $"Игрок:{config.UserName} {config.UserId}";
+
+        var newCharacter = await GetCharacterAsync(_avaliableCharacters[characterIndex], _config.UserId);
+
+        if (newCharacter is null)
+        {
+            MessageBox.Show($"А персонажа то как можно было потерять?", "Не знаю, что ты сделал - но больше так не делай...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+        _chosenCharacter = newCharacter;
+        RenderCharacter(_chosenCharacter);
+
+        //_avaliableCharacters = await GetCharacterListAsync(_config.UserId);
+    }
+
+    #region firstInit
+
+    public void StartIt()
+    {
+        _config = GetConfig();
+        if (_config is null)
+        {
+            MessageBox.Show($"Ты куда его дел?", "А где config?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.Close();
+            return;
+        }
+        UsernameLabel.Text = $"Игрок:{_config.UserName} {_config.UserId}";
 
         _httpClient = new HttpClient(handler)
         {
             //BaseAddress = new Uri("https://localhost:44320/")
-            BaseAddress = new Uri(config.Path)
+            BaseAddress = new Uri(_config.Path)
         };
 
-        var task = Task.Run(() => GetCharacterListAsync(config.UserId));
+        var task = Task.Run(() => GetCharacterListAsync(_config.UserId));
 
         //while server thinks
         ClearAttributeChoice();
@@ -760,21 +789,24 @@ public partial class CharacterForm : Form
 
         task.Wait();
 
-        var avaliableCharacters = task.Result;
-        MessageBox.Show($"Найдено персонажей: {avaliableCharacters.Count.ToString()}");
+        _avaliableCharacters = task.Result;
+        MessageBox.Show($"Найдено персонажей: {_avaliableCharacters.Count.ToString()}");
 
-        if (avaliableCharacters.Count > 0) {
-            var task2 = Task.Run(() => GetCharacterAsync(avaliableCharacters.First(), config.UserId));
+        if (_avaliableCharacters.Count > 0) {
+            var task2 = Task.Run(() => GetCharacterAsync(_avaliableCharacters.First(), _config.UserId));
+
+            //while server thinks
+            characterComboBox.Items.Clear();
+            foreach(var character in _avaliableCharacters)
+            {
+                characterComboBox.Items.Add(character.CharacterName);
+            }
+            characterComboBox.SelectedIndex = 0;
             task2.Wait();
 
             _chosenCharacter = task2.Result;
             RenderCharacter(_chosenCharacter);
         }
-        
-
-       
-
-
 
         //var character = new Character()
         //{
