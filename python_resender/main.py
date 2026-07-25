@@ -16,7 +16,7 @@ CHAT_ID=int(file.read().strip())#''
 file.close()
 
 
-API_URL = 'https://localhost:44320/Dice'
+API_URL = 'http://localhost:8080/Dice'
 
 # bot=telebot.TeleBot(token)
 # @bot.message_handler(commands=['start'])
