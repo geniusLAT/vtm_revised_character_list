@@ -38,6 +38,7 @@ public static class RussianTranslator
             OtherRollable.SelfControlInstinct => "Самоконтроль/Инстинкты",
             OtherRollable.Courage => "Храбрость",
             null => throw new NotImplementedException(),
+            OtherRollable.HumanityPath => "Человечность/Путь",
             _ => "Неназванный аттрибут",
         };
     }

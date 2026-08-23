@@ -113,6 +113,7 @@ public partial class CharacterForm : Form
     #endregion
 
     #region OtherButtons
+    RadioButton[] HumanityPathButtons = [];
     RadioButton[] ConstWillpowerButtons = [];
     RadioButton[] TempWillpowerButtons = [];
     RadioButton[] ConscienceConvictionButtons = [];
@@ -126,6 +127,8 @@ public partial class CharacterForm : Form
 
     void FindButtonsForOthers()
     {
+        HumanityPathButtons = [HumanityPathButton1, HumanityPathButton2, HumanityPathButton3, HumanityPathButton4, HumanityPathButton5,
+        HumanityPathButton6, HumanityPathButton7, HumanityPathButton8, HumanityPathButton9, HumanityPathButton10];
         ConstWillpowerButtons = [constWillpowerButton1, constWillpowerButton2, constWillpowerButton3, constWillpowerButton4, constWillpowerButton5,
         constWillpowerButton6, constWillpowerButton7, constWillpowerButton8, constWillpowerButton9, constWillpowerButton10];
         TempWillpowerButtons = [TempWillpowerButton1, TempWillpowerButton2, TempWillpowerButton3, TempWillpowerButton4, TempWillpowerButton5,
@@ -221,7 +224,7 @@ public partial class CharacterForm : Form
     void ClearOtherRollableChoice()
     {
         _otherRollable = null;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
         {
             OtherRollable rollable = (OtherRollable)i;
             var panel = GetOtherRollablePanel(rollable);
@@ -288,6 +291,8 @@ public partial class CharacterForm : Form
                 return SelfControlInstinctPanel;
             case OtherRollable.Courage:
                 return CouragePanel;
+            case OtherRollable.HumanityPath:
+                return HumanityPathPanel;
             case null:
             default:
                 return null;
@@ -372,6 +377,7 @@ public partial class CharacterForm : Form
         OtherRollable.SelfControlInstinct => SelfControlInstinctButtons,
         OtherRollable.Courage => CourageButtons,
         null => throw new NotImplementedException(),
+        OtherRollable.HumanityPath => HumanityPathButtons,
         _ => null
     };
 
@@ -438,6 +444,8 @@ public partial class CharacterForm : Form
                 return SelfControlInstinctNumeric;
             case OtherRollable.Courage:
                 return CourageNumeric;
+            case OtherRollable.HumanityPath:
+                return HumanityPathNumeric;
             case null:
             default:
                 return null;
@@ -750,7 +758,7 @@ public partial class CharacterForm : Form
 
         }
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
         {
             OtherRollable other = (OtherRollable)i;
             uint otherValue = character.GetOther(other);
@@ -1093,7 +1101,7 @@ public partial class CharacterForm : Form
             }
         }
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
         {
             OtherRollable other = (OtherRollable)i;
             

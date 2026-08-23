@@ -339,6 +339,15 @@ public partial class CharacterForm : Form
         ChooseOther(OtherRollable.TempWillpower);
     }
 
+    private void HumanityPathPanel_Click(object sender, EventArgs e)
+    {
+        ChooseOther(OtherRollable.HumanityPath);
+    }
+
+    private void HumanityPathLabel_Click(object sender, EventArgs e)
+    {
+        ChooseOther(OtherRollable.HumanityPath);
+    }
     private void debuffDicePoolNumeric_ValueChanged(object sender, EventArgs e)
     {
         _debuffDicePool = (uint)debuffDicePoolNumeric.Value;
