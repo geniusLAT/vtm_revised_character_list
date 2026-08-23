@@ -1150,7 +1150,7 @@ public partial class CharacterForm : Form
             { 
                 Width =227,
                 Height = 19,
-                BackColor = Color.Green,
+                //BackColor = Color.Green,
                 Location = new Point(3, 3 + i * 20)
             };
             parentPanel.Controls.Add(littlePanel);
@@ -1165,6 +1165,34 @@ public partial class CharacterForm : Form
                 Location = new Point(3, 4)
             };
             littlePanel.Controls.Add(label);
+
+            var numeric = new NumericUpDown()
+            {
+                Location = new Point(183, -2),
+                Value = item.Rating,
+                Increment = 1,
+                Minimum = 0,
+                Width = 44,
+                Maximum = 5
+
+            };
+            littlePanel.Controls.Add(numeric);
+
+            for (int j = 0; j < 5; j++)
+            {
+                var radioButton = new RadioButton()
+                {
+                    Size = new Size(14, 13),
+                    Location = new Point(86 + 20 * j, 6),
+                    AutoCheck = false
+                };
+                littlePanel.Controls.Add(radioButton);
+
+                if(item.Rating > j)
+                {
+                    radioButton.Checked = true;
+                }
+            }
         }
     }
 
