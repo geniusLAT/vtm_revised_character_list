@@ -158,6 +158,11 @@ public class Character
 
     #endregion
 
+    public HealthCondition GetHealthCondition()
+    {
+        return (HealthCondition)Health;
+    }
+
     public uint SetOther(OtherRollable other, uint value)
     {
         switch (other)

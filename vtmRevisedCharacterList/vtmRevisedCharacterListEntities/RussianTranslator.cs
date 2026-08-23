@@ -36,6 +36,24 @@ public static class RussianTranslator
         };
     }
 
+    public static string TranslateHealthCondition(HealthCondition? condition)
+    {
+        return condition switch
+        {
+            HealthCondition.Ok => "ОК",
+            HealthCondition.Bruised => "Пустяк",
+            HealthCondition.Hurt => "Боль",
+            HealthCondition.Injured => "Лёгкие травмы",
+            HealthCondition.Wounded => "Средние травмы",
+            HealthCondition.Mauled => "Тяжёлые травмы",
+            HealthCondition.Crippled => "Увечья",
+            HealthCondition.Incapacitated => "Нокаут",
+            HealthCondition.Dead => "Торпор/смерть",
+            null => throw new NotImplementedException(),
+            _ => "Неназванное состояние здоровья",
+        };
+    }
+
     public static string TranslateAttribute(AttributeVtm? attribute)
     {
         return attribute switch
