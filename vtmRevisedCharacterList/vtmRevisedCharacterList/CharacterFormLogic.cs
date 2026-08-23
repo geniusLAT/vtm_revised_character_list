@@ -631,11 +631,7 @@ public partial class CharacterForm : Form
         if (_debuffDicePool > 0)
         {
             _dicesToRoll -= (int)_debuffDicePool;
-            if (sb.Length > 0)
-            {
-                sb.Append(" - ");
-            }
-            sb.Append($" штрафные кубы {_debuffDicePool.ToString()}");
+            sb.Append($" - штрафные кубы {_debuffDicePool.ToString()}");
 
         }
 
