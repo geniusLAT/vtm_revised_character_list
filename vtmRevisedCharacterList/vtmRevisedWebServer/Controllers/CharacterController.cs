@@ -79,7 +79,7 @@ public class CharacterController : ControllerBase
         {
             return NotFound();
         }
-        MessageManager.EnqueueRequest(new() { Hidden = false, Text = characterUpdateResult.ChangeLog });
+        MessageManager.EnqueueRequest(new() { Hidden = request.Hidden, Text = characterUpdateResult.ChangeLog });
         return characterUpdateResult;
     }
 

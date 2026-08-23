@@ -12,6 +12,8 @@ namespace vtmRevisedCharacterListEntities
 
         public Guid CharacterUuid { get; set; }
 
-        public Character CharacterToUpdate { get; set; }
+        public required Character CharacterToUpdate { get; set; }
+
+        public bool Hidden { get; set; }
     }
 }
