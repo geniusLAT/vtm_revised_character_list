@@ -396,4 +396,15 @@ public partial class CharacterForm : Form
     {
         OpenAddBackgroundWindow();
     }
+
+    private void ExampleBackGroundPanel_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
+
+    private void ExampleBackGroundPanel_Click(object sender, EventArgs e)
+    {
+        //MessageBox.Show("Hello world");
+        ClickOnRatingPanel(sender);
+    }
 }

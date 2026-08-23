@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace vtmRevisedCharacterListEntities;
 
-public abstract class ARating
+public class ARating
 {
     public required string Name { get; set; }
 

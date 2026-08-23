@@ -819,6 +819,8 @@
             ExampleBackGroundPanel.Name = "ExampleBackGroundPanel";
             ExampleBackGroundPanel.Size = new Size(227, 19);
             ExampleBackGroundPanel.TabIndex = 9;
+            ExampleBackGroundPanel.Click += ExampleBackGroundPanel_Click;
+            ExampleBackGroundPanel.Paint += ExampleBackGroundPanel_Paint;
             // 
             // panel30
             // 
@@ -909,6 +911,7 @@
             label103.Size = new Size(81, 10);
             label103.TabIndex = 0;
             label103.Text = "Совесть\\Убеждённость";
+            label103.Click += ExampleBackGroundPanel_Click;
             // 
             // label108
             // 
