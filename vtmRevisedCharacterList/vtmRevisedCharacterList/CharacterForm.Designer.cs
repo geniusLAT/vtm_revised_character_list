@@ -541,6 +541,21 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
+            HumanityPathPanel = new Panel();
+            HumanityPathButton7 = new RadioButton();
+            HumanityPathButton10 = new RadioButton();
+            HumanityPathButton9 = new RadioButton();
+            HumanityPathButton8 = new RadioButton();
+            HumanityPathButton6 = new RadioButton();
+            panel24 = new Panel();
+            label92 = new Label();
+            HumanityPathNumeric = new NumericUpDown();
+            HumanityPathButton5 = new RadioButton();
+            radioButton7 = new RadioButton();
+            HumanityPathButton3 = new RadioButton();
+            HumanityPathButton2 = new RadioButton();
+            HumanityPathButton1 = new RadioButton();
+            HumanityPathLabel = new Label();
             characterPanel.SuspendLayout();
             HealthPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).BeginInit();
@@ -691,10 +706,14 @@
             ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).BeginInit();
             LogPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).BeginInit();
+            HumanityPathPanel.SuspendLayout();
+            panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)HumanityPathNumeric).BeginInit();
             SuspendLayout();
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(HumanityPathPanel);
             characterPanel.Controls.Add(HealthPanel);
             characterPanel.Controls.Add(CancelUpdateButton);
             characterPanel.Controls.Add(characterComboBox);
@@ -6157,6 +6176,172 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
+            // HumanityPathPanel
+            // 
+            HumanityPathPanel.Controls.Add(HumanityPathButton7);
+            HumanityPathPanel.Controls.Add(HumanityPathButton10);
+            HumanityPathPanel.Controls.Add(HumanityPathButton9);
+            HumanityPathPanel.Controls.Add(HumanityPathButton8);
+            HumanityPathPanel.Controls.Add(HumanityPathButton6);
+            HumanityPathPanel.Controls.Add(panel24);
+            HumanityPathPanel.Controls.Add(HumanityPathNumeric);
+            HumanityPathPanel.Controls.Add(HumanityPathButton5);
+            HumanityPathPanel.Controls.Add(radioButton7);
+            HumanityPathPanel.Controls.Add(HumanityPathButton3);
+            HumanityPathPanel.Controls.Add(HumanityPathButton2);
+            HumanityPathPanel.Controls.Add(HumanityPathButton1);
+            HumanityPathPanel.Controls.Add(HumanityPathLabel);
+            HumanityPathPanel.Location = new Point(239, 466);
+            HumanityPathPanel.Name = "HumanityPathPanel";
+            HumanityPathPanel.Size = new Size(227, 19);
+            HumanityPathPanel.TabIndex = 14;
+            // 
+            // HumanityPathButton7
+            // 
+            HumanityPathButton7.AutoCheck = false;
+            HumanityPathButton7.AutoSize = true;
+            HumanityPathButton7.Checked = true;
+            HumanityPathButton7.Location = new Point(139, 6);
+            HumanityPathButton7.Name = "HumanityPathButton7";
+            HumanityPathButton7.Size = new Size(14, 13);
+            HumanityPathButton7.TabIndex = 13;
+            HumanityPathButton7.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton10
+            // 
+            HumanityPathButton10.AutoCheck = false;
+            HumanityPathButton10.AutoSize = true;
+            HumanityPathButton10.Checked = true;
+            HumanityPathButton10.Location = new Point(170, 6);
+            HumanityPathButton10.Name = "HumanityPathButton10";
+            HumanityPathButton10.Size = new Size(14, 13);
+            HumanityPathButton10.TabIndex = 12;
+            HumanityPathButton10.TabStop = true;
+            HumanityPathButton10.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton9
+            // 
+            HumanityPathButton9.AutoCheck = false;
+            HumanityPathButton9.AutoSize = true;
+            HumanityPathButton9.Checked = true;
+            HumanityPathButton9.Location = new Point(159, 6);
+            HumanityPathButton9.Name = "HumanityPathButton9";
+            HumanityPathButton9.Size = new Size(14, 13);
+            HumanityPathButton9.TabIndex = 11;
+            HumanityPathButton9.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton8
+            // 
+            HumanityPathButton8.AutoCheck = false;
+            HumanityPathButton8.AutoSize = true;
+            HumanityPathButton8.Checked = true;
+            HumanityPathButton8.Location = new Point(150, 6);
+            HumanityPathButton8.Name = "HumanityPathButton8";
+            HumanityPathButton8.Size = new Size(14, 13);
+            HumanityPathButton8.TabIndex = 10;
+            HumanityPathButton8.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton6
+            // 
+            HumanityPathButton6.AutoCheck = false;
+            HumanityPathButton6.AutoSize = true;
+            HumanityPathButton6.Checked = true;
+            HumanityPathButton6.Location = new Point(129, 6);
+            HumanityPathButton6.Name = "HumanityPathButton6";
+            HumanityPathButton6.Size = new Size(14, 13);
+            HumanityPathButton6.TabIndex = 9;
+            HumanityPathButton6.UseVisualStyleBackColor = true;
+            // 
+            // panel24
+            // 
+            panel24.Controls.Add(label92);
+            panel24.Location = new Point(3, 18);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(197, 19);
+            panel24.TabIndex = 2;
+            // 
+            // label92
+            // 
+            label92.AutoSize = true;
+            label92.Location = new Point(3, 0);
+            label92.Name = "label92";
+            label92.Size = new Size(58, 15);
+            label92.TabIndex = 0;
+            label92.Text = "Ловкость";
+            // 
+            // HumanityPathNumeric
+            // 
+            HumanityPathNumeric.Location = new Point(183, -2);
+            HumanityPathNumeric.Name = "HumanityPathNumeric";
+            HumanityPathNumeric.Size = new Size(41, 23);
+            HumanityPathNumeric.TabIndex = 8;
+            // 
+            // HumanityPathButton5
+            // 
+            HumanityPathButton5.AutoCheck = false;
+            HumanityPathButton5.AutoSize = true;
+            HumanityPathButton5.Checked = true;
+            HumanityPathButton5.Location = new Point(109, 6);
+            HumanityPathButton5.Name = "HumanityPathButton5";
+            HumanityPathButton5.Size = new Size(14, 13);
+            HumanityPathButton5.TabIndex = 7;
+            HumanityPathButton5.TabStop = true;
+            HumanityPathButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            radioButton7.AutoCheck = false;
+            radioButton7.AutoSize = true;
+            radioButton7.Checked = true;
+            radioButton7.Location = new Point(98, 6);
+            radioButton7.Name = "radioButton7";
+            radioButton7.Size = new Size(14, 13);
+            radioButton7.TabIndex = 6;
+            radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton3
+            // 
+            HumanityPathButton3.AutoCheck = false;
+            HumanityPathButton3.AutoSize = true;
+            HumanityPathButton3.Checked = true;
+            HumanityPathButton3.Location = new Point(89, 6);
+            HumanityPathButton3.Name = "HumanityPathButton3";
+            HumanityPathButton3.Size = new Size(14, 13);
+            HumanityPathButton3.TabIndex = 5;
+            HumanityPathButton3.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton2
+            // 
+            HumanityPathButton2.AutoCheck = false;
+            HumanityPathButton2.AutoSize = true;
+            HumanityPathButton2.Checked = true;
+            HumanityPathButton2.Location = new Point(78, 6);
+            HumanityPathButton2.Name = "HumanityPathButton2";
+            HumanityPathButton2.Size = new Size(14, 13);
+            HumanityPathButton2.TabIndex = 4;
+            HumanityPathButton2.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton1
+            // 
+            HumanityPathButton1.AutoCheck = false;
+            HumanityPathButton1.AutoSize = true;
+            HumanityPathButton1.Checked = true;
+            HumanityPathButton1.Location = new Point(68, 6);
+            HumanityPathButton1.Name = "HumanityPathButton1";
+            HumanityPathButton1.Size = new Size(14, 13);
+            HumanityPathButton1.TabIndex = 3;
+            HumanityPathButton1.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathLabel
+            // 
+            HumanityPathLabel.AutoSize = true;
+            HumanityPathLabel.Font = new Font("Segoe UI", 5F);
+            HumanityPathLabel.Location = new Point(3, 4);
+            HumanityPathLabel.Name = "HumanityPathLabel";
+            HumanityPathLabel.Size = new Size(69, 10);
+            HumanityPathLabel.TabIndex = 0;
+            HumanityPathLabel.Text = "Человечность/путь";
+            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -6428,6 +6613,11 @@
             LogPanel.ResumeLayout(false);
             LogPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).EndInit();
+            HumanityPathPanel.ResumeLayout(false);
+            HumanityPathPanel.PerformLayout();
+            panel24.ResumeLayout(false);
+            panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)HumanityPathNumeric).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -6947,5 +7137,20 @@
         private Label HealthLabel1;
         private RadioButton HealthButton9;
         private NumericUpDown DriveNumeric;
+        private Panel HumanityPathPanel;
+        private RadioButton HumanityPathButton7;
+        private RadioButton HumanityPathButton10;
+        private RadioButton HumanityPathButton9;
+        private RadioButton HumanityPathButton8;
+        private RadioButton HumanityPathButton6;
+        private Panel panel24;
+        private Label label92;
+        private NumericUpDown HumanityPathNumeric;
+        private RadioButton HumanityPathButton5;
+        private RadioButton radioButton7;
+        private RadioButton HumanityPathButton3;
+        private RadioButton HumanityPathButton2;
+        private RadioButton HumanityPathButton1;
+        private Label HumanityPathLabel;
     }
 }
