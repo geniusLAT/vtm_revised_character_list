@@ -29,7 +29,28 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
-            UpdateCharacterButton = new Button();
+            HealthPanel = new Panel();
+            checkBox1 = new CheckBox();
+            label100 = new Label();
+            label99 = new Label();
+            label98 = new Label();
+            label97 = new Label();
+            label96 = new Label();
+            label95 = new Label();
+            label94 = new Label();
+            label93 = new Label();
+            label92 = new Label();
+            radioButton1 = new RadioButton();
+            healthButton8 = new RadioButton();
+            healthButton7 = new RadioButton();
+            healthButton6 = new RadioButton();
+            healthButton5 = new RadioButton();
+            healthButton4 = new RadioButton();
+            healthButton3 = new RadioButton();
+            healthButton2 = new RadioButton();
+            healthButton1 = new RadioButton();
+            HealthLabel = new Label();
+            CancelUpdateButton = new Button();
             characterComboBox = new ComboBox();
             UsernameLabel = new Label();
             TempWillpowerPanel = new Panel();
@@ -375,7 +396,7 @@
             DrivePanel = new Panel();
             panel6 = new Panel();
             label20 = new Label();
-            DriveNumeric = new NumericUpDown();
+            AggravatedDamageNumeric = new NumericUpDown();
             DriveButton5 = new RadioButton();
             DriveButton4 = new RadioButton();
             DriveButton3 = new RadioButton();
@@ -502,6 +523,7 @@
             StrenghtLabel = new Label();
             PhysicalAttributesLabel = new Label();
             AttributesLabel = new Label();
+            UpdateCharacterButton = new Button();
             DiceLabel = new Label();
             ExtraDicePoolNumeric = new NumericUpDown();
             ExtraDicePoolLabel = new Label();
@@ -515,8 +537,11 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
-            CancelUpdateButton = new Button();
+            CommonDamageNumeric = new NumericUpDown();
+            AggravatedDamageLabel = new Label();
+            CommomDamageLabel = new Label();
             characterPanel.SuspendLayout();
+            HealthPanel.SuspendLayout();
             TempWillpowerPanel.SuspendLayout();
             panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TempWillpowerNumeric).BeginInit();
@@ -620,7 +645,7 @@
             ((System.ComponentModel.ISupportInitialize)EtiquetteNumeric).BeginInit();
             DrivePanel.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DriveNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AggravatedDamageNumeric).BeginInit();
             CraftsPanel.SuspendLayout();
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CraftsNumeric).BeginInit();
@@ -663,12 +688,13 @@
             ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).BeginInit();
             LogPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).BeginInit();
             SuspendLayout();
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(HealthPanel);
             characterPanel.Controls.Add(CancelUpdateButton);
-            characterPanel.Controls.Add(UpdateCharacterButton);
             characterPanel.Controls.Add(characterComboBox);
             characterPanel.Controls.Add(UsernameLabel);
             characterPanel.Controls.Add(TempWillpowerPanel);
@@ -683,15 +709,266 @@
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
             // 
-            // UpdateCharacterButton
+            // HealthPanel
             // 
-            UpdateCharacterButton.Location = new Point(615, 662);
-            UpdateCharacterButton.Name = "UpdateCharacterButton";
-            UpdateCharacterButton.Size = new Size(90, 23);
-            UpdateCharacterButton.TabIndex = 18;
-            UpdateCharacterButton.Text = "Сохранить";
-            UpdateCharacterButton.UseVisualStyleBackColor = true;
-            UpdateCharacterButton.Click += UpdateCharacterButton_Click;
+            HealthPanel.Controls.Add(CommomDamageLabel);
+            HealthPanel.Controls.Add(AggravatedDamageLabel);
+            HealthPanel.Controls.Add(CommonDamageNumeric);
+            HealthPanel.Controls.Add(checkBox1);
+            HealthPanel.Controls.Add(AggravatedDamageNumeric);
+            HealthPanel.Controls.Add(label100);
+            HealthPanel.Controls.Add(label99);
+            HealthPanel.Controls.Add(label98);
+            HealthPanel.Controls.Add(label97);
+            HealthPanel.Controls.Add(label96);
+            HealthPanel.Controls.Add(label95);
+            HealthPanel.Controls.Add(label94);
+            HealthPanel.Controls.Add(label93);
+            HealthPanel.Controls.Add(label92);
+            HealthPanel.Controls.Add(radioButton1);
+            HealthPanel.Controls.Add(healthButton8);
+            HealthPanel.Controls.Add(healthButton7);
+            HealthPanel.Controls.Add(healthButton6);
+            HealthPanel.Controls.Add(healthButton5);
+            HealthPanel.Controls.Add(healthButton4);
+            HealthPanel.Controls.Add(healthButton3);
+            HealthPanel.Controls.Add(healthButton2);
+            HealthPanel.Controls.Add(healthButton1);
+            HealthPanel.Controls.Add(HealthLabel);
+            HealthPanel.Location = new Point(581, 470);
+            HealthPanel.Name = "HealthPanel";
+            HealthPanel.Size = new Size(121, 187);
+            HealthPanel.TabIndex = 14;
+            // 
+            // checkBox1
+            // 
+            checkBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(3, 147);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(111, 19);
+            checkBox1.TabIndex = 19;
+            checkBox1.Text = "Игнор дебафов";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label100
+            // 
+            label100.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label100.AutoSize = true;
+            label100.Location = new Point(0, 133);
+            label100.Name = "label100";
+            label100.Size = new Size(93, 15);
+            label100.TabIndex = 27;
+            label100.Text = "Смерть/торпор";
+            // 
+            // label99
+            // 
+            label99.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label99.AutoSize = true;
+            label99.Location = new Point(0, 120);
+            label99.Name = "label99";
+            label99.Size = new Size(46, 15);
+            label99.TabIndex = 26;
+            label99.Text = "Нокаут";
+            // 
+            // label98
+            // 
+            label98.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label98.AutoSize = true;
+            label98.Location = new Point(0, 105);
+            label98.Name = "label98";
+            label98.Size = new Size(45, 15);
+            label98.TabIndex = 25;
+            label98.Text = "Увечья";
+            // 
+            // label97
+            // 
+            label97.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label97.AutoSize = true;
+            label97.Location = new Point(0, 88);
+            label97.Name = "label97";
+            label97.Size = new Size(101, 15);
+            label97.TabIndex = 24;
+            label97.Text = "Тяжёлые травмы";
+            // 
+            // label96
+            // 
+            label96.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label96.AutoSize = true;
+            label96.Location = new Point(0, 73);
+            label96.Name = "label96";
+            label96.Size = new Size(99, 15);
+            label96.TabIndex = 23;
+            label96.Text = "Средние травмы";
+            // 
+            // label95
+            // 
+            label95.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label95.AutoSize = true;
+            label95.Location = new Point(0, 59);
+            label95.Name = "label95";
+            label95.Size = new Size(90, 15);
+            label95.TabIndex = 22;
+            label95.Text = "Лёгкие травмы";
+            // 
+            // label94
+            // 
+            label94.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label94.AutoSize = true;
+            label94.Location = new Point(0, 43);
+            label94.Name = "label94";
+            label94.Size = new Size(34, 15);
+            label94.TabIndex = 21;
+            label94.Text = "Боль";
+            // 
+            // label93
+            // 
+            label93.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label93.AutoSize = true;
+            label93.Location = new Point(0, 28);
+            label93.Name = "label93";
+            label93.Size = new Size(45, 15);
+            label93.TabIndex = 20;
+            label93.Text = "Пустяк";
+            // 
+            // label92
+            // 
+            label92.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label92.AutoSize = true;
+            label92.Location = new Point(0, 13);
+            label92.Name = "label92";
+            label92.Size = new Size(47, 15);
+            label92.TabIndex = 19;
+            label92.Text = "Здоров";
+            label92.Click += label92_Click;
+            // 
+            // radioButton1
+            // 
+            radioButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radioButton1.AutoCheck = false;
+            radioButton1.AutoSize = true;
+            radioButton1.Checked = true;
+            radioButton1.Location = new Point(101, 135);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(14, 13);
+            radioButton1.TabIndex = 17;
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // healthButton8
+            // 
+            healthButton8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            healthButton8.AutoCheck = false;
+            healthButton8.AutoSize = true;
+            healthButton8.Checked = true;
+            healthButton8.Location = new Point(101, 120);
+            healthButton8.Name = "healthButton8";
+            healthButton8.Size = new Size(14, 13);
+            healthButton8.TabIndex = 16;
+            healthButton8.UseVisualStyleBackColor = true;
+            // 
+            // healthButton7
+            // 
+            healthButton7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            healthButton7.AutoCheck = false;
+            healthButton7.AutoSize = true;
+            healthButton7.Checked = true;
+            healthButton7.Location = new Point(101, 105);
+            healthButton7.Name = "healthButton7";
+            healthButton7.Size = new Size(14, 13);
+            healthButton7.TabIndex = 15;
+            healthButton7.UseVisualStyleBackColor = true;
+            // 
+            // healthButton6
+            // 
+            healthButton6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            healthButton6.AutoCheck = false;
+            healthButton6.AutoSize = true;
+            healthButton6.Checked = true;
+            healthButton6.Location = new Point(101, 90);
+            healthButton6.Name = "healthButton6";
+            healthButton6.Size = new Size(14, 13);
+            healthButton6.TabIndex = 14;
+            healthButton6.UseVisualStyleBackColor = true;
+            // 
+            // healthButton5
+            // 
+            healthButton5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            healthButton5.AutoCheck = false;
+            healthButton5.AutoSize = true;
+            healthButton5.Checked = true;
+            healthButton5.Location = new Point(101, 75);
+            healthButton5.Name = "healthButton5";
+            healthButton5.Size = new Size(14, 13);
+            healthButton5.TabIndex = 13;
+            healthButton5.UseVisualStyleBackColor = true;
+            // 
+            // healthButton4
+            // 
+            healthButton4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            healthButton4.AutoCheck = false;
+            healthButton4.AutoSize = true;
+            healthButton4.Checked = true;
+            healthButton4.Location = new Point(101, 60);
+            healthButton4.Name = "healthButton4";
+            healthButton4.Size = new Size(14, 13);
+            healthButton4.TabIndex = 12;
+            healthButton4.UseVisualStyleBackColor = true;
+            // 
+            // healthButton3
+            // 
+            healthButton3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            healthButton3.AutoCheck = false;
+            healthButton3.AutoSize = true;
+            healthButton3.Checked = true;
+            healthButton3.Location = new Point(101, 45);
+            healthButton3.Name = "healthButton3";
+            healthButton3.Size = new Size(14, 13);
+            healthButton3.TabIndex = 11;
+            healthButton3.UseVisualStyleBackColor = true;
+            // 
+            // healthButton2
+            // 
+            healthButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            healthButton2.AutoCheck = false;
+            healthButton2.AutoSize = true;
+            healthButton2.Checked = true;
+            healthButton2.Location = new Point(101, 30);
+            healthButton2.Name = "healthButton2";
+            healthButton2.Size = new Size(14, 13);
+            healthButton2.TabIndex = 10;
+            healthButton2.UseVisualStyleBackColor = true;
+            // 
+            // healthButton1
+            // 
+            healthButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            healthButton1.AutoCheck = false;
+            healthButton1.AutoSize = true;
+            healthButton1.Checked = true;
+            healthButton1.Location = new Point(101, 15);
+            healthButton1.Name = "healthButton1";
+            healthButton1.Size = new Size(14, 13);
+            healthButton1.TabIndex = 9;
+            healthButton1.UseVisualStyleBackColor = true;
+            // 
+            // HealthLabel
+            // 
+            HealthLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthLabel.AutoSize = true;
+            HealthLabel.Location = new Point(31, 0);
+            HealthLabel.Name = "HealthLabel";
+            HealthLabel.Size = new Size(59, 15);
+            HealthLabel.TabIndex = 0;
+            HealthLabel.Text = "Здоровье";
+            // 
+            // CancelUpdateButton
+            // 
+            CancelUpdateButton.Location = new Point(526, 663);
+            CancelUpdateButton.Name = "CancelUpdateButton";
+            CancelUpdateButton.Size = new Size(90, 23);
+            CancelUpdateButton.TabIndex = 19;
+            CancelUpdateButton.Text = "Отмена";
+            CancelUpdateButton.UseVisualStyleBackColor = true;
+            CancelUpdateButton.Click += CancelUpdateButton_Click;
             // 
             // characterComboBox
             // 
@@ -4331,7 +4608,6 @@
             // DrivePanel
             // 
             DrivePanel.Controls.Add(panel6);
-            DrivePanel.Controls.Add(DriveNumeric);
             DrivePanel.Controls.Add(DriveButton5);
             DrivePanel.Controls.Add(DriveButton4);
             DrivePanel.Controls.Add(DriveButton3);
@@ -4361,12 +4637,12 @@
             label20.TabIndex = 0;
             label20.Text = "Ловкость";
             // 
-            // DriveNumeric
+            // AggravatedDamageNumeric
             // 
-            DriveNumeric.Location = new Point(183, -2);
-            DriveNumeric.Name = "DriveNumeric";
-            DriveNumeric.Size = new Size(41, 23);
-            DriveNumeric.TabIndex = 8;
+            AggravatedDamageNumeric.Location = new Point(77, 164);
+            AggravatedDamageNumeric.Name = "AggravatedDamageNumeric";
+            AggravatedDamageNumeric.Size = new Size(41, 23);
+            AggravatedDamageNumeric.TabIndex = 8;
             // 
             // DriveButton5
             // 
@@ -5709,6 +5985,16 @@
             AttributesLabel.Text = "Атрибуты";
             AttributesLabel.Click += label1_Click;
             // 
+            // UpdateCharacterButton
+            // 
+            UpdateCharacterButton.Location = new Point(627, 675);
+            UpdateCharacterButton.Name = "UpdateCharacterButton";
+            UpdateCharacterButton.Size = new Size(90, 23);
+            UpdateCharacterButton.TabIndex = 18;
+            UpdateCharacterButton.Text = "Сохранить";
+            UpdateCharacterButton.UseVisualStyleBackColor = true;
+            UpdateCharacterButton.Click += UpdateCharacterButton_Click;
+            // 
             // DiceLabel
             // 
             DiceLabel.AutoSize = true;
@@ -5832,15 +6118,32 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
-            // CancelUpdateButton
+            // CommonDamageNumeric
             // 
-            CancelUpdateButton.Location = new Point(526, 663);
-            CancelUpdateButton.Name = "CancelUpdateButton";
-            CancelUpdateButton.Size = new Size(90, 23);
-            CancelUpdateButton.TabIndex = 19;
-            CancelUpdateButton.Text = "Отмена";
-            CancelUpdateButton.UseVisualStyleBackColor = true;
-            CancelUpdateButton.Click += CancelUpdateButton_Click;
+            CommonDamageNumeric.Location = new Point(16, 164);
+            CommonDamageNumeric.Name = "CommonDamageNumeric";
+            CommonDamageNumeric.Size = new Size(41, 23);
+            CommonDamageNumeric.TabIndex = 28;
+            // 
+            // AggravatedDamageLabel
+            // 
+            AggravatedDamageLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            AggravatedDamageLabel.AutoSize = true;
+            AggravatedDamageLabel.Location = new Point(63, 166);
+            AggravatedDamageLabel.Name = "AggravatedDamageLabel";
+            AggravatedDamageLabel.Size = new Size(14, 15);
+            AggravatedDamageLabel.TabIndex = 29;
+            AggravatedDamageLabel.Text = "X";
+            // 
+            // CommomDamageLabel
+            // 
+            CommomDamageLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            CommomDamageLabel.AutoSize = true;
+            CommomDamageLabel.Location = new Point(2, 166);
+            CommomDamageLabel.Name = "CommomDamageLabel";
+            CommomDamageLabel.Size = new Size(12, 15);
+            CommomDamageLabel.TabIndex = 30;
+            CommomDamageLabel.Text = "/";
             // 
             // CharacterForm
             // 
@@ -5849,6 +6152,7 @@
             ClientSize = new Size(948, 796);
             Controls.Add(debuffDicePoolLabel);
             Controls.Add(debuffDicePoolNumeric);
+            Controls.Add(UpdateCharacterButton);
             Controls.Add(SpecializationCheckBox);
             Controls.Add(LogPanel);
             Controls.Add(RollDiceButton);
@@ -5864,6 +6168,8 @@
             Text = "VTM бот для кубов";
             characterPanel.ResumeLayout(false);
             characterPanel.PerformLayout();
+            HealthPanel.ResumeLayout(false);
+            HealthPanel.PerformLayout();
             TempWillpowerPanel.ResumeLayout(false);
             TempWillpowerPanel.PerformLayout();
             panel20.ResumeLayout(false);
@@ -6038,7 +6344,7 @@
             DrivePanel.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DriveNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AggravatedDamageNumeric).EndInit();
             CraftsPanel.ResumeLayout(false);
             CraftsPanel.PerformLayout();
             panel10.ResumeLayout(false);
@@ -6108,6 +6414,7 @@
             LogPanel.ResumeLayout(false);
             LogPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -6218,7 +6525,7 @@
         private Panel DrivePanel;
         private Panel panel6;
         private Label label20;
-        private NumericUpDown DriveNumeric;
+        private NumericUpDown AggravatedDamageNumeric;
         private RadioButton DriveButton5;
         private RadioButton DriveButton4;
         private RadioButton DriveButton3;
@@ -6602,5 +6909,29 @@
         private ComboBox characterComboBox;
         private Button UpdateCharacterButton;
         private Button CancelUpdateButton;
+        private Panel HealthPanel;
+        private RadioButton healthButton1;
+        private Label HealthLabel;
+        private RadioButton healthButton7;
+        private RadioButton healthButton6;
+        private RadioButton healthButton5;
+        private RadioButton healthButton4;
+        private RadioButton healthButton3;
+        private RadioButton healthButton2;
+        private Label label92;
+        private RadioButton radioButton1;
+        private RadioButton healthButton8;
+        private Label label97;
+        private Label label96;
+        private Label label95;
+        private Label label94;
+        private Label label93;
+        private CheckBox checkBox1;
+        private Label label100;
+        private Label label99;
+        private Label label98;
+        private NumericUpDown CommonDamageNumeric;
+        private Label CommomDamageLabel;
+        private Label AggravatedDamageLabel;
     }
 }

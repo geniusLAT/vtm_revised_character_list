@@ -494,7 +494,7 @@ public partial class CharacterForm : Form
             case Ability.Crafts:
                 return CraftsNumeric;
             case Ability.Drive:
-                return DriveNumeric;
+                return AggravatedDamageNumeric;
             case Ability.Etiquette:
                 return EtiquetteNumeric;
             case Ability.Firearms:

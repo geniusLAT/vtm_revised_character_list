@@ -371,4 +371,9 @@ public partial class CharacterForm : Form
     {
         CancelUpdating();
     }
+
+    private void label92_Click(object sender, EventArgs e)
+    {
+
+    }
 }
