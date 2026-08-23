@@ -33,7 +33,7 @@
             CommomDamageLabel = new Label();
             AggravatedDamageLabel = new Label();
             CommonDamageNumeric = new NumericUpDown();
-            checkBox1 = new CheckBox();
+            IgnoreHealthConditionCheckBox = new CheckBox();
             AggravatedDamageNumeric = new NumericUpDown();
             label100 = new Label();
             label99 = new Label();
@@ -398,6 +398,7 @@
             EtiquetteButton1 = new RadioButton();
             label28 = new Label();
             DrivePanel = new Panel();
+            DriveNumeric = new NumericUpDown();
             panel6 = new Panel();
             label20 = new Label();
             DriveButton5 = new RadioButton();
@@ -540,7 +541,6 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
-            DriveNumeric = new NumericUpDown();
             characterPanel.SuspendLayout();
             HealthPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).BeginInit();
@@ -647,6 +647,7 @@
             panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)EtiquetteNumeric).BeginInit();
             DrivePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DriveNumeric).BeginInit();
             panel6.SuspendLayout();
             CraftsPanel.SuspendLayout();
             panel10.SuspendLayout();
@@ -690,7 +691,6 @@
             ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).BeginInit();
             LogPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DriveNumeric).BeginInit();
             SuspendLayout();
             // 
             // characterPanel
@@ -716,7 +716,7 @@
             HealthPanel.Controls.Add(CommomDamageLabel);
             HealthPanel.Controls.Add(AggravatedDamageLabel);
             HealthPanel.Controls.Add(CommonDamageNumeric);
-            HealthPanel.Controls.Add(checkBox1);
+            HealthPanel.Controls.Add(IgnoreHealthConditionCheckBox);
             HealthPanel.Controls.Add(AggravatedDamageNumeric);
             HealthPanel.Controls.Add(label100);
             HealthPanel.Controls.Add(label99);
@@ -769,16 +769,17 @@
             CommonDamageNumeric.Size = new Size(41, 23);
             CommonDamageNumeric.TabIndex = 28;
             // 
-            // checkBox1
+            // IgnoreHealthConditionCheckBox
             // 
-            checkBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(3, 147);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(111, 19);
-            checkBox1.TabIndex = 19;
-            checkBox1.Text = "Игнор дебафов";
-            checkBox1.UseVisualStyleBackColor = true;
+            IgnoreHealthConditionCheckBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            IgnoreHealthConditionCheckBox.AutoSize = true;
+            IgnoreHealthConditionCheckBox.Location = new Point(3, 147);
+            IgnoreHealthConditionCheckBox.Name = "IgnoreHealthConditionCheckBox";
+            IgnoreHealthConditionCheckBox.Size = new Size(111, 19);
+            IgnoreHealthConditionCheckBox.TabIndex = 19;
+            IgnoreHealthConditionCheckBox.Text = "Игнор дебафов";
+            IgnoreHealthConditionCheckBox.UseVisualStyleBackColor = true;
+            IgnoreHealthConditionCheckBox.CheckedChanged += IgnoreHealthConditionCheckBox_CheckedChanged;
             // 
             // AggravatedDamageNumeric
             // 
@@ -4658,6 +4659,13 @@
             DrivePanel.TabIndex = 10;
             DrivePanel.Click += DrivePanel_Click;
             // 
+            // DriveNumeric
+            // 
+            DriveNumeric.Location = new Point(183, -2);
+            DriveNumeric.Name = "DriveNumeric";
+            DriveNumeric.Size = new Size(41, 23);
+            DriveNumeric.TabIndex = 9;
+            // 
             // panel6
             // 
             panel6.Controls.Add(label20);
@@ -6149,13 +6157,6 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
-            // DriveNumeric
-            // 
-            DriveNumeric.Location = new Point(183, -2);
-            DriveNumeric.Name = "DriveNumeric";
-            DriveNumeric.Size = new Size(41, 23);
-            DriveNumeric.TabIndex = 9;
-            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -6355,6 +6356,7 @@
             ((System.ComponentModel.ISupportInitialize)EtiquetteNumeric).EndInit();
             DrivePanel.ResumeLayout(false);
             DrivePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DriveNumeric).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             CraftsPanel.ResumeLayout(false);
@@ -6426,7 +6428,6 @@
             LogPanel.ResumeLayout(false);
             LogPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DriveNumeric).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -6936,7 +6937,7 @@
         private Label label95;
         private Label label94;
         private Label label93;
-        private CheckBox checkBox1;
+        private CheckBox IgnoreHealthConditionCheckBox;
         private Label label100;
         private Label label99;
         private Label label98;

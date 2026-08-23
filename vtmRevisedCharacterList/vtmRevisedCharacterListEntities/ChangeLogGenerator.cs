@@ -47,7 +47,6 @@ public static class ChangeLogGenerator
                         } {RussianTranslator.IncreasedWord} {attributeValue2}");
                 }
             }
-
         }
 
         for (int i = 0; i < 30; i++)
@@ -86,6 +85,42 @@ public static class ChangeLogGenerator
                 {
                     sb.Append($"\n{RussianTranslator.TranslateOther(other)} {otherValue1} {RussianTranslator.IncreasedWord} {otherValue2}");
                 }
+            }
+        }
+
+        if (character1.CommonDamage != character2.CommonDamage)
+        {
+            if (character1.CommonDamage > character2.CommonDamage) 
+            {
+                sb.Append($"\n{RussianTranslator.CommonDamage} {character1.CommonDamage} {RussianTranslator.DecreasedWord} {character2.CommonDamage}");
+            }
+            if (character1.CommonDamage < character2.CommonDamage) 
+            {
+                sb.Append($"\n{RussianTranslator.CommonDamage} {character1.CommonDamage} {RussianTranslator.IncreasedWord} {character2.CommonDamage}");
+            }
+        }
+
+        if (character1.AggravatedDamage != character2.AggravatedDamage)
+        {
+            if (character1.AggravatedDamage > character2.AggravatedDamage)
+            {
+                sb.Append($"\n{RussianTranslator.AggravatedDamage} {character1.AggravatedDamage} {RussianTranslator.DecreasedWord} {character2.AggravatedDamage}");
+            }
+            if (character1.AggravatedDamage < character2.AggravatedDamage)
+            {
+                sb.Append($"\n{RussianTranslator.AggravatedDamage} {character1.AggravatedDamage} {RussianTranslator.IncreasedWord} {character2.AggravatedDamage}");
+            }
+        }
+
+        if (character1.Damage != character2.Damage)
+        {
+            if (character1.Damage > character2.Damage)
+            {
+                sb.Append($"\n{RussianTranslator.Damage} {character1.Damage} {RussianTranslator.DecreasedWord} {character2.Damage}");
+            }
+            if (character1.Damage < character2.Damage)
+            {
+                sb.Append($"\n{RussianTranslator.Damage} {character1.Damage} {RussianTranslator.IncreasedWord} {character2.Damage}");
             }
         }
 

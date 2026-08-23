@@ -49,6 +49,8 @@ public partial class CharacterForm : Form
 
     bool _specialization = false;
 
+    bool _ignoreHealthCondition = false;
+
     string _rollComment = string.Empty;
 
     #endregion
@@ -637,6 +639,48 @@ public partial class CharacterForm : Form
 
         }
 
+        if (!_ignoreHealthCondition)
+        {
+            var healthCondition = _chosenCharacter.GetHealthCondition();
+            var healthConditionDebuff = 0;
+            switch (healthCondition)
+            {
+                case HealthCondition.Ok:
+                    break;
+                case HealthCondition.BruisedBonused:
+                    break;
+                case HealthCondition.Bruised:
+                    break;
+                case HealthCondition.Hurt:
+                    healthConditionDebuff = 1;
+                    break;
+                case HealthCondition.Injured:
+                    healthConditionDebuff = 1;
+                    break;
+                case HealthCondition.Wounded:
+                    healthConditionDebuff = 2;
+                    break;
+                case HealthCondition.Mauled:
+                    healthConditionDebuff = 2;
+                    break;
+                case HealthCondition.Crippled:
+                    healthConditionDebuff = 5;
+                    break;
+                case HealthCondition.Incapacitated:
+                    healthConditionDebuff = 9999;
+                    break;
+                case HealthCondition.Dead:
+                    healthConditionDebuff = 9999;
+                    break;
+            }
+
+            _dicesToRoll -= (int)healthConditionDebuff;
+            if (healthConditionDebuff > 0)
+            {
+                sb.Append($" - {RussianTranslator.TranslateHealthCondition(healthCondition)} {healthConditionDebuff.ToString()}");
+            }
+        }
+
         sb.Append($" = {_dicesToRoll}");
         var name = _chosenCharacter?.CharacterName ?? "Кто-то";
         var daredevilCommentary = _daredevil ? ",сорвиголова " : string.Empty;
@@ -732,6 +776,10 @@ public partial class CharacterForm : Form
             }
         }
         MarkCharacterAsSaved();
+
+
+        CalculateDices();
+
     }
 
    

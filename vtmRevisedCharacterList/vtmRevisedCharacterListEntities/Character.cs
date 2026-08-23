@@ -169,7 +169,12 @@ public class Character
 
     public HealthCondition GetHealthCondition()
     {
-        return (HealthCondition)Damage;
+        if (Damage == 0) return HealthCondition.Ok;
+        if (BonusHealth())
+        {
+            return (HealthCondition)Damage;
+        }
+        return (HealthCondition)(1+Damage);
     }
 
     public uint SetOther(OtherRollable other, uint value)

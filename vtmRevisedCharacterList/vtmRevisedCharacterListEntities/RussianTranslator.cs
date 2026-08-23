@@ -20,6 +20,12 @@ public static class RussianTranslator
 
     public const string ChronicleName = "Хроника ";
 
+    public const string CommonDamage = "Число повреждений ";
+
+    public const string AggravatedDamage = "Число аггравированных повреждений ";
+
+    public const string Damage = "Общее число повреждений ";
+
     #endregion
 
     public static string TranslateOther(OtherRollable? other)
