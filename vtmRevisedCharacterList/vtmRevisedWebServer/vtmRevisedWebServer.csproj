@@ -23,10 +23,46 @@
     <None Update="admin.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="characters\0a89f4ec-99b7-4a7b-9553-dea0ee01d1fd.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\25db31f0-28c4-470b-bee3-a96bea1c002f.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\312dc987-ea4a-4e91-9b34-1d185d57088c.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\3d32708b-c68f-4982-85e3-c63f664c323e.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\4460869f-faa0-4061-919b-b56dca0c67da.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\4a0aac81-8f4a-461f-8319-e165c3544d20.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\86663c8e-c74b-4e45-815a-b4c84e8aac77.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="characters\a03594a7-5239-4d9c-a8e7-c2cc5fcda5e2.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="characters\a0a3683a-bce4-4cbc-82e1-88f470a83ee1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="characters\b03594a7-5239-4d9c-a8e7-c2cc5fcda5e2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\blank.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\df9a429b-29dd-4a91-8f0a-15a1e21704aa.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\f795ab60-b6f8-4e2b-8592-c6284cdcdd6c.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="characters\fa869a86-6116-40ea-86ff-aef8adefc406.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="userRights\0f28faef-04ae-4711-a7ea-3704f2210a9e.txt">

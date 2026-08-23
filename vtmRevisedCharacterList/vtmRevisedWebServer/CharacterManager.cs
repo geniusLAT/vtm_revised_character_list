@@ -127,4 +127,45 @@ public static class CharacterManager
             return null;
         }
     }
+
+    public static CharacterUpdateResult? UpdateCharacter(Guid characterGuid, Character newCharacter)
+    {
+        string filePath = Path.Combine("characters", $"{characterGuid}.txt");
+
+        if (!File.Exists(filePath))
+        {
+            return null;
+        }
+
+        try
+        {
+            string content = File.ReadAllText(filePath);
+
+            Character? oldCharacter = JsonSerializer.Deserialize<Character>(content);
+
+            if (oldCharacter is null)
+            {
+                throw new ApplicationException("No such character");
+            }
+
+            var changeLog = ChangeLogGenerator.GenerateChangeLog(oldCharacter, newCharacter);
+
+            var newContent = JsonSerializer.Serialize(newCharacter);
+            File.WriteAllText(filePath, newContent);
+
+            Console.WriteLine(oldCharacter!.CharacterName);
+
+            return new()
+            {
+                CharacterUuid = characterGuid,
+                UpdatedCharacter = newCharacter,
+                ChangeLog = changeLog
+            };
+        }
+        catch (Exception)
+        {
+            // В случае любых ошибок чтения или некорректного JSON возвращаем null
+            return null;
+        }
+    }
 }

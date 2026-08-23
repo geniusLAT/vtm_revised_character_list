@@ -15,20 +15,14 @@ file=open("chatId.txt",'r')
 CHAT_ID=int(file.read().strip())#''
 file.close()
 
-API_URL = 'http://185.84.163.5:8080/Dice'
+file=open("hiddenChatId.txt",'r')
+HIDDEN_CHAT_ID=int(file.read().strip())#''
+file.close()
 
-# bot=telebot.TeleBot(token)
-# @bot.message_handler(commands=['start'])
-# def start_message(message):
-#   bot.send_message(message.chat.id,"Я просто пересылаю сообщение в беседу, не надо в меня писать.")
-#   bot.send_message(chatId,"Вот в эту беседу я пересылаю")
+BASE_API_URL = 'http://localhost:5000'
 
-
-# @bot.message_handler(content_types='text')
-# def message_reply(message):
-#     print("msg" + str(message.chat.id))
-
-# bot.infinity_polling()
+API_URL_DICE = BASE_API_URL + "/Dice"
+API_URL_MESSAGE = BASE_API_URL + "/Message"
 
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -37,21 +31,18 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 bot = telebot.TeleBot(TOKEN)
 
 
-def poll_api_and_send():
+def poll_dice_api_and_send():
   """Фоновая функция: забирает элементы из очереди и отправляет только если value != null."""
   while True:
     try:
-      response = requests.get(API_URL, verify=False, timeout=3)
+      response = requests.get(API_URL_DICE, verify=False, timeout=3)
 
       if response.status_code == 200 and response.text.strip():
         data = response.json()
 
-        # Достаем содержимое ключа "value"
         value = data.get('value')
 
-        # Если value равен None (в JSON это null), значит очередь пуста
         if value is not None:
-          # Теперь данные кубиков лежат внутри объекта value
           comment = value.get('comment', 'Без комментария')
 
           roll_res = value.get('rollResult') or {}
@@ -75,6 +66,31 @@ def poll_api_and_send():
 
     time.sleep(1)
 
+def poll_message_api_and_send():
+  """Фоновая функция: забирает элементы из очереди и отправляет только если value != null."""
+  while True:
+    try:
+      response = requests.get(API_URL_MESSAGE, verify=False, timeout=3)
+
+      if response.status_code == 200 and response.text.strip():
+        data = response.json()
+
+        value = data.get('value')
+
+        if value is not None:
+          msg_text = value.get('text')
+          print(msg_text)
+          hidden = value.get('hidden')
+          chat_id = CHAT_ID
+          if hidden:
+            chat_id = HIDDEN_CHAT_ID
+          bot.send_message(chat_id, msg_text, parse_mode='Markdown')
+
+    except Exception as e:
+      print(f'Ошибка при запросе к API: {e}')
+
+    time.sleep(1)
+
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
@@ -90,9 +106,11 @@ def message_reply(message):
 
 
 if __name__ == '__main__':
-  # Запускаем фоновый поток (daemon=True завершит поток при остановке бота)
-  api_thread = threading.Thread(target=poll_api_and_send, daemon=True)
-  api_thread.start()
+  dice_api_thread = threading.Thread(target=poll_dice_api_and_send, daemon=True)
+  dice_api_thread.start()
+
+  message_api_thread = threading.Thread(target=poll_message_api_and_send, daemon=True)
+  message_api_thread.start()
 
   # Запускаем лонг-поллинг бота
   bot.infinity_polling()

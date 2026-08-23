@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
+            UpdateCharacterButton = new Button();
             characterComboBox = new ComboBox();
             UsernameLabel = new Label();
             TempWillpowerPanel = new Panel();
@@ -514,6 +515,7 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
+            CancelUpdateButton = new Button();
             characterPanel.SuspendLayout();
             TempWillpowerPanel.SuspendLayout();
             panel20.SuspendLayout();
@@ -665,6 +667,8 @@
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(CancelUpdateButton);
+            characterPanel.Controls.Add(UpdateCharacterButton);
             characterPanel.Controls.Add(characterComboBox);
             characterPanel.Controls.Add(UsernameLabel);
             characterPanel.Controls.Add(TempWillpowerPanel);
@@ -678,6 +682,16 @@
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // UpdateCharacterButton
+            // 
+            UpdateCharacterButton.Location = new Point(615, 662);
+            UpdateCharacterButton.Name = "UpdateCharacterButton";
+            UpdateCharacterButton.Size = new Size(90, 23);
+            UpdateCharacterButton.TabIndex = 18;
+            UpdateCharacterButton.Text = "Сохранить";
+            UpdateCharacterButton.UseVisualStyleBackColor = true;
+            UpdateCharacterButton.Click += UpdateCharacterButton_Click;
             // 
             // characterComboBox
             // 
@@ -5818,6 +5832,16 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
+            // CancelUpdateButton
+            // 
+            CancelUpdateButton.Location = new Point(526, 663);
+            CancelUpdateButton.Name = "CancelUpdateButton";
+            CancelUpdateButton.Size = new Size(90, 23);
+            CancelUpdateButton.TabIndex = 19;
+            CancelUpdateButton.Text = "Отмена";
+            CancelUpdateButton.UseVisualStyleBackColor = true;
+            CancelUpdateButton.Click += CancelUpdateButton_Click;
+            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -6576,5 +6600,7 @@
         private Label debuffDicePoolLabel;
         private Label UsernameLabel;
         private ComboBox characterComboBox;
+        private Button UpdateCharacterButton;
+        private Button CancelUpdateButton;
     }
 }

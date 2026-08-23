@@ -356,4 +356,19 @@ public partial class CharacterForm : Form
         var characterClickedIndex = characterComboBox.SelectedIndex;
         await ChooseAnotherCharacter(characterClickedIndex);
     }
+
+    private void UpdateCharacterButton_Click(object sender, EventArgs e)
+    {
+        UpdateCharacter();
+    }
+
+    private void CharacterNumeric_ValueChanged(object sender, EventArgs e)
+    {
+        MarkUnsavedChanges();
+    }
+
+    private void CancelUpdateButton_Click(object sender, EventArgs e)
+    {
+        CancelUpdating();
+    }
 }

@@ -2,6 +2,25 @@
 
 public static class RussianTranslator
 {
+    #region changeLogWording
+
+    public const string IncreasedWord = " повышается до";
+
+    public const string DecreasedWord = " понижается до";
+
+    public const string ChangedWord = " меняется на";
+
+    #endregion
+
+    #region ConstsTranslation
+
+    public const string PlayerName = "Имя игрока ";
+
+    public const string CharacterName = "Имя ";
+
+    public const string ChronicleName = "Хроника ";
+
+    #endregion
 
     public static string TranslateOther(OtherRollable? other)
     {
