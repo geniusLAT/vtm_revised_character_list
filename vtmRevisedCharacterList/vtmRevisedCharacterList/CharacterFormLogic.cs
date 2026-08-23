@@ -140,6 +140,7 @@ public partial class CharacterForm : Form
         AppearanceButtons = [AppearanceButton1, AppearanceButton2, AppearanceButton3, AppearanceButton4, AppearanceButton5];
         PerceptionButtons = [PerceptionButton1, PerceptionButton2, PerceptionButton3, PerceptionButton4, PerceptionButton5];
         IntelligeceButtons = [IntelligeceButton1, IntelligeceButton2, IntelligeceButton3, IntelligeceButton4, IntelligeceButton5];
+        WitsButtons = [WitsButton1, WitsButton2, WitsButton3, WitsButton4, WitsButton5];
     }
 
     void FindButtonsForAbilities()
@@ -623,7 +624,7 @@ public partial class CharacterForm : Form
             _dicesToRoll -= (int)_debuffDicePool;
             if (sb.Length > 0)
             {
-                sb.Append(" + ");
+                sb.Append(" - ");
             }
             sb.Append($" штрафные кубы {_debuffDicePool.ToString()}");
 
@@ -770,7 +771,7 @@ public partial class CharacterForm : Form
             this.Close();
             return;
         }
-        UsernameLabel.Text = $"Игрок:{_config.UserName} {_config.UserId}";
+        UsernameLabel.Text = $"Игрок:{_config.UserName}";
 
         _httpClient = new HttpClient(handler)
         {

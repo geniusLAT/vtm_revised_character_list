@@ -1,5 +1,5 @@
 {
-  "CharacterName": "Michael4",
+  "CharacterName": "Michael",
   "PlayerName": "example",
   "ChronicleName": "Miami",
 
