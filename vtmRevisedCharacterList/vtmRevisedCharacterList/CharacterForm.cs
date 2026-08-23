@@ -371,4 +371,10 @@ public partial class CharacterForm : Form
     {
         CancelUpdating();
     }
+
+    private void IgnoreHealthConditionCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+        _ignoreHealthCondition = IgnoreHealthConditionCheckBox.Checked;
+        CalculateDices();
+    }
 }

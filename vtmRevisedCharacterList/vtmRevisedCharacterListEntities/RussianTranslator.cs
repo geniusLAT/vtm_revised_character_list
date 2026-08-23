@@ -20,6 +20,12 @@ public static class RussianTranslator
 
     public const string ChronicleName = "Хроника ";
 
+    public const string CommonDamage = "Число повреждений ";
+
+    public const string AggravatedDamage = "Число аггравированных повреждений ";
+
+    public const string Damage = "Общее число повреждений ";
+
     #endregion
 
     public static string TranslateOther(OtherRollable? other)
@@ -33,6 +39,24 @@ public static class RussianTranslator
             OtherRollable.Courage => "Храбрость",
             null => throw new NotImplementedException(),
             _ => "Неназванный аттрибут",
+        };
+    }
+
+    public static string TranslateHealthCondition(HealthCondition? condition)
+    {
+        return condition switch
+        {
+            HealthCondition.Ok => "ОК",
+            HealthCondition.Bruised => "Пустяк",
+            HealthCondition.Hurt => "Боль",
+            HealthCondition.Injured => "Лёгкие травмы",
+            HealthCondition.Wounded => "Средние травмы",
+            HealthCondition.Mauled => "Тяжёлые травмы",
+            HealthCondition.Crippled => "Увечья",
+            HealthCondition.Incapacitated => "Нокаут",
+            HealthCondition.Dead => "Торпор/смерть",
+            null => throw new NotImplementedException(),
+            _ => "Неназванное состояние здоровья",
         };
     }
 

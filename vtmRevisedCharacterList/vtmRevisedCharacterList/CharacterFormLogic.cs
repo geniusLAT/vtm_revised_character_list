@@ -49,6 +49,8 @@ public partial class CharacterForm : Form
 
     bool _specialization = false;
 
+    bool _ignoreHealthCondition = false;
+
     string _rollComment = string.Empty;
 
     #endregion
@@ -116,6 +118,8 @@ public partial class CharacterForm : Form
     RadioButton[] ConscienceConvictionButtons = [];
     RadioButton[] SelfControlInstinctButtons = [];
     RadioButton[] CourageButtons = [];
+
+    RadioButton[] HealthButtons = [];
     #endregion
 
     #endregion
@@ -130,6 +134,9 @@ public partial class CharacterForm : Form
         ConscienceConvictionButtons = [ConscienceConvictionButton1, ConscienceConvictionButton2, ConscienceConvictionButton3, ConscienceConvictionButton4, ConscienceConvictionButton5];
         SelfControlInstinctButtons = [SelfControlInstinctButton1, SelfControlInstinctButton2, SelfControlInstinctButton3, SelfControlInstinctButton4, SelfControlInstinctButton5];
         CourageButtons = [CourageButton1, CourageButton2, CourageButton3, CourageButton4, CourageButton5];
+
+        HealthButtons = [HealthButton1, HealthButton2, HealthButton3, HealthButton4, HealthButton5,
+        HealthButton6, HealthButton7, HealthButton8, HealthButton9];
     }
 
     void FindButtonsForAttributes()
@@ -624,12 +631,50 @@ public partial class CharacterForm : Form
         if (_debuffDicePool > 0)
         {
             _dicesToRoll -= (int)_debuffDicePool;
-            if (sb.Length > 0)
-            {
-                sb.Append(" - ");
-            }
-            sb.Append($" штрафные кубы {_debuffDicePool.ToString()}");
+            sb.Append($" - штрафные кубы {_debuffDicePool.ToString()}");
 
+        }
+
+        if (!_ignoreHealthCondition)
+        {
+            var healthCondition = _chosenCharacter.GetHealthCondition();
+            var healthConditionDebuff = 0;
+            switch (healthCondition)
+            {
+                case HealthCondition.Ok:
+                    break;
+                case HealthCondition.BruisedBonused:
+                    break;
+                case HealthCondition.Bruised:
+                    break;
+                case HealthCondition.Hurt:
+                    healthConditionDebuff = 1;
+                    break;
+                case HealthCondition.Injured:
+                    healthConditionDebuff = 1;
+                    break;
+                case HealthCondition.Wounded:
+                    healthConditionDebuff = 2;
+                    break;
+                case HealthCondition.Mauled:
+                    healthConditionDebuff = 2;
+                    break;
+                case HealthCondition.Crippled:
+                    healthConditionDebuff = 5;
+                    break;
+                case HealthCondition.Incapacitated:
+                    healthConditionDebuff = 9999;
+                    break;
+                case HealthCondition.Dead:
+                    healthConditionDebuff = 9999;
+                    break;
+            }
+
+            _dicesToRoll -= (int)healthConditionDebuff;
+            if (healthConditionDebuff > 0)
+            {
+                sb.Append($" - {RussianTranslator.TranslateHealthCondition(healthCondition)} {healthConditionDebuff.ToString()}");
+            }
         }
 
         sb.Append($" = {_dicesToRoll}");
@@ -641,11 +686,38 @@ public partial class CharacterForm : Form
             }{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
     }
 
+    void RenderHealthCondition(Character character)
+    {
+        var bonusHealth = character.BonusHealth();
+
+        HealthLabel1.Visible = HealthButton1.Visible = bonusHealth;
+
+        for (int i = 0; i < 9; i++)
+        {
+            var currentButton = HealthButtons[i];
+            if (character.Damage + (bonusHealth ? 0 : 1) > i)
+            {
+                currentButton.Checked = true;
+            }
+            else
+            {
+                currentButton.Checked = false;
+            }
+        }
+    }
+
     void RenderCharacter(Character character)
     {
         _chosenCharacter = character;
 
         characterNameLabel.Text = character.CharacterName ?? "Новый персонаж";
+
+        AggravatedDamageNumeric.Value = character.AggravatedDamage;
+        AggravatedDamageNumeric.ValueChanged += CharacterNumeric_ValueChanged;
+        CommonDamageNumeric.Value = character.CommonDamage;
+        CommonDamageNumeric.ValueChanged += CharacterNumeric_ValueChanged;
+
+        RenderHealthCondition(character);
 
         for (int i = 0; i < 9; i++)
         {
@@ -700,6 +772,10 @@ public partial class CharacterForm : Form
             }
         }
         MarkCharacterAsSaved();
+
+
+        CalculateDices();
+
     }
 
    
@@ -992,6 +1068,8 @@ public partial class CharacterForm : Form
     {
         Character character = JsonSerializer.Deserialize<Character>(JsonSerializer.Serialize(_chosenCharacter));
 
+        character.CommonDamage = (uint)CommonDamageNumeric.Value;
+        character.AggravatedDamage = (uint)AggravatedDamageNumeric.Value;
 
         for (int i = 0; i < 9; i++)
         {

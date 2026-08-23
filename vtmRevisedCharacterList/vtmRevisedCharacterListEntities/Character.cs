@@ -154,9 +154,28 @@ public class Character
 
     public uint Bloodpool { get; set; }
 
-    public uint Health { get; set; }
+    public uint Damage { get
+        {
+            return CommonDamage + AggravatedDamage;
+        }
+    }
+    public uint CommonDamage { get; set; }
+    
+    public uint AggravatedDamage { get; set; }
+
+
 
     #endregion
+
+    public HealthCondition GetHealthCondition()
+    {
+        if (Damage == 0) return HealthCondition.Ok;
+        if (BonusHealth())
+        {
+            return (HealthCondition)Damage;
+        }
+        return (HealthCondition)(1+Damage);
+    }
 
     public uint SetOther(OtherRollable other, uint value)
     {
@@ -384,5 +403,10 @@ public class Character
         }
 
         return 0;
+    }
+
+    public bool BonusHealth()
+    {
+        return false;
     }
 }
