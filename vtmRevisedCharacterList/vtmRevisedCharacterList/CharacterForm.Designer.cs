@@ -30,6 +30,7 @@
         {
             characterPanel = new Panel();
             BackgroundsOuterPanel = new Panel();
+            AddBackgroundButton = new Button();
             BackgroundsInnerPanel = new Panel();
             ExampleBackGroundPanel = new Panel();
             panel30 = new Panel();
@@ -592,7 +593,6 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
-            AddBackgroundButton = new Button();
             characterPanel.SuspendLayout();
             BackgroundsOuterPanel.SuspendLayout();
             BackgroundsInnerPanel.SuspendLayout();
@@ -785,6 +785,17 @@
             BackgroundsOuterPanel.Name = "BackgroundsOuterPanel";
             BackgroundsOuterPanel.Size = new Size(230, 114);
             BackgroundsOuterPanel.TabIndex = 14;
+            // 
+            // AddBackgroundButton
+            // 
+            AddBackgroundButton.Font = new Font("Segoe UI", 7F);
+            AddBackgroundButton.Location = new Point(206, 0);
+            AddBackgroundButton.Name = "AddBackgroundButton";
+            AddBackgroundButton.Size = new Size(21, 18);
+            AddBackgroundButton.TabIndex = 20;
+            AddBackgroundButton.Text = "+";
+            AddBackgroundButton.UseVisualStyleBackColor = true;
+            AddBackgroundButton.Click += AddBackgroundButton_Click;
             // 
             // BackgroundsInnerPanel
             // 
@@ -6793,17 +6804,6 @@
             debuffDicePoolLabel.TabIndex = 17;
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
-            // 
-            // AddBackgroundButton
-            // 
-            AddBackgroundButton.Font = new Font("Segoe UI", 7F);
-            AddBackgroundButton.Location = new Point(206, 0);
-            AddBackgroundButton.Name = "AddBackgroundButton";
-            AddBackgroundButton.Size = new Size(21, 18);
-            AddBackgroundButton.TabIndex = 20;
-            AddBackgroundButton.Text = "+";
-            AddBackgroundButton.UseVisualStyleBackColor = true;
-            AddBackgroundButton.Click += AddBackgroundButton_Click;
             // 
             // CharacterForm
             // 

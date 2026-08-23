@@ -724,8 +724,12 @@ public partial class CharacterForm : Form
             }
         }
     }
+    public void RenderCharacter()
+    {
+        RenderCharacter(_chosenCharacter);
+    }
 
-    void RenderCharacter(Character character)
+    public void RenderCharacter(Character character)
     {
         _chosenCharacter = character;
 
@@ -790,6 +794,9 @@ public partial class CharacterForm : Form
                 MessageBox.Show($"{other} {i}");
             }
         }
+
+        RenderBackGrounds();
+
         MarkCharacterAsSaved();
 
 
@@ -1132,6 +1139,35 @@ public partial class CharacterForm : Form
 
     #region abstractCollectionGuiManagment
 
+    void RenderCollectionGui(Panel parentPanel, List<ARating> collection)
+    {
+        parentPanel.Controls.Clear();
+
+        for (int i = 0; i < collection.Count; i++)
+        {
+            ARating? item = collection[i];
+            var littlePanel = new Panel()
+            { 
+                Width =227,
+                Height = 19,
+                BackColor = Color.Green,
+                Location = new Point(3, 3 + i * 20)
+            };
+            parentPanel.Controls.Add(littlePanel);
+            //81, 10
+
+            var label = new Label()
+            {
+                Width = 81,
+                Height = 10,
+                Text = item.Name,
+                Font = new("Segoe UI", 7),
+                Location = new Point(3, 4)
+            };
+            littlePanel.Controls.Add(label);
+        }
+    }
+
     #endregion
 
     #region BackgrounsManagment
@@ -1140,6 +1176,11 @@ public partial class CharacterForm : Form
     {
         var addWindow = new AddARatingForm(this, _chosenCharacter.Backgrounds, typeof(Background));
         addWindow.ShowDialog();
+    }
+
+    void RenderBackGrounds()
+    {
+        RenderCollectionGui(BackgroundsInnerPanel, _chosenCharacter.Backgrounds);
     }
 
     #endregion

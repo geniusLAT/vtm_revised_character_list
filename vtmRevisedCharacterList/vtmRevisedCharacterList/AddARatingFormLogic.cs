@@ -40,7 +40,9 @@ public partial class AddARatingForm : Form
         created.Rating = (uint)RatingNumeric.Value;
         _collectionToAdd.Add(created);
 
-        MessageBox.Show($"{_collectionToAdd.Count()}");
+        //MessageBox.Show($"{_collectionToAdd.Count()}");
+
+        _parentForm.RenderCharacter();
 
         this.Close();
     }
