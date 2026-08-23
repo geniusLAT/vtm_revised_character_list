@@ -579,6 +579,19 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
+            BackgroundsOuterPanel = new Panel();
+            label108 = new Label();
+            BackgroundsInnerPanel = new Panel();
+            ExampleBackGroundPanel = new Panel();
+            panel30 = new Panel();
+            label102 = new Label();
+            numericUpDown1 = new NumericUpDown();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton3 = new RadioButton();
+            radioButton4 = new RadioButton();
+            radioButton5 = new RadioButton();
+            label103 = new Label();
             characterPanel.SuspendLayout();
             BloodpoolPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BloodpoolNumeric).BeginInit();
@@ -734,10 +747,16 @@
             ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).BeginInit();
             LogPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).BeginInit();
+            BackgroundsOuterPanel.SuspendLayout();
+            BackgroundsInnerPanel.SuspendLayout();
+            ExampleBackGroundPanel.SuspendLayout();
+            panel30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(BackgroundsOuterPanel);
             characterPanel.Controls.Add(BloodpoolPanel);
             characterPanel.Controls.Add(HumanityPathPanel);
             characterPanel.Controls.Add(HealthPanel);
@@ -780,7 +799,7 @@
             BloodpoolPanel.Controls.Add(BloodpoolButton2);
             BloodpoolPanel.Controls.Add(BloodpoolButton1);
             BloodpoolPanel.Controls.Add(BloodpoolLabel);
-            BloodpoolPanel.Location = new Point(239, 528);
+            BloodpoolPanel.Location = new Point(245, 607);
             BloodpoolPanel.Name = "BloodpoolPanel";
             BloodpoolPanel.Size = new Size(227, 30);
             BloodpoolPanel.TabIndex = 15;
@@ -1043,7 +1062,7 @@
             HumanityPathPanel.Controls.Add(HumanityPathButton2);
             HumanityPathPanel.Controls.Add(HumanityPathButton1);
             HumanityPathPanel.Controls.Add(HumanityPathLabel);
-            HumanityPathPanel.Location = new Point(239, 466);
+            HumanityPathPanel.Location = new Point(245, 545);
             HumanityPathPanel.Name = "HumanityPathPanel";
             HumanityPathPanel.Size = new Size(227, 19);
             HumanityPathPanel.TabIndex = 14;
@@ -1526,7 +1545,7 @@
             TempWillpowerPanel.Controls.Add(TempWillpowerButton2);
             TempWillpowerPanel.Controls.Add(TempWillpowerButton1);
             TempWillpowerPanel.Controls.Add(label91);
-            TempWillpowerPanel.Location = new Point(239, 507);
+            TempWillpowerPanel.Location = new Point(245, 586);
             TempWillpowerPanel.Name = "TempWillpowerPanel";
             TempWillpowerPanel.Size = new Size(227, 19);
             TempWillpowerPanel.TabIndex = 14;
@@ -2035,7 +2054,7 @@
             ConstWillpowerPanel.Controls.Add(constWillpowerButton2);
             ConstWillpowerPanel.Controls.Add(constWillpowerButton1);
             ConstWillpowerPanel.Controls.Add(WillpowerLabel);
-            ConstWillpowerPanel.Location = new Point(239, 486);
+            ConstWillpowerPanel.Location = new Point(245, 565);
             ConstWillpowerPanel.Name = "ConstWillpowerPanel";
             ConstWillpowerPanel.Size = new Size(227, 19);
             ConstWillpowerPanel.TabIndex = 9;
@@ -6642,6 +6661,137 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
+            // BackgroundsOuterPanel
+            // 
+            BackgroundsOuterPanel.Controls.Add(BackgroundsInnerPanel);
+            BackgroundsOuterPanel.Controls.Add(label108);
+            BackgroundsOuterPanel.Location = new Point(3, 384);
+            BackgroundsOuterPanel.Name = "BackgroundsOuterPanel";
+            BackgroundsOuterPanel.Size = new Size(230, 114);
+            BackgroundsOuterPanel.TabIndex = 14;
+            // 
+            // label108
+            // 
+            label108.AutoSize = true;
+            label108.Location = new Point(67, 0);
+            label108.Name = "label108";
+            label108.Size = new Size(111, 15);
+            label108.TabIndex = 0;
+            label108.Text = "Детали биографии";
+            // 
+            // BackgroundsInnerPanel
+            // 
+            BackgroundsInnerPanel.Controls.Add(ExampleBackGroundPanel);
+            BackgroundsInnerPanel.Location = new Point(0, 16);
+            BackgroundsInnerPanel.Name = "BackgroundsInnerPanel";
+            BackgroundsInnerPanel.Size = new Size(230, 98);
+            BackgroundsInnerPanel.TabIndex = 15;
+            // 
+            // ExampleBackGroundPanel
+            // 
+            ExampleBackGroundPanel.Controls.Add(panel30);
+            ExampleBackGroundPanel.Controls.Add(numericUpDown1);
+            ExampleBackGroundPanel.Controls.Add(radioButton1);
+            ExampleBackGroundPanel.Controls.Add(radioButton2);
+            ExampleBackGroundPanel.Controls.Add(radioButton3);
+            ExampleBackGroundPanel.Controls.Add(radioButton4);
+            ExampleBackGroundPanel.Controls.Add(radioButton5);
+            ExampleBackGroundPanel.Controls.Add(label103);
+            ExampleBackGroundPanel.Location = new Point(0, 2);
+            ExampleBackGroundPanel.Name = "ExampleBackGroundPanel";
+            ExampleBackGroundPanel.Size = new Size(227, 19);
+            ExampleBackGroundPanel.TabIndex = 9;
+            // 
+            // panel30
+            // 
+            panel30.Controls.Add(label102);
+            panel30.Location = new Point(3, 18);
+            panel30.Name = "panel30";
+            panel30.Size = new Size(197, 19);
+            panel30.TabIndex = 2;
+            // 
+            // label102
+            // 
+            label102.AutoSize = true;
+            label102.Location = new Point(3, 0);
+            label102.Name = "label102";
+            label102.Size = new Size(58, 15);
+            label102.TabIndex = 0;
+            label102.Text = "Ловкость";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(183, -2);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(41, 23);
+            numericUpDown1.TabIndex = 8;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoCheck = false;
+            radioButton1.AutoSize = true;
+            radioButton1.Checked = true;
+            radioButton1.Location = new Point(166, 6);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(14, 13);
+            radioButton1.TabIndex = 7;
+            radioButton1.TabStop = true;
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoCheck = false;
+            radioButton2.AutoSize = true;
+            radioButton2.Checked = true;
+            radioButton2.Location = new Point(146, 6);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(14, 13);
+            radioButton2.TabIndex = 6;
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoCheck = false;
+            radioButton3.AutoSize = true;
+            radioButton3.Checked = true;
+            radioButton3.Location = new Point(126, 6);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(14, 13);
+            radioButton3.TabIndex = 5;
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            radioButton4.AutoCheck = false;
+            radioButton4.AutoSize = true;
+            radioButton4.Checked = true;
+            radioButton4.Location = new Point(106, 6);
+            radioButton4.Name = "radioButton4";
+            radioButton4.Size = new Size(14, 13);
+            radioButton4.TabIndex = 4;
+            radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            radioButton5.AutoCheck = false;
+            radioButton5.AutoSize = true;
+            radioButton5.Checked = true;
+            radioButton5.Location = new Point(86, 6);
+            radioButton5.Name = "radioButton5";
+            radioButton5.Size = new Size(14, 13);
+            radioButton5.TabIndex = 3;
+            radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // label103
+            // 
+            label103.AutoSize = true;
+            label103.Font = new Font("Segoe UI", 5F);
+            label103.Location = new Point(3, 6);
+            label103.Name = "label103";
+            label103.Size = new Size(81, 10);
+            label103.TabIndex = 0;
+            label103.Text = "Совесть\\Убеждённость";
+            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -6921,6 +7071,14 @@
             LogPanel.ResumeLayout(false);
             LogPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).EndInit();
+            BackgroundsOuterPanel.ResumeLayout(false);
+            BackgroundsOuterPanel.PerformLayout();
+            BackgroundsInnerPanel.ResumeLayout(false);
+            ExampleBackGroundPanel.ResumeLayout(false);
+            ExampleBackGroundPanel.PerformLayout();
+            panel30.ResumeLayout(false);
+            panel30.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -7483,5 +7641,18 @@
         private RadioButton BloodpoolButton13;
         private RadioButton BloodpoolButton12;
         private RadioButton BloodpoolButton11;
+        private Panel BackgroundsOuterPanel;
+        private Panel BackgroundsInnerPanel;
+        private Panel ExampleBackGroundPanel;
+        private Panel panel30;
+        private Label label102;
+        private NumericUpDown numericUpDown1;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
+        private RadioButton radioButton4;
+        private RadioButton radioButton5;
+        private Label label103;
+        private Label label108;
     }
 }
