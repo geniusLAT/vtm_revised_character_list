@@ -133,15 +133,6 @@ public partial class CharacterForm : Form
         BloodpoolButton12, BloodpoolButton13, BloodpoolButton14, BloodpoolButton15, BloodpoolButton16, BloodpoolButton17,
         BloodpoolButton18, BloodpoolButton19, BloodpoolButton20];
 
-        for (int i = 0; i < BloodpoolButtons.Length; i++)
-        {
-            RadioButton? button = BloodpoolButtons[i];
-            if (button is null)
-            {
-                throw new ArgumentNullException($"{i}");
-            }
-        }
-
         HumanityPathButtons = [HumanityPathButton1, HumanityPathButton2, HumanityPathButton3, HumanityPathButton4, HumanityPathButton5,
         HumanityPathButton6, HumanityPathButton7, HumanityPathButton8, HumanityPathButton9, HumanityPathButton10];
         ConstWillpowerButtons = [constWillpowerButton1, constWillpowerButton2, constWillpowerButton3, constWillpowerButton4, constWillpowerButton5,
