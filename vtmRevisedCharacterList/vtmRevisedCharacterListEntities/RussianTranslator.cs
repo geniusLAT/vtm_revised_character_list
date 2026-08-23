@@ -12,6 +12,12 @@ public static class RussianTranslator
 
     #endregion
 
+    #region ConstsTranslation
+    public const string PlayerName = "Имя игрока ";
+    public const string CharacterName = "Имя ";
+    public const string ChronicleName = "Хроника ";
+    #endregion
+
     public static string TranslateOther(OtherRollable? other)
     {
         return other switch
