@@ -75,7 +75,7 @@ public class CharacterController : ControllerBase
         }
 
         var characterUpdateResult = CharacterManager.UpdateCharacter(request.CharacterUuid, request.CharacterToUpdate);
-        if (characterUpdateResult == null)
+        if (characterUpdateResult is null)
         {
             return NotFound();
         }
