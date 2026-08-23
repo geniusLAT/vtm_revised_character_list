@@ -2,6 +2,15 @@
 
 public static class RussianTranslator
 {
+    #region changeLogWording
+
+    public const string IncreasedWord = " повышается до";
+
+    public const string DecreasedWord = " понижается до";
+
+    public const string ChangedWord = " меняется на";
+
+    #endregion
 
     public static string TranslateOther(OtherRollable? other)
     {
