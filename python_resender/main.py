@@ -19,7 +19,7 @@ file=open("hiddenChatId.txt",'r')
 HIDDEN_CHAT_ID=int(file.read().strip())#''
 file.close()
 
-BASE_API_URL = 'https://localhost:44320'
+BASE_API_URL = 'http://localhost:5000'
 
 API_URL_DICE = BASE_API_URL + "/Dice"
 API_URL_MESSAGE = BASE_API_URL + "/Message"
@@ -40,12 +40,9 @@ def poll_dice_api_and_send():
       if response.status_code == 200 and response.text.strip():
         data = response.json()
 
-        # Достаем содержимое ключа "value"
         value = data.get('value')
 
-        # Если value равен None (в JSON это null), значит очередь пуста
         if value is not None:
-          # Теперь данные кубиков лежат внутри объекта value
           comment = value.get('comment', 'Без комментария')
 
           roll_res = value.get('rollResult') or {}
@@ -78,12 +75,8 @@ def poll_message_api_and_send():
       if response.status_code == 200 and response.text.strip():
         data = response.json()
 
-        # Достаем содержимое ключа "value"
         value = data.get('value')
 
-        print(value)
-
-        # Если value равен None (в JSON это null), значит очередь пуста
         if value is not None:
           msg_text = value.get('text')
           print(msg_text)
