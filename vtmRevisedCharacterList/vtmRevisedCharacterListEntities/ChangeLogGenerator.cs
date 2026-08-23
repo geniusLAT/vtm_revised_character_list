@@ -183,6 +183,42 @@ public static class ChangeLogGenerator
             }
         }
 
+        foreach (var item1 in collection1)
+        {
+            bool found = false;
+            foreach (var item2 in collection2)
+            {
+                if (item1.Name == item2.Name)
+                {
+                    found = true;
+
+                    if (item1.Rating != item2.Rating)
+                    {
+                        if (item1.Rating > item2.Rating)
+                        {
+                            sb.Append($"\n{item1.Name}, {RussianTranslator.Lenght} {item1.Rating} {RussianTranslator.DecreasedWord} {item2.Rating}");
+                        }
+                        if (item1.Rating < item2.Rating)
+                        {
+                            sb.Append($"\n{item2.Name}, {RussianTranslator.Lenght} {item1.Rating} {RussianTranslator.IncreasedWord} {item2.Rating}");
+                        }
+                    }
+                }
+            }
+
+            if (!found)
+            {
+                sb.Append($"\n{item1.Name} {item1.Rating} {RussianTranslator.Removed}");
+               
+            }
+        }
+
+        var added = collection2.Where(item2 => !collection1.Contains(item2));
+        foreach (var item in added)
+        {
+            sb.Append($"\n{item.Name} {item.Rating} {RussianTranslator.Added}");
+        }
+
         return sb.ToString();
     }
 }

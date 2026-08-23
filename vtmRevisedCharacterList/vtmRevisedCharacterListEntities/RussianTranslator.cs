@@ -30,6 +30,10 @@ public static class RussianTranslator
 
     public const string Lenght = "количество ";
 
+    public const string Removed = "удален ";
+
+    public const string Added = "добавлен ";
+
     public const string Backgrounds = "Детали биографии";
 
     
