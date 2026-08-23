@@ -121,12 +121,27 @@ public partial class CharacterForm : Form
     RadioButton[] CourageButtons = [];
 
     RadioButton[] HealthButtons = [];
+    RadioButton[] BloodpoolButtons = [];
     #endregion
 
     #endregion
 
     void FindButtonsForOthers()
     {
+        BloodpoolButtons = [BloodpoolButton1, BloodpoolButton2, BloodpoolButton3, BloodpoolButton4, BloodpoolButton5,
+        BloodpoolButton6, BloodpoolButton7, BloodpoolButton8, BloodpoolButton9, BloodpoolButton10, BloodpoolButton11,
+        BloodpoolButton12, BloodpoolButton13, BloodpoolButton14, BloodpoolButton15, BloodpoolButton16, BloodpoolButton17,
+        BloodpoolButton18, BloodpoolButton19, BloodpoolButton20];
+
+        for (int i = 0; i < BloodpoolButtons.Length; i++)
+        {
+            RadioButton? button = BloodpoolButtons[i];
+            if (button is null)
+            {
+                throw new ArgumentNullException($"{i}");
+            }
+        }
+
         HumanityPathButtons = [HumanityPathButton1, HumanityPathButton2, HumanityPathButton3, HumanityPathButton4, HumanityPathButton5,
         HumanityPathButton6, HumanityPathButton7, HumanityPathButton8, HumanityPathButton9, HumanityPathButton10];
         ConstWillpowerButtons = [constWillpowerButton1, constWillpowerButton2, constWillpowerButton3, constWillpowerButton4, constWillpowerButton5,
@@ -224,7 +239,7 @@ public partial class CharacterForm : Form
     void ClearOtherRollableChoice()
     {
         _otherRollable = null;
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 7; i++)
         {
             OtherRollable rollable = (OtherRollable)i;
             var panel = GetOtherRollablePanel(rollable);
@@ -293,6 +308,8 @@ public partial class CharacterForm : Form
                 return CouragePanel;
             case OtherRollable.HumanityPath:
                 return HumanityPathPanel;
+            case OtherRollable.Bloodpool:
+                return BloodpoolPanel;
             case null:
             default:
                 return null;
@@ -378,6 +395,7 @@ public partial class CharacterForm : Form
         OtherRollable.Courage => CourageButtons,
         null => throw new NotImplementedException(),
         OtherRollable.HumanityPath => HumanityPathButtons,
+        OtherRollable.Bloodpool => BloodpoolButtons,
         _ => null
     };
 
@@ -446,6 +464,8 @@ public partial class CharacterForm : Form
                 return CourageNumeric;
             case OtherRollable.HumanityPath:
                 return HumanityPathNumeric;
+            case OtherRollable.Bloodpool:
+                return BloodpoolNumeric;
             case null:
             default:
                 return null;
@@ -758,7 +778,7 @@ public partial class CharacterForm : Form
 
         }
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 7; i++)
         {
             OtherRollable other = (OtherRollable)i;
             uint otherValue = character.GetOther(other);
@@ -1101,7 +1121,7 @@ public partial class CharacterForm : Form
             }
         }
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 7; i++)
         {
             OtherRollable other = (OtherRollable)i;
             

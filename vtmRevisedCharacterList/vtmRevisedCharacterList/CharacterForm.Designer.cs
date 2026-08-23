@@ -29,6 +29,29 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
+            BloodpoolPanel = new Panel();
+            BloodpoolButton19 = new RadioButton();
+            BloodpoolButton14 = new RadioButton();
+            BloodpoolButton17 = new RadioButton();
+            BloodpoolButton20 = new RadioButton();
+            BloodpoolButton18 = new RadioButton();
+            BloodpoolButton16 = new RadioButton();
+            BloodpoolButton15 = new RadioButton();
+            BloodpoolButton13 = new RadioButton();
+            BloodpoolButton12 = new RadioButton();
+            BloodpoolButton11 = new RadioButton();
+            BloodpoolButton7 = new RadioButton();
+            BloodpoolButton10 = new RadioButton();
+            BloodpoolButton9 = new RadioButton();
+            BloodpoolButton8 = new RadioButton();
+            BloodpoolButton6 = new RadioButton();
+            BloodpoolNumeric = new NumericUpDown();
+            BloodpoolButton5 = new RadioButton();
+            BloodpoolButton4 = new RadioButton();
+            BloodpoolButton3 = new RadioButton();
+            BloodpoolButton2 = new RadioButton();
+            BloodpoolButton1 = new RadioButton();
+            BloodpoolLabel = new Label();
             HumanityPathPanel = new Panel();
             HumanityPathButton7 = new RadioButton();
             HumanityPathButton10 = new RadioButton();
@@ -557,6 +580,8 @@
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
             characterPanel.SuspendLayout();
+            BloodpoolPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)BloodpoolNumeric).BeginInit();
             HumanityPathPanel.SuspendLayout();
             panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HumanityPathNumeric).BeginInit();
@@ -713,6 +738,7 @@
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(BloodpoolPanel);
             characterPanel.Controls.Add(HumanityPathPanel);
             characterPanel.Controls.Add(HealthPanel);
             characterPanel.Controls.Add(CancelUpdateButton);
@@ -729,6 +755,276 @@
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // BloodpoolPanel
+            // 
+            BloodpoolPanel.Controls.Add(BloodpoolButton19);
+            BloodpoolPanel.Controls.Add(BloodpoolButton14);
+            BloodpoolPanel.Controls.Add(BloodpoolButton17);
+            BloodpoolPanel.Controls.Add(BloodpoolButton20);
+            BloodpoolPanel.Controls.Add(BloodpoolButton18);
+            BloodpoolPanel.Controls.Add(BloodpoolButton16);
+            BloodpoolPanel.Controls.Add(BloodpoolButton15);
+            BloodpoolPanel.Controls.Add(BloodpoolButton13);
+            BloodpoolPanel.Controls.Add(BloodpoolButton12);
+            BloodpoolPanel.Controls.Add(BloodpoolButton11);
+            BloodpoolPanel.Controls.Add(BloodpoolButton7);
+            BloodpoolPanel.Controls.Add(BloodpoolButton10);
+            BloodpoolPanel.Controls.Add(BloodpoolButton9);
+            BloodpoolPanel.Controls.Add(BloodpoolButton8);
+            BloodpoolPanel.Controls.Add(BloodpoolButton6);
+            BloodpoolPanel.Controls.Add(BloodpoolNumeric);
+            BloodpoolPanel.Controls.Add(BloodpoolButton5);
+            BloodpoolPanel.Controls.Add(BloodpoolButton4);
+            BloodpoolPanel.Controls.Add(BloodpoolButton3);
+            BloodpoolPanel.Controls.Add(BloodpoolButton2);
+            BloodpoolPanel.Controls.Add(BloodpoolButton1);
+            BloodpoolPanel.Controls.Add(BloodpoolLabel);
+            BloodpoolPanel.Location = new Point(239, 528);
+            BloodpoolPanel.Name = "BloodpoolPanel";
+            BloodpoolPanel.Size = new Size(227, 30);
+            BloodpoolPanel.TabIndex = 15;
+            // 
+            // BloodpoolButton19
+            // 
+            BloodpoolButton19.AutoCheck = false;
+            BloodpoolButton19.AutoSize = true;
+            BloodpoolButton19.Checked = true;
+            BloodpoolButton19.Location = new Point(159, 17);
+            BloodpoolButton19.Name = "BloodpoolButton19";
+            BloodpoolButton19.Size = new Size(14, 13);
+            BloodpoolButton19.TabIndex = 23;
+            BloodpoolButton19.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton14
+            // 
+            BloodpoolButton14.AutoCheck = false;
+            BloodpoolButton14.AutoSize = true;
+            BloodpoolButton14.Checked = true;
+            BloodpoolButton14.Location = new Point(98, 17);
+            BloodpoolButton14.Name = "BloodpoolButton14";
+            BloodpoolButton14.Size = new Size(14, 13);
+            BloodpoolButton14.TabIndex = 22;
+            BloodpoolButton14.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton17
+            // 
+            BloodpoolButton17.AutoCheck = false;
+            BloodpoolButton17.AutoSize = true;
+            BloodpoolButton17.Checked = true;
+            BloodpoolButton17.Location = new Point(139, 17);
+            BloodpoolButton17.Name = "BloodpoolButton17";
+            BloodpoolButton17.Size = new Size(14, 13);
+            BloodpoolButton17.TabIndex = 21;
+            BloodpoolButton17.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton20
+            // 
+            BloodpoolButton20.AutoCheck = false;
+            BloodpoolButton20.AutoSize = true;
+            BloodpoolButton20.Checked = true;
+            BloodpoolButton20.Location = new Point(170, 17);
+            BloodpoolButton20.Name = "BloodpoolButton20";
+            BloodpoolButton20.Size = new Size(14, 13);
+            BloodpoolButton20.TabIndex = 20;
+            BloodpoolButton20.TabStop = true;
+            BloodpoolButton20.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton18
+            // 
+            BloodpoolButton18.AutoCheck = false;
+            BloodpoolButton18.AutoSize = true;
+            BloodpoolButton18.Checked = true;
+            BloodpoolButton18.Location = new Point(150, 17);
+            BloodpoolButton18.Name = "BloodpoolButton18";
+            BloodpoolButton18.Size = new Size(14, 13);
+            BloodpoolButton18.TabIndex = 19;
+            BloodpoolButton18.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton16
+            // 
+            BloodpoolButton16.AutoCheck = false;
+            BloodpoolButton16.AutoSize = true;
+            BloodpoolButton16.Checked = true;
+            BloodpoolButton16.Location = new Point(129, 17);
+            BloodpoolButton16.Name = "BloodpoolButton16";
+            BloodpoolButton16.Size = new Size(14, 13);
+            BloodpoolButton16.TabIndex = 18;
+            BloodpoolButton16.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton15
+            // 
+            BloodpoolButton15.AutoCheck = false;
+            BloodpoolButton15.AutoSize = true;
+            BloodpoolButton15.Checked = true;
+            BloodpoolButton15.Location = new Point(109, 17);
+            BloodpoolButton15.Name = "BloodpoolButton15";
+            BloodpoolButton15.Size = new Size(14, 13);
+            BloodpoolButton15.TabIndex = 17;
+            BloodpoolButton15.TabStop = true;
+            BloodpoolButton15.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton13
+            // 
+            BloodpoolButton13.AutoCheck = false;
+            BloodpoolButton13.AutoSize = true;
+            BloodpoolButton13.Checked = true;
+            BloodpoolButton13.Location = new Point(89, 17);
+            BloodpoolButton13.Name = "BloodpoolButton13";
+            BloodpoolButton13.Size = new Size(14, 13);
+            BloodpoolButton13.TabIndex = 16;
+            BloodpoolButton13.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton12
+            // 
+            BloodpoolButton12.AutoCheck = false;
+            BloodpoolButton12.AutoSize = true;
+            BloodpoolButton12.Checked = true;
+            BloodpoolButton12.Location = new Point(78, 17);
+            BloodpoolButton12.Name = "BloodpoolButton12";
+            BloodpoolButton12.Size = new Size(14, 13);
+            BloodpoolButton12.TabIndex = 15;
+            BloodpoolButton12.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton11
+            // 
+            BloodpoolButton11.AutoCheck = false;
+            BloodpoolButton11.AutoSize = true;
+            BloodpoolButton11.Checked = true;
+            BloodpoolButton11.Location = new Point(68, 17);
+            BloodpoolButton11.Name = "BloodpoolButton11";
+            BloodpoolButton11.Size = new Size(14, 13);
+            BloodpoolButton11.TabIndex = 14;
+            BloodpoolButton11.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton7
+            // 
+            BloodpoolButton7.AutoCheck = false;
+            BloodpoolButton7.AutoSize = true;
+            BloodpoolButton7.Checked = true;
+            BloodpoolButton7.Location = new Point(139, 6);
+            BloodpoolButton7.Name = "BloodpoolButton7";
+            BloodpoolButton7.Size = new Size(14, 13);
+            BloodpoolButton7.TabIndex = 13;
+            BloodpoolButton7.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton10
+            // 
+            BloodpoolButton10.AutoCheck = false;
+            BloodpoolButton10.AutoSize = true;
+            BloodpoolButton10.Checked = true;
+            BloodpoolButton10.Location = new Point(170, 6);
+            BloodpoolButton10.Name = "BloodpoolButton10";
+            BloodpoolButton10.Size = new Size(14, 13);
+            BloodpoolButton10.TabIndex = 12;
+            BloodpoolButton10.TabStop = true;
+            BloodpoolButton10.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton9
+            // 
+            BloodpoolButton9.AutoCheck = false;
+            BloodpoolButton9.AutoSize = true;
+            BloodpoolButton9.Checked = true;
+            BloodpoolButton9.Location = new Point(159, 6);
+            BloodpoolButton9.Name = "BloodpoolButton9";
+            BloodpoolButton9.Size = new Size(14, 13);
+            BloodpoolButton9.TabIndex = 11;
+            BloodpoolButton9.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton8
+            // 
+            BloodpoolButton8.AutoCheck = false;
+            BloodpoolButton8.AutoSize = true;
+            BloodpoolButton8.Checked = true;
+            BloodpoolButton8.Location = new Point(150, 6);
+            BloodpoolButton8.Name = "BloodpoolButton8";
+            BloodpoolButton8.Size = new Size(14, 13);
+            BloodpoolButton8.TabIndex = 10;
+            BloodpoolButton8.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton6
+            // 
+            BloodpoolButton6.AutoCheck = false;
+            BloodpoolButton6.AutoSize = true;
+            BloodpoolButton6.Checked = true;
+            BloodpoolButton6.Location = new Point(129, 6);
+            BloodpoolButton6.Name = "BloodpoolButton6";
+            BloodpoolButton6.Size = new Size(14, 13);
+            BloodpoolButton6.TabIndex = 9;
+            BloodpoolButton6.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolNumeric
+            // 
+            BloodpoolNumeric.Location = new Point(183, 6);
+            BloodpoolNumeric.Name = "BloodpoolNumeric";
+            BloodpoolNumeric.Size = new Size(41, 23);
+            BloodpoolNumeric.TabIndex = 8;
+            // 
+            // BloodpoolButton5
+            // 
+            BloodpoolButton5.AutoCheck = false;
+            BloodpoolButton5.AutoSize = true;
+            BloodpoolButton5.Checked = true;
+            BloodpoolButton5.Location = new Point(109, 6);
+            BloodpoolButton5.Name = "BloodpoolButton5";
+            BloodpoolButton5.Size = new Size(14, 13);
+            BloodpoolButton5.TabIndex = 7;
+            BloodpoolButton5.TabStop = true;
+            BloodpoolButton5.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton4
+            // 
+            BloodpoolButton4.AutoCheck = false;
+            BloodpoolButton4.AutoSize = true;
+            BloodpoolButton4.Checked = true;
+            BloodpoolButton4.Location = new Point(98, 6);
+            BloodpoolButton4.Name = "BloodpoolButton4";
+            BloodpoolButton4.Size = new Size(14, 13);
+            BloodpoolButton4.TabIndex = 6;
+            BloodpoolButton4.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton3
+            // 
+            BloodpoolButton3.AutoCheck = false;
+            BloodpoolButton3.AutoSize = true;
+            BloodpoolButton3.Checked = true;
+            BloodpoolButton3.Location = new Point(89, 6);
+            BloodpoolButton3.Name = "BloodpoolButton3";
+            BloodpoolButton3.Size = new Size(14, 13);
+            BloodpoolButton3.TabIndex = 5;
+            BloodpoolButton3.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton2
+            // 
+            BloodpoolButton2.AutoCheck = false;
+            BloodpoolButton2.AutoSize = true;
+            BloodpoolButton2.Checked = true;
+            BloodpoolButton2.Location = new Point(78, 6);
+            BloodpoolButton2.Name = "BloodpoolButton2";
+            BloodpoolButton2.Size = new Size(14, 13);
+            BloodpoolButton2.TabIndex = 4;
+            BloodpoolButton2.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton1
+            // 
+            BloodpoolButton1.AutoCheck = false;
+            BloodpoolButton1.AutoSize = true;
+            BloodpoolButton1.Checked = true;
+            BloodpoolButton1.Location = new Point(68, 6);
+            BloodpoolButton1.Name = "BloodpoolButton1";
+            BloodpoolButton1.Size = new Size(14, 13);
+            BloodpoolButton1.TabIndex = 3;
+            BloodpoolButton1.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolLabel
+            // 
+            BloodpoolLabel.AutoSize = true;
+            BloodpoolLabel.Font = new Font("Segoe UI", 10F);
+            BloodpoolLabel.Location = new Point(3, 6);
+            BloodpoolLabel.Name = "BloodpoolLabel";
+            BloodpoolLabel.Size = new Size(47, 19);
+            BloodpoolLabel.TabIndex = 0;
+            BloodpoolLabel.Text = "Кровь";
             // 
             // HumanityPathPanel
             // 
@@ -6367,6 +6663,9 @@
             Text = "VTM бот для кубов";
             characterPanel.ResumeLayout(false);
             characterPanel.PerformLayout();
+            BloodpoolPanel.ResumeLayout(false);
+            BloodpoolPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)BloodpoolNumeric).EndInit();
             HumanityPathPanel.ResumeLayout(false);
             HumanityPathPanel.PerformLayout();
             panel24.ResumeLayout(false);
@@ -7154,5 +7453,33 @@
         private RadioButton HumanityPathButton2;
         private RadioButton HumanityPathButton1;
         private Label HumanityPathLabel;
+        private Panel BloodpoolPanel;
+        private RadioButton BloodpoolButton7;
+        private RadioButton BloodpoolButton10;
+        private RadioButton BloodpoolButton9;
+        private RadioButton BloodpoolButton8;
+        private RadioButton BloodpoolButton6;
+        private Panel panel28;
+        private Label label101;
+        private NumericUpDown BloodpoolNumeric;
+        private RadioButton BloodpoolButton5;
+        private RadioButton radioButton7;
+        private RadioButton radioButton8;
+        private RadioButton radioButton9;
+        private RadioButton BloodpoolButton1;
+        private RadioButton BloodpoolButton2;
+        private RadioButton BloodpoolButton3;
+        private RadioButton BloodpoolButton4;
+        private Label BloodpoolLabel;
+        private RadioButton BloodpoolButton19;
+        private RadioButton BloodpoolButton14;
+        private RadioButton BloodpoolButton17;
+        private RadioButton BloodpoolButton20;
+        private RadioButton BloodpoolButton18;
+        private RadioButton BloodpoolButton16;
+        private RadioButton BloodpoolButton15;
+        private RadioButton BloodpoolButton13;
+        private RadioButton BloodpoolButton12;
+        private RadioButton BloodpoolButton11;
     }
 }

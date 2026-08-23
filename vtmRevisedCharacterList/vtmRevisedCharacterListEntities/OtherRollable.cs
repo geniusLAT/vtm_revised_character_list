@@ -7,5 +7,6 @@ public enum OtherRollable
     ConscienceConviction = 2,
     SelfControlInstinct = 3,
     Courage = 4,
-    HumanityPath =5
+    HumanityPath = 5,
+    Bloodpool = 6
 }

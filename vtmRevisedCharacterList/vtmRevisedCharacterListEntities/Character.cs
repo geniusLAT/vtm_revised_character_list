@@ -193,6 +193,8 @@ public class Character
                 return Courage = value;
             case OtherRollable.HumanityPath:
                 return HumanityPath = value;
+            case OtherRollable.Bloodpool:
+                return Bloodpool = value;
         }
 
         return value;
@@ -214,6 +216,8 @@ public class Character
                 return Courage;
             case OtherRollable.HumanityPath:
                 return HumanityPath;
+            case OtherRollable.Bloodpool:
+                return Bloodpool;
         }
 
         return 0;
