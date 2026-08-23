@@ -151,8 +151,8 @@ public partial class CharacterForm : Form
     void FindButtonsForAttributes()
     {
         StrenghtButtons = [SButton, SButton2, SButton3, SButton4, SButton5];
-        DexterityButtons = [DexterityButton1, DexterityButton2 , DexterityButton3, DexterityButton4, DexterityButton5];
-        StaminaButtons = [StaminaButton1, StaminaButton2, StaminaButton3 , StaminaButton4, StaminaButton5];
+        DexterityButtons = [DexterityButton1, DexterityButton2, DexterityButton3, DexterityButton4, DexterityButton5];
+        StaminaButtons = [StaminaButton1, StaminaButton2, StaminaButton3, StaminaButton4, StaminaButton5];
         CharismaButtons = [CharismaButton1, CharismaButton2, CharismaButton3, CharismaButton4, CharismaButton5];
         ManipulationButtons = [ManupulationButton1, ManupulationButton2, ManupulationButton3, ManupulationButton4, ManupulationButton5];
         AppearanceButtons = [AppearanceButton1, AppearanceButton2, AppearanceButton3, AppearanceButton4, AppearanceButton5];
@@ -248,7 +248,8 @@ public partial class CharacterForm : Form
             if (i < numToSet)
             {
                 buttons[i].Checked = true;
-            }else
+            }
+            else
             {
                 buttons[i].Checked = false;
             }
@@ -701,8 +702,7 @@ public partial class CharacterForm : Form
         var daredevilCommentary = _daredevil ? ",сорвиголова " : string.Empty;
         var specializationCommentary = _specialization ? ",специализация " : string.Empty;
         var autoSuccessCommentary = _additionalAutoSuccess > 0 ? $", {_additionalAutoSuccess} автоуспехов" : string.Empty;
-        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {_difficulty
-            }{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
+        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {_difficulty}{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
     }
 
     void RenderHealthCondition(Character character)
@@ -749,8 +749,8 @@ public partial class CharacterForm : Form
                 numeric.Enabled = true;
                 numeric.ValueChanged += CharacterNumeric_ValueChanged;
             }
-           
-            SetButtonsForNum( GetAttributeButtons(attribute), attributeValue);
+
+            SetButtonsForNum(GetAttributeButtons(attribute), attributeValue);
 
         }
 
@@ -797,7 +797,7 @@ public partial class CharacterForm : Form
 
     }
 
-   
+
     public async Task RollDiceAsync()
     {
         uint positiveDicesToRoll = _dicesToRoll < 0 ? 0 : (uint)_dicesToRoll;
@@ -893,12 +893,13 @@ public partial class CharacterForm : Form
         _avaliableCharacters = task.Result;
         MessageBox.Show($"Найдено персонажей: {_avaliableCharacters.Count.ToString()}");
 
-        if (_avaliableCharacters.Count > 0) {
+        if (_avaliableCharacters.Count > 0)
+        {
             var task2 = Task.Run(() => GetCharacterAsync(_avaliableCharacters.First(), _config.UserId));
 
             //while server thinks
             characterComboBox.Items.Clear();
-            foreach(var character in _avaliableCharacters)
+            foreach (var character in _avaliableCharacters)
             {
                 characterComboBox.Items.Add(character.CharacterName);
             }
@@ -958,7 +959,7 @@ public partial class CharacterForm : Form
         }
         catch (Exception)
         {
-          
+
             return null;
         }
     }
@@ -977,7 +978,7 @@ public partial class CharacterForm : Form
 
             var responseRequest = await response.Content.ReadFromJsonAsync<List<CharacterListMember>>();
 
-           return responseRequest.ToList();
+            return responseRequest.ToList();
         }
         catch (HttpRequestException ex)
         {
@@ -1037,14 +1038,14 @@ public partial class CharacterForm : Form
         RollDiceButton.Enabled = !unsavedChangesExist;
         CancelUpdateButton.Enabled
             = CancelUpdateButton.Visible
-            = UpdateCharacterButton.Enabled 
-            = UpdateCharacterButton.Visible 
+            = UpdateCharacterButton.Enabled
+            = UpdateCharacterButton.Visible
             = unsavedChangesExist;
     }
 
     public void UpdateCharacter()
     {
-        var characterGuid =  _avaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
+        var characterGuid = _avaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
 
         var newCharacter = GenerateChangedCharacter();
         CharacterUpdateRequest request = new()
@@ -1093,8 +1094,8 @@ public partial class CharacterForm : Form
         for (int i = 0; i < 9; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
-            
-            var numeric = GetAttributeNumeric(attribute); 
+
+            var numeric = GetAttributeNumeric(attribute);
             if (numeric is not null)
             {
                 uint attributeValue = character.SetAttribute(attribute, (uint)numeric.Value);
@@ -1104,7 +1105,7 @@ public partial class CharacterForm : Form
         for (int i = 0; i < 30; i++)
         {
             Ability ability = (Ability)i;
-            
+
             var numeric = GetAbilityNumeric(ability);
             if (numeric is not null)
             {
@@ -1115,9 +1116,9 @@ public partial class CharacterForm : Form
         for (int i = 0; i < 7; i++)
         {
             OtherRollable other = (OtherRollable)i;
-            
+
             var numeric = GetOtherNumeric(other);
-            
+
             if (numeric is not null)
             {
                 uint otherValue = character.SetOther(other, (uint)numeric.Value);
@@ -1125,6 +1126,20 @@ public partial class CharacterForm : Form
         }
 
         return character;
+    }
+
+    #endregion
+
+    #region abstractCollectionGuiManagment
+
+    #endregion
+
+    #region BackgrounsManagment
+
+    void OpenAddBackgroundWindow()
+    {
+        var addWindow = new AddARatingForm(this, _chosenCharacter.Backgrounds, typeof(Background));
+        addWindow.ShowDialog();
     }
 
     #endregion

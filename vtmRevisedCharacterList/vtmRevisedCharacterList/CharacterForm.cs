@@ -392,5 +392,8 @@ public partial class CharacterForm : Form
         CalculateDices();
     }
 
-   
+    private void AddBackgroundButton_Click(object sender, EventArgs e)
+    {
+        OpenAddBackgroundWindow();
+    }
 }
