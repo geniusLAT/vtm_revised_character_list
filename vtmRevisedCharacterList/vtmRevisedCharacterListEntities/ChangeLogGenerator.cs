@@ -136,11 +136,53 @@ public static class ChangeLogGenerator
             }
         }
 
+        //if (character1.Backgrounds.Count() != character2.Backgrounds.Count())
+        //{
+        //    if (character1.Backgrounds.Count() > character2.Backgrounds.Count())
+        //    {
+        //        sb.Append($"\n{RussianTranslator.Backgrounds}, {RussianTranslator.Lenght} {character1.Backgrounds.Count()
+        //            } {RussianTranslator.DecreasedWord} {character2.Backgrounds.Count()}");
+        //    }
+        //    if (character1.Backgrounds.Count() < character2.Backgrounds.Count())
+        //    {
+        //        sb.Append($"\n{RussianTranslator.Backgrounds}, {RussianTranslator.Lenght} {character1.Backgrounds.Count()
+        //            } {RussianTranslator.IncreasedWord} {character2.Backgrounds.Count()}");
+        //    }
+        //}
+
+        var backgroundChangeLog = GenerateChangeLogForCollection(
+            character1.Backgrounds, 
+            character2.Backgrounds, 
+            RussianTranslator.Backgrounds);
+        if (string.IsNullOrEmpty(backgroundChangeLog))
+        {
+            sb.Append(backgroundChangeLog);
+        } 
+
         if (sb.Length == 0)
         {
             return string.Empty;
         }
 
         return $"{character1.CharacterName} {sb.ToString()}";
+    }
+
+    public static string GenerateChangeLogForCollection(IEnumerable<ARating> collection1, IEnumerable<ARating> collection2, string collectionName)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        if (collection1.Count() != collection2.Count())
+        {
+            if (collection1.Count() > collection2.Count())
+            {
+                sb.Append($"\n{collectionName}, {RussianTranslator.Lenght} {collection1.Count()} {RussianTranslator.DecreasedWord} {collection2.Count()}");
+            }
+            if (collection1.Count() < collection2.Count())
+            {
+                sb.Append($"\n{collectionName}, {RussianTranslator.Lenght} {collection1.Count()} {RussianTranslator.IncreasedWord} {collection2.Count()}");
+            }
+        }
+
+        return sb.ToString();
     }
 }

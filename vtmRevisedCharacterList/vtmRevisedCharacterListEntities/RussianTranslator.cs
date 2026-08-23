@@ -28,6 +28,12 @@ public static class RussianTranslator
 
     public const string Bloodpool = "Витэ ";
 
+    public const string Lenght = "количество ";
+
+    public const string Backgrounds = "Детали биографии";
+
+    
+
     #endregion
 
     public static string TranslateOther(OtherRollable? other)

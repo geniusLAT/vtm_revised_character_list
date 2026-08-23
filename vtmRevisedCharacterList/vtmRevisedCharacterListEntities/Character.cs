@@ -163,7 +163,11 @@ public class Character
     
     public uint AggravatedDamage { get; set; }
 
+    #endregion
 
+    #region BackGrounds
+
+    public IEnumerable<Background> Backgrounds { get; set; } = Enumerable.Empty<Background>();
 
     #endregion
 
