@@ -127,4 +127,31 @@ public static class CharacterManager
             return null;
         }
     }
+
+    public static CharacterUpdateResult? UpdateCharacter(Guid characterGuid, Character newCharacter)
+    {
+        string filePath = Path.Combine("characters", $"{characterGuid}.txt");
+
+        if (!File.Exists(filePath))
+        {
+            return null;
+        }
+
+        try
+        {
+            string content = File.ReadAllText(filePath);
+
+            // Десериализуем JSON в объект Character
+            Character? oldCharacter = JsonSerializer.Deserialize<Character>(content);
+
+            Console.WriteLine(oldCharacter!.CharacterName);
+
+            return oldCharacter;
+        }
+        catch (Exception)
+        {
+            // В случае любых ошибок чтения или некорректного JSON возвращаем null
+            return null;
+        }
+    }
 }

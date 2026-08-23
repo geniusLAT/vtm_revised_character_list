@@ -61,7 +61,30 @@ public class CharacterController : ControllerBase
     }
 
     [HttpPost("GetCharacter")]
-    public ActionResult<Character> GetCharacter([FromBody] CharacterRequest request)
+    public ActionResult<CharacterUpdateResult> GetCharacter([FromBody] CharacterUpdateRequest request)
+    {
+        var adminGuid = CharacterManager.GetAdminGuid();
+        if (adminGuid != request.UserUuid)
+        {
+            var charactersToAccess = CharacterManager.GetUserRights(request.UserUuid);
+
+            if (!charactersToAccess.Contains(request.CharacterUuid))
+            {
+                return BadRequest("not your character");
+            }
+        }
+
+        var character = CharacterManager.UpdateCharacter(request.CharacterUuid);
+        if (character == null)
+        {
+            return NotFound();
+        }
+
+        return character;
+    }
+
+    [HttpPost("UpdateCharacter")]
+    public ActionResult<Character> UpdateCharacter([FromBody] CharacterRequest request)
     {
         var adminGuid = CharacterManager.GetAdminGuid();
         if (adminGuid != request.UserUuid)
