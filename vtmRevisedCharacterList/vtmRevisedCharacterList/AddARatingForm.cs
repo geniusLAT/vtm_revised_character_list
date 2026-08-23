@@ -13,7 +13,7 @@ namespace vtmRevisedCharacterList;
 
 public partial class AddARatingForm : Form
 {
-    public AddARatingForm(CharacterForm characterForm, IEnumerable<ARating> collectionToAdd, Type type)
+    public AddARatingForm(CharacterForm characterForm, List<ARating> collectionToAdd, Type type)
     {
         _parentForm = characterForm;
         _collectionToAdd = collectionToAdd;

@@ -167,7 +167,7 @@ public class Character
 
     #region BackGrounds
 
-    public IEnumerable<Background> Backgrounds { get; set; } = Enumerable.Empty<Background>();
+    public List<ARating> Backgrounds { get; set; } = new List<ARating>();
 
     #endregion
 

@@ -15,7 +15,7 @@ public partial class AddARatingForm : Form
 {
     CharacterForm _parentForm;
 
-    IEnumerable<ARating> _collectionToAdd;
+    List<ARating> _collectionToAdd;
 
     Type _type;
 
@@ -38,7 +38,10 @@ public partial class AddARatingForm : Form
         ARating created = (ARating)Activator.CreateInstance(_type);
         created.Name = name;
         created.Rating = (uint)RatingNumeric.Value;
-        _collectionToAdd.Append(created);
+        _collectionToAdd.Add(created);
+
+        MessageBox.Show($"{_collectionToAdd.Count()}");
+
         this.Close();
     }
 }
