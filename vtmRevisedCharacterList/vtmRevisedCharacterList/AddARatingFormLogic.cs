@@ -22,7 +22,7 @@ public partial class AddARatingForm : Form
     public void AddSomething()
     {
         var name = NameTextBox.Text.Trim();
-        if (name.Length < 0)
+        if (name.Length < 1)
         {
             MessageBox.Show("Неверное имя. Его необходимо ввести");
             return;

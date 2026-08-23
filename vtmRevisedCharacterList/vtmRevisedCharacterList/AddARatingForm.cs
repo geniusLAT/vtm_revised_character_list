@@ -29,6 +29,38 @@ public partial class AddARatingForm : Form
 
     private void RatingNumeric_ValueChanged(object sender, EventArgs e)
     {
-
+        var v = RatingNumeric.Value;
+        if (v > 1)
+        {
+            RatingButton2.Checked = true;
+        }
+        else
+        {
+            RatingButton2.Checked = false;
+        }
+        if (v > 2)
+        {
+            RatingButton3.Checked = true;
+        }
+        else
+        {
+            RatingButton3.Checked = false;
+        }
+        if (v > 3)
+        {
+            RatingButton4.Checked = true;
+        }
+        else
+        {
+            RatingButton4.Checked = false;
+        }
+        if (v > 4)
+        {
+            RatingButton5.Checked = true;
+        }
+        else
+        {
+            RatingButton5.Checked = false;
+        }
     }
 }
