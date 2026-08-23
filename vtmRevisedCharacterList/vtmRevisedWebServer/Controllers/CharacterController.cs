@@ -60,8 +60,8 @@ public class CharacterController : ControllerBase
         return result;
     }
 
-    [HttpPost("GetCharacter")]
-    public ActionResult<CharacterUpdateResult> GetCharacter([FromBody] CharacterUpdateRequest request)
+    [HttpPost("UpdateCharacter")]
+    public ActionResult<CharacterUpdateResult> UpdateCharacter ([FromBody] CharacterUpdateRequest request)
     {
         var adminGuid = CharacterManager.GetAdminGuid();
         if (adminGuid != request.UserUuid)
@@ -79,12 +79,12 @@ public class CharacterController : ControllerBase
         {
             return NotFound();
         }
-
+        MessageManager.EnqueueRequest(new() { Hidden = false, Text = characterUpdateResult.ChangeLog });
         return characterUpdateResult;
     }
 
-    [HttpPost("UpdateCharacter")]
-    public ActionResult<Character> UpdateCharacter([FromBody] CharacterRequest request)
+    [HttpPost("GetCharacter")]
+    public ActionResult<Character> GetCharacter([FromBody] CharacterRequest request)
     {
         var adminGuid = CharacterManager.GetAdminGuid();
         if (adminGuid != request.UserUuid)

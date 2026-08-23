@@ -143,7 +143,7 @@ public static class CharacterManager
 
             Character? oldCharacter = JsonSerializer.Deserialize<Character>(content);
 
-            if (oldCharacter != newCharacter)
+            if (oldCharacter is null)
             {
                 throw new ApplicationException("No such character");
             }
