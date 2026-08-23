@@ -26,6 +26,8 @@ public static class RussianTranslator
 
     public const string Damage = "Общее число повреждений ";
 
+    public const string Bloodpool = "Витэ ";
+
     #endregion
 
     public static string TranslateOther(OtherRollable? other)
@@ -39,6 +41,7 @@ public static class RussianTranslator
             OtherRollable.Courage => "Храбрость",
             null => throw new NotImplementedException(),
             OtherRollable.HumanityPath => "Человечность/Путь",
+            OtherRollable.Bloodpool => "Витэ",
             _ => "Неназванный аттрибут",
         };
     }

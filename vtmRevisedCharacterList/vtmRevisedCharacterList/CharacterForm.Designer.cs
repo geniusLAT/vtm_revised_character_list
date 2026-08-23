@@ -784,6 +784,7 @@
             BloodpoolPanel.Name = "BloodpoolPanel";
             BloodpoolPanel.Size = new Size(227, 30);
             BloodpoolPanel.TabIndex = 15;
+            BloodpoolPanel.Click += BloodpoolLabel_Click;
             // 
             // BloodpoolButton19
             // 
@@ -1025,6 +1026,7 @@
             BloodpoolLabel.Size = new Size(47, 19);
             BloodpoolLabel.TabIndex = 0;
             BloodpoolLabel.Text = "Кровь";
+            BloodpoolLabel.Click += BloodpoolLabel_Click;
             // 
             // HumanityPathPanel
             // 

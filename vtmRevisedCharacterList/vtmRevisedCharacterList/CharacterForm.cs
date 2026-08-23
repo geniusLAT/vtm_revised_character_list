@@ -348,6 +348,11 @@ public partial class CharacterForm : Form
     {
         ChooseOther(OtherRollable.HumanityPath);
     }
+    private void BloodpoolLabel_Click(object sender, EventArgs e)
+    {
+        ChooseOther(OtherRollable.Bloodpool);
+    }
+
     private void debuffDicePoolNumeric_ValueChanged(object sender, EventArgs e)
     {
         _debuffDicePool = (uint)debuffDicePoolNumeric.Value;
@@ -386,4 +391,6 @@ public partial class CharacterForm : Form
         _ignoreHealthCondition = IgnoreHealthConditionCheckBox.Checked;
         CalculateDices();
     }
+
+   
 }

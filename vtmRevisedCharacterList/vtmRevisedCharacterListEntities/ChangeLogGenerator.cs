@@ -124,6 +124,18 @@ public static class ChangeLogGenerator
             }
         }
 
+        if (character1.Bloodpool != character2.Bloodpool)
+        {
+            if (character1.Bloodpool > character2.Bloodpool)
+            {
+                sb.Append($"\n{RussianTranslator.Bloodpool} {character1.Bloodpool} {RussianTranslator.DecreasedWord} {character2.Bloodpool}");
+            }
+            if (character1.Bloodpool < character2.Bloodpool)
+            {
+                sb.Append($"\n{RussianTranslator.Bloodpool} {character1.Bloodpool} {RussianTranslator.IncreasedWord} {character2.Bloodpool}");
+            }
+        }
+
         if (sb.Length == 0)
         {
             return string.Empty;
