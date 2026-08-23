@@ -30,7 +30,11 @@
         {
             characterPanel = new Panel();
             HealthPanel = new Panel();
+            CommomDamageLabel = new Label();
+            AggravatedDamageLabel = new Label();
+            CommonDamageNumeric = new NumericUpDown();
             checkBox1 = new CheckBox();
+            AggravatedDamageNumeric = new NumericUpDown();
             label100 = new Label();
             label99 = new Label();
             label98 = new Label();
@@ -39,16 +43,16 @@
             label95 = new Label();
             label94 = new Label();
             label93 = new Label();
-            label92 = new Label();
-            radioButton1 = new RadioButton();
-            healthButton8 = new RadioButton();
-            healthButton7 = new RadioButton();
-            healthButton6 = new RadioButton();
-            healthButton5 = new RadioButton();
-            healthButton4 = new RadioButton();
-            healthButton3 = new RadioButton();
-            healthButton2 = new RadioButton();
-            healthButton1 = new RadioButton();
+            HealthLabel1 = new Label();
+            HealthButton9 = new RadioButton();
+            HealthButton8 = new RadioButton();
+            HealthButton7 = new RadioButton();
+            HealthButton6 = new RadioButton();
+            HealthButton5 = new RadioButton();
+            HealthButton4 = new RadioButton();
+            HealthButton3 = new RadioButton();
+            HealthButton2 = new RadioButton();
+            HealthButton1 = new RadioButton();
             HealthLabel = new Label();
             CancelUpdateButton = new Button();
             characterComboBox = new ComboBox();
@@ -396,7 +400,6 @@
             DrivePanel = new Panel();
             panel6 = new Panel();
             label20 = new Label();
-            AggravatedDamageNumeric = new NumericUpDown();
             DriveButton5 = new RadioButton();
             DriveButton4 = new RadioButton();
             DriveButton3 = new RadioButton();
@@ -537,11 +540,11 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
-            CommonDamageNumeric = new NumericUpDown();
-            AggravatedDamageLabel = new Label();
-            CommomDamageLabel = new Label();
+            DriveNumeric = new NumericUpDown();
             characterPanel.SuspendLayout();
             HealthPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AggravatedDamageNumeric).BeginInit();
             TempWillpowerPanel.SuspendLayout();
             panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TempWillpowerNumeric).BeginInit();
@@ -645,7 +648,6 @@
             ((System.ComponentModel.ISupportInitialize)EtiquetteNumeric).BeginInit();
             DrivePanel.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)AggravatedDamageNumeric).BeginInit();
             CraftsPanel.SuspendLayout();
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CraftsNumeric).BeginInit();
@@ -688,7 +690,7 @@
             ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).BeginInit();
             LogPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DriveNumeric).BeginInit();
             SuspendLayout();
             // 
             // characterPanel
@@ -724,21 +726,48 @@
             HealthPanel.Controls.Add(label95);
             HealthPanel.Controls.Add(label94);
             HealthPanel.Controls.Add(label93);
-            HealthPanel.Controls.Add(label92);
-            HealthPanel.Controls.Add(radioButton1);
-            HealthPanel.Controls.Add(healthButton8);
-            HealthPanel.Controls.Add(healthButton7);
-            HealthPanel.Controls.Add(healthButton6);
-            HealthPanel.Controls.Add(healthButton5);
-            HealthPanel.Controls.Add(healthButton4);
-            HealthPanel.Controls.Add(healthButton3);
-            HealthPanel.Controls.Add(healthButton2);
-            HealthPanel.Controls.Add(healthButton1);
+            HealthPanel.Controls.Add(HealthLabel1);
+            HealthPanel.Controls.Add(HealthButton9);
+            HealthPanel.Controls.Add(HealthButton8);
+            HealthPanel.Controls.Add(HealthButton7);
+            HealthPanel.Controls.Add(HealthButton6);
+            HealthPanel.Controls.Add(HealthButton5);
+            HealthPanel.Controls.Add(HealthButton4);
+            HealthPanel.Controls.Add(HealthButton3);
+            HealthPanel.Controls.Add(HealthButton2);
+            HealthPanel.Controls.Add(HealthButton1);
             HealthPanel.Controls.Add(HealthLabel);
             HealthPanel.Location = new Point(581, 470);
             HealthPanel.Name = "HealthPanel";
             HealthPanel.Size = new Size(121, 187);
             HealthPanel.TabIndex = 14;
+            // 
+            // CommomDamageLabel
+            // 
+            CommomDamageLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            CommomDamageLabel.AutoSize = true;
+            CommomDamageLabel.Location = new Point(2, 166);
+            CommomDamageLabel.Name = "CommomDamageLabel";
+            CommomDamageLabel.Size = new Size(12, 15);
+            CommomDamageLabel.TabIndex = 30;
+            CommomDamageLabel.Text = "/";
+            // 
+            // AggravatedDamageLabel
+            // 
+            AggravatedDamageLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            AggravatedDamageLabel.AutoSize = true;
+            AggravatedDamageLabel.Location = new Point(63, 166);
+            AggravatedDamageLabel.Name = "AggravatedDamageLabel";
+            AggravatedDamageLabel.Size = new Size(14, 15);
+            AggravatedDamageLabel.TabIndex = 29;
+            AggravatedDamageLabel.Text = "X";
+            // 
+            // CommonDamageNumeric
+            // 
+            CommonDamageNumeric.Location = new Point(16, 164);
+            CommonDamageNumeric.Name = "CommonDamageNumeric";
+            CommonDamageNumeric.Size = new Size(41, 23);
+            CommonDamageNumeric.TabIndex = 28;
             // 
             // checkBox1
             // 
@@ -750,6 +779,13 @@
             checkBox1.TabIndex = 19;
             checkBox1.Text = "Игнор дебафов";
             checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // AggravatedDamageNumeric
+            // 
+            AggravatedDamageNumeric.Location = new Point(77, 164);
+            AggravatedDamageNumeric.Name = "AggravatedDamageNumeric";
+            AggravatedDamageNumeric.Size = new Size(41, 23);
+            AggravatedDamageNumeric.TabIndex = 8;
             // 
             // label100
             // 
@@ -831,124 +867,125 @@
             label93.TabIndex = 20;
             label93.Text = "Пустяк";
             // 
-            // label92
+            // HealthLabel1
             // 
-            label92.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label92.AutoSize = true;
-            label92.Location = new Point(0, 13);
-            label92.Name = "label92";
-            label92.Size = new Size(47, 15);
-            label92.TabIndex = 19;
-            label92.Text = "Здоров";
-            label92.Click += label92_Click;
+            HealthLabel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthLabel1.AutoSize = true;
+            HealthLabel1.Location = new Point(0, 13);
+            HealthLabel1.Name = "HealthLabel1";
+            HealthLabel1.Size = new Size(102, 15);
+            HealthLabel1.TabIndex = 19;
+            HealthLabel1.Text = "Бонусный пустяк";
+            HealthLabel1.Visible = false;
             // 
-            // radioButton1
+            // HealthButton9
             // 
-            radioButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButton1.AutoCheck = false;
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(101, 135);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(14, 13);
-            radioButton1.TabIndex = 17;
-            radioButton1.UseVisualStyleBackColor = true;
+            HealthButton9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton9.AutoCheck = false;
+            HealthButton9.AutoSize = true;
+            HealthButton9.Checked = true;
+            HealthButton9.Location = new Point(101, 135);
+            HealthButton9.Name = "HealthButton9";
+            HealthButton9.Size = new Size(14, 13);
+            HealthButton9.TabIndex = 17;
+            HealthButton9.UseVisualStyleBackColor = true;
             // 
-            // healthButton8
+            // HealthButton8
             // 
-            healthButton8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            healthButton8.AutoCheck = false;
-            healthButton8.AutoSize = true;
-            healthButton8.Checked = true;
-            healthButton8.Location = new Point(101, 120);
-            healthButton8.Name = "healthButton8";
-            healthButton8.Size = new Size(14, 13);
-            healthButton8.TabIndex = 16;
-            healthButton8.UseVisualStyleBackColor = true;
+            HealthButton8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton8.AutoCheck = false;
+            HealthButton8.AutoSize = true;
+            HealthButton8.Checked = true;
+            HealthButton8.Location = new Point(101, 120);
+            HealthButton8.Name = "HealthButton8";
+            HealthButton8.Size = new Size(14, 13);
+            HealthButton8.TabIndex = 16;
+            HealthButton8.UseVisualStyleBackColor = true;
             // 
-            // healthButton7
+            // HealthButton7
             // 
-            healthButton7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            healthButton7.AutoCheck = false;
-            healthButton7.AutoSize = true;
-            healthButton7.Checked = true;
-            healthButton7.Location = new Point(101, 105);
-            healthButton7.Name = "healthButton7";
-            healthButton7.Size = new Size(14, 13);
-            healthButton7.TabIndex = 15;
-            healthButton7.UseVisualStyleBackColor = true;
+            HealthButton7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton7.AutoCheck = false;
+            HealthButton7.AutoSize = true;
+            HealthButton7.Checked = true;
+            HealthButton7.Location = new Point(101, 105);
+            HealthButton7.Name = "HealthButton7";
+            HealthButton7.Size = new Size(14, 13);
+            HealthButton7.TabIndex = 15;
+            HealthButton7.UseVisualStyleBackColor = true;
             // 
-            // healthButton6
+            // HealthButton6
             // 
-            healthButton6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            healthButton6.AutoCheck = false;
-            healthButton6.AutoSize = true;
-            healthButton6.Checked = true;
-            healthButton6.Location = new Point(101, 90);
-            healthButton6.Name = "healthButton6";
-            healthButton6.Size = new Size(14, 13);
-            healthButton6.TabIndex = 14;
-            healthButton6.UseVisualStyleBackColor = true;
+            HealthButton6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton6.AutoCheck = false;
+            HealthButton6.AutoSize = true;
+            HealthButton6.Checked = true;
+            HealthButton6.Location = new Point(101, 90);
+            HealthButton6.Name = "HealthButton6";
+            HealthButton6.Size = new Size(14, 13);
+            HealthButton6.TabIndex = 14;
+            HealthButton6.UseVisualStyleBackColor = true;
             // 
-            // healthButton5
+            // HealthButton5
             // 
-            healthButton5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            healthButton5.AutoCheck = false;
-            healthButton5.AutoSize = true;
-            healthButton5.Checked = true;
-            healthButton5.Location = new Point(101, 75);
-            healthButton5.Name = "healthButton5";
-            healthButton5.Size = new Size(14, 13);
-            healthButton5.TabIndex = 13;
-            healthButton5.UseVisualStyleBackColor = true;
+            HealthButton5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton5.AutoCheck = false;
+            HealthButton5.AutoSize = true;
+            HealthButton5.Checked = true;
+            HealthButton5.Location = new Point(101, 75);
+            HealthButton5.Name = "HealthButton5";
+            HealthButton5.Size = new Size(14, 13);
+            HealthButton5.TabIndex = 13;
+            HealthButton5.UseVisualStyleBackColor = true;
             // 
-            // healthButton4
+            // HealthButton4
             // 
-            healthButton4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            healthButton4.AutoCheck = false;
-            healthButton4.AutoSize = true;
-            healthButton4.Checked = true;
-            healthButton4.Location = new Point(101, 60);
-            healthButton4.Name = "healthButton4";
-            healthButton4.Size = new Size(14, 13);
-            healthButton4.TabIndex = 12;
-            healthButton4.UseVisualStyleBackColor = true;
+            HealthButton4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton4.AutoCheck = false;
+            HealthButton4.AutoSize = true;
+            HealthButton4.Checked = true;
+            HealthButton4.Location = new Point(101, 60);
+            HealthButton4.Name = "HealthButton4";
+            HealthButton4.Size = new Size(14, 13);
+            HealthButton4.TabIndex = 12;
+            HealthButton4.UseVisualStyleBackColor = true;
             // 
-            // healthButton3
+            // HealthButton3
             // 
-            healthButton3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            healthButton3.AutoCheck = false;
-            healthButton3.AutoSize = true;
-            healthButton3.Checked = true;
-            healthButton3.Location = new Point(101, 45);
-            healthButton3.Name = "healthButton3";
-            healthButton3.Size = new Size(14, 13);
-            healthButton3.TabIndex = 11;
-            healthButton3.UseVisualStyleBackColor = true;
+            HealthButton3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton3.AutoCheck = false;
+            HealthButton3.AutoSize = true;
+            HealthButton3.Checked = true;
+            HealthButton3.Location = new Point(101, 45);
+            HealthButton3.Name = "HealthButton3";
+            HealthButton3.Size = new Size(14, 13);
+            HealthButton3.TabIndex = 11;
+            HealthButton3.UseVisualStyleBackColor = true;
             // 
-            // healthButton2
+            // HealthButton2
             // 
-            healthButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            healthButton2.AutoCheck = false;
-            healthButton2.AutoSize = true;
-            healthButton2.Checked = true;
-            healthButton2.Location = new Point(101, 30);
-            healthButton2.Name = "healthButton2";
-            healthButton2.Size = new Size(14, 13);
-            healthButton2.TabIndex = 10;
-            healthButton2.UseVisualStyleBackColor = true;
+            HealthButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton2.AutoCheck = false;
+            HealthButton2.AutoSize = true;
+            HealthButton2.Checked = true;
+            HealthButton2.Location = new Point(101, 30);
+            HealthButton2.Name = "HealthButton2";
+            HealthButton2.Size = new Size(14, 13);
+            HealthButton2.TabIndex = 10;
+            HealthButton2.UseVisualStyleBackColor = true;
             // 
-            // healthButton1
+            // HealthButton1
             // 
-            healthButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            healthButton1.AutoCheck = false;
-            healthButton1.AutoSize = true;
-            healthButton1.Checked = true;
-            healthButton1.Location = new Point(101, 15);
-            healthButton1.Name = "healthButton1";
-            healthButton1.Size = new Size(14, 13);
-            healthButton1.TabIndex = 9;
-            healthButton1.UseVisualStyleBackColor = true;
+            HealthButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            HealthButton1.AutoCheck = false;
+            HealthButton1.AutoSize = true;
+            HealthButton1.Checked = true;
+            HealthButton1.Location = new Point(101, 15);
+            HealthButton1.Name = "HealthButton1";
+            HealthButton1.Size = new Size(14, 13);
+            HealthButton1.TabIndex = 9;
+            HealthButton1.UseVisualStyleBackColor = true;
+            HealthButton1.Visible = false;
             // 
             // HealthLabel
             // 
@@ -4607,6 +4644,7 @@
             // 
             // DrivePanel
             // 
+            DrivePanel.Controls.Add(DriveNumeric);
             DrivePanel.Controls.Add(panel6);
             DrivePanel.Controls.Add(DriveButton5);
             DrivePanel.Controls.Add(DriveButton4);
@@ -4636,13 +4674,6 @@
             label20.Size = new Size(58, 15);
             label20.TabIndex = 0;
             label20.Text = "Ловкость";
-            // 
-            // AggravatedDamageNumeric
-            // 
-            AggravatedDamageNumeric.Location = new Point(77, 164);
-            AggravatedDamageNumeric.Name = "AggravatedDamageNumeric";
-            AggravatedDamageNumeric.Size = new Size(41, 23);
-            AggravatedDamageNumeric.TabIndex = 8;
             // 
             // DriveButton5
             // 
@@ -6118,32 +6149,12 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
-            // CommonDamageNumeric
+            // DriveNumeric
             // 
-            CommonDamageNumeric.Location = new Point(16, 164);
-            CommonDamageNumeric.Name = "CommonDamageNumeric";
-            CommonDamageNumeric.Size = new Size(41, 23);
-            CommonDamageNumeric.TabIndex = 28;
-            // 
-            // AggravatedDamageLabel
-            // 
-            AggravatedDamageLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            AggravatedDamageLabel.AutoSize = true;
-            AggravatedDamageLabel.Location = new Point(63, 166);
-            AggravatedDamageLabel.Name = "AggravatedDamageLabel";
-            AggravatedDamageLabel.Size = new Size(14, 15);
-            AggravatedDamageLabel.TabIndex = 29;
-            AggravatedDamageLabel.Text = "X";
-            // 
-            // CommomDamageLabel
-            // 
-            CommomDamageLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            CommomDamageLabel.AutoSize = true;
-            CommomDamageLabel.Location = new Point(2, 166);
-            CommomDamageLabel.Name = "CommomDamageLabel";
-            CommomDamageLabel.Size = new Size(12, 15);
-            CommomDamageLabel.TabIndex = 30;
-            CommomDamageLabel.Text = "/";
+            DriveNumeric.Location = new Point(183, -2);
+            DriveNumeric.Name = "DriveNumeric";
+            DriveNumeric.Size = new Size(41, 23);
+            DriveNumeric.TabIndex = 9;
             // 
             // CharacterForm
             // 
@@ -6170,6 +6181,8 @@
             characterPanel.PerformLayout();
             HealthPanel.ResumeLayout(false);
             HealthPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AggravatedDamageNumeric).EndInit();
             TempWillpowerPanel.ResumeLayout(false);
             TempWillpowerPanel.PerformLayout();
             panel20.ResumeLayout(false);
@@ -6344,7 +6357,6 @@
             DrivePanel.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)AggravatedDamageNumeric).EndInit();
             CraftsPanel.ResumeLayout(false);
             CraftsPanel.PerformLayout();
             panel10.ResumeLayout(false);
@@ -6414,7 +6426,7 @@
             LogPanel.ResumeLayout(false);
             LogPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).EndInit();
-            ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DriveNumeric).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -6910,17 +6922,15 @@
         private Button UpdateCharacterButton;
         private Button CancelUpdateButton;
         private Panel HealthPanel;
-        private RadioButton healthButton1;
+        private RadioButton HealthButton1;
         private Label HealthLabel;
-        private RadioButton healthButton7;
-        private RadioButton healthButton6;
-        private RadioButton healthButton5;
-        private RadioButton healthButton4;
-        private RadioButton healthButton3;
-        private RadioButton healthButton2;
-        private Label label92;
-        private RadioButton radioButton1;
-        private RadioButton healthButton8;
+        private RadioButton HealthButton7;
+        private RadioButton HealthButton6;
+        private RadioButton HealthButton5;
+        private RadioButton HealthButton4;
+        private RadioButton HealthButton3;
+        private RadioButton HealthButton2;
+        private RadioButton HealthButton8;
         private Label label97;
         private Label label96;
         private Label label95;
@@ -6933,5 +6943,8 @@
         private NumericUpDown CommonDamageNumeric;
         private Label CommomDamageLabel;
         private Label AggravatedDamageLabel;
+        private Label HealthLabel1;
+        private RadioButton HealthButton9;
+        private NumericUpDown DriveNumeric;
     }
 }

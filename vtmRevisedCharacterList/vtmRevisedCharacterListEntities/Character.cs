@@ -399,4 +399,9 @@ public class Character
 
         return 0;
     }
+
+    public bool BonusHealth()
+    {
+        return false;
+    }
 }

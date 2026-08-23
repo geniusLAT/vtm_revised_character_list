@@ -116,6 +116,8 @@ public partial class CharacterForm : Form
     RadioButton[] ConscienceConvictionButtons = [];
     RadioButton[] SelfControlInstinctButtons = [];
     RadioButton[] CourageButtons = [];
+
+    RadioButton[] HealthButtons = [];
     #endregion
 
     #endregion
@@ -130,6 +132,9 @@ public partial class CharacterForm : Form
         ConscienceConvictionButtons = [ConscienceConvictionButton1, ConscienceConvictionButton2, ConscienceConvictionButton3, ConscienceConvictionButton4, ConscienceConvictionButton5];
         SelfControlInstinctButtons = [SelfControlInstinctButton1, SelfControlInstinctButton2, SelfControlInstinctButton3, SelfControlInstinctButton4, SelfControlInstinctButton5];
         CourageButtons = [CourageButton1, CourageButton2, CourageButton3, CourageButton4, CourageButton5];
+
+        HealthButtons = [HealthButton1, HealthButton2, HealthButton3, HealthButton4, HealthButton5,
+        HealthButton6, HealthButton7, HealthButton8, HealthButton9];
     }
 
     void FindButtonsForAttributes()
@@ -494,7 +499,7 @@ public partial class CharacterForm : Form
             case Ability.Crafts:
                 return CraftsNumeric;
             case Ability.Drive:
-                return AggravatedDamageNumeric;
+                return DriveNumeric;
             case Ability.Etiquette:
                 return EtiquetteNumeric;
             case Ability.Firearms:
@@ -641,11 +646,38 @@ public partial class CharacterForm : Form
             }{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
     }
 
+    void RenderHealthCondition(Character character)
+    {
+        var bonusHealth = character.BonusHealth();
+
+        HealthLabel1.Visible = HealthButton1.Visible = bonusHealth;
+
+        for (int i = 0; i < 9; i++)
+        {
+            var currentButton = HealthButtons[i];
+            if (character.Damage + (bonusHealth ? 0 : 1) > i)
+            {
+                currentButton.Checked = true;
+            }
+            else
+            {
+                currentButton.Checked = false;
+            }
+        }
+    }
+
     void RenderCharacter(Character character)
     {
         _chosenCharacter = character;
 
         characterNameLabel.Text = character.CharacterName ?? "Новый персонаж";
+
+        AggravatedDamageNumeric.Value = character.AggravatedDamage;
+        AggravatedDamageNumeric.ValueChanged += CharacterNumeric_ValueChanged;
+        CommonDamageNumeric.Value = character.CommonDamage;
+        CommonDamageNumeric.ValueChanged += CharacterNumeric_ValueChanged;
+
+        RenderHealthCondition(character);
 
         for (int i = 0; i < 9; i++)
         {
@@ -992,6 +1024,8 @@ public partial class CharacterForm : Form
     {
         Character character = JsonSerializer.Deserialize<Character>(JsonSerializer.Serialize(_chosenCharacter));
 
+        character.CommonDamage = (uint)CommonDamageNumeric.Value;
+        character.AggravatedDamage = (uint)AggravatedDamageNumeric.Value;
 
         for (int i = 0; i < 9; i++)
         {
