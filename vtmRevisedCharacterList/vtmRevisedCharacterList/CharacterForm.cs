@@ -404,7 +404,6 @@ public partial class CharacterForm : Form
 
     private void ExampleBackGroundPanel_Click(object sender, EventArgs e)
     {
-        //MessageBox.Show("Hello world");
         ClickOnRatingPanel(sender);
     }
 

@@ -1181,7 +1181,7 @@ public partial class CharacterForm : Form
             }
         }
 
-        MessageBox.Show(ChangeLogGenerator.GenerateChangeLog(_chosenCharacter, character));
+        //MessageBox.Show(ChangeLogGenerator.GenerateChangeLog(_chosenCharacter, character));
 
         return character;
     }

@@ -213,10 +213,22 @@ public static class ChangeLogGenerator
             }
         }
 
-        var added = collection2.Where(item2 => collection1.Contains(item2));
-        foreach (var item in added)
+        foreach (var item1 in collection2)
         {
-            sb.Append($"\n{item.Name} {item.Rating} {RussianTranslator.Added}");
+            bool found = false;
+            foreach (var item2 in collection1)
+            {
+                if (item1.Name == item2.Name)
+                {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+            {
+                sb.Append($"\n{item1.Name} {item1.Rating} {RussianTranslator.Added}");
+
+            }
         }
 
         return sb.ToString();
