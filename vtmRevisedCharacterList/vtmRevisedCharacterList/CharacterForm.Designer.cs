@@ -29,6 +29,44 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
+            BloodpoolPanel = new Panel();
+            BloodpoolButton19 = new RadioButton();
+            BloodpoolButton14 = new RadioButton();
+            BloodpoolButton17 = new RadioButton();
+            BloodpoolButton20 = new RadioButton();
+            BloodpoolButton18 = new RadioButton();
+            BloodpoolButton16 = new RadioButton();
+            BloodpoolButton15 = new RadioButton();
+            BloodpoolButton13 = new RadioButton();
+            BloodpoolButton12 = new RadioButton();
+            BloodpoolButton11 = new RadioButton();
+            BloodpoolButton7 = new RadioButton();
+            BloodpoolButton10 = new RadioButton();
+            BloodpoolButton9 = new RadioButton();
+            BloodpoolButton8 = new RadioButton();
+            BloodpoolButton6 = new RadioButton();
+            BloodpoolNumeric = new NumericUpDown();
+            BloodpoolButton5 = new RadioButton();
+            BloodpoolButton4 = new RadioButton();
+            BloodpoolButton3 = new RadioButton();
+            BloodpoolButton2 = new RadioButton();
+            BloodpoolButton1 = new RadioButton();
+            BloodpoolLabel = new Label();
+            HumanityPathPanel = new Panel();
+            HumanityPathButton7 = new RadioButton();
+            HumanityPathButton10 = new RadioButton();
+            HumanityPathButton9 = new RadioButton();
+            HumanityPathButton8 = new RadioButton();
+            HumanityPathButton6 = new RadioButton();
+            panel24 = new Panel();
+            label92 = new Label();
+            HumanityPathNumeric = new NumericUpDown();
+            HumanityPathButton5 = new RadioButton();
+            HumanityPathButton4 = new RadioButton();
+            HumanityPathButton3 = new RadioButton();
+            HumanityPathButton2 = new RadioButton();
+            HumanityPathButton1 = new RadioButton();
+            HumanityPathLabel = new Label();
             HealthPanel = new Panel();
             CommomDamageLabel = new Label();
             AggravatedDamageLabel = new Label();
@@ -542,6 +580,11 @@
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
             characterPanel.SuspendLayout();
+            BloodpoolPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)BloodpoolNumeric).BeginInit();
+            HumanityPathPanel.SuspendLayout();
+            panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)HumanityPathNumeric).BeginInit();
             HealthPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AggravatedDamageNumeric).BeginInit();
@@ -695,6 +738,8 @@
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(BloodpoolPanel);
+            characterPanel.Controls.Add(HumanityPathPanel);
             characterPanel.Controls.Add(HealthPanel);
             characterPanel.Controls.Add(CancelUpdateButton);
             characterPanel.Controls.Add(characterComboBox);
@@ -710,6 +755,446 @@
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // BloodpoolPanel
+            // 
+            BloodpoolPanel.Controls.Add(BloodpoolButton19);
+            BloodpoolPanel.Controls.Add(BloodpoolButton14);
+            BloodpoolPanel.Controls.Add(BloodpoolButton17);
+            BloodpoolPanel.Controls.Add(BloodpoolButton20);
+            BloodpoolPanel.Controls.Add(BloodpoolButton18);
+            BloodpoolPanel.Controls.Add(BloodpoolButton16);
+            BloodpoolPanel.Controls.Add(BloodpoolButton15);
+            BloodpoolPanel.Controls.Add(BloodpoolButton13);
+            BloodpoolPanel.Controls.Add(BloodpoolButton12);
+            BloodpoolPanel.Controls.Add(BloodpoolButton11);
+            BloodpoolPanel.Controls.Add(BloodpoolButton7);
+            BloodpoolPanel.Controls.Add(BloodpoolButton10);
+            BloodpoolPanel.Controls.Add(BloodpoolButton9);
+            BloodpoolPanel.Controls.Add(BloodpoolButton8);
+            BloodpoolPanel.Controls.Add(BloodpoolButton6);
+            BloodpoolPanel.Controls.Add(BloodpoolNumeric);
+            BloodpoolPanel.Controls.Add(BloodpoolButton5);
+            BloodpoolPanel.Controls.Add(BloodpoolButton4);
+            BloodpoolPanel.Controls.Add(BloodpoolButton3);
+            BloodpoolPanel.Controls.Add(BloodpoolButton2);
+            BloodpoolPanel.Controls.Add(BloodpoolButton1);
+            BloodpoolPanel.Controls.Add(BloodpoolLabel);
+            BloodpoolPanel.Location = new Point(239, 528);
+            BloodpoolPanel.Name = "BloodpoolPanel";
+            BloodpoolPanel.Size = new Size(227, 30);
+            BloodpoolPanel.TabIndex = 15;
+            BloodpoolPanel.Click += BloodpoolLabel_Click;
+            // 
+            // BloodpoolButton19
+            // 
+            BloodpoolButton19.AutoCheck = false;
+            BloodpoolButton19.AutoSize = true;
+            BloodpoolButton19.Checked = true;
+            BloodpoolButton19.Location = new Point(159, 17);
+            BloodpoolButton19.Name = "BloodpoolButton19";
+            BloodpoolButton19.Size = new Size(14, 13);
+            BloodpoolButton19.TabIndex = 23;
+            BloodpoolButton19.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton14
+            // 
+            BloodpoolButton14.AutoCheck = false;
+            BloodpoolButton14.AutoSize = true;
+            BloodpoolButton14.Checked = true;
+            BloodpoolButton14.Location = new Point(98, 17);
+            BloodpoolButton14.Name = "BloodpoolButton14";
+            BloodpoolButton14.Size = new Size(14, 13);
+            BloodpoolButton14.TabIndex = 22;
+            BloodpoolButton14.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton17
+            // 
+            BloodpoolButton17.AutoCheck = false;
+            BloodpoolButton17.AutoSize = true;
+            BloodpoolButton17.Checked = true;
+            BloodpoolButton17.Location = new Point(139, 17);
+            BloodpoolButton17.Name = "BloodpoolButton17";
+            BloodpoolButton17.Size = new Size(14, 13);
+            BloodpoolButton17.TabIndex = 21;
+            BloodpoolButton17.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton20
+            // 
+            BloodpoolButton20.AutoCheck = false;
+            BloodpoolButton20.AutoSize = true;
+            BloodpoolButton20.Checked = true;
+            BloodpoolButton20.Location = new Point(170, 17);
+            BloodpoolButton20.Name = "BloodpoolButton20";
+            BloodpoolButton20.Size = new Size(14, 13);
+            BloodpoolButton20.TabIndex = 20;
+            BloodpoolButton20.TabStop = true;
+            BloodpoolButton20.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton18
+            // 
+            BloodpoolButton18.AutoCheck = false;
+            BloodpoolButton18.AutoSize = true;
+            BloodpoolButton18.Checked = true;
+            BloodpoolButton18.Location = new Point(150, 17);
+            BloodpoolButton18.Name = "BloodpoolButton18";
+            BloodpoolButton18.Size = new Size(14, 13);
+            BloodpoolButton18.TabIndex = 19;
+            BloodpoolButton18.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton16
+            // 
+            BloodpoolButton16.AutoCheck = false;
+            BloodpoolButton16.AutoSize = true;
+            BloodpoolButton16.Checked = true;
+            BloodpoolButton16.Location = new Point(129, 17);
+            BloodpoolButton16.Name = "BloodpoolButton16";
+            BloodpoolButton16.Size = new Size(14, 13);
+            BloodpoolButton16.TabIndex = 18;
+            BloodpoolButton16.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton15
+            // 
+            BloodpoolButton15.AutoCheck = false;
+            BloodpoolButton15.AutoSize = true;
+            BloodpoolButton15.Checked = true;
+            BloodpoolButton15.Location = new Point(109, 17);
+            BloodpoolButton15.Name = "BloodpoolButton15";
+            BloodpoolButton15.Size = new Size(14, 13);
+            BloodpoolButton15.TabIndex = 17;
+            BloodpoolButton15.TabStop = true;
+            BloodpoolButton15.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton13
+            // 
+            BloodpoolButton13.AutoCheck = false;
+            BloodpoolButton13.AutoSize = true;
+            BloodpoolButton13.Checked = true;
+            BloodpoolButton13.Location = new Point(89, 17);
+            BloodpoolButton13.Name = "BloodpoolButton13";
+            BloodpoolButton13.Size = new Size(14, 13);
+            BloodpoolButton13.TabIndex = 16;
+            BloodpoolButton13.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton12
+            // 
+            BloodpoolButton12.AutoCheck = false;
+            BloodpoolButton12.AutoSize = true;
+            BloodpoolButton12.Checked = true;
+            BloodpoolButton12.Location = new Point(78, 17);
+            BloodpoolButton12.Name = "BloodpoolButton12";
+            BloodpoolButton12.Size = new Size(14, 13);
+            BloodpoolButton12.TabIndex = 15;
+            BloodpoolButton12.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton11
+            // 
+            BloodpoolButton11.AutoCheck = false;
+            BloodpoolButton11.AutoSize = true;
+            BloodpoolButton11.Checked = true;
+            BloodpoolButton11.Location = new Point(68, 17);
+            BloodpoolButton11.Name = "BloodpoolButton11";
+            BloodpoolButton11.Size = new Size(14, 13);
+            BloodpoolButton11.TabIndex = 14;
+            BloodpoolButton11.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton7
+            // 
+            BloodpoolButton7.AutoCheck = false;
+            BloodpoolButton7.AutoSize = true;
+            BloodpoolButton7.Checked = true;
+            BloodpoolButton7.Location = new Point(139, 6);
+            BloodpoolButton7.Name = "BloodpoolButton7";
+            BloodpoolButton7.Size = new Size(14, 13);
+            BloodpoolButton7.TabIndex = 13;
+            BloodpoolButton7.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton10
+            // 
+            BloodpoolButton10.AutoCheck = false;
+            BloodpoolButton10.AutoSize = true;
+            BloodpoolButton10.Checked = true;
+            BloodpoolButton10.Location = new Point(170, 6);
+            BloodpoolButton10.Name = "BloodpoolButton10";
+            BloodpoolButton10.Size = new Size(14, 13);
+            BloodpoolButton10.TabIndex = 12;
+            BloodpoolButton10.TabStop = true;
+            BloodpoolButton10.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton9
+            // 
+            BloodpoolButton9.AutoCheck = false;
+            BloodpoolButton9.AutoSize = true;
+            BloodpoolButton9.Checked = true;
+            BloodpoolButton9.Location = new Point(159, 6);
+            BloodpoolButton9.Name = "BloodpoolButton9";
+            BloodpoolButton9.Size = new Size(14, 13);
+            BloodpoolButton9.TabIndex = 11;
+            BloodpoolButton9.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton8
+            // 
+            BloodpoolButton8.AutoCheck = false;
+            BloodpoolButton8.AutoSize = true;
+            BloodpoolButton8.Checked = true;
+            BloodpoolButton8.Location = new Point(150, 6);
+            BloodpoolButton8.Name = "BloodpoolButton8";
+            BloodpoolButton8.Size = new Size(14, 13);
+            BloodpoolButton8.TabIndex = 10;
+            BloodpoolButton8.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton6
+            // 
+            BloodpoolButton6.AutoCheck = false;
+            BloodpoolButton6.AutoSize = true;
+            BloodpoolButton6.Checked = true;
+            BloodpoolButton6.Location = new Point(129, 6);
+            BloodpoolButton6.Name = "BloodpoolButton6";
+            BloodpoolButton6.Size = new Size(14, 13);
+            BloodpoolButton6.TabIndex = 9;
+            BloodpoolButton6.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolNumeric
+            // 
+            BloodpoolNumeric.Location = new Point(183, 6);
+            BloodpoolNumeric.Name = "BloodpoolNumeric";
+            BloodpoolNumeric.Size = new Size(41, 23);
+            BloodpoolNumeric.TabIndex = 8;
+            // 
+            // BloodpoolButton5
+            // 
+            BloodpoolButton5.AutoCheck = false;
+            BloodpoolButton5.AutoSize = true;
+            BloodpoolButton5.Checked = true;
+            BloodpoolButton5.Location = new Point(109, 6);
+            BloodpoolButton5.Name = "BloodpoolButton5";
+            BloodpoolButton5.Size = new Size(14, 13);
+            BloodpoolButton5.TabIndex = 7;
+            BloodpoolButton5.TabStop = true;
+            BloodpoolButton5.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton4
+            // 
+            BloodpoolButton4.AutoCheck = false;
+            BloodpoolButton4.AutoSize = true;
+            BloodpoolButton4.Checked = true;
+            BloodpoolButton4.Location = new Point(98, 6);
+            BloodpoolButton4.Name = "BloodpoolButton4";
+            BloodpoolButton4.Size = new Size(14, 13);
+            BloodpoolButton4.TabIndex = 6;
+            BloodpoolButton4.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton3
+            // 
+            BloodpoolButton3.AutoCheck = false;
+            BloodpoolButton3.AutoSize = true;
+            BloodpoolButton3.Checked = true;
+            BloodpoolButton3.Location = new Point(89, 6);
+            BloodpoolButton3.Name = "BloodpoolButton3";
+            BloodpoolButton3.Size = new Size(14, 13);
+            BloodpoolButton3.TabIndex = 5;
+            BloodpoolButton3.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton2
+            // 
+            BloodpoolButton2.AutoCheck = false;
+            BloodpoolButton2.AutoSize = true;
+            BloodpoolButton2.Checked = true;
+            BloodpoolButton2.Location = new Point(78, 6);
+            BloodpoolButton2.Name = "BloodpoolButton2";
+            BloodpoolButton2.Size = new Size(14, 13);
+            BloodpoolButton2.TabIndex = 4;
+            BloodpoolButton2.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolButton1
+            // 
+            BloodpoolButton1.AutoCheck = false;
+            BloodpoolButton1.AutoSize = true;
+            BloodpoolButton1.Checked = true;
+            BloodpoolButton1.Location = new Point(68, 6);
+            BloodpoolButton1.Name = "BloodpoolButton1";
+            BloodpoolButton1.Size = new Size(14, 13);
+            BloodpoolButton1.TabIndex = 3;
+            BloodpoolButton1.UseVisualStyleBackColor = true;
+            // 
+            // BloodpoolLabel
+            // 
+            BloodpoolLabel.AutoSize = true;
+            BloodpoolLabel.Font = new Font("Segoe UI", 10F);
+            BloodpoolLabel.Location = new Point(3, 6);
+            BloodpoolLabel.Name = "BloodpoolLabel";
+            BloodpoolLabel.Size = new Size(47, 19);
+            BloodpoolLabel.TabIndex = 0;
+            BloodpoolLabel.Text = "Кровь";
+            BloodpoolLabel.Click += BloodpoolLabel_Click;
+            // 
+            // HumanityPathPanel
+            // 
+            HumanityPathPanel.Controls.Add(HumanityPathButton7);
+            HumanityPathPanel.Controls.Add(HumanityPathButton10);
+            HumanityPathPanel.Controls.Add(HumanityPathButton9);
+            HumanityPathPanel.Controls.Add(HumanityPathButton8);
+            HumanityPathPanel.Controls.Add(HumanityPathButton6);
+            HumanityPathPanel.Controls.Add(panel24);
+            HumanityPathPanel.Controls.Add(HumanityPathNumeric);
+            HumanityPathPanel.Controls.Add(HumanityPathButton5);
+            HumanityPathPanel.Controls.Add(HumanityPathButton4);
+            HumanityPathPanel.Controls.Add(HumanityPathButton3);
+            HumanityPathPanel.Controls.Add(HumanityPathButton2);
+            HumanityPathPanel.Controls.Add(HumanityPathButton1);
+            HumanityPathPanel.Controls.Add(HumanityPathLabel);
+            HumanityPathPanel.Location = new Point(239, 466);
+            HumanityPathPanel.Name = "HumanityPathPanel";
+            HumanityPathPanel.Size = new Size(227, 19);
+            HumanityPathPanel.TabIndex = 14;
+            HumanityPathPanel.Click += HumanityPathPanel_Click;
+            // 
+            // HumanityPathButton7
+            // 
+            HumanityPathButton7.AutoCheck = false;
+            HumanityPathButton7.AutoSize = true;
+            HumanityPathButton7.Checked = true;
+            HumanityPathButton7.Location = new Point(139, 6);
+            HumanityPathButton7.Name = "HumanityPathButton7";
+            HumanityPathButton7.Size = new Size(14, 13);
+            HumanityPathButton7.TabIndex = 13;
+            HumanityPathButton7.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton10
+            // 
+            HumanityPathButton10.AutoCheck = false;
+            HumanityPathButton10.AutoSize = true;
+            HumanityPathButton10.Checked = true;
+            HumanityPathButton10.Location = new Point(170, 6);
+            HumanityPathButton10.Name = "HumanityPathButton10";
+            HumanityPathButton10.Size = new Size(14, 13);
+            HumanityPathButton10.TabIndex = 12;
+            HumanityPathButton10.TabStop = true;
+            HumanityPathButton10.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton9
+            // 
+            HumanityPathButton9.AutoCheck = false;
+            HumanityPathButton9.AutoSize = true;
+            HumanityPathButton9.Checked = true;
+            HumanityPathButton9.Location = new Point(159, 6);
+            HumanityPathButton9.Name = "HumanityPathButton9";
+            HumanityPathButton9.Size = new Size(14, 13);
+            HumanityPathButton9.TabIndex = 11;
+            HumanityPathButton9.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton8
+            // 
+            HumanityPathButton8.AutoCheck = false;
+            HumanityPathButton8.AutoSize = true;
+            HumanityPathButton8.Checked = true;
+            HumanityPathButton8.Location = new Point(150, 6);
+            HumanityPathButton8.Name = "HumanityPathButton8";
+            HumanityPathButton8.Size = new Size(14, 13);
+            HumanityPathButton8.TabIndex = 10;
+            HumanityPathButton8.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton6
+            // 
+            HumanityPathButton6.AutoCheck = false;
+            HumanityPathButton6.AutoSize = true;
+            HumanityPathButton6.Checked = true;
+            HumanityPathButton6.Location = new Point(129, 6);
+            HumanityPathButton6.Name = "HumanityPathButton6";
+            HumanityPathButton6.Size = new Size(14, 13);
+            HumanityPathButton6.TabIndex = 9;
+            HumanityPathButton6.UseVisualStyleBackColor = true;
+            // 
+            // panel24
+            // 
+            panel24.Controls.Add(label92);
+            panel24.Location = new Point(3, 18);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(197, 19);
+            panel24.TabIndex = 2;
+            // 
+            // label92
+            // 
+            label92.AutoSize = true;
+            label92.Location = new Point(3, 0);
+            label92.Name = "label92";
+            label92.Size = new Size(58, 15);
+            label92.TabIndex = 0;
+            label92.Text = "Ловкость";
+            // 
+            // HumanityPathNumeric
+            // 
+            HumanityPathNumeric.Location = new Point(183, -2);
+            HumanityPathNumeric.Name = "HumanityPathNumeric";
+            HumanityPathNumeric.Size = new Size(41, 23);
+            HumanityPathNumeric.TabIndex = 8;
+            // 
+            // HumanityPathButton5
+            // 
+            HumanityPathButton5.AutoCheck = false;
+            HumanityPathButton5.AutoSize = true;
+            HumanityPathButton5.Checked = true;
+            HumanityPathButton5.Location = new Point(109, 6);
+            HumanityPathButton5.Name = "HumanityPathButton5";
+            HumanityPathButton5.Size = new Size(14, 13);
+            HumanityPathButton5.TabIndex = 7;
+            HumanityPathButton5.TabStop = true;
+            HumanityPathButton5.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton4
+            // 
+            HumanityPathButton4.AutoCheck = false;
+            HumanityPathButton4.AutoSize = true;
+            HumanityPathButton4.Checked = true;
+            HumanityPathButton4.Location = new Point(98, 6);
+            HumanityPathButton4.Name = "HumanityPathButton4";
+            HumanityPathButton4.Size = new Size(14, 13);
+            HumanityPathButton4.TabIndex = 6;
+            HumanityPathButton4.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton3
+            // 
+            HumanityPathButton3.AutoCheck = false;
+            HumanityPathButton3.AutoSize = true;
+            HumanityPathButton3.Checked = true;
+            HumanityPathButton3.Location = new Point(89, 6);
+            HumanityPathButton3.Name = "HumanityPathButton3";
+            HumanityPathButton3.Size = new Size(14, 13);
+            HumanityPathButton3.TabIndex = 5;
+            HumanityPathButton3.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton2
+            // 
+            HumanityPathButton2.AutoCheck = false;
+            HumanityPathButton2.AutoSize = true;
+            HumanityPathButton2.Checked = true;
+            HumanityPathButton2.Location = new Point(78, 6);
+            HumanityPathButton2.Name = "HumanityPathButton2";
+            HumanityPathButton2.Size = new Size(14, 13);
+            HumanityPathButton2.TabIndex = 4;
+            HumanityPathButton2.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathButton1
+            // 
+            HumanityPathButton1.AutoCheck = false;
+            HumanityPathButton1.AutoSize = true;
+            HumanityPathButton1.Checked = true;
+            HumanityPathButton1.Location = new Point(68, 6);
+            HumanityPathButton1.Name = "HumanityPathButton1";
+            HumanityPathButton1.Size = new Size(14, 13);
+            HumanityPathButton1.TabIndex = 3;
+            HumanityPathButton1.UseVisualStyleBackColor = true;
+            // 
+            // HumanityPathLabel
+            // 
+            HumanityPathLabel.AutoSize = true;
+            HumanityPathLabel.Font = new Font("Segoe UI", 5F);
+            HumanityPathLabel.Location = new Point(3, 4);
+            HumanityPathLabel.Name = "HumanityPathLabel";
+            HumanityPathLabel.Size = new Size(69, 10);
+            HumanityPathLabel.TabIndex = 0;
+            HumanityPathLabel.Text = "Человечность/путь";
+            HumanityPathLabel.Click += HumanityPathLabel_Click;
             // 
             // HealthPanel
             // 
@@ -6180,6 +6665,14 @@
             Text = "VTM бот для кубов";
             characterPanel.ResumeLayout(false);
             characterPanel.PerformLayout();
+            BloodpoolPanel.ResumeLayout(false);
+            BloodpoolPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)BloodpoolNumeric).EndInit();
+            HumanityPathPanel.ResumeLayout(false);
+            HumanityPathPanel.PerformLayout();
+            panel24.ResumeLayout(false);
+            panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)HumanityPathNumeric).EndInit();
             HealthPanel.ResumeLayout(false);
             HealthPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)CommonDamageNumeric).EndInit();
@@ -6947,5 +7440,48 @@
         private Label HealthLabel1;
         private RadioButton HealthButton9;
         private NumericUpDown DriveNumeric;
+        private Panel HumanityPathPanel;
+        private RadioButton HumanityPathButton7;
+        private RadioButton HumanityPathButton10;
+        private RadioButton HumanityPathButton9;
+        private RadioButton HumanityPathButton8;
+        private RadioButton HumanityPathButton6;
+        private Panel panel24;
+        private Label label92;
+        private NumericUpDown HumanityPathNumeric;
+        private RadioButton HumanityPathButton5;
+        private RadioButton HumanityPathButton4;
+        private RadioButton HumanityPathButton3;
+        private RadioButton HumanityPathButton2;
+        private RadioButton HumanityPathButton1;
+        private Label HumanityPathLabel;
+        private Panel BloodpoolPanel;
+        private RadioButton BloodpoolButton7;
+        private RadioButton BloodpoolButton10;
+        private RadioButton BloodpoolButton9;
+        private RadioButton BloodpoolButton8;
+        private RadioButton BloodpoolButton6;
+        private Panel panel28;
+        private Label label101;
+        private NumericUpDown BloodpoolNumeric;
+        private RadioButton BloodpoolButton5;
+        private RadioButton radioButton7;
+        private RadioButton radioButton8;
+        private RadioButton radioButton9;
+        private RadioButton BloodpoolButton1;
+        private RadioButton BloodpoolButton2;
+        private RadioButton BloodpoolButton3;
+        private RadioButton BloodpoolButton4;
+        private Label BloodpoolLabel;
+        private RadioButton BloodpoolButton19;
+        private RadioButton BloodpoolButton14;
+        private RadioButton BloodpoolButton17;
+        private RadioButton BloodpoolButton20;
+        private RadioButton BloodpoolButton18;
+        private RadioButton BloodpoolButton16;
+        private RadioButton BloodpoolButton15;
+        private RadioButton BloodpoolButton13;
+        private RadioButton BloodpoolButton12;
+        private RadioButton BloodpoolButton11;
     }
 }

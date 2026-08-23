@@ -6,6 +6,7 @@ public enum OtherRollable
     TempWillpower = 1,
     ConscienceConviction = 2,
     SelfControlInstinct = 3,
-    Courage = 4
-
+    Courage = 4,
+    HumanityPath = 5,
+    Bloodpool = 6
 }

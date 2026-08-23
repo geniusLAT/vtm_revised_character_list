@@ -191,6 +191,10 @@ public class Character
                 return SelfControlInstincts = value;
             case OtherRollable.Courage:
                 return Courage = value;
+            case OtherRollable.HumanityPath:
+                return HumanityPath = value;
+            case OtherRollable.Bloodpool:
+                return Bloodpool = value;
         }
 
         return value;
@@ -210,6 +214,10 @@ public class Character
                 return SelfControlInstincts;
             case OtherRollable.Courage:
                 return Courage;
+            case OtherRollable.HumanityPath:
+                return HumanityPath;
+            case OtherRollable.Bloodpool:
+                return Bloodpool;
         }
 
         return 0;
