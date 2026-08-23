@@ -154,7 +154,7 @@ public static class ChangeLogGenerator
             character1.Backgrounds, 
             character2.Backgrounds, 
             RussianTranslator.Backgrounds);
-        if (string.IsNullOrEmpty(backgroundChangeLog))
+        if (!string.IsNullOrEmpty(backgroundChangeLog))
         {
             sb.Append(backgroundChangeLog);
         } 
@@ -196,11 +196,11 @@ public static class ChangeLogGenerator
                     {
                         if (item1.Rating > item2.Rating)
                         {
-                            sb.Append($"\n{item1.Name}, {RussianTranslator.Lenght} {item1.Rating} {RussianTranslator.DecreasedWord} {item2.Rating}");
+                            sb.Append($"\n{item1.Name} {item1.Rating} {RussianTranslator.DecreasedWord} {item2.Rating}");
                         }
                         if (item1.Rating < item2.Rating)
                         {
-                            sb.Append($"\n{item2.Name}, {RussianTranslator.Lenght} {item1.Rating} {RussianTranslator.IncreasedWord} {item2.Rating}");
+                            sb.Append($"\n{item2.Name} {item1.Rating} {RussianTranslator.IncreasedWord} {item2.Rating}");
                         }
                     }
                 }
@@ -213,7 +213,7 @@ public static class ChangeLogGenerator
             }
         }
 
-        var added = collection2.Where(item2 => !collection1.Contains(item2));
+        var added = collection2.Where(item2 => collection1.Contains(item2));
         foreach (var item in added)
         {
             sb.Append($"\n{item.Name} {item.Rating} {RussianTranslator.Added}");

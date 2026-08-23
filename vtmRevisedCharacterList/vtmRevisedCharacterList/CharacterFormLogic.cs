@@ -1168,12 +1168,32 @@ public partial class CharacterForm : Form
             }
         }
 
+        foreach (var ratingPanel in ratingGuiPanels)
+        {
+            if (ratingPanel.Numeric.Value != ratingPanel.rating.Rating)
+            {
+                character.SetRating(new()
+                {
+                    Name = ratingPanel.rating.Name,
+                    Rating = (uint)ratingPanel.Numeric.Value,
+                }
+                    );
+            }
+        }
+
+        MessageBox.Show(ChangeLogGenerator.GenerateChangeLog(_chosenCharacter, character));
+
         return character;
     }
 
     #endregion
 
     #region abstractCollectionGuiManagment
+
+    void ClickOnNumericOnRatingPanel(object sender)
+    {
+        MarkUnsavedChanges();
+    }
 
     void ClickOnRatingPanel(object sender)
     {
@@ -1198,7 +1218,7 @@ public partial class CharacterForm : Form
             ARating? item = collection[i];
             var littlePanel = new Panel()
             { 
-                Width =227,
+                Width =207,//227
                 Height = 19,
                 //BackColor = Color.Green,
                 Location = new Point(3, 3 + i * 20)
@@ -1209,7 +1229,7 @@ public partial class CharacterForm : Form
 
             var label = new Label()
             {
-                Width = 81,
+                Width = 76,
                 Height = 10,
                 Text = item.Name,
                 Font = new("Segoe UI", 7),
@@ -1220,7 +1240,7 @@ public partial class CharacterForm : Form
 
             var numeric = new NumericUpDown()
             {
-                Location = new Point(183, -2),
+                Location = new Point(173, -2),
                 Value = item.Rating,
                 Increment = 1,
                 Minimum = 0,
@@ -1229,6 +1249,7 @@ public partial class CharacterForm : Form
 
             };
             littlePanel.Controls.Add(numeric);
+            numeric.ValueChanged += RatingPanelNumeric_ValueChanged;
 
             RadioButton[] buttons = new RadioButton[5];
             for (int j = 0; j < 5; j++)
@@ -1236,7 +1257,7 @@ public partial class CharacterForm : Form
                 var radioButton = new RadioButton()
                 {
                     Size = new Size(14, 13),
-                    Location = new Point(86 + 20 * j, 6),
+                    Location = new Point(80 + 20 * j, 6),//86
                     AutoCheck = false
                 };
                 littlePanel.Controls.Add(radioButton);

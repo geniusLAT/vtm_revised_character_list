@@ -407,4 +407,9 @@ public partial class CharacterForm : Form
         //MessageBox.Show("Hello world");
         ClickOnRatingPanel(sender);
     }
+
+    private void RatingPanelNumeric_ValueChanged(object sender, EventArgs e)
+    {
+        ClickOnNumericOnRatingPanel(sender);
+    }
 }

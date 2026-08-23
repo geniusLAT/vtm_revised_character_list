@@ -181,6 +181,23 @@ public class Character
         return (HealthCondition)(1+Damage);
     }
 
+    public void SetRating(ARating rating)
+    {
+        //Copy same for desciplines
+        var foundRating = Backgrounds.Where(background => background.Name == rating.Name).FirstOrDefault();
+        if (foundRating != null)
+        {
+            if(rating.Rating == 0)
+            {
+                Backgrounds.Remove(foundRating);
+            }
+            else
+            {
+                foundRating.Rating = rating.Rating;
+            }
+        }
+    }
+
     public uint SetOther(OtherRollable other, uint value)
     {
         switch (other)

@@ -799,6 +799,7 @@
             // 
             // BackgroundsInnerPanel
             // 
+            BackgroundsInnerPanel.AutoScroll = true;
             BackgroundsInnerPanel.Controls.Add(ExampleBackGroundPanel);
             BackgroundsInnerPanel.Location = new Point(0, 16);
             BackgroundsInnerPanel.Name = "BackgroundsInnerPanel";
@@ -845,6 +846,7 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(41, 23);
             numericUpDown1.TabIndex = 8;
+            numericUpDown1.ValueChanged += RatingPanelNumeric_ValueChanged;
             // 
             // radioButton1
             // 
