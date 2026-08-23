@@ -141,12 +141,26 @@ public static class CharacterManager
         {
             string content = File.ReadAllText(filePath);
 
-            // Десериализуем JSON в объект Character
             Character? oldCharacter = JsonSerializer.Deserialize<Character>(content);
+
+            if (oldCharacter != newCharacter)
+            {
+                throw new ApplicationException("No such character");
+            }
+
+            var changeLog = ChangeLogGenerator.GenerateChangeLog(oldCharacter, newCharacter);
+
+            var newContent = JsonSerializer.Serialize(newCharacter);
+            File.WriteAllText(filePath, newContent);
 
             Console.WriteLine(oldCharacter!.CharacterName);
 
-            return oldCharacter;
+            return new()
+            {
+                CharacterUuid = characterGuid,
+                UpdatedCharacter = newCharacter,
+                ChangeLog = changeLog
+            };
         }
         catch (Exception)
         {

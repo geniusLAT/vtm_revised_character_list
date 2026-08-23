@@ -74,13 +74,13 @@ public class CharacterController : ControllerBase
             }
         }
 
-        var character = CharacterManager.UpdateCharacter(request.CharacterUuid);
-        if (character == null)
+        var characterUpdateResult = CharacterManager.UpdateCharacter(request.CharacterUuid, request.CharacterToUpdate);
+        if (characterUpdateResult == null)
         {
             return NotFound();
         }
 
-        return character;
+        return characterUpdateResult;
     }
 
     [HttpPost("UpdateCharacter")]

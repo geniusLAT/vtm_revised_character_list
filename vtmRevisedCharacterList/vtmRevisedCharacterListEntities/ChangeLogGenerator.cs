@@ -73,7 +73,11 @@ public static class ChangeLogGenerator
             }
         }
 
+        if (sb.Length == 0)
+        {
+            return string.Empty;
+        }
 
-        return sb.ToString();
+        return $"{character1.CharacterName} {sb.ToString()}";
     }
 }
