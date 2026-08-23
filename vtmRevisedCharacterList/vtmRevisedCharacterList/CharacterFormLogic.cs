@@ -962,6 +962,10 @@ public partial class CharacterForm : Form
         var task = Task.Run(() => UpdateCharacterAsync(request));
         task.Wait();
         _chosenCharacter = newCharacter;
+
+        logLabel.Text += task.Result.ChangeLog + '\n';
+        ScrollLogToBottom();
+
         RenderCharacter(_chosenCharacter);
     }
 
