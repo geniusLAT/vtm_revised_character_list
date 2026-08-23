@@ -158,6 +158,25 @@ public class Character
 
     #endregion
 
+    public uint SetOther(OtherRollable other, uint value)
+    {
+        switch (other)
+        {
+            case OtherRollable.ConstWillpower:
+                return WillpowerMax = value;
+            case OtherRollable.TempWillpower:
+                return Willpower = value;
+            case OtherRollable.ConscienceConviction:
+                return ConscienceConviction = value;
+            case OtherRollable.SelfControlInstinct:
+                return SelfControlInstincts = value;
+            case OtherRollable.Courage:
+                return Courage = value;
+        }
+
+        return value;
+    }
+
     public uint GetOther(OtherRollable other)
     {
         switch (other)
@@ -175,6 +194,32 @@ public class Character
         }
 
         return 0;
+    }
+    public uint SetAttribute(AttributeVtm attribute, uint value)
+    {
+        switch (attribute)
+        {
+            case AttributeVtm.Strenght:
+                return Strenght = value;
+            case AttributeVtm.Dexterity:
+                return Dexterity = value;
+            case AttributeVtm.Stamina:
+                return Stamina = value;
+            case AttributeVtm.Charisma:
+                return Charisma = value;
+            case AttributeVtm.Manipulation:
+                return Manipulation = value;
+            case AttributeVtm.Appearance:
+                return Appearance = value;
+            case AttributeVtm.Perception:
+                return Perception = value;
+            case AttributeVtm.Intelligance:
+                return Intellegence = value;
+            case AttributeVtm.Wits:
+                return Wits = value;
+        }
+
+        return value;
     }
 
     public uint GetAttribute(AttributeVtm attribute)
@@ -202,6 +247,74 @@ public class Character
         }
 
         return 0;
+    }
+    public uint SetAbility(Ability ability, uint value)
+    {
+        switch (ability)
+        {
+            case Ability.Alertness:
+                return Alertness = value;
+            case Ability.Athletics:
+                return Athletics = value;
+            case Ability.Brawl:
+                return Brawl = value;
+            case Ability.Dodge:
+                return Dodge = value;
+            case Ability.Empathy:
+                return Empathy = value;
+            case Ability.Expression:
+                return Expression = value;
+            case Ability.Intimidation:
+                return Intimidation = value;
+            case Ability.Leadership:
+                return Leadership = value;
+            case Ability.Streetwise:
+                return Streetwise = value;
+            case Ability.Subterfuge:
+                return Subterfuge = value;
+            case Ability.AnimalKen:
+                return AnimalKen = value;
+            case Ability.Crafts:
+                return Crafts = value;
+            case Ability.Drive:
+                return Drive = value;
+            case Ability.Etiquette:
+                return Etiquette = value;
+            case Ability.Firearms:
+                return Firearms = value;
+            case Ability.Melee:
+                return Melee = value;
+            case Ability.Perfomance:
+                return Perfomance = value;
+            case Ability.Security:
+                return Security = value;
+            case Ability.Stealth:
+                return Stealth = value;
+            case Ability.Survival:
+                return Survival = value;
+            case Ability.Academics:
+                return Academics = value;
+            case Ability.Computer:
+                return Computer = value;
+            case Ability.Finance:
+                return Finance = value;
+            case Ability.Investigation:
+                return Investigation = value;
+            case Ability.Law:
+                return Law = value;
+            case Ability.Linguistics:
+                return Linguistics = value;
+            case Ability.Medicine:
+                return Medicine = value;
+            case Ability.Occult:
+                return Occult = value;
+            case Ability.Politics:
+                return Politics = value;
+            case Ability.Science:
+                return Science = value;
+        }
+
+        return value;
     }
 
     public uint GetAbility(Ability ability)

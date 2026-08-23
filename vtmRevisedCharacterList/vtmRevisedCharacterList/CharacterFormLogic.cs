@@ -31,7 +31,9 @@ public partial class CharacterForm : Form
 
     Character? _chosenCharacter;
 
-    #region
+    private bool _unsavedChangesExist = false;
+
+    #region diceRolling
 
     int _dicesToRoll = 0;
 
@@ -653,7 +655,8 @@ public partial class CharacterForm : Form
             if (numeric is not null)
             {
                 numeric.Value = attributeValue;
-                numeric.Enabled = false;
+                numeric.Enabled = true;
+                numeric.ValueChanged += CharacterNumeric_ValueChanged;
             }
            
             SetButtonsForNum( GetAttributeButtons(attribute), attributeValue);
@@ -668,7 +671,8 @@ public partial class CharacterForm : Form
             if (numeric is not null)
             {
                 numeric.Value = abilityValue;
-                numeric.Enabled = false;
+                numeric.Enabled = true;
+                numeric.ValueChanged += CharacterNumeric_ValueChanged;
             }
             SetButtonsForNum(GetAbilityButtons(ability), abilityValue);
 
@@ -682,7 +686,8 @@ public partial class CharacterForm : Form
             if (numeric is not null)
             {
                 numeric.Value = otherValue;
-                numeric.Enabled = false;
+                numeric.Enabled = true;
+                numeric.ValueChanged += CharacterNumeric_ValueChanged;
             }
             var buttons = GetOtherButtons(other);
             if (buttons is not null)
@@ -693,8 +698,8 @@ public partial class CharacterForm : Form
             {
                 MessageBox.Show($"{other} {i}");
             }
-
         }
+        MarkCharacterAsSaved();
     }
 
    
@@ -909,6 +914,116 @@ public partial class CharacterForm : Form
         }
         MessageBox.Show($"Какая-то шляпа на этапе серализации", "Как это вообще случилось?", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return null;
+    }
+
+    #endregion
+
+    #region UpdatingCharacter
+
+    public void CancelUpdating()
+    {
+        RenderCharacter(_chosenCharacter);
+    }
+
+    public void MarkUnsavedChanges()
+    {
+        SetUnsavedStatus(true);
+    }
+
+    public void MarkCharacterAsSaved()
+    {
+        SetUnsavedStatus(false);
+    }
+
+    public void SetUnsavedStatus(bool unsavedChangesExist)
+    {
+        _unsavedChangesExist = unsavedChangesExist;
+
+        RollDiceButton.Enabled = !unsavedChangesExist;
+        CancelUpdateButton.Enabled
+            = CancelUpdateButton.Visible
+            = UpdateCharacterButton.Enabled 
+            = UpdateCharacterButton.Visible 
+            = unsavedChangesExist;
+    }
+
+    public void UpdateCharacter()
+    {
+        var characterGuid =  _avaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
+
+        var newCharacter = GenerateChangedCharacter();
+        CharacterUpdateRequest request = new()
+        {
+            CharacterToUpdate = newCharacter,
+            CharacterUuid = characterGuid,
+            UserUuid = _config.UserId,
+            Hidden = false
+        };
+        var task = Task.Run(() => UpdateCharacterAsync(request));
+        task.Wait();
+        _chosenCharacter = newCharacter;
+        RenderCharacter(_chosenCharacter);
+    }
+
+    public async Task<CharacterUpdateResult?> UpdateCharacterAsync(CharacterUpdateRequest request)
+    {
+        try
+        {
+            var response = await _httpClient.PostAsJsonAsync("/Character/UpdateCharacter", request);
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<CharacterUpdateResult>();
+
+            return responseRequest;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        MessageBox.Show($"Какая-то шляпа на этапе серализации", "Как это вообще случилось?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return null;
+    }
+
+    public Character GenerateChangedCharacter()
+    {
+        Character character = JsonSerializer.Deserialize<Character>(JsonSerializer.Serialize(_chosenCharacter));
+
+
+        for (int i = 0; i < 9; i++)
+        {
+            AttributeVtm attribute = (AttributeVtm)i;
+            
+            var numeric = GetAttributeNumeric(attribute); 
+            if (numeric is not null)
+            {
+                uint attributeValue = character.SetAttribute(attribute, (uint)numeric.Value);
+            }
+        }
+
+        for (int i = 0; i < 30; i++)
+        {
+            Ability ability = (Ability)i;
+            
+            var numeric = GetAbilityNumeric(ability);
+            if (numeric is not null)
+            {
+                uint abilityValue = character.SetAbility(ability, (uint)numeric.Value);
+            }
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            OtherRollable other = (OtherRollable)i;
+            
+            var numeric = GetOtherNumeric(other);
+            
+            if (numeric is not null)
+            {
+                uint otherValue = character.SetOther(other, (uint)numeric.Value);
+            }
+        }
+
+        return character;
     }
 
     #endregion
