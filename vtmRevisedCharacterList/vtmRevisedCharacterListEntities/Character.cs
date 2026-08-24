@@ -122,13 +122,13 @@ public class Character
 
     #region Disciplines
 
-
+    public List<ARating> Disciplines { get; set; } = new List<ARating>();
 
     #endregion
 
     #region Backgrounds
 
-
+    public List<ARating> Backgrounds { get; set; } = new List<ARating>();
 
     #endregion
 
@@ -165,12 +165,6 @@ public class Character
 
     #endregion
 
-    #region BackGrounds
-
-    public List<ARating> Backgrounds { get; set; } = new List<ARating>();
-
-    #endregion
-
     public HealthCondition GetHealthCondition()
     {
         if (Damage == 0) return HealthCondition.Ok;
@@ -195,6 +189,22 @@ public class Character
             {
                 foundRating.Rating = rating.Rating;
             }
+            return;
+        }
+
+        //Copy same for desciplines
+        foundRating = Disciplines.Where(background => background.Name == rating.Name).FirstOrDefault();
+        if (foundRating != null)
+        {
+            if (rating.Rating == 0)
+            {
+                Disciplines.Remove(foundRating);
+            }
+            else
+            {
+                foundRating.Rating = rating.Rating;
+            }
+            return;
         }
     }
 

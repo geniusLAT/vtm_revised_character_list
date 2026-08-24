@@ -827,6 +827,7 @@ public partial class CharacterForm : Form
 
         ratingGuiPanels.Clear();
         RenderBackGrounds();
+        RenderDisciplines();
 
         MarkCharacterAsSaved();
 
@@ -1073,7 +1074,10 @@ public partial class CharacterForm : Form
     {
         _unsavedChangesExist = unsavedChangesExist;
 
-        RollDiceButton.Enabled = !unsavedChangesExist;
+        AddBackgroundButton.Enabled 
+            = AddDisciplineButton.Enabled 
+            = RollDiceButton.Enabled 
+            = !unsavedChangesExist;
         CancelUpdateButton.Enabled
             = CancelUpdateButton.Visible
             = UpdateCharacterButton.Enabled
@@ -1294,6 +1298,26 @@ public partial class CharacterForm : Form
     void RenderBackGrounds()
     {
         RenderCollectionGui(BackgroundsInnerPanel, _chosenCharacter.Backgrounds);
+    }
+
+    #endregion
+
+    #region DisciplinesManagment
+
+    void OpenAddDisciplineWindow()
+    {
+        var addWindow = new AddARatingForm(
+            this,
+            _chosenCharacter.Disciplines,
+            typeof(Discipline),
+            new DisciplineHelper()
+            );
+        addWindow.ShowDialog();
+    }
+
+    void RenderDisciplines()
+    {
+        RenderCollectionGui(DisciplinesInnerPanel, _chosenCharacter.Disciplines);
     }
 
     #endregion
