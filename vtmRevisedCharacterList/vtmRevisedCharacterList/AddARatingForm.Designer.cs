@@ -37,7 +37,13 @@
             RatingButton1 = new RadioButton();
             AddButton = new Button();
             DefaultOptionsPanel = new Panel();
+            MeritSettingPanel = new Panel();
+            MeritDiffiultyNumeric = new NumericUpDown();
+            MeritDicepoolNumeric = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)RatingNumeric).BeginInit();
+            MeritSettingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MeritDiffiultyNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MeritDicepoolNumeric).BeginInit();
             SuspendLayout();
             // 
             // NameTextBox
@@ -129,11 +135,39 @@
             DefaultOptionsPanel.Size = new Size(369, 398);
             DefaultOptionsPanel.TabIndex = 21;
             // 
+            // MeritSettingPanel
+            // 
+            MeritSettingPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            MeritSettingPanel.AutoScroll = true;
+            MeritSettingPanel.Controls.Add(MeritDicepoolNumeric);
+            MeritSettingPanel.Controls.Add(MeritDiffiultyNumeric);
+            MeritSettingPanel.Location = new Point(389, 40);
+            MeritSettingPanel.Name = "MeritSettingPanel";
+            MeritSettingPanel.Size = new Size(134, 398);
+            MeritSettingPanel.TabIndex = 22;
+            // 
+            // MeritDiffiultyNumeric
+            // 
+            MeritDiffiultyNumeric.Location = new Point(90, 3);
+            MeritDiffiultyNumeric.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
+            MeritDiffiultyNumeric.Name = "MeritDiffiultyNumeric";
+            MeritDiffiultyNumeric.Size = new Size(41, 23);
+            MeritDiffiultyNumeric.TabIndex = 23;
+            // 
+            // MeritDicepoolNumeric
+            // 
+            MeritDicepoolNumeric.Location = new Point(90, 32);
+            MeritDicepoolNumeric.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
+            MeritDicepoolNumeric.Name = "MeritDicepoolNumeric";
+            MeritDicepoolNumeric.Size = new Size(41, 23);
+            MeritDicepoolNumeric.TabIndex = 24;
+            // 
             // AddARatingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(527, 450);
+            Controls.Add(MeritSettingPanel);
             Controls.Add(DefaultOptionsPanel);
             Controls.Add(AddButton);
             Controls.Add(RatingNumeric);
@@ -146,6 +180,9 @@
             Name = "AddARatingForm";
             Text = "AddARatingForm";
             ((System.ComponentModel.ISupportInitialize)RatingNumeric).EndInit();
+            MeritSettingPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)MeritDiffiultyNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MeritDicepoolNumeric).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -161,5 +198,8 @@
         private RadioButton RatingButton1;
         private Button AddButton;
         private Panel DefaultOptionsPanel;
+        private Panel MeritSettingPanel;
+        private NumericUpDown MeritDiffiultyNumeric;
+        private NumericUpDown MeritDicepoolNumeric;
     }
 }

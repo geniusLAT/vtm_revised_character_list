@@ -14,6 +14,21 @@ public partial class AddARatingForm : Form
 
         InitializeComponent();
         AutoCompleteDefault();
+        if (!_helper.Rated)
+        {
+           RatingNumeric.Visible 
+                = RatingNumeric.Enabled 
+                = RatingButton1.Visible 
+                = RatingButton2.Visible 
+                = RatingButton3.Visible 
+                = RatingButton4.Visible 
+                = RatingButton5.Visible 
+                = false;
+        }
+        else
+        {
+            MeritSettingPanel.Visible = false;
+        }
     }
 
     private void AddButton_Click(object sender, EventArgs e)
