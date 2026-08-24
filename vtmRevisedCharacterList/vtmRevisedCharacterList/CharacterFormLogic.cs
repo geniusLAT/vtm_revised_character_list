@@ -828,6 +828,7 @@ public partial class CharacterForm : Form
         ratingGuiPanels.Clear();
         RenderBackGrounds();
         RenderDisciplines();
+        RenderMerits();
 
         MarkCharacterAsSaved();
 
@@ -1318,6 +1319,26 @@ public partial class CharacterForm : Form
     void RenderDisciplines()
     {
         RenderCollectionGui(DisciplinesInnerPanel, _chosenCharacter.Disciplines);
+    }
+
+    #endregion
+
+    #region MeritsAndFlawManagment
+
+    void OpenAddMeritWindow()
+    {
+        var addWindow = new AddARatingForm(
+            this,
+            _chosenCharacter.Merits,
+            typeof(MeritEntity),
+            new MeritHelper()
+            );
+        addWindow.ShowDialog();
+    }
+
+    void RenderMerits()
+    {
+        RenderCollectionGui(MeritsInnerPanel, _chosenCharacter.Merits);
     }
 
     #endregion

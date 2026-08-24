@@ -415,4 +415,9 @@ public partial class CharacterForm : Form
     {
         OpenAddDisciplineWindow();
     }
+
+    private void AddMeritButton_Click(object sender, EventArgs e)
+    {
+        OpenAddMeritWindow();
+    }
 }

@@ -7013,6 +7013,7 @@
             AddMeritButton.TabIndex = 20;
             AddMeritButton.Text = "+";
             AddMeritButton.UseVisualStyleBackColor = true;
+            AddMeritButton.Click += AddMeritButton_Click;
             // 
             // MeritsInnerPanel
             // 

@@ -165,6 +165,12 @@ public class Character
 
     #endregion
 
+    #region Merits
+
+    public List<ARating> Merits { get; set; } = new List<ARating>();
+
+    #endregion
+
     public HealthCondition GetHealthCondition()
     {
         if (Damage == 0) return HealthCondition.Ok;
