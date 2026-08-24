@@ -4,47 +4,47 @@ public enum DefaultDiscipline
 {
     Animalism = 0,
 
-    Auspex = 2,
+    Auspex = 1,
 
-    Celerity = 3,
+    Celerity = 2,
 
-    Chimerstry = 4,
+    Chimerstry = 3,
 
-    Dementation = 5,
+    Dementation = 4,
 
-    Dominate = 6,
+    Dominate = 5,
 
-    Fortitude = 7,
+    Fortitude = 6,
 
-    Obfuscate = 8,
+    Obfuscate = 7,
 
-    Obtenebration = 9,
+    Obtenebration = 8,
 
-    Potence = 10,
+    Potence = 9,
 
-    Presence = 11,
+    Presence = 10,
 
-    Protean = 12,
+    Protean = 11,
 
-    Quietus = 13,
+    Quietus = 12,
 
-    Serpentis = 14,
+    Serpentis = 13,
 
-    Vicissitude = 15,
+    Vicissitude = 14,
 
-    NecromancySepulchrePath = 16,
+    NecromancySepulchrePath = 15,
 
-    NecromancyAshPath = 17,
+    NecromancyAshPath = 16,
 
-    NecromancyBonePath = 18,
+    NecromancyBonePath = 17,
 
-    ThaumaturgyPathOfBlood = 19,
+    ThaumaturgyPathOfBlood = 18,
 
-    ThaumaturgyLureOfFlames = 20,
+    ThaumaturgyLureOfFlames = 19,
 
-    ThaumaturgyMovementOfTheMind = 21,
+    ThaumaturgyMovementOfTheMind = 20,
 
-    ThaumaturgyPathOfConjuring = 22,
+    ThaumaturgyPathOfConjuring = 21,
 
-    ThaumaturgyHandsOfDistraction = 23,
+    ThaumaturgyHandsOfDistraction = 22,
 }
