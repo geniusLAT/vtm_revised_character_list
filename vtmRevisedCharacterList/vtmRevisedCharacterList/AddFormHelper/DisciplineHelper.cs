@@ -15,7 +15,7 @@ public class DisciplineHelper : IAddFormHelper
         return result;
     }
 
-    public void ProcessCompletedItem(AddARatingForm form, ARating item)
+    public void ProcessCreatedItem(AddARatingForm form, ARating item)
     {
 
     }
