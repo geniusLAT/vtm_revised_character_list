@@ -1,12 +1,7 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
+using vtmRevisedCharacterList.AddFormHelper;
 using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList;
@@ -28,6 +23,8 @@ public partial class CharacterForm : Form
     Ability? _chosenAbility;
 
     OtherRollable? _otherRollable;
+
+    RatingGuiPanel? _chosenRatingGuiPanel;
 
     Character? _chosenCharacter;
 
@@ -126,6 +123,12 @@ public partial class CharacterForm : Form
 
     #endregion
 
+    #region abstractRatingPanels
+
+    internal List<RatingGuiPanel> ratingGuiPanels = new List<RatingGuiPanel>();
+
+    #endregion
+
     void FindButtonsForOthers()
     {
         BloodpoolButtons = [BloodpoolButton1, BloodpoolButton2, BloodpoolButton3, BloodpoolButton4, BloodpoolButton5,
@@ -151,8 +154,8 @@ public partial class CharacterForm : Form
     void FindButtonsForAttributes()
     {
         StrenghtButtons = [SButton, SButton2, SButton3, SButton4, SButton5];
-        DexterityButtons = [DexterityButton1, DexterityButton2 , DexterityButton3, DexterityButton4, DexterityButton5];
-        StaminaButtons = [StaminaButton1, StaminaButton2, StaminaButton3 , StaminaButton4, StaminaButton5];
+        DexterityButtons = [DexterityButton1, DexterityButton2, DexterityButton3, DexterityButton4, DexterityButton5];
+        StaminaButtons = [StaminaButton1, StaminaButton2, StaminaButton3, StaminaButton4, StaminaButton5];
         CharismaButtons = [CharismaButton1, CharismaButton2, CharismaButton3, CharismaButton4, CharismaButton5];
         ManipulationButtons = [ManupulationButton1, ManupulationButton2, ManupulationButton3, ManupulationButton4, ManupulationButton5];
         AppearanceButtons = [AppearanceButton1, AppearanceButton2, AppearanceButton3, AppearanceButton4, AppearanceButton5];
@@ -216,6 +219,7 @@ public partial class CharacterForm : Form
 
     void ClearAbilityChoice()
     {
+        _chosenAbility = null;
         for (int i = 0; i < 30; i++)
         {
             Ability ability = (Ability)i;
@@ -224,6 +228,15 @@ public partial class CharacterForm : Form
             {
                 panel.BackColor = Color.White;
             }
+        }
+    }
+
+    void ClearRatingPanelChoice()
+    {
+        _chosenRatingGuiPanel = null;
+        foreach (var ratingPanel in ratingGuiPanels)
+        {
+            ratingPanel.Panel.BackColor = Color.White;
         }
     }
 
@@ -248,7 +261,8 @@ public partial class CharacterForm : Form
             if (i < numToSet)
             {
                 buttons[i].Checked = true;
-            }else
+            }
+            else
             {
                 buttons[i].Checked = false;
             }
@@ -583,6 +597,7 @@ public partial class CharacterForm : Form
         ClearAttributeChoice();
 
         ClearOtherRollableChoice();
+        ClearRatingPanelChoice();
 
         _otherRollable = rollable;
         var panel = GetOtherRollablePanel(_otherRollable);
@@ -595,10 +610,13 @@ public partial class CharacterForm : Form
 
     void ChooseAbility(Ability ability)
     {
-        _chosenAbility = ability;
+       
         _otherRollable = null;
         ClearAbilityChoice();
         ClearOtherRollableChoice();
+        ClearRatingPanelChoice();
+
+        _chosenAbility = ability;
         var panel = GetAbilityPanel(_chosenAbility);
         if (panel != null)
         {
@@ -636,6 +654,19 @@ public partial class CharacterForm : Form
             sb.Append($" {RussianTranslator.TranslateAbility(_chosenAbility)} {ability.ToString()}");
 
         }
+
+        if (_chosenRatingGuiPanel != null)
+        {
+            var rating = _chosenRatingGuiPanel.rating.Rating;
+            _dicesToRoll += (int)rating;
+            if (sb.Length > 0)
+            {
+                sb.Append(" + ");
+            }
+            sb.Append($" {_chosenRatingGuiPanel.rating.Name} {rating.ToString()}");
+
+        }
+
         if (_extraDicePool > 0)
         {
             _dicesToRoll += (int)_extraDicePool;
@@ -701,8 +732,7 @@ public partial class CharacterForm : Form
         var daredevilCommentary = _daredevil ? ",сорвиголова " : string.Empty;
         var specializationCommentary = _specialization ? ",специализация " : string.Empty;
         var autoSuccessCommentary = _additionalAutoSuccess > 0 ? $", {_additionalAutoSuccess} автоуспехов" : string.Empty;
-        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {_difficulty
-            }{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
+        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {_difficulty}{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
     }
 
     void RenderHealthCondition(Character character)
@@ -724,8 +754,12 @@ public partial class CharacterForm : Form
             }
         }
     }
+    public void RenderCharacter()
+    {
+        RenderCharacter(_chosenCharacter);
+    }
 
-    void RenderCharacter(Character character)
+    public void RenderCharacter(Character character)
     {
         _chosenCharacter = character;
 
@@ -749,8 +783,8 @@ public partial class CharacterForm : Form
                 numeric.Enabled = true;
                 numeric.ValueChanged += CharacterNumeric_ValueChanged;
             }
-           
-            SetButtonsForNum( GetAttributeButtons(attribute), attributeValue);
+
+            SetButtonsForNum(GetAttributeButtons(attribute), attributeValue);
 
         }
 
@@ -790,6 +824,10 @@ public partial class CharacterForm : Form
                 MessageBox.Show($"{other} {i}");
             }
         }
+
+        ratingGuiPanels.Clear();
+        RenderBackGrounds();
+
         MarkCharacterAsSaved();
 
 
@@ -797,7 +835,7 @@ public partial class CharacterForm : Form
 
     }
 
-   
+
     public async Task RollDiceAsync()
     {
         uint positiveDicesToRoll = _dicesToRoll < 0 ? 0 : (uint)_dicesToRoll;
@@ -893,12 +931,13 @@ public partial class CharacterForm : Form
         _avaliableCharacters = task.Result;
         MessageBox.Show($"Найдено персонажей: {_avaliableCharacters.Count.ToString()}");
 
-        if (_avaliableCharacters.Count > 0) {
+        if (_avaliableCharacters.Count > 0)
+        {
             var task2 = Task.Run(() => GetCharacterAsync(_avaliableCharacters.First(), _config.UserId));
 
             //while server thinks
             characterComboBox.Items.Clear();
-            foreach(var character in _avaliableCharacters)
+            foreach (var character in _avaliableCharacters)
             {
                 characterComboBox.Items.Add(character.CharacterName);
             }
@@ -958,7 +997,7 @@ public partial class CharacterForm : Form
         }
         catch (Exception)
         {
-          
+
             return null;
         }
     }
@@ -977,7 +1016,7 @@ public partial class CharacterForm : Form
 
             var responseRequest = await response.Content.ReadFromJsonAsync<List<CharacterListMember>>();
 
-           return responseRequest.ToList();
+            return responseRequest.ToList();
         }
         catch (HttpRequestException ex)
         {
@@ -1037,14 +1076,14 @@ public partial class CharacterForm : Form
         RollDiceButton.Enabled = !unsavedChangesExist;
         CancelUpdateButton.Enabled
             = CancelUpdateButton.Visible
-            = UpdateCharacterButton.Enabled 
-            = UpdateCharacterButton.Visible 
+            = UpdateCharacterButton.Enabled
+            = UpdateCharacterButton.Visible
             = unsavedChangesExist;
     }
 
     public void UpdateCharacter()
     {
-        var characterGuid =  _avaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
+        var characterGuid = _avaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
 
         var newCharacter = GenerateChangedCharacter();
         CharacterUpdateRequest request = new()
@@ -1093,8 +1132,8 @@ public partial class CharacterForm : Form
         for (int i = 0; i < 9; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
-            
-            var numeric = GetAttributeNumeric(attribute); 
+
+            var numeric = GetAttributeNumeric(attribute);
             if (numeric is not null)
             {
                 uint attributeValue = character.SetAttribute(attribute, (uint)numeric.Value);
@@ -1104,7 +1143,7 @@ public partial class CharacterForm : Form
         for (int i = 0; i < 30; i++)
         {
             Ability ability = (Ability)i;
-            
+
             var numeric = GetAbilityNumeric(ability);
             if (numeric is not null)
             {
@@ -1115,16 +1154,146 @@ public partial class CharacterForm : Form
         for (int i = 0; i < 7; i++)
         {
             OtherRollable other = (OtherRollable)i;
-            
+
             var numeric = GetOtherNumeric(other);
-            
+
             if (numeric is not null)
             {
                 uint otherValue = character.SetOther(other, (uint)numeric.Value);
             }
         }
 
+        foreach (var ratingPanel in ratingGuiPanels)
+        {
+            if (ratingPanel.Numeric.Value != ratingPanel.rating.Rating)
+            {
+                character.SetRating(new()
+                {
+                    Name = ratingPanel.rating.Name,
+                    Rating = (uint)ratingPanel.Numeric.Value,
+                }
+                    );
+            }
+        }
+
+        //MessageBox.Show(ChangeLogGenerator.GenerateChangeLog(_chosenCharacter, character));
+
         return character;
+    }
+
+    #endregion
+
+    #region abstractCollectionGuiManagment
+
+    void ClickOnNumericOnRatingPanel(object sender)
+    {
+        MarkUnsavedChanges();
+    }
+
+    void ClickOnRatingPanel(object sender)
+    {
+        var ratingPanel = ratingGuiPanels.Where(panel => panel.Label == sender || panel.Panel == sender).FirstOrDefault();
+
+        ClearRatingPanelChoice();
+        ClearOtherRollableChoice();
+        ClearAbilityChoice();
+
+        _chosenRatingGuiPanel = ratingPanel;
+        ratingPanel.Panel.BackColor = Color.Yellow;
+
+        CalculateDices();
+    }
+
+    void RenderCollectionGui(Panel parentPanel, List<ARating> collection)
+    {
+        parentPanel.Controls.Clear();
+
+        for (int i = 0; i < collection.Count; i++)
+        {
+            ARating? item = collection[i];
+            var littlePanel = new Panel()
+            { 
+                Width =207,//227
+                Height = 19,
+                //BackColor = Color.Green,
+                Location = new Point(3, 3 + i * 20)
+            };
+            littlePanel.Click += ExampleBackGroundPanel_Click;
+            parentPanel.Controls.Add(littlePanel);
+            //81, 10
+
+            var label = new Label()
+            {
+                Width = 76,
+                Height = 10,
+                Text = item.Name,
+                Font = new("Segoe UI", 7),
+                Location = new Point(3, 4)
+            };
+            littlePanel.Controls.Add(label);
+            label.Click += ExampleBackGroundPanel_Click;
+
+            var numeric = new NumericUpDown()
+            {
+                Location = new Point(173, -2),
+                Value = item.Rating,
+                Increment = 1,
+                Minimum = 0,
+                Width = 44,
+                Maximum = 5
+
+            };
+            littlePanel.Controls.Add(numeric);
+            numeric.ValueChanged += RatingPanelNumeric_ValueChanged;
+
+            RadioButton[] buttons = new RadioButton[5];
+            for (int j = 0; j < 5; j++)
+            {
+                var radioButton = new RadioButton()
+                {
+                    Size = new Size(14, 13),
+                    Location = new Point(80 + 20 * j, 6),//86
+                    AutoCheck = false
+                };
+                littlePanel.Controls.Add(radioButton);
+
+                if(item.Rating > j)
+                {
+                    radioButton.Checked = true;
+                }
+                buttons[j] = radioButton;
+            }
+
+            ratingGuiPanels.Add(new()
+            {
+                rating = item,
+                Label = label,
+                Numeric = numeric,
+                RadioButtons = buttons,
+                Panel = littlePanel
+            }
+                );
+        }
+    }
+
+    #endregion
+
+    #region BackgrounsManagment
+
+    void OpenAddBackgroundWindow()
+    {
+        var addWindow = new AddARatingForm(
+            this, 
+            _chosenCharacter.Backgrounds, 
+            typeof(Background),
+            new BackGroundHelper()
+            );
+        addWindow.ShowDialog();
+    }
+
+    void RenderBackGrounds()
+    {
+        RenderCollectionGui(BackgroundsInnerPanel, _chosenCharacter.Backgrounds);
     }
 
     #endregion

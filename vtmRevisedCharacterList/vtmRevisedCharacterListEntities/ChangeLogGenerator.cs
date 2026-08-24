@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace vtmRevisedCharacterListEntities;
 
@@ -136,11 +132,101 @@ public static class ChangeLogGenerator
             }
         }
 
+        //if (character1.Backgrounds.Count() != character2.Backgrounds.Count())
+        //{
+        //    if (character1.Backgrounds.Count() > character2.Backgrounds.Count())
+        //    {
+        //        sb.Append($"\n{RussianTranslator.Backgrounds}, {RussianTranslator.Lenght} {character1.Backgrounds.Count()
+        //            } {RussianTranslator.DecreasedWord} {character2.Backgrounds.Count()}");
+        //    }
+        //    if (character1.Backgrounds.Count() < character2.Backgrounds.Count())
+        //    {
+        //        sb.Append($"\n{RussianTranslator.Backgrounds}, {RussianTranslator.Lenght} {character1.Backgrounds.Count()
+        //            } {RussianTranslator.IncreasedWord} {character2.Backgrounds.Count()}");
+        //    }
+        //}
+
+        var backgroundChangeLog = GenerateChangeLogForCollection(
+            character1.Backgrounds, 
+            character2.Backgrounds, 
+            RussianTranslator.Backgrounds);
+        if (!string.IsNullOrEmpty(backgroundChangeLog))
+        {
+            sb.Append(backgroundChangeLog);
+        } 
+
         if (sb.Length == 0)
         {
             return string.Empty;
         }
 
         return $"{character1.CharacterName} {sb.ToString()}";
+    }
+
+    public static string GenerateChangeLogForCollection(IEnumerable<ARating> collection1, IEnumerable<ARating> collection2, string collectionName)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        if (collection1.Count() != collection2.Count())
+        {
+            if (collection1.Count() > collection2.Count())
+            {
+                sb.Append($"\n{collectionName}, {RussianTranslator.Lenght} {collection1.Count()} {RussianTranslator.DecreasedWord} {collection2.Count()}");
+            }
+            if (collection1.Count() < collection2.Count())
+            {
+                sb.Append($"\n{collectionName}, {RussianTranslator.Lenght} {collection1.Count()} {RussianTranslator.IncreasedWord} {collection2.Count()}");
+            }
+        }
+
+        foreach (var item1 in collection1)
+        {
+            bool found = false;
+            foreach (var item2 in collection2)
+            {
+                if (item1.Name == item2.Name)
+                {
+                    found = true;
+
+                    if (item1.Rating != item2.Rating)
+                    {
+                        if (item1.Rating > item2.Rating)
+                        {
+                            sb.Append($"\n{item1.Name} {item1.Rating} {RussianTranslator.DecreasedWord} {item2.Rating}");
+                        }
+                        if (item1.Rating < item2.Rating)
+                        {
+                            sb.Append($"\n{item2.Name} {item1.Rating} {RussianTranslator.IncreasedWord} {item2.Rating}");
+                        }
+                    }
+                }
+            }
+
+            if (!found)
+            {
+                sb.Append($"\n{item1.Name} {item1.Rating} {RussianTranslator.Removed}");
+               
+            }
+        }
+
+        foreach (var item1 in collection2)
+        {
+            bool found = false;
+            foreach (var item2 in collection1)
+            {
+                if (item1.Name == item2.Name)
+                {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+            {
+                sb.Append($"\n{item1.Name} {item1.Rating} {RussianTranslator.Added}");
+
+            }
+        }
+
+        return sb.ToString();
     }
 }

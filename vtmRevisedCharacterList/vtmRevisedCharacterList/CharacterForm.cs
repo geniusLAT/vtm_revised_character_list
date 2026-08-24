@@ -1,5 +1,4 @@
-﻿using System;
-using vtmRevisedCharacterListEntities;
+﻿using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList;
 
@@ -392,5 +391,23 @@ public partial class CharacterForm : Form
         CalculateDices();
     }
 
-   
+    private void AddBackgroundButton_Click(object sender, EventArgs e)
+    {
+        OpenAddBackgroundWindow();
+    }
+
+    private void ExampleBackGroundPanel_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
+
+    private void ExampleBackGroundPanel_Click(object sender, EventArgs e)
+    {
+        ClickOnRatingPanel(sender);
+    }
+
+    private void RatingPanelNumeric_ValueChanged(object sender, EventArgs e)
+    {
+        ClickOnNumericOnRatingPanel(sender);
+    }
 }

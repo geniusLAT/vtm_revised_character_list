@@ -28,6 +28,16 @@ public static class RussianTranslator
 
     public const string Bloodpool = "Витэ ";
 
+    public const string Lenght = "количество ";
+
+    public const string Removed = "удален ";
+
+    public const string Added = "добавлен ";
+
+    public const string Backgrounds = "Детали биографии";
+
+    
+
     #endregion
 
     public static string TranslateOther(OtherRollable? other)
@@ -116,6 +126,25 @@ public static class RussianTranslator
             Ability.Politics => "Политика",
             Ability.Science => "Естественные науки",
             _ => "Неназванная способность",
+        };
+    }
+
+    public static string TranslateBackground(DefaultBackground? background)
+    {
+        return background switch
+        {
+            DefaultBackground.Allies => "Союзники",
+            DefaultBackground.Contacts => "Контакты",
+            DefaultBackground.Fame => "Слава",
+            DefaultBackground.Generation => "Поколение",
+            DefaultBackground.Herd => "Стадо",
+            DefaultBackground.Influence => "Влияние",
+            DefaultBackground.Mentor => "Наставник",
+            DefaultBackground.Resources => "Ресурсы",
+            DefaultBackground.Retainers => "Слуги",
+            DefaultBackground.Status => "Статус",
+            null => "Неназванная деталь биографии",
+            _ => "Неназванная деталь биографии",
         };
     }
 }

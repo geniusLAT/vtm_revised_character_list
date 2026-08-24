@@ -163,7 +163,11 @@ public class Character
     
     public uint AggravatedDamage { get; set; }
 
+    #endregion
 
+    #region BackGrounds
+
+    public List<ARating> Backgrounds { get; set; } = new List<ARating>();
 
     #endregion
 
@@ -175,6 +179,23 @@ public class Character
             return (HealthCondition)Damage;
         }
         return (HealthCondition)(1+Damage);
+    }
+
+    public void SetRating(ARating rating)
+    {
+        //Copy same for desciplines
+        var foundRating = Backgrounds.Where(background => background.Name == rating.Name).FirstOrDefault();
+        if (foundRating != null)
+        {
+            if(rating.Rating == 0)
+            {
+                Backgrounds.Remove(foundRating);
+            }
+            else
+            {
+                foundRating.Rating = rating.Rating;
+            }
+        }
     }
 
     public uint SetOther(OtherRollable other, uint value)
