@@ -189,6 +189,22 @@ public class Character
             {
                 foundRating.Rating = rating.Rating;
             }
+            return;
+        }
+
+        //Copy same for desciplines
+        foundRating = Disciplines.Where(background => background.Name == rating.Name).FirstOrDefault();
+        if (foundRating != null)
+        {
+            if (rating.Rating == 0)
+            {
+                Backgrounds.Remove(foundRating);
+            }
+            else
+            {
+                foundRating.Rating = rating.Rating;
+            }
+            return;
         }
     }
 
