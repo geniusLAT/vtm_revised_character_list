@@ -122,13 +122,13 @@ public class Character
 
     #region Disciplines
 
-
+    public List<ARating> Disciplines { get; set; } = new List<ARating>();
 
     #endregion
 
     #region Backgrounds
 
-
+    public List<ARating> Backgrounds { get; set; } = new List<ARating>();
 
     #endregion
 
@@ -162,12 +162,6 @@ public class Character
     public uint CommonDamage { get; set; }
     
     public uint AggravatedDamage { get; set; }
-
-    #endregion
-
-    #region BackGrounds
-
-    public List<ARating> Backgrounds { get; set; } = new List<ARating>();
 
     #endregion
 
