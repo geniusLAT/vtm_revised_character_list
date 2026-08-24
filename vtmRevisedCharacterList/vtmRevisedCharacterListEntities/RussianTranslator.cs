@@ -152,14 +152,13 @@ public static class RussianTranslator
     {
         return discipline switch
         {
-            DefaultDiscipline.Animalism => "Анимализм",            
+            DefaultDiscipline.Animalism => "Анимализм",
             DefaultDiscipline.Auspex => "Прорицание",
             DefaultDiscipline.Celerity => "Стремительность",
             DefaultDiscipline.Chimerstry => "Химерия",
             DefaultDiscipline.Dementation => "Помешательство",
             DefaultDiscipline.Dominate => "Доминирование",
             DefaultDiscipline.Fortitude => "Стойкость",
-            DefaultDiscipline.Necromancy => "Некромантия",
             DefaultDiscipline.Obfuscate => "Затемнение",
             DefaultDiscipline.Obtenebration => "Власть над тенью",
             DefaultDiscipline.Potence => "Могущество",
@@ -168,6 +167,9 @@ public static class RussianTranslator
             DefaultDiscipline.Quietus => "Смертносность",
             DefaultDiscipline.Serpentis => "Серпентис",
             DefaultDiscipline.Vicissitude => "Изменчивость",
+            DefaultDiscipline.NecromancySepulchrePath => "Некромантия, путь склепа",
+            DefaultDiscipline.NecromancyAshPath => "Некромантия, путь праха",
+            DefaultDiscipline.NecromancyBonePath => "Некромантия, путь кости",
             DefaultDiscipline.ThaumaturgyPathOfBlood => "Тауматургия, путь крови",
             DefaultDiscipline.ThaumaturgyLureOfFlames => "Туматургия, привлечение огней",
             DefaultDiscipline.ThaumaturgyMovementOfTheMind => "Тауматургия, движение разума",

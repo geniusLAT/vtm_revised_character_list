@@ -16,31 +16,35 @@ public enum DefaultDiscipline
 
     Fortitude = 7,
 
-    Necromancy = 8,
+    Obfuscate = 8,
 
-    Obfuscate = 9,
+    Obtenebration = 9,
 
-    Obtenebration = 10,
+    Potence = 10,
 
-    Potence = 11,
+    Presence = 11,
 
-    Presence = 12,
+    Protean = 12,
 
-    Protean = 13,
+    Quietus = 13,
 
-    Quietus = 14,
+    Serpentis = 14,
 
-    Serpentis = 15,
+    Vicissitude = 15,
 
-    Vicissitude = 16,
+    NecromancySepulchrePath = 16,
 
-    ThaumaturgyPathOfBlood = 17,
+    NecromancyAshPath = 17,
 
-    ThaumaturgyLureOfFlames = 18,
+    NecromancyBonePath = 18,
 
-    ThaumaturgyMovementOfTheMind = 19,
+    ThaumaturgyPathOfBlood = 19,
 
-    ThaumaturgyPathOfConjuring = 20,
+    ThaumaturgyLureOfFlames = 20,
 
-    ThaumaturgyHandsOfDistraction = 21,
+    ThaumaturgyMovementOfTheMind = 21,
+
+    ThaumaturgyPathOfConjuring = 22,
+
+    ThaumaturgyHandsOfDistraction = 23,
 }
