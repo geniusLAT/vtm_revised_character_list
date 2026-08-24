@@ -33,7 +33,7 @@ public partial class AddARatingForm : Form
             var option = autocompleteOptions[i];
             var label = new Label()
             {
-                Width = 76,
+                Width = 160,
                 Height = 15,
                 Text = option,
                 Font = new("Segoe UI", 9),
