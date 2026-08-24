@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vtmRevisedCharacterList.AddFormHelper;
 using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList;
@@ -19,6 +20,26 @@ public partial class AddARatingForm : Form
 
     Type _type;
 
+    IAddFormHelper _helper;
+
+    private void AutoCompleteDefault()
+    {
+        var autocompleteOptions = _helper.GetAutoComplete().ToArray();
+
+       for (int i = 0; i < autocompleteOptions.Count(); i++)
+       {
+            var option = autocompleteOptions[i];
+            var label = new Label()
+            {
+                Width = 76,
+                Height = 15,
+                Text = option,
+                Font = new("Segoe UI", 9),
+                Location = new Point(3, 4 + 15 * i)
+            };
+            DefaultOptionsPanel.Controls.Add(label);
+        }
+    }
     public void AddSomething()
     {
         var name = NameTextBox.Text.Trim();

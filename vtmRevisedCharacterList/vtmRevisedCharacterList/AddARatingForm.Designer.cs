@@ -125,7 +125,7 @@
             DefaultOptionsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DefaultOptionsPanel.Location = new Point(14, 40);
             DefaultOptionsPanel.Name = "DefaultOptionsPanel";
-            DefaultOptionsPanel.Size = new Size(501, 398);
+            DefaultOptionsPanel.Size = new Size(369, 398);
             DefaultOptionsPanel.TabIndex = 21;
             // 
             // AddARatingForm
