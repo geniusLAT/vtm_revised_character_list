@@ -9,4 +9,6 @@ public interface IAddFormHelper
     public bool Rated => true;
 
     public void ProcessCreatedItem(AddARatingForm form, ARating item);
+
+    public void ProcessClick(AddARatingForm form);
 }

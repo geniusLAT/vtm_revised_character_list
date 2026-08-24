@@ -79,6 +79,8 @@ public partial class AddARatingForm : Form
     {
         var label = (Label)sender;
         NameTextBox.Text = label.Text;
+
+        _helper.ProcessClick(this);
     }
 
     public int? FindClickedTextBoxIndex(string name)

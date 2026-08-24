@@ -225,7 +225,7 @@ public static class RussianTranslator
             DefaultMerit.IronWill => "Железная воля",
             DefaultMerit.DeepSleeper => "Крепкий сон",
             DefaultMerit.Nightmares => "Кошмары",
-            DefaultMerit.Phopia => "Фобия",
+            DefaultMerit.Phobia => "Фобия",
             DefaultMerit.PreyExclusion => "Разборчивость в добыче",
             DefaultMerit.Shy => "Робость",
             DefaultMerit.SoftHearted => "Мягкосердечие",

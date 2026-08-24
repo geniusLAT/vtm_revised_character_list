@@ -56,7 +56,7 @@ public enum DefaultMerit
     IronWill = 38,
     DeepSleeper = 39,
     Nightmares = 40,
-    Phopia = 41,
+    Phobia = 41,
     PreyExclusion = 42,
     Shy = 43,
     SoftHearted = 44,

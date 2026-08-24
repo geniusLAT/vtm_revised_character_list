@@ -29,6 +29,7 @@ public partial class AddARatingForm : Form
         {
             MeritSettingPanel.Visible = false;
         }
+        
     }
 
     private void AddButton_Click(object sender, EventArgs e)

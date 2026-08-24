@@ -189,7 +189,7 @@
 
         #endregion
 
-        private TextBox NameTextBox;
+        public TextBox NameTextBox;
         private NumericUpDown RatingNumeric;
         private RadioButton RatingButton5;
         private RadioButton RatingButton4;
@@ -199,7 +199,7 @@
         private Button AddButton;
         private Panel DefaultOptionsPanel;
         private Panel MeritSettingPanel;
-        private NumericUpDown MeritDiffiultyNumeric;
-        private NumericUpDown MeritDicepoolNumeric;
+        public NumericUpDown MeritDiffiultyNumeric;
+        public NumericUpDown MeritDicepoolNumeric;
     }
 }
