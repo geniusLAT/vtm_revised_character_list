@@ -147,4 +147,34 @@ public static class RussianTranslator
             _ => "Неназванная деталь биографии",
         };
     }
+
+    public static string TranslateDiscipline(DefaultDiscipline? discipline)
+    {
+        return discipline switch
+        {
+            DefaultDiscipline.Animalism => "Анимализм",            
+            DefaultDiscipline.Auspex => "Прорицание",
+            DefaultDiscipline.Celerity => "Стремительность",
+            DefaultDiscipline.Chimerstry => "Химерия",
+            DefaultDiscipline.Dementation => "Помешательство",
+            DefaultDiscipline.Dominate => "Доминирование",
+            DefaultDiscipline.Fortitude => "Стойкость",
+            DefaultDiscipline.Necromancy => "Некромантия",
+            DefaultDiscipline.Obfuscate => "Затемнение",
+            DefaultDiscipline.Obtenebration => "Власть над тенью",
+            DefaultDiscipline.Potence => "Могущество",
+            DefaultDiscipline.Presence => "Присутствие",
+            DefaultDiscipline.Protean => "Превращение",
+            DefaultDiscipline.Quietus => "Смертносность",
+            DefaultDiscipline.Serpentis => "Серпентис",
+            DefaultDiscipline.Vicissitude => "Изменчивость",
+            DefaultDiscipline.ThaumaturgyPathOfBlood => "Тауматургия, путь крови",
+            DefaultDiscipline.ThaumaturgyLureOfFlames => "Туматургия, привлечение огней",
+            DefaultDiscipline.ThaumaturgyMovementOfTheMind => "Тауматургия, движение разума",
+            DefaultDiscipline.ThaumaturgyPathOfConjuring => "Тауматургия, путь создания",
+            DefaultDiscipline.ThaumaturgyHandsOfDistraction => "Тауматургия, руки разрушения",
+            null => "Неназванная дисциплина",
+            _ => "Неназванная дисциплина",
+        };
+    }
 }
