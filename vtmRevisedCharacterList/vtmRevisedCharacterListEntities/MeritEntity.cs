@@ -8,5 +8,5 @@ namespace vtmRevisedCharacterListEntities;
 
 public class MeritEntity : ARating
 {
-
+    public DefaultMerit? DefaultMerit {  get; set; }
 }

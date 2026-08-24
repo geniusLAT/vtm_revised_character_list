@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Xml.Linq;
 using vtmRevisedCharacterList.AddFormHelper;
 using vtmRevisedCharacterListEntities;
 
@@ -64,6 +65,7 @@ public partial class AddARatingForm : Form
         ARating created = (ARating)Activator.CreateInstance(_type);
         created.Name = name;
         created.Rating = (uint)RatingNumeric.Value;
+        _helper.ProcessCompletedItem(this, created);
         _collectionToAdd.Add(created);
 
         _parentForm.RenderCharacter();
@@ -77,5 +79,15 @@ public partial class AddARatingForm : Form
     {
         var label = (Label)sender;
         NameTextBox.Text = label.Text;
+    }
+
+    public int? FindClickedTextBoxIndex(string name)
+    {
+        var sameNamedLabel = _defaultOptionsLabels.Where(label => label.Text == name).FirstOrDefault();
+        if (sameNamedLabel is null)
+        {
+            return null;
+        }
+        return DefaultOptionsPanel.Controls.IndexOf(sameNamedLabel);
     }
 }
