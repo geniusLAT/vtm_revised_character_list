@@ -410,4 +410,9 @@ public partial class CharacterForm : Form
     {
         ClickOnNumericOnRatingPanel(sender);
     }
+
+    private void AddDisciplineButton_Click(object sender, EventArgs e)
+    {
+        OpenAddDisciplineWindow();
+    }
 }

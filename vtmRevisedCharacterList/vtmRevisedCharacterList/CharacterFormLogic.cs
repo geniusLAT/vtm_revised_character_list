@@ -827,6 +827,7 @@ public partial class CharacterForm : Form
 
         ratingGuiPanels.Clear();
         RenderBackGrounds();
+        RenderDisciplines();
 
         MarkCharacterAsSaved();
 
@@ -1294,6 +1295,26 @@ public partial class CharacterForm : Form
     void RenderBackGrounds()
     {
         RenderCollectionGui(BackgroundsInnerPanel, _chosenCharacter.Backgrounds);
+    }
+
+    #endregion
+
+    #region DisciplinesManagment
+
+    void OpenAddDisciplineWindow()
+    {
+        var addWindow = new AddARatingForm(
+            this,
+            _chosenCharacter.Disciplines,
+            typeof(Discipline),
+            new DisciplineHelper()
+            );
+        addWindow.ShowDialog();
+    }
+
+    void RenderDisciplines()
+    {
+        RenderCollectionGui(DisciplinesInnerPanel, _chosenCharacter.Disciplines);
     }
 
     #endregion
