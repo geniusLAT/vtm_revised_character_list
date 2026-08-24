@@ -1,4 +1,5 @@
-﻿using vtmRevisedCharacterListEntities;
+﻿using System.Text.Json;
+using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList.AddFormHelper;
 
@@ -27,6 +28,8 @@ public class MeritHelper : IAddFormHelper
             var effect = GetMeritEffectForDefaultMerit((DefaultMerit)defaultMerit);
             form.MeritDicepoolNumeric.Value = effect.MeritDicepoolEffect;
             form.MeritDiffiultyNumeric.Value = effect.MeritDifficultyEffect;
+            form.RemoveOneCheckBox.Checked = effect.DaredevilRemoveOne;
+            form.ExtraHealthCheckBox.Checked = effect.ExtraHealth;
         }
     }
 

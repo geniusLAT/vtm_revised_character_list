@@ -38,12 +38,16 @@
             AddButton = new Button();
             DefaultOptionsPanel = new Panel();
             MeritSettingPanel = new Panel();
-            MeritDiffiultyNumeric = new NumericUpDown();
+            RemoveOneCheckBox = new CheckBox();
+            ExtraHealthCheckBox = new CheckBox();
+            label2 = new Label();
+            label1 = new Label();
             MeritDicepoolNumeric = new NumericUpDown();
+            MeritDiffiultyNumeric = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)RatingNumeric).BeginInit();
             MeritSettingPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)MeritDiffiultyNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MeritDicepoolNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MeritDiffiultyNumeric).BeginInit();
             SuspendLayout();
             // 
             // NameTextBox
@@ -132,35 +136,78 @@
             DefaultOptionsPanel.AutoScroll = true;
             DefaultOptionsPanel.Location = new Point(14, 40);
             DefaultOptionsPanel.Name = "DefaultOptionsPanel";
-            DefaultOptionsPanel.Size = new Size(369, 398);
+            DefaultOptionsPanel.Size = new Size(366, 398);
             DefaultOptionsPanel.TabIndex = 21;
             // 
             // MeritSettingPanel
             // 
             MeritSettingPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             MeritSettingPanel.AutoScroll = true;
+            MeritSettingPanel.Controls.Add(RemoveOneCheckBox);
+            MeritSettingPanel.Controls.Add(ExtraHealthCheckBox);
+            MeritSettingPanel.Controls.Add(label2);
+            MeritSettingPanel.Controls.Add(label1);
             MeritSettingPanel.Controls.Add(MeritDicepoolNumeric);
             MeritSettingPanel.Controls.Add(MeritDiffiultyNumeric);
-            MeritSettingPanel.Location = new Point(389, 40);
+            MeritSettingPanel.Location = new Point(386, 40);
             MeritSettingPanel.Name = "MeritSettingPanel";
-            MeritSettingPanel.Size = new Size(134, 398);
+            MeritSettingPanel.Size = new Size(137, 398);
             MeritSettingPanel.TabIndex = 22;
             // 
-            // MeritDiffiultyNumeric
+            // RemoveOneCheckBox
             // 
-            MeritDiffiultyNumeric.Location = new Point(90, 3);
-            MeritDiffiultyNumeric.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
-            MeritDiffiultyNumeric.Name = "MeritDiffiultyNumeric";
-            MeritDiffiultyNumeric.Size = new Size(41, 23);
-            MeritDiffiultyNumeric.TabIndex = 23;
+            RemoveOneCheckBox.AutoSize = true;
+            RemoveOneCheckBox.Location = new Point(5, 135);
+            RemoveOneCheckBox.Name = "RemoveOneCheckBox";
+            RemoveOneCheckBox.Size = new Size(127, 34);
+            RemoveOneCheckBox.TabIndex = 28;
+            RemoveOneCheckBox.Text = "Убирает единички\r\nс броска";
+            RemoveOneCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // ExtraHealthCheckBox
+            // 
+            ExtraHealthCheckBox.AutoSize = true;
+            ExtraHealthCheckBox.Location = new Point(5, 95);
+            ExtraHealthCheckBox.Name = "ExtraHealthCheckBox";
+            ExtraHealthCheckBox.Size = new Size(124, 34);
+            ExtraHealthCheckBox.TabIndex = 27;
+            ExtraHealthCheckBox.Text = "Даёт доп \r\nуровень здоровья";
+            ExtraHealthCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 47);
+            label2.Name = "label2";
+            label2.Size = new Size(85, 30);
+            label2.TabIndex = 26;
+            label2.Text = "Модификатор\r\nкол-ва кубов\r\n";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 5);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 30);
+            label1.TabIndex = 25;
+            label1.Text = "Модификатор\r\nсложности";
             // 
             // MeritDicepoolNumeric
             // 
-            MeritDicepoolNumeric.Location = new Point(90, 32);
+            MeritDicepoolNumeric.Location = new Point(94, 54);
             MeritDicepoolNumeric.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             MeritDicepoolNumeric.Name = "MeritDicepoolNumeric";
             MeritDicepoolNumeric.Size = new Size(41, 23);
             MeritDicepoolNumeric.TabIndex = 24;
+            MeritDicepoolNumeric.ValueChanged += MeritDicepoolNumeric_ValueChanged;
+            // 
+            // MeritDiffiultyNumeric
+            // 
+            MeritDiffiultyNumeric.Location = new Point(94, 12);
+            MeritDiffiultyNumeric.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
+            MeritDiffiultyNumeric.Name = "MeritDiffiultyNumeric";
+            MeritDiffiultyNumeric.Size = new Size(41, 23);
+            MeritDiffiultyNumeric.TabIndex = 23;
             // 
             // AddARatingForm
             // 
@@ -181,8 +228,9 @@
             Text = "AddARatingForm";
             ((System.ComponentModel.ISupportInitialize)RatingNumeric).EndInit();
             MeritSettingPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)MeritDiffiultyNumeric).EndInit();
+            MeritSettingPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)MeritDicepoolNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MeritDiffiultyNumeric).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,5 +249,9 @@
         private Panel MeritSettingPanel;
         public NumericUpDown MeritDiffiultyNumeric;
         public NumericUpDown MeritDicepoolNumeric;
+        private Label label2;
+        private Label label1;
+        public CheckBox RemoveOneCheckBox;
+        public CheckBox ExtraHealthCheckBox;
     }
 }
