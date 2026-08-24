@@ -1074,7 +1074,10 @@ public partial class CharacterForm : Form
     {
         _unsavedChangesExist = unsavedChangesExist;
 
-        RollDiceButton.Enabled = !unsavedChangesExist;
+        AddBackgroundButton.Enabled 
+            = AddDisciplineButton.Enabled 
+            = RollDiceButton.Enabled 
+            = !unsavedChangesExist;
         CancelUpdateButton.Enabled
             = CancelUpdateButton.Visible
             = UpdateCharacterButton.Enabled
