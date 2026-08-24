@@ -66,4 +66,9 @@ public partial class AddARatingForm : Form
             RatingButton5.Checked = false;
         }
     }
+
+    private void DefaultOption_Click(object sender, EventArgs e)
+    {
+        LabelClicked(sender);
+    }
 }

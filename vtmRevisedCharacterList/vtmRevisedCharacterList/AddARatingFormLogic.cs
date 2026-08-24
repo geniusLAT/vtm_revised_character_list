@@ -14,6 +14,8 @@ namespace vtmRevisedCharacterList;
 
 public partial class AddARatingForm : Form
 {
+
+    #region FromConstructor
     CharacterForm _parentForm;
 
     List<ARating> _collectionToAdd;
@@ -21,6 +23,13 @@ public partial class AddARatingForm : Form
     Type _type;
 
     IAddFormHelper _helper;
+    #endregion
+
+    #region GeneratedFields
+
+    private List<Label> _defaultOptionsLabels = [];
+
+    #endregion
 
     private void AutoCompleteDefault()
     {
@@ -37,9 +46,12 @@ public partial class AddARatingForm : Form
                 Font = new("Segoe UI", 9),
                 Location = new Point(3, 4 + 15 * i)
             };
+            label.Click += DefaultOption_Click;
             DefaultOptionsPanel.Controls.Add(label);
+            _defaultOptionsLabels.Add(label);
         }
     }
+
     public void AddSomething()
     {
         var name = NameTextBox.Text.Trim();
@@ -66,5 +78,11 @@ public partial class AddARatingForm : Form
         _parentForm.UpdateCharacter();
 
         this.Close();
+    }
+
+    private void LabelClicked(object sender)
+    {
+        var label = (Label)sender;
+        NameTextBox.Text = label.Text;
     }
 }
