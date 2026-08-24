@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using vtmRevisedCharacterList.AddFormHelper;
 using vtmRevisedCharacterListEntities;
 
@@ -14,8 +6,8 @@ namespace vtmRevisedCharacterList;
 
 public partial class AddARatingForm : Form
 {
-
     #region FromConstructor
+
     CharacterForm _parentForm;
 
     List<ARating> _collectionToAdd;
@@ -23,6 +15,7 @@ public partial class AddARatingForm : Form
     Type _type;
 
     IAddFormHelper _helper;
+
     #endregion
 
     #region GeneratedFields

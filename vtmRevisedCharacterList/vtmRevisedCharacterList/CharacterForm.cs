@@ -1,5 +1,4 @@
-﻿using System;
-using vtmRevisedCharacterListEntities;
+﻿using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList;
 

@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Text.Json.Serialization;
 using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedWebServer.Controllers;

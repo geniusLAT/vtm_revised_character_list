@@ -37,7 +37,6 @@
             RatingButton1 = new RadioButton();
             AddButton = new Button();
             DefaultOptionsPanel = new Panel();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)RatingNumeric).BeginInit();
             SuspendLayout();
             // 
@@ -129,22 +128,11 @@
             DefaultOptionsPanel.Size = new Size(369, 398);
             DefaultOptionsPanel.TabIndex = 21;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(403, 99);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 22;
-            label1.Text = "label1";
-            label1.Click += DefaultOption_Click;
-            // 
             // AddARatingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(527, 450);
-            Controls.Add(label1);
             Controls.Add(DefaultOptionsPanel);
             Controls.Add(AddButton);
             Controls.Add(RatingNumeric);
@@ -172,6 +160,5 @@
         private RadioButton RatingButton1;
         private Button AddButton;
         private Panel DefaultOptionsPanel;
-        private Label label1;
     }
 }
