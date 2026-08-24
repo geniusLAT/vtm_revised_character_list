@@ -128,4 +128,23 @@ public static class RussianTranslator
             _ => "Неназванная способность",
         };
     }
+
+    public static string TranslateBackground(DefaultBackground? background)
+    {
+        return background switch
+        {
+            DefaultBackground.Allies => "Союзники",
+            DefaultBackground.Contacts => "Контакты",
+            DefaultBackground.Fame => "Слава",
+            DefaultBackground.Generation => "Поколение",
+            DefaultBackground.Herd => "Стадо",
+            DefaultBackground.Influence => "Влияние",
+            DefaultBackground.Mentor => "Наставник",
+            DefaultBackground.Resources => "Ресурсы",
+            DefaultBackground.Retainers => "Слуги",
+            DefaultBackground.Status => "Статус",
+            null => "Неназванная деталь биографии",
+            _ => "Неназванная деталь биографии",
+        };
+    }
 }
