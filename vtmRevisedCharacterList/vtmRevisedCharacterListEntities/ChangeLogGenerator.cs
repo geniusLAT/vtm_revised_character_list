@@ -153,7 +153,16 @@ public static class ChangeLogGenerator
         if (!string.IsNullOrEmpty(backgroundChangeLog))
         {
             sb.Append(backgroundChangeLog);
-        } 
+        }
+
+        var disciplineChangeLog = GenerateChangeLogForCollection(
+           character1.Disciplines,
+           character2.Disciplines,
+           RussianTranslator.Disciplines);
+        if (!string.IsNullOrEmpty(disciplineChangeLog))
+        {
+            sb.Append(disciplineChangeLog);
+        }
 
         if (sb.Length == 0)
         {

@@ -198,7 +198,7 @@ public class Character
         {
             if (rating.Rating == 0)
             {
-                Backgrounds.Remove(foundRating);
+                Disciplines.Remove(foundRating);
             }
             else
             {

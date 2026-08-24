@@ -36,7 +36,7 @@ public static class RussianTranslator
 
     public const string Backgrounds = "Детали биографии";
 
-    
+    public const string Disciplines = "Дисциплины";
 
     #endregion
 
