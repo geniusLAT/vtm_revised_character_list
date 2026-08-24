@@ -44,6 +44,7 @@
             label1 = new Label();
             MeritDicepoolNumeric = new NumericUpDown();
             MeritDiffiultyNumeric = new NumericUpDown();
+            CanBeActivatedCheckBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)RatingNumeric).BeginInit();
             MeritSettingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MeritDicepoolNumeric).BeginInit();
@@ -143,6 +144,7 @@
             // 
             MeritSettingPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             MeritSettingPanel.AutoScroll = true;
+            MeritSettingPanel.Controls.Add(CanBeActivatedCheckBox);
             MeritSettingPanel.Controls.Add(RemoveOneCheckBox);
             MeritSettingPanel.Controls.Add(ExtraHealthCheckBox);
             MeritSettingPanel.Controls.Add(label2);
@@ -209,6 +211,16 @@
             MeritDiffiultyNumeric.Size = new Size(41, 23);
             MeritDiffiultyNumeric.TabIndex = 23;
             // 
+            // CanBeActivatedCheckBox
+            // 
+            CanBeActivatedCheckBox.AutoSize = true;
+            CanBeActivatedCheckBox.Location = new Point(5, 182);
+            CanBeActivatedCheckBox.Name = "CanBeActivatedCheckBox";
+            CanBeActivatedCheckBox.Size = new Size(109, 19);
+            CanBeActivatedCheckBox.TabIndex = 29;
+            CanBeActivatedCheckBox.Text = "Активируемый";
+            CanBeActivatedCheckBox.UseVisualStyleBackColor = true;
+            // 
             // AddARatingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -253,5 +265,6 @@
         private Label label1;
         public CheckBox RemoveOneCheckBox;
         public CheckBox ExtraHealthCheckBox;
+        public CheckBox CanBeActivatedCheckBox;
     }
 }

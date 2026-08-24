@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Drawing.Imaging.Effects;
+using System.Text.Json;
 using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList.AddFormHelper;
@@ -26,6 +27,8 @@ public class MeritHelper : IAddFormHelper
         if (defaultMerit is not null)
         {
             var effect = GetMeritEffectForDefaultMerit((DefaultMerit)defaultMerit);
+
+            form.CanBeActivatedCheckBox.Checked = !effect.Narrative;
             form.MeritDicepoolNumeric.Value = effect.MeritDicepoolEffect;
             form.MeritDiffiultyNumeric.Value = effect.MeritDifficultyEffect;
             form.RemoveOneCheckBox.Checked = effect.DaredevilRemoveOne;
@@ -40,6 +43,16 @@ public class MeritHelper : IAddFormHelper
         DefaultMerit defaultMerit = (DefaultMerit)index;
         var merit = (MeritEntity)item;
         merit.DefaultMerit = defaultMerit;
+
+        MeritEffect effect = new();
+
+        merit.CanBeActivated = form.ExtraHealthCheckBox.Checked;
+        effect.MeritDicepoolEffect = (int)form.MeritDicepoolNumeric.Value;
+        effect.MeritDifficultyEffect = (int)form.MeritDiffiultyNumeric.Value;
+        effect.DaredevilRemoveOne = form.RemoveOneCheckBox.Checked;
+        effect.ExtraHealth = form.ExtraHealthCheckBox.Checked;
+
+        merit.Effect = effect;
     }
 
     MeritEffect GetMeritEffectForDefaultMerit(DefaultMerit defaultMerit)
