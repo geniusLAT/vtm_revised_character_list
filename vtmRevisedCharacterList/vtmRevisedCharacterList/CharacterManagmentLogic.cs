@@ -82,7 +82,7 @@ public partial class CharacterManagment : Form
         Random rnd = new Random();
         foreach (var character in initCharacters)
         {
-            var bonus = (int)character.Character.Dexterity;
+            var bonus = (int)character.NumericBonus.Value;
             character.LastRoundInit = rnd.Next(1, 11) + bonus;
             character.InitLabel.Text = character.LastRoundInit.ToString();
         }
@@ -155,6 +155,17 @@ public partial class CharacterManagment : Form
             };
             panel.Controls.Add(initLabel);
 
+            var numericBonus = new NumericUpDown()
+            {
+                Value = character.Dexterity,
+                Minimum = -100,
+                Maximum = 100,
+                Width = 30,
+                Location = new(230, 5),
+            };
+            panel.Controls.Add(numericBonus);
+
+
             characterPanels.Add(new()
             {
                 Character = character,
@@ -163,6 +174,7 @@ public partial class CharacterManagment : Form
                 Button = button,
                 InitCheckBox = initCheckBox,
                 InitLabel = initLabel,
+                NumericBonus = numericBonus
 
             }
                 );

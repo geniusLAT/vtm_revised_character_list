@@ -25,7 +25,10 @@ internal class GuiCharacterManagmentCharacterPanel : IComparable<GuiCharacterMan
     public required Label InitLabel { get; set; }
 
     public required Button Button { get; set; }
+
     public required CheckBox InitCheckBox { get; set; }
+
+    public required NumericUpDown NumericBonus { get; set; }
 
     public int CompareTo(GuiCharacterManagmentCharacterPanel? other)
     {
