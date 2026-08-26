@@ -1154,6 +1154,7 @@ public partial class CharacterForm : Form
 
         AddBackgroundButton.Enabled 
             = AddDisciplineButton.Enabled 
+            = AddMeritButton.Enabled 
             = RollDiceButton.Enabled 
             = !unsavedChangesExist;
         CancelUpdateButton.Enabled
