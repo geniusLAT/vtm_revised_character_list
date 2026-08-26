@@ -38,6 +38,26 @@ public static class RussianTranslator
 
     public const string Disciplines = "Дисциплины";
 
+    public const string Merits = "Достоинства/Недостатки";
+
+    #endregion
+
+    #region MeritChangeLogVocabulary
+
+    public const string Activated = " активирован";
+
+    public const string Disactivated = " дизактивирован";
+
+    public const string ExtraHealth  = " дополнительное здоровье";
+
+    public const string DaredevilRemoveOne = " убирание единичек";
+
+    public const string CanBeActivated = " активируемость";
+
+    public const string MeritDifficultyEffect = " Модификатор сложности";
+
+    public const string MeritDicepoolEffect = " Модификатор кол-ва кубов";
+
     #endregion
 
     public static string TranslateOther(OtherRollable? other)

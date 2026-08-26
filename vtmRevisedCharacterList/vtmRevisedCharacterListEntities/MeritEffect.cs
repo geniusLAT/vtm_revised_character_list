@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace vtmRevisedCharacterListEntities;
 
@@ -21,5 +22,24 @@ public class MeritEffect
         {
             return MeritDifficultyEffect == 0 && MeritDicepoolEffect == 0 && !DaredevilRemoveOne && !ExtraHealth;
         }
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj == null)
+            return false;
+
+        var otherMeritEffect = obj as MeritEffect;
+        if (otherMeritEffect is null)
+            return false;
+
+        if (MeritDifficultyEffect != otherMeritEffect.MeritDifficultyEffect) return false;
+        if (MeritDicepoolEffect != otherMeritEffect.MeritDicepoolEffect) return false;
+        if (DaredevilRemoveOne != otherMeritEffect.DaredevilRemoveOne) return false;
+        if (ExtraHealth != otherMeritEffect.ExtraHealth) return false;
+      
+
+        return true;
+
     }
 }
