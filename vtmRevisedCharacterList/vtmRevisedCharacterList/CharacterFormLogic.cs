@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Json;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -15,9 +16,15 @@ public partial class CharacterForm : Form
     };
     private HttpClient? _httpClient;
 
-    GuiConfig? _config;
+    public GuiConfig? Config;
 
-    List<CharacterListMember> _avaliableCharacters = new List<CharacterListMember>();
+    private bool _adminStatus;
+
+    internal bool CharacterManagmentOpened = false;
+
+    internal CharacterManagment? CharacterManagmentOpenedForm = null;
+
+    public List<CharacterListMember> AvaliableCharacters = new List<CharacterListMember>();
 
     AttributeVtm? _chosenAttribute;
 
@@ -922,14 +929,14 @@ public partial class CharacterForm : Form
 
     private async Task ChooseAnotherCharacter(int characterIndex)
     {
-        if (_config is null)
+        if (Config is null)
         {
             MessageBox.Show($"Ты куда его дел?", "А где config?", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.Close();
             return;
         }
 
-        var newCharacter = await GetCharacterAsync(_avaliableCharacters[characterIndex], _config.UserId);
+        var newCharacter = await GetCharacterAsync(AvaliableCharacters[characterIndex], Config.UserId);
 
         if (newCharacter is null)
         {
@@ -946,22 +953,22 @@ public partial class CharacterForm : Form
 
     public void StartIt()
     {
-        _config = GetConfig();
-        if (_config is null)
+        Config = GetConfig();
+        if (Config is null)
         {
             MessageBox.Show($"Ты куда его дел?", "А где config?", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.Close();
             return;
         }
-        UsernameLabel.Text = $"Игрок:{_config.UserName}";
+        UsernameLabel.Text = $"Игрок:{Config.UserName}";
 
         _httpClient = new HttpClient(handler)
         {
             //BaseAddress = new Uri("https://localhost:44320/")
-            BaseAddress = new Uri(_config.Path)
+            BaseAddress = new Uri(Config.Path)
         };
 
-        var task = Task.Run(() => GetCharacterListAsync(_config.UserId));
+        var task = Task.Run(() => GetCharacterListAsync(Config.UserId)); 
 
         //while server thinks
         ClearAttributeChoice();
@@ -972,16 +979,21 @@ public partial class CharacterForm : Form
 
         task.Wait();
 
-        _avaliableCharacters = task.Result;
-        MessageBox.Show($"Найдено персонажей: {_avaliableCharacters.Count.ToString()}");
+        var task3 = Task.Run(() => GetStatusAsync(Config.UserId));
 
-        if (_avaliableCharacters.Count > 0)
+
+        AvaliableCharacters = task.Result;
+       
+        logLabel.Text += $"Найдено персонажей: {AvaliableCharacters.Count.ToString()}";
+        ScrollLogToBottom();
+
+        if (AvaliableCharacters.Count > 0)
         {
-            var task2 = Task.Run(() => GetCharacterAsync(_avaliableCharacters.First(), _config.UserId));
+            var task2 = Task.Run(() => GetCharacterAsync(AvaliableCharacters.First(), Config.UserId));
 
             //while server thinks
             characterComboBox.Items.Clear();
-            foreach (var character in _avaliableCharacters)
+            foreach (var character in AvaliableCharacters)
             {
                 characterComboBox.Items.Add(character.CharacterName);
             }
@@ -991,6 +1003,12 @@ public partial class CharacterForm : Form
             _chosenCharacter = task2.Result;
             RenderCharacter(_chosenCharacter);
         }
+
+        task3.Wait();
+        
+        _adminStatus = task3.Result;
+
+        CharacterManagmentButton.Visible = CharacterManagmentButton.Enabled = _adminStatus;
 
         //var character = new Character()
         //{
@@ -1044,6 +1062,23 @@ public partial class CharacterForm : Form
 
             return null;
         }
+    }
+
+    public async Task<bool> GetStatusAsync(Guid userId)
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync($"/User/GetAdminStatus?userId={userId}");
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<bool>();
+            return responseRequest;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return false;
     }
 
     public async Task<List<CharacterListMember>> GetCharacterListAsync(Guid userId)
@@ -1119,6 +1154,7 @@ public partial class CharacterForm : Form
 
         AddBackgroundButton.Enabled 
             = AddDisciplineButton.Enabled 
+            = AddMeritButton.Enabled 
             = RollDiceButton.Enabled 
             = !unsavedChangesExist;
         CancelUpdateButton.Enabled
@@ -1130,14 +1166,14 @@ public partial class CharacterForm : Form
 
     public void UpdateCharacter()
     {
-        var characterGuid = _avaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
+        var characterGuid = AvaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
 
         var newCharacter = GenerateChangedCharacter();
         CharacterUpdateRequest request = new()
         {
             CharacterToUpdate = newCharacter,
             CharacterUuid = characterGuid,
-            UserUuid = _config.UserId,
+            UserUuid = Config.UserId,
             Hidden = _hiddenMessage
         };
         var task = Task.Run(() => UpdateCharacterAsync(request));
@@ -1167,6 +1203,21 @@ public partial class CharacterForm : Form
         }
         MessageBox.Show($"Какая-то шляпа на этапе серализации", "Как это вообще случилось?", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return null;
+    }
+
+    public async Task SendMessageAsync(MessageFromAdmin request)
+    {
+        try
+        {
+            var response = await _httpClient.PostAsJsonAsync("/Message", request);
+            response.EnsureSuccessStatusCode();
+            return;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        MessageBox.Show($"Какая-то шляпа на этапе серализации", "Как это вообще случилось?", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 
     public Character GenerateChangedCharacter()
@@ -1482,6 +1533,42 @@ public partial class CharacterForm : Form
         meritGuiPanel.rating.Active = meritGuiPanel.CheckBox.Checked;
 
         UpdateCharacter();
+    }
+
+    #endregion
+
+    #region CharacterManagment
+
+    public void OpenCharacterManagmentWindow()
+    {
+        if (CharacterManagmentOpened)
+        { 
+            CharacterManagmentOpenedForm.Invoke(new Action(() => CharacterManagmentOpenedForm.Activate()));
+            return;
+        }
+
+        Task.Run(() =>
+        {
+            CharacterManagmentOpened = true;
+            CharacterManagmentOpenedForm = new CharacterManagment(this);
+            CharacterManagmentOpenedForm.ShowDialog();
+        });
+    }
+
+    public void SendInit(string init)
+    {
+        Task.Run(async () => await SendMessageAsync(new()
+        {
+            Message = new()
+            {
+                Hidden = _hiddenMessage,
+                Text = init
+            }, 
+            UserId = Config.UserId}
+        ));
+
+        logLabel.Text += init + '\n';
+        ScrollLogToBottom();
     }
 
     #endregion
