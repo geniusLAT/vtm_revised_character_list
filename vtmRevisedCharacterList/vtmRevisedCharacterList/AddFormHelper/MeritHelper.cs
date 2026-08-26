@@ -40,7 +40,11 @@ public class MeritHelper : IAddFormHelper
     {
         var index = form.FindClickedTextBoxIndex(item.Name);
 
-        DefaultMerit defaultMerit = (DefaultMerit)index;
+        DefaultMerit? defaultMerit = null;
+        if (index is not null)
+        {
+            defaultMerit = (DefaultMerit)(int)index;
+        }
         var merit = (MeritEntity)item;
         merit.DefaultMerit = defaultMerit;
 
