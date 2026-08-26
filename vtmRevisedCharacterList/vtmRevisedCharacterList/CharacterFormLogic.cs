@@ -1537,5 +1537,10 @@ public partial class CharacterForm : Form
         });
     }
 
+    public void SendInit(string init)
+    {
+        MessageBox.Show(init);
+    }
+
     #endregion
 }

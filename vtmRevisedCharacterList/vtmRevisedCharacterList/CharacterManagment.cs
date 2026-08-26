@@ -19,6 +19,6 @@ public partial class CharacterManagment : Form
 
     private void InitRollButton_Click(object sender, EventArgs e)
     {
-
+        RollInit();
     }
 }
