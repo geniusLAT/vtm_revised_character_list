@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Json;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -16,6 +17,8 @@ public partial class CharacterForm : Form
     private HttpClient? _httpClient;
 
     GuiConfig? _config;
+
+    private bool _adminStatus;
 
     List<CharacterListMember> _avaliableCharacters = new List<CharacterListMember>();
 
@@ -961,7 +964,7 @@ public partial class CharacterForm : Form
             BaseAddress = new Uri(_config.Path)
         };
 
-        var task = Task.Run(() => GetCharacterListAsync(_config.UserId));
+        var task = Task.Run(() => GetCharacterListAsync(_config.UserId)); 
 
         //while server thinks
         ClearAttributeChoice();
@@ -971,6 +974,9 @@ public partial class CharacterForm : Form
         FindButtonsForOthers();
 
         task.Wait();
+
+        var task3 = Task.Run(() => GetStatusAsync(_config.UserId));
+
 
         _avaliableCharacters = task.Result;
         MessageBox.Show($"Найдено персонажей: {_avaliableCharacters.Count.ToString()}");
@@ -991,6 +997,11 @@ public partial class CharacterForm : Form
             _chosenCharacter = task2.Result;
             RenderCharacter(_chosenCharacter);
         }
+
+        task3.Wait();
+        
+        _adminStatus = task3.Result;
+        MessageBox.Show(_adminStatus.ToString());
 
         //var character = new Character()
         //{
@@ -1044,6 +1055,23 @@ public partial class CharacterForm : Form
 
             return null;
         }
+    }
+
+    public async Task<bool> GetStatusAsync(Guid userId)
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync($"/User/GetAdminStatus?userId={userId}");
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<bool>();
+            return responseRequest;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return false;
     }
 
     public async Task<List<CharacterListMember>> GetCharacterListAsync(Guid userId)

@@ -15,14 +15,10 @@ namespace vtmRevisedWebServer.Controllers
         }
 
         [HttpGet("GetAdminStatus", Name = "GetAdminStatus")]
-        public IActionResult GetAdminStatus(Guid userId)
+        public IActionResult GetAdminStatus([FromQuery] Guid userId) 
         {
             var adminGuid = CharacterManager.GetAdminGuid();
-            
-            return Ok(new
-            {
-                Status = adminGuid == userId
-            });
+            return Ok(adminGuid == userId);
         }
     }
 }
