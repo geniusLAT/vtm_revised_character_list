@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharacterForm));
             characterPanel = new Panel();
+            CharacterManagmentButton = new Button();
             MeritsOuterPanel = new Panel();
             AddMeritButton = new Button();
             MeritsInnerPanel = new Panel();
@@ -621,7 +623,6 @@
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
             HiddenMessage = new CheckBox();
-            CharacterManagmentButton = new Button();
             characterPanel.SuspendLayout();
             MeritsOuterPanel.SuspendLayout();
             MeritsInnerPanel.SuspendLayout();
@@ -816,6 +817,17 @@
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // CharacterManagmentButton
+            // 
+            CharacterManagmentButton.Font = new Font("Segoe UI", 12F);
+            CharacterManagmentButton.Location = new Point(442, -15);
+            CharacterManagmentButton.Name = "CharacterManagmentButton";
+            CharacterManagmentButton.Size = new Size(30, 36);
+            CharacterManagmentButton.TabIndex = 21;
+            CharacterManagmentButton.Text = "...";
+            CharacterManagmentButton.UseVisualStyleBackColor = true;
+            CharacterManagmentButton.Click += CharacterManagmentButton_Click;
             // 
             // MeritsOuterPanel
             // 
@@ -7139,17 +7151,6 @@
             HiddenMessage.UseVisualStyleBackColor = true;
             HiddenMessage.CheckedChanged += HiddenMessage_CheckedChanged;
             // 
-            // CharacterManagmentButton
-            // 
-            CharacterManagmentButton.Font = new Font("Segoe UI", 12F);
-            CharacterManagmentButton.Location = new Point(442, -15);
-            CharacterManagmentButton.Name = "CharacterManagmentButton";
-            CharacterManagmentButton.Size = new Size(30, 36);
-            CharacterManagmentButton.TabIndex = 21;
-            CharacterManagmentButton.Text = "...";
-            CharacterManagmentButton.UseVisualStyleBackColor = true;
-            CharacterManagmentButton.Click += CharacterManagmentButton_Click;
-            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -7170,6 +7171,7 @@
             Controls.Add(ExtraDicePoolNumeric);
             Controls.Add(DiceLabel);
             Controls.Add(characterPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CharacterForm";
             Text = "VTM бот для кубов";
             characterPanel.ResumeLayout(false);
