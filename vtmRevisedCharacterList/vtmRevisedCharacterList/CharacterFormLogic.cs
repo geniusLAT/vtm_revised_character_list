@@ -128,6 +128,8 @@ public partial class CharacterForm : Form
 
     internal List<RatingGuiPanel> ratingGuiPanels = new List<RatingGuiPanel>();
 
+    internal List<MeritGuiPanel> meritGuiPanels = new List<MeritGuiPanel>();
+
     #endregion
 
     void FindButtonsForOthers()
@@ -1342,10 +1344,13 @@ public partial class CharacterForm : Form
         var parentPanel = MeritsInnerPanel;
         var collection = _chosenCharacter.Merits;
 
+        meritGuiPanels.Clear();
         parentPanel.Controls.Clear();
 
         for (int i = 0; i < collection.Count; i++)
         {
+            
+
             ARating? item = collection[i];
             MeritEntity? merit = item as MeritEntity;
             if ( merit is null )
@@ -1382,11 +1387,13 @@ public partial class CharacterForm : Form
                 Font = new("Segoe UI", 7),
                 Width = 11
             };
+            removeButton.Click += RemoveMeritButton_Click;
             littlePanel.Controls.Add(removeButton);
 
+            CheckBox? checkbox = null;
             if (merit.CanBeActivated)
             {
-                var checkbox = new CheckBox()
+                checkbox = new CheckBox()
                 {
                     Checked = merit.Active
                 };
@@ -1398,7 +1405,30 @@ public partial class CharacterForm : Form
                 //MessageBox.Show($"- {item.Name} can not be activated");
                 //MessageBox.Show(JsonSerializer.Serialize(merit));
             }
+
+            meritGuiPanels.Add(new() { 
+                Button = removeButton, 
+                Label = label, 
+                Panel = littlePanel, 
+                rating = merit, 
+                CheckBox = checkbox }
+            );
         }
     }
+
+    private void RemoveMeritButton_Click(object sender, EventArgs e)
+    {
+        var meritGuiPanel  = meritGuiPanels.Where(button => button.Button == sender ).FirstOrDefault();
+        if (meritGuiPanel is null)
+        {
+            return;
+        }
+
+        //MessageBox.Show(meritGuiPanel.rating.Name);
+        _chosenCharacter.Merits.Remove(meritGuiPanel.rating);
+
+        UpdateCharacter();
+    }
+
     #endregion
 }
