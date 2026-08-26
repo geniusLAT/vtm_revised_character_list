@@ -271,13 +271,13 @@ public partial class CharacterForm : Form
 
     private void label84_Click(object sender, EventArgs e)
     {
-        _difficulty = (uint)(DifficultyNumeric.Value = 6);
+        _baseDifficulty = (uint)(DifficultyNumeric.Value = 6);
         CalculateDices();
     }
 
     private void DifficultyNumeric_ValueChanged(object sender, EventArgs e)
     {
-        _difficulty = (uint)(DifficultyNumeric.Value);
+        _baseDifficulty = (uint)(DifficultyNumeric.Value);
         CalculateDices();
     }
 

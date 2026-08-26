@@ -39,7 +39,9 @@ public partial class CharacterForm : Form
 
     uint _debuffDicePool = 0;
 
-    uint _difficulty = 6;
+    uint _baseDifficulty = 6;
+
+    int _difficulty = 6;
 
     uint _additionalAutoSuccess = 0;
 
@@ -632,6 +634,9 @@ public partial class CharacterForm : Form
     {
         _dicesToRoll = 0;
         StringBuilder sb = new StringBuilder();
+        StringBuilder difficulty_sb = new StringBuilder();
+        _difficulty = (int)_baseDifficulty;
+
 
         if (_otherRollable != null)
         {
@@ -741,6 +746,13 @@ public partial class CharacterForm : Form
                 var d = Math.Abs(merit.Effect.MeritDicepoolEffect);
                 sb.Append($" {sign} {merit.Name} {d}");
             }
+            if (merit.Effect.MeritDifficultyEffect != 0 && merit.Active)
+            {
+                _difficulty += merit.Effect.MeritDifficultyEffect;
+                var sign = merit.Effect.MeritDifficultyEffect > 0 ? "+" : "-" ;
+                var d = Math.Abs(merit.Effect.MeritDifficultyEffect);
+                difficulty_sb.Append($" {sign} {merit.Name} {d}");
+            }
 
             if (merit.Effect.DaredevilRemoveOne && merit.Active)
             {
@@ -749,11 +761,16 @@ public partial class CharacterForm : Form
         }
 
         sb.Append($" = {_dicesToRoll}");
+        var difficultyComment = _baseDifficulty.ToString();
+        if (difficulty_sb.Length > 0)
+        {
+            difficultyComment = $"{_baseDifficulty}{difficulty_sb} = {_difficulty}";
+        }
         var name = _chosenCharacter?.CharacterName ?? "Кто-то";
         var daredevilCommentary = _daredevil ? ",сорвиголова " : string.Empty;
         var specializationCommentary = _specialization ? ",специализация " : string.Empty;
         var autoSuccessCommentary = _additionalAutoSuccess > 0 ? $", {_additionalAutoSuccess} автоуспехов" : string.Empty;
-        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {_difficulty}{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
+        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {difficultyComment}{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
     }
 
     void RenderHealthCondition(Character character)
@@ -862,11 +879,12 @@ public partial class CharacterForm : Form
     public async Task RollDiceAsync()
     {
         uint positiveDicesToRoll = _dicesToRoll < 0 ? 0 : (uint)_dicesToRoll;
+        uint positiveDifficulty = _difficulty < 0 ? 0 : (uint)_difficulty;
         DicesRollRequest request = new DicesRollRequest()
         {
             AutoSuccesses = _additionalAutoSuccess,
             DicesToRoll = positiveDicesToRoll,
-            Difficulty = _difficulty,
+            Difficulty = positiveDifficulty,
             Specialization = _specialization,
             RemoveCriticalFailure = (uint)(_daredevil ? 1 : 0),
             Comment = _rollComment
