@@ -1202,6 +1202,21 @@ public partial class CharacterForm : Form
         return null;
     }
 
+    public async Task SendMessageAsync(MessageFromAdmin request)
+    {
+        try
+        {
+            var response = await _httpClient.PostAsJsonAsync("/Message", request);
+            response.EnsureSuccessStatusCode();
+            return;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        MessageBox.Show($"Какая-то шляпа на этапе серализации", "Как это вообще случилось?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+
     public Character GenerateChangedCharacter()
     {
         Character character = JsonSerializer.Deserialize<Character>(JsonSerializer.Serialize(_chosenCharacter));
@@ -1539,7 +1554,18 @@ public partial class CharacterForm : Form
 
     public void SendInit(string init)
     {
-        MessageBox.Show(init);
+        Task.Run(async () => await SendMessageAsync(new()
+        {
+            Message = new()
+            {
+                Hidden = _hiddenMessage,
+                Text = init
+            }, 
+            UserId = Config.UserId}
+        ));
+
+        logLabel.Text += init + '\n';
+        ScrollLogToBottom();
     }
 
     #endregion

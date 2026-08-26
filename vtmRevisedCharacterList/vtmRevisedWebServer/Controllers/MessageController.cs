@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedWebServer.Controllers
 {
@@ -26,6 +27,19 @@ namespace vtmRevisedWebServer.Controllers
                 Value = request,
                 Count = currentCount
             });
+        }
+
+        [HttpPost(Name = "SendMessage")]
+        public IActionResult Post([FromBody] MessageFromAdmin message)
+        {
+            var adminGuid = CharacterManager.GetAdminGuid();
+            if (adminGuid != message.UserId)
+            {
+                return Unauthorized();
+            }
+            var request = MessageManager.EnqueueRequest(message.Message);
+
+            return Ok();
         }
     }
 }
