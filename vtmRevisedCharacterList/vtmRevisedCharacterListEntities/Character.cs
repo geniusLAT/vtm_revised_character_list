@@ -452,6 +452,7 @@ public class Character
 
     public bool BonusHealth()
     {
-        return false;
+        return Merits.Where(merit => (merit as MeritEntity).Active 
+        && (merit as MeritEntity).Effect.ExtraHealth).FirstOrDefault() is not null;
     }
 }
