@@ -33,6 +33,5 @@ public class MeritEntity : ARating
         if (Effect != otherMerit.Effect) return false;
 
         return true;
-
     }
 }
