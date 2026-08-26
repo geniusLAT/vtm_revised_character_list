@@ -423,6 +423,6 @@ public partial class CharacterForm : Form
 
     private void CharacterManagmentButton_Click(object sender, EventArgs e)
     {
-
+        OpenCharacterManagmentWindow();
     }
 }

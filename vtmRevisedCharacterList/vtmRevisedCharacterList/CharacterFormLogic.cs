@@ -20,6 +20,10 @@ public partial class CharacterForm : Form
 
     private bool _adminStatus;
 
+    internal bool CharacterManagmentOpened = false;
+
+    internal CharacterManagment? CharacterManagmentOpenedForm = null;
+
     List<CharacterListMember> _avaliableCharacters = new List<CharacterListMember>();
 
     AttributeVtm? _chosenAttribute;
@@ -1511,6 +1515,26 @@ public partial class CharacterForm : Form
         meritGuiPanel.rating.Active = meritGuiPanel.CheckBox.Checked;
 
         UpdateCharacter();
+    }
+
+    #endregion
+
+    #region CharacterManagment
+
+    public void OpenCharacterManagmentWindow()
+    {
+        if (CharacterManagmentOpened)
+        { 
+            CharacterManagmentOpenedForm.Invoke(new Action(() => CharacterManagmentOpenedForm.Activate()));
+            return;
+        }
+
+        Task.Run(() =>
+        {
+            CharacterManagmentOpened = true;
+            CharacterManagmentOpenedForm = new CharacterManagment(this);
+            CharacterManagmentOpenedForm.ShowDialog();
+        });
     }
 
     #endregion
