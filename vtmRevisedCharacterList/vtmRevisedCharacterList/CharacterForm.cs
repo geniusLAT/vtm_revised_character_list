@@ -415,4 +415,9 @@ public partial class CharacterForm : Form
     {
         OpenAddMeritWindow();
     }
+
+    private void HiddenMessage_CheckedChanged(object sender, EventArgs e)
+    {
+        _hiddenMessage = HiddenMessage.Checked;
+    }
 }

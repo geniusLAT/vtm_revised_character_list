@@ -50,6 +50,8 @@ def poll_dice_api_and_send():
           successes = roll_res.get('succeses', 0)
           is_crit_fail = roll_res.get('criticallyFailed', False)
 
+          hidden = value.get('hidden')
+
           msg_text = comment
           for roll in rolls:
             msg_text += str(roll) + " "
@@ -57,9 +59,12 @@ def poll_dice_api_and_send():
 
           if (is_crit_fail):
             msg_text += "\nКритический провал"
-          
 
-          bot.send_message(CHAT_ID, msg_text, parse_mode='Markdown')
+          chat_id = CHAT_ID
+          if hidden:
+                      chat_id = HIDDEN_CHAT_ID
+
+          bot.send_message(chat_id, msg_text, parse_mode='Markdown')
 
     except Exception as e:
       print(f'Ошибка при запросе к API: {e}')

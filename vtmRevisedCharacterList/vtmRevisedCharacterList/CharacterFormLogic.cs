@@ -31,6 +31,8 @@ public partial class CharacterForm : Form
 
     private bool _unsavedChangesExist = false;
 
+    private bool _hiddenMessage = false;
+
     #region diceRolling
 
     int _dicesToRoll = 0;
@@ -887,7 +889,8 @@ public partial class CharacterForm : Form
             Difficulty = positiveDifficulty,
             Specialization = _specialization,
             RemoveCriticalFailure = (uint)(_daredevil ? 1 : 0),
-            Comment = _rollComment
+            Comment = _rollComment,
+             Hidden = _hiddenMessage
         };
 
         try
@@ -1135,7 +1138,7 @@ public partial class CharacterForm : Form
             CharacterToUpdate = newCharacter,
             CharacterUuid = characterGuid,
             UserUuid = _config.UserId,
-            Hidden = false
+            Hidden = _hiddenMessage
         };
         var task = Task.Run(() => UpdateCharacterAsync(request));
         task.Wait();
