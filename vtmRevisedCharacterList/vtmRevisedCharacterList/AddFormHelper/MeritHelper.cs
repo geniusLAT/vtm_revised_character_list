@@ -46,7 +46,7 @@ public class MeritHelper : IAddFormHelper
 
         MeritEffect effect = new();
 
-        merit.CanBeActivated = form.ExtraHealthCheckBox.Checked;
+        merit.CanBeActivated = form.CanBeActivatedCheckBox.Checked;
         effect.MeritDicepoolEffect = (int)form.MeritDicepoolNumeric.Value;
         effect.MeritDifficultyEffect = (int)form.MeritDiffiultyNumeric.Value;
         effect.DaredevilRemoveOne = form.RemoveOneCheckBox.Checked;
