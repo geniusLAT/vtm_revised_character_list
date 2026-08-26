@@ -38,6 +38,26 @@ public static class RussianTranslator
 
     public const string Disciplines = "Дисциплины";
 
+    public const string Merits = "Достоинства/Недостатки";
+
+    #endregion
+
+    #region MeritChangeLogVocabulary
+
+    public const string Activated = " активирован";
+
+    public const string Disactivated = " дизактивирован";
+
+    public const string ExtraHealth  = " дополнительное здоровье";
+
+    public const string DaredevilRemoveOne = " убирание единичек";
+
+    public const string CanBeActivated = " активируемость";
+
+    public const string MeritDifficultyEffect = " Модификатор сложности";
+
+    public const string MeritDicepoolEffect = " Модификатор кол-ва кубов";
+
     #endregion
 
     public static string TranslateOther(OtherRollable? other)
@@ -177,6 +197,99 @@ public static class RussianTranslator
             DefaultDiscipline.ThaumaturgyHandsOfDistraction => "Тауматургия, руки разрушения",
             null => "Неназванная дисциплина",
             _ => "Неназванная дисциплина",
+        };
+    }
+
+    public static string TranslateMerit(DefaultMerit? merit)
+    {
+        return merit switch
+        {
+            DefaultMerit.AcuteSense => "Обостренное чувство",
+            DefaultMerit.Ambidextrous => "Обоерукость",
+            DefaultMerit.EatFood => "Поглощение пищи",
+            DefaultMerit.CatlikeBalance => "Кошачье равновесие",
+            DefaultMerit.BlushOfHealth => "Сияющий здоровьем",
+            DefaultMerit.EnchantingVoice => "Чарующий голос",
+            DefaultMerit.DareDevil => "Сорвиголова",
+            DefaultMerit.EfficientDigestion => "Эффективное усвоение",
+            DefaultMerit.HugeSize => "Огромные размеры",
+            DefaultMerit.SmellOfTheGrave => "Запах могилы",
+            DefaultMerit.Short => "Низкий рост",
+            DefaultMerit.HardOfHearing => "Тугоухость",
+            DefaultMerit.FourteenthGeneration => "14-ое поколение",
+            DefaultMerit.InfectiousBite => "Заразный укус",
+            DefaultMerit.BadSight => "Плохое зрение",
+            DefaultMerit.OneEye => "Одноглазый",
+            DefaultMerit.Disfigured => "Уродство",
+            DefaultMerit.Child => "Ребенок",
+            DefaultMerit.Deformity => "Дефект",
+            DefaultMerit.Lame => "Хромота",
+            DefaultMerit.Monstrous => "Чудовищная внешность",
+            DefaultMerit.PermanentWound => "Постоянная рана",
+            DefaultMerit.SlowHealing => "Медленное лечение",
+            DefaultMerit.Addiction => "Пагубное пристрастие",
+            DefaultMerit.Mute => "Немота",
+            DefaultMerit.ThinBlood => "Слабая кровь",
+            DefaultMerit.DiseaseCarrier => "Разносчик болезни",
+            DefaultMerit.Deaf => "Глухота",
+            DefaultMerit.FleshOfTheCorpse => "Мёртвая плоть",
+            DefaultMerit.Blind => "Слепота",
+            DefaultMerit.CommonSense => "Здравый смысл",
+            DefaultMerit.Concentration => "Концентрация",
+            DefaultMerit.TimeSense => "Чувство времени",
+            DefaultMerit.CodeOfHonor => "Кодекс чести",
+            DefaultMerit.EideticMemory => "Эйдетическая память",
+            DefaultMerit.LightSleeper => "Чуткий сон",
+            DefaultMerit.NaturalLenguist => "Прирождённый лингвист",
+            DefaultMerit.CalmHeart => "Миролюбивость",
+            DefaultMerit.IronWill => "Железная воля",
+            DefaultMerit.DeepSleeper => "Крепкий сон",
+            DefaultMerit.Nightmares => "Кошмары",
+            DefaultMerit.Phobia => "Фобия",
+            DefaultMerit.PreyExclusion => "Разборчивость в добыче",
+            DefaultMerit.Shy => "Робость",
+            DefaultMerit.SoftHearted => "Мягкосердечие",
+            DefaultMerit.SpeechImpediment => "Нарушение речи",
+            DefaultMerit.ShortFuse => "Вспыльчивость",
+            DefaultMerit.Territorial => "Территориальность",
+            DefaultMerit.Vengefil => "Мстительность",
+            DefaultMerit.Amnesia => "Амнезия",
+            DefaultMerit.Lunacy => "Лунатизм",
+            DefaultMerit.WeakWilled => "Слабая воля",
+            DefaultMerit.ConspicuousConsumption => "Полное потребление",
+            DefaultMerit.PrestigiousSire => "Прославленный сир",
+            DefaultMerit.NaturalLeader => "Прирожденный лидер",
+            DefaultMerit.DebtOfGratitude => "Долг признательности",
+            DefaultMerit.DarkSecret => "Тёмная тайна",
+            DefaultMerit.InfamousSire => "Постыдный сир",
+            DefaultMerit.MistakenIdentity => "Ошибочное опознание",
+            DefaultMerit.SireResentiment => "Отречение сира",
+            DefaultMerit.Enemy => "Враг",
+            DefaultMerit.Hunted => "Преследование",
+            DefaultMerit.ProbationarySectMember => "На испытательном сроке",
+            DefaultMerit.Medium => "Медиум",
+            DefaultMerit.MagicResistance => "Сопротивляемость магии",
+            DefaultMerit.OracularAbility => "Способности предсказателя",
+            DefaultMerit.SpiritMentor => "Дух-Наставник",
+            DefaultMerit.Unbondable => "Иммунитет к узам",
+            DefaultMerit.Lucky => "Удачливость",
+            DefaultMerit.TrueLove => "Истинная любовь",
+            DefaultMerit.NineLives => "Девять жизней",
+            DefaultMerit.TrueFaith => "Истинная вера",
+            DefaultMerit.TouchOfFrost => "Прикосновение холода",
+            DefaultMerit.RepulsedByGarlic => "Восприимчивость к чесноку",
+            DefaultMerit.Cursed => "Проклятие",
+            DefaultMerit.CastNoReflection => "Отсутствие отражения",
+            DefaultMerit.EeriePresence => "Зловещее присутствие",
+            DefaultMerit.RepelledByCrosses => "Восприимчивость к крестам",
+            DefaultMerit.CantCrossRunningWater => "Неспособность пересекать текущую воду",
+            DefaultMerit.Haunted => "Преследование духами",
+            DefaultMerit.GripOfTheDamned => "Хватка проклятого",
+            DefaultMerit.DarkFate => "ЗлойРок",
+            DefaultMerit.LightSensitive => "Чувствительность к свету",
+
+            null => "Неназванная деталь биографии",
+            _ => "Неназванная деталь биографии",
         };
     }
 }

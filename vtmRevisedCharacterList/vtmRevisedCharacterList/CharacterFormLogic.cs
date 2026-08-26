@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using vtmRevisedCharacterList.AddFormHelper;
 using vtmRevisedCharacterListEntities;
 
@@ -38,7 +39,9 @@ public partial class CharacterForm : Form
 
     uint _debuffDicePool = 0;
 
-    uint _difficulty = 6;
+    uint _baseDifficulty = 6;
+
+    int _difficulty = 6;
 
     uint _additionalAutoSuccess = 0;
 
@@ -126,6 +129,8 @@ public partial class CharacterForm : Form
     #region abstractRatingPanels
 
     internal List<RatingGuiPanel> ratingGuiPanels = new List<RatingGuiPanel>();
+
+    internal List<MeritGuiPanel> meritGuiPanels = new List<MeritGuiPanel>();
 
     #endregion
 
@@ -629,6 +634,9 @@ public partial class CharacterForm : Form
     {
         _dicesToRoll = 0;
         StringBuilder sb = new StringBuilder();
+        StringBuilder difficulty_sb = new StringBuilder();
+        _difficulty = (int)_baseDifficulty;
+
 
         if (_otherRollable != null)
         {
@@ -727,12 +735,42 @@ public partial class CharacterForm : Form
             }
         }
 
+        _daredevil = false;
+        foreach (var meritRating in _chosenCharacter.Merits)
+        {
+            var merit = meritRating as MeritEntity;
+            if (merit.Effect.MeritDicepoolEffect != 0 && merit.Active)
+            {
+                _dicesToRoll += merit.Effect.MeritDicepoolEffect;
+                var sign = merit.Effect.MeritDicepoolEffect > 0 ? "+" : "-" ;
+                var d = Math.Abs(merit.Effect.MeritDicepoolEffect);
+                sb.Append($" {sign} {merit.Name} {d}");
+            }
+            if (merit.Effect.MeritDifficultyEffect != 0 && merit.Active)
+            {
+                _difficulty += merit.Effect.MeritDifficultyEffect;
+                var sign = merit.Effect.MeritDifficultyEffect > 0 ? "+" : "-" ;
+                var d = Math.Abs(merit.Effect.MeritDifficultyEffect);
+                difficulty_sb.Append($" {sign} {merit.Name} {d}");
+            }
+
+            if (merit.Effect.DaredevilRemoveOne && merit.Active)
+            {
+                _daredevil = true;
+            }
+        }
+
         sb.Append($" = {_dicesToRoll}");
+        var difficultyComment = _baseDifficulty.ToString();
+        if (difficulty_sb.Length > 0)
+        {
+            difficultyComment = $"{_baseDifficulty}{difficulty_sb} = {_difficulty}";
+        }
         var name = _chosenCharacter?.CharacterName ?? "Кто-то";
         var daredevilCommentary = _daredevil ? ",сорвиголова " : string.Empty;
         var specializationCommentary = _specialization ? ",специализация " : string.Empty;
         var autoSuccessCommentary = _additionalAutoSuccess > 0 ? $", {_additionalAutoSuccess} автоуспехов" : string.Empty;
-        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {_difficulty}{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
+        _rollComment = DiceLabel.Text = $"{name} {sb.ToString()} СЛ {difficultyComment}{daredevilCommentary}{specializationCommentary}{autoSuccessCommentary}\n";
     }
 
     void RenderHealthCondition(Character character)
@@ -828,6 +866,7 @@ public partial class CharacterForm : Form
         ratingGuiPanels.Clear();
         RenderBackGrounds();
         RenderDisciplines();
+        RenderMerits();
 
         MarkCharacterAsSaved();
 
@@ -840,11 +879,12 @@ public partial class CharacterForm : Form
     public async Task RollDiceAsync()
     {
         uint positiveDicesToRoll = _dicesToRoll < 0 ? 0 : (uint)_dicesToRoll;
+        uint positiveDifficulty = _difficulty < 0 ? 0 : (uint)_difficulty;
         DicesRollRequest request = new DicesRollRequest()
         {
             AutoSuccesses = _additionalAutoSuccess,
             DicesToRoll = positiveDicesToRoll,
-            Difficulty = _difficulty,
+            Difficulty = positiveDifficulty,
             Specialization = _specialization,
             RemoveCriticalFailure = (uint)(_daredevil ? 1 : 0),
             Comment = _rollComment
@@ -1171,7 +1211,7 @@ public partial class CharacterForm : Form
         {
             if (ratingPanel.Numeric.Value != ratingPanel.rating.Rating)
             {
-                character.SetRating(new()
+                character.SetRating(new RatingDto()
                 {
                     Name = ratingPanel.rating.Name,
                     Rating = (uint)ratingPanel.Numeric.Value,
@@ -1318,6 +1358,127 @@ public partial class CharacterForm : Form
     void RenderDisciplines()
     {
         RenderCollectionGui(DisciplinesInnerPanel, _chosenCharacter.Disciplines);
+    }
+
+    #endregion
+
+    #region MeritsAndFlawManagment
+
+    void OpenAddMeritWindow()
+    {
+        var addWindow = new AddARatingForm(
+            this,
+            _chosenCharacter.Merits,
+            typeof(MeritEntity),
+            new MeritHelper()
+            );
+        addWindow.ShowDialog();
+    }
+
+    void RenderMerits()
+    {
+        var parentPanel = MeritsInnerPanel;
+        var collection = _chosenCharacter.Merits;
+
+        meritGuiPanels.Clear();
+        parentPanel.Controls.Clear();
+
+        for (int i = 0; i < collection.Count; i++)
+        {
+            
+
+            ARating? item = collection[i];
+            MeritEntity? merit = item as MeritEntity;
+            if ( merit is null )
+            {
+                MessageBox.Show($"{item.GetType()}\n {item.Name} не достоинство или недостаток");
+                continue;
+            }
+            var littlePanel = new Panel()
+            {
+                Width = 207,//227
+                Height = 19,
+                //BackColor = Color.Green,
+                Location = new Point(23, 3 + i * 20)
+            };
+            //littlePanel.Click += ExampleBackGroundPanel_Click;
+            parentPanel.Controls.Add(littlePanel);
+            //81, 10
+
+            var label = new Label()
+            {
+                Width = 200,
+                Height = 10,
+                Text = item.Name,
+                Font = new("Segoe UI", 7),
+                Location = new Point(40, 4)
+            };
+            littlePanel.Controls.Add(label);
+
+            var removeButton = new Button()
+            {
+                Location = Location = new Point(15, 4),
+                Text = "-",
+
+                Font = new("Segoe UI", 7),
+                Width = 11
+            };
+            removeButton.Click += RemoveMeritButton_Click;
+            littlePanel.Controls.Add(removeButton);
+
+            CheckBox? checkbox = null;
+            if (merit.CanBeActivated)
+            {
+                checkbox = new CheckBox()
+                {
+                    Checked = merit.Active
+                };
+                littlePanel.Controls.Add(checkbox);
+                checkbox.CheckedChanged += ActivateMeritCheckBox_CheckedChanged;
+                //MessageBox.Show($"+ {item.Name} can be activated");
+            }
+            else
+            {
+                //MessageBox.Show($"- {item.Name} can not be activated");
+                //MessageBox.Show(JsonSerializer.Serialize(merit));
+            }
+
+            meritGuiPanels.Add(new() { 
+                Button = removeButton, 
+                Label = label, 
+                Panel = littlePanel, 
+                rating = merit, 
+                CheckBox = checkbox }
+            );
+        }
+    }
+
+    private void RemoveMeritButton_Click(object sender, EventArgs e)
+    {
+        var meritGuiPanel  = meritGuiPanels.Where(panel => panel.Button == sender ).FirstOrDefault();
+        if (meritGuiPanel is null)
+        {
+            return;
+        }
+
+        //MessageBox.Show(meritGuiPanel.rating.Name);
+        _chosenCharacter.Merits.Remove(meritGuiPanel.rating);
+
+        UpdateCharacter();
+    }
+
+    private void ActivateMeritCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+        var meritGuiPanel = meritGuiPanels.Where(panel => panel.CheckBox == sender).FirstOrDefault();
+        if (meritGuiPanel is null)
+        {
+            return;
+        }
+
+        //MessageBox.Show(meritGuiPanel.rating.Name);
+        meritGuiPanel.rating.Active = meritGuiPanel.CheckBox.Checked;
+
+        UpdateCharacter();
     }
 
     #endregion

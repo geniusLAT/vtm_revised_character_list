@@ -1,6 +1,14 @@
-﻿namespace vtmRevisedCharacterList.AddFormHelper;
+﻿using vtmRevisedCharacterListEntities;
+
+namespace vtmRevisedCharacterList.AddFormHelper;
 
 public interface IAddFormHelper
 {
     public IEnumerable<string> GetAutoComplete();
+
+    public bool Rated => true;
+
+    public void ProcessCreatedItem(AddARatingForm form, ARating item);
+
+    public void ProcessClick(AddARatingForm form);
 }

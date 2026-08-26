@@ -132,20 +132,6 @@ public static class ChangeLogGenerator
             }
         }
 
-        //if (character1.Backgrounds.Count() != character2.Backgrounds.Count())
-        //{
-        //    if (character1.Backgrounds.Count() > character2.Backgrounds.Count())
-        //    {
-        //        sb.Append($"\n{RussianTranslator.Backgrounds}, {RussianTranslator.Lenght} {character1.Backgrounds.Count()
-        //            } {RussianTranslator.DecreasedWord} {character2.Backgrounds.Count()}");
-        //    }
-        //    if (character1.Backgrounds.Count() < character2.Backgrounds.Count())
-        //    {
-        //        sb.Append($"\n{RussianTranslator.Backgrounds}, {RussianTranslator.Lenght} {character1.Backgrounds.Count()
-        //            } {RussianTranslator.IncreasedWord} {character2.Backgrounds.Count()}");
-        //    }
-        //}
-
         var backgroundChangeLog = GenerateChangeLogForCollection(
             character1.Backgrounds, 
             character2.Backgrounds, 
@@ -162,6 +148,15 @@ public static class ChangeLogGenerator
         if (!string.IsNullOrEmpty(disciplineChangeLog))
         {
             sb.Append(disciplineChangeLog);
+        }
+
+        var meritChangeLog = GenerateChangeLogForCollection(
+          character1.Merits,
+          character2.Merits,
+          RussianTranslator.Merits);
+        if (!string.IsNullOrEmpty(meritChangeLog))
+        {
+            sb.Append(meritChangeLog);
         }
 
         if (sb.Length == 0)
@@ -208,6 +203,12 @@ public static class ChangeLogGenerator
                             sb.Append($"\n{item2.Name} {item1.Rating} {RussianTranslator.IncreasedWord} {item2.Rating}");
                         }
                     }
+                    MeritEntity merit1 = item1 as MeritEntity;
+                    MeritEntity merit2 = item2 as MeritEntity;
+                    if (merit1 is not null && merit2 is not null && merit1 != merit2)
+                    {
+                        sb.Append(ChangeLogForMerits(merit1, merit2));
+                    }
                 }
             }
 
@@ -232,10 +233,119 @@ public static class ChangeLogGenerator
             if (!found)
             {
                 sb.Append($"\n{item1.Name} {item1.Rating} {RussianTranslator.Added}");
+                if (item1 is MeritEntity)
+                {
+                    sb.Append($"\n{MeritDescription(item1 as MeritEntity)}");
+                }
 
             }
         }
 
+        return sb.ToString();
+    }
+
+    public static string MeritDescription(MeritEntity merit)
+    {
+        var sb = new StringBuilder();
+
+        if (merit.CanBeActivated)
+        {
+            sb.Append($"\n{merit.Name} {RussianTranslator.CanBeActivated} {RussianTranslator.Activated}");
+        }
+        if (merit.Effect.DaredevilRemoveOne)
+        {
+            sb.Append($"\n{merit.Name} {RussianTranslator.DaredevilRemoveOne} {RussianTranslator.Activated}");
+        }
+        if (merit.Effect.ExtraHealth)
+        {
+            sb.Append($"\n{merit.Name} {RussianTranslator.ExtraHealth} {RussianTranslator.Activated}");
+        }
+        if (merit.Effect.MeritDifficultyEffect != 0)
+        {
+            sb.Append($"\n{merit.Name} {RussianTranslator.MeritDifficultyEffect} {merit.Effect.MeritDifficultyEffect}");
+        }
+        if (merit.Effect.MeritDicepoolEffect != 0)
+        {
+            sb.Append($"\n{merit.Name} {RussianTranslator.MeritDicepoolEffect} {merit.Effect.MeritDicepoolEffect}");
+        }
+
+        return sb.ToString();
+    }
+
+    public static string ChangeLogForMerits(MeritEntity merit1, MeritEntity merit2)
+    {
+        StringBuilder sb = new StringBuilder();
+
+
+        {
+            bool someLog = false;
+            //Not sure if needed
+            if (merit2.Active != merit1.Active)
+            {
+                if (merit2.Active)
+                {
+                    sb.Append($"\n{merit2.Name} {RussianTranslator.Activated}");
+                }
+                else
+                {
+                    sb.Append($"\n{merit2.Name} {RussianTranslator.Disactivated}");
+                }
+                someLog = true;
+            }
+
+            if (merit2.Effect.DaredevilRemoveOne != merit1.Effect.DaredevilRemoveOne)
+            {
+                if (merit2.Effect.DaredevilRemoveOne)
+                {
+                    sb.Append($"\n{merit2.Name} {RussianTranslator.DaredevilRemoveOne} {RussianTranslator.Activated}");
+                }
+                else
+                {
+                    sb.Append($"\n{merit2.Name} {RussianTranslator.DaredevilRemoveOne} {RussianTranslator.Disactivated}");
+                }
+                someLog = true;
+            }
+
+            if (merit2.CanBeActivated != merit1.CanBeActivated)
+            {
+                if (merit2.CanBeActivated)
+                {
+                    sb.Append($"\n{merit2.Name} {RussianTranslator.CanBeActivated} {RussianTranslator.Activated}");
+                }
+                else
+                {
+                    sb.Append($"\n{merit2.Name} {RussianTranslator.CanBeActivated} {RussianTranslator.Disactivated}");
+                }
+                someLog = true;
+            }
+
+            if (merit2.Effect.MeritDicepoolEffect != merit1.Effect.MeritDicepoolEffect)
+            {
+                if (merit1.Effect.MeritDicepoolEffect > merit2.Effect.MeritDicepoolEffect)
+                {
+                    sb.Append($"\n{merit1.Name} {RussianTranslator.MeritDicepoolEffect} {merit1.Effect.MeritDicepoolEffect} {RussianTranslator.DecreasedWord} {merit2.Effect.MeritDicepoolEffect}");
+                }
+                else
+                {
+                    sb.Append($"\n{merit1.Name} {RussianTranslator.MeritDicepoolEffect} {merit1.Effect.MeritDicepoolEffect} {RussianTranslator.IncreasedWord} {merit2.Effect.MeritDicepoolEffect}");
+                }
+                someLog = true;
+            }
+
+            if (merit2.Effect.MeritDifficultyEffect != merit1.Effect.MeritDifficultyEffect)
+            {
+                if (merit1.Effect.MeritDifficultyEffect > merit2.Effect.MeritDifficultyEffect)
+                {
+                    sb.Append($"\n{merit1.Name} {RussianTranslator.MeritDifficultyEffect} {merit1.Effect.MeritDifficultyEffect} {RussianTranslator.DecreasedWord} {merit2.Effect.MeritDifficultyEffect}");
+                }
+                else
+                {
+                    sb.Append($"\n{merit1.Name} {RussianTranslator.MeritDifficultyEffect} {merit1.Effect.MeritDifficultyEffect} {RussianTranslator.IncreasedWord} {merit2.Effect.MeritDifficultyEffect}");
+                }
+                someLog = true;
+            }
+
+        }
         return sb.ToString();
     }
 }

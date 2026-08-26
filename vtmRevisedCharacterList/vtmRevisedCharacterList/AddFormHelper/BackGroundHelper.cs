@@ -14,4 +14,14 @@ public class BackGroundHelper : IAddFormHelper
         }
         return result;
     }
+
+    public void ProcessClick(AddARatingForm form)
+    {
+
+    }
+
+    public void ProcessCreatedItem(AddARatingForm form, ARating item)
+    {
+
+    }
 }

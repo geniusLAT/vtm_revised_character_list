@@ -271,13 +271,13 @@ public partial class CharacterForm : Form
 
     private void label84_Click(object sender, EventArgs e)
     {
-        _difficulty = (uint)(DifficultyNumeric.Value = 6);
+        _baseDifficulty = (uint)(DifficultyNumeric.Value = 6);
         CalculateDices();
     }
 
     private void DifficultyNumeric_ValueChanged(object sender, EventArgs e)
     {
-        _difficulty = (uint)(DifficultyNumeric.Value);
+        _baseDifficulty = (uint)(DifficultyNumeric.Value);
         CalculateDices();
     }
 
@@ -301,11 +301,6 @@ public partial class CharacterForm : Form
         await RollDiceAsync();
 
         RollDiceButton.Enabled = true;
-    }
-
-    private void DaredevilCheckBox_CheckedChanged(object sender, EventArgs e)
-    {
-        _daredevil = DaredevilCheckBox.Checked;
     }
 
     private void SpecializationCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -414,5 +409,10 @@ public partial class CharacterForm : Form
     private void AddDisciplineButton_Click(object sender, EventArgs e)
     {
         OpenAddDisciplineWindow();
+    }
+
+    private void AddMeritButton_Click(object sender, EventArgs e)
+    {
+        OpenAddMeritWindow();
     }
 }
