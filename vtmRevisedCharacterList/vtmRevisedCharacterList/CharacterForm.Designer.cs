@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             characterPanel = new Panel();
+            MeritsOuterPanel = new Panel();
+            AddMeritButton = new Button();
+            MeritsInnerPanel = new Panel();
+            panel39 = new Panel();
+            panel41 = new Panel();
+            label106 = new Label();
+            numericUpDown3 = new NumericUpDown();
+            radioButton14 = new RadioButton();
+            radioButton15 = new RadioButton();
+            radioButton16 = new RadioButton();
+            radioButton17 = new RadioButton();
+            radioButton18 = new RadioButton();
+            label107 = new Label();
+            MeritsLabel = new Label();
             DisciplinesOuterPanel = new Panel();
             AddDisciplineButton = new Button();
             DisciplinesInnerPanel = new Panel();
@@ -186,7 +200,6 @@
             constWillpowerButton1 = new RadioButton();
             WillpowerLabel = new Label();
             characterNameLabel = new Label();
-            DaredevilCheckBox = new CheckBox();
             AbilitiesPanel = new Panel();
             panel53 = new Panel();
             SciencePanel = new Panel();
@@ -607,21 +620,12 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
-            MeritsOuterPanel = new Panel();
-            AddMeritButton = new Button();
-            MeritsInnerPanel = new Panel();
-            panel39 = new Panel();
-            panel41 = new Panel();
-            label106 = new Label();
-            numericUpDown3 = new NumericUpDown();
-            radioButton14 = new RadioButton();
-            radioButton15 = new RadioButton();
-            radioButton16 = new RadioButton();
-            radioButton17 = new RadioButton();
-            radioButton18 = new RadioButton();
-            label107 = new Label();
-            MeritsLabel = new Label();
             characterPanel.SuspendLayout();
+            MeritsOuterPanel.SuspendLayout();
+            MeritsInnerPanel.SuspendLayout();
+            panel39.SuspendLayout();
+            panel41.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             DisciplinesOuterPanel.SuspendLayout();
             DisciplinesInnerPanel.SuspendLayout();
             panel35.SuspendLayout();
@@ -786,11 +790,6 @@
             ((System.ComponentModel.ISupportInitialize)additionalAutoSuccessNumeric).BeginInit();
             LogPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).BeginInit();
-            MeritsOuterPanel.SuspendLayout();
-            MeritsInnerPanel.SuspendLayout();
-            panel39.SuspendLayout();
-            panel41.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             SuspendLayout();
             // 
             // characterPanel
@@ -808,13 +807,156 @@
             characterPanel.Controls.Add(panel3);
             characterPanel.Controls.Add(ConstWillpowerPanel);
             characterPanel.Controls.Add(characterNameLabel);
-            characterPanel.Controls.Add(DaredevilCheckBox);
             characterPanel.Controls.Add(AbilitiesPanel);
             characterPanel.Controls.Add(AttributesPanel);
             characterPanel.Location = new Point(12, 12);
             characterPanel.Name = "characterPanel";
             characterPanel.Size = new Size(705, 686);
             characterPanel.TabIndex = 0;
+            // 
+            // MeritsOuterPanel
+            // 
+            MeritsOuterPanel.Controls.Add(AddMeritButton);
+            MeritsOuterPanel.Controls.Add(MeritsInnerPanel);
+            MeritsOuterPanel.Controls.Add(MeritsLabel);
+            MeritsOuterPanel.Location = new Point(3, 500);
+            MeritsOuterPanel.Name = "MeritsOuterPanel";
+            MeritsOuterPanel.Size = new Size(230, 186);
+            MeritsOuterPanel.TabIndex = 21;
+            // 
+            // AddMeritButton
+            // 
+            AddMeritButton.Font = new Font("Segoe UI", 7F);
+            AddMeritButton.Location = new Point(206, 0);
+            AddMeritButton.Name = "AddMeritButton";
+            AddMeritButton.Size = new Size(21, 18);
+            AddMeritButton.TabIndex = 20;
+            AddMeritButton.Text = "+";
+            AddMeritButton.UseVisualStyleBackColor = true;
+            AddMeritButton.Click += AddMeritButton_Click;
+            // 
+            // MeritsInnerPanel
+            // 
+            MeritsInnerPanel.AutoScroll = true;
+            MeritsInnerPanel.Controls.Add(panel39);
+            MeritsInnerPanel.Location = new Point(0, 16);
+            MeritsInnerPanel.Name = "MeritsInnerPanel";
+            MeritsInnerPanel.Size = new Size(230, 170);
+            MeritsInnerPanel.TabIndex = 15;
+            // 
+            // panel39
+            // 
+            panel39.Controls.Add(panel41);
+            panel39.Controls.Add(numericUpDown3);
+            panel39.Controls.Add(radioButton14);
+            panel39.Controls.Add(radioButton15);
+            panel39.Controls.Add(radioButton16);
+            panel39.Controls.Add(radioButton17);
+            panel39.Controls.Add(radioButton18);
+            panel39.Controls.Add(label107);
+            panel39.Location = new Point(0, 2);
+            panel39.Name = "panel39";
+            panel39.Size = new Size(227, 19);
+            panel39.TabIndex = 9;
+            // 
+            // panel41
+            // 
+            panel41.Controls.Add(label106);
+            panel41.Location = new Point(3, 18);
+            panel41.Name = "panel41";
+            panel41.Size = new Size(197, 19);
+            panel41.TabIndex = 2;
+            // 
+            // label106
+            // 
+            label106.AutoSize = true;
+            label106.Location = new Point(3, 0);
+            label106.Name = "label106";
+            label106.Size = new Size(58, 15);
+            label106.TabIndex = 0;
+            label106.Text = "Ловкость";
+            // 
+            // numericUpDown3
+            // 
+            numericUpDown3.Location = new Point(183, -2);
+            numericUpDown3.Name = "numericUpDown3";
+            numericUpDown3.Size = new Size(41, 23);
+            numericUpDown3.TabIndex = 8;
+            // 
+            // radioButton14
+            // 
+            radioButton14.AutoCheck = false;
+            radioButton14.AutoSize = true;
+            radioButton14.Checked = true;
+            radioButton14.Location = new Point(166, 6);
+            radioButton14.Name = "radioButton14";
+            radioButton14.Size = new Size(14, 13);
+            radioButton14.TabIndex = 7;
+            radioButton14.TabStop = true;
+            radioButton14.UseVisualStyleBackColor = true;
+            // 
+            // radioButton15
+            // 
+            radioButton15.AutoCheck = false;
+            radioButton15.AutoSize = true;
+            radioButton15.Checked = true;
+            radioButton15.Location = new Point(146, 6);
+            radioButton15.Name = "radioButton15";
+            radioButton15.Size = new Size(14, 13);
+            radioButton15.TabIndex = 6;
+            radioButton15.UseVisualStyleBackColor = true;
+            // 
+            // radioButton16
+            // 
+            radioButton16.AutoCheck = false;
+            radioButton16.AutoSize = true;
+            radioButton16.Checked = true;
+            radioButton16.Location = new Point(126, 6);
+            radioButton16.Name = "radioButton16";
+            radioButton16.Size = new Size(14, 13);
+            radioButton16.TabIndex = 5;
+            radioButton16.UseVisualStyleBackColor = true;
+            // 
+            // radioButton17
+            // 
+            radioButton17.AutoCheck = false;
+            radioButton17.AutoSize = true;
+            radioButton17.Checked = true;
+            radioButton17.Location = new Point(106, 6);
+            radioButton17.Name = "radioButton17";
+            radioButton17.Size = new Size(14, 13);
+            radioButton17.TabIndex = 4;
+            radioButton17.UseVisualStyleBackColor = true;
+            // 
+            // radioButton18
+            // 
+            radioButton18.AutoCheck = false;
+            radioButton18.AutoSize = true;
+            radioButton18.Checked = true;
+            radioButton18.Location = new Point(86, 6);
+            radioButton18.Name = "radioButton18";
+            radioButton18.Size = new Size(14, 13);
+            radioButton18.TabIndex = 3;
+            radioButton18.UseVisualStyleBackColor = true;
+            // 
+            // label107
+            // 
+            label107.AutoSize = true;
+            label107.Font = new Font("Segoe UI", 5F);
+            label107.Location = new Point(3, 6);
+            label107.Name = "label107";
+            label107.Size = new Size(81, 10);
+            label107.TabIndex = 0;
+            label107.Text = "Совесть\\Убеждённость";
+            // 
+            // MeritsLabel
+            // 
+            MeritsLabel.AutoSize = true;
+            MeritsLabel.Location = new Point(44, 0);
+            MeritsLabel.Name = "MeritsLabel";
+            MeritsLabel.Size = new Size(151, 15);
+            MeritsLabel.TabIndex = 0;
+            MeritsLabel.Text = "Достоинства и недостатки";
             // 
             // DisciplinesOuterPanel
             // 
@@ -2548,17 +2690,6 @@
             characterNameLabel.Size = new Size(95, 15);
             characterNameLabel.TabIndex = 9;
             characterNameLabel.Text = "Имя персонажа";
-            // 
-            // DaredevilCheckBox
-            // 
-            DaredevilCheckBox.AutoSize = true;
-            DaredevilCheckBox.Location = new Point(239, 663);
-            DaredevilCheckBox.Name = "DaredevilCheckBox";
-            DaredevilCheckBox.Size = new Size(99, 19);
-            DaredevilCheckBox.TabIndex = 2;
-            DaredevilCheckBox.Text = "Сорвиголова";
-            DaredevilCheckBox.UseVisualStyleBackColor = true;
-            DaredevilCheckBox.CheckedChanged += DaredevilCheckBox_CheckedChanged;
             // 
             // AbilitiesPanel
             // 
@@ -6994,150 +7125,6 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
-            // MeritsOuterPanel
-            // 
-            MeritsOuterPanel.Controls.Add(AddMeritButton);
-            MeritsOuterPanel.Controls.Add(MeritsInnerPanel);
-            MeritsOuterPanel.Controls.Add(MeritsLabel);
-            MeritsOuterPanel.Location = new Point(3, 500);
-            MeritsOuterPanel.Name = "MeritsOuterPanel";
-            MeritsOuterPanel.Size = new Size(230, 186);
-            MeritsOuterPanel.TabIndex = 21;
-            // 
-            // AddMeritButton
-            // 
-            AddMeritButton.Font = new Font("Segoe UI", 7F);
-            AddMeritButton.Location = new Point(206, 0);
-            AddMeritButton.Name = "AddMeritButton";
-            AddMeritButton.Size = new Size(21, 18);
-            AddMeritButton.TabIndex = 20;
-            AddMeritButton.Text = "+";
-            AddMeritButton.UseVisualStyleBackColor = true;
-            AddMeritButton.Click += AddMeritButton_Click;
-            // 
-            // MeritsInnerPanel
-            // 
-            MeritsInnerPanel.AutoScroll = true;
-            MeritsInnerPanel.Controls.Add(panel39);
-            MeritsInnerPanel.Location = new Point(0, 16);
-            MeritsInnerPanel.Name = "MeritsInnerPanel";
-            MeritsInnerPanel.Size = new Size(230, 170);
-            MeritsInnerPanel.TabIndex = 15;
-            // 
-            // panel39
-            // 
-            panel39.Controls.Add(panel41);
-            panel39.Controls.Add(numericUpDown3);
-            panel39.Controls.Add(radioButton14);
-            panel39.Controls.Add(radioButton15);
-            panel39.Controls.Add(radioButton16);
-            panel39.Controls.Add(radioButton17);
-            panel39.Controls.Add(radioButton18);
-            panel39.Controls.Add(label107);
-            panel39.Location = new Point(0, 2);
-            panel39.Name = "panel39";
-            panel39.Size = new Size(227, 19);
-            panel39.TabIndex = 9;
-            // 
-            // panel41
-            // 
-            panel41.Controls.Add(label106);
-            panel41.Location = new Point(3, 18);
-            panel41.Name = "panel41";
-            panel41.Size = new Size(197, 19);
-            panel41.TabIndex = 2;
-            // 
-            // label106
-            // 
-            label106.AutoSize = true;
-            label106.Location = new Point(3, 0);
-            label106.Name = "label106";
-            label106.Size = new Size(58, 15);
-            label106.TabIndex = 0;
-            label106.Text = "Ловкость";
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.Location = new Point(183, -2);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(41, 23);
-            numericUpDown3.TabIndex = 8;
-            // 
-            // radioButton14
-            // 
-            radioButton14.AutoCheck = false;
-            radioButton14.AutoSize = true;
-            radioButton14.Checked = true;
-            radioButton14.Location = new Point(166, 6);
-            radioButton14.Name = "radioButton14";
-            radioButton14.Size = new Size(14, 13);
-            radioButton14.TabIndex = 7;
-            radioButton14.TabStop = true;
-            radioButton14.UseVisualStyleBackColor = true;
-            // 
-            // radioButton15
-            // 
-            radioButton15.AutoCheck = false;
-            radioButton15.AutoSize = true;
-            radioButton15.Checked = true;
-            radioButton15.Location = new Point(146, 6);
-            radioButton15.Name = "radioButton15";
-            radioButton15.Size = new Size(14, 13);
-            radioButton15.TabIndex = 6;
-            radioButton15.UseVisualStyleBackColor = true;
-            // 
-            // radioButton16
-            // 
-            radioButton16.AutoCheck = false;
-            radioButton16.AutoSize = true;
-            radioButton16.Checked = true;
-            radioButton16.Location = new Point(126, 6);
-            radioButton16.Name = "radioButton16";
-            radioButton16.Size = new Size(14, 13);
-            radioButton16.TabIndex = 5;
-            radioButton16.UseVisualStyleBackColor = true;
-            // 
-            // radioButton17
-            // 
-            radioButton17.AutoCheck = false;
-            radioButton17.AutoSize = true;
-            radioButton17.Checked = true;
-            radioButton17.Location = new Point(106, 6);
-            radioButton17.Name = "radioButton17";
-            radioButton17.Size = new Size(14, 13);
-            radioButton17.TabIndex = 4;
-            radioButton17.UseVisualStyleBackColor = true;
-            // 
-            // radioButton18
-            // 
-            radioButton18.AutoCheck = false;
-            radioButton18.AutoSize = true;
-            radioButton18.Checked = true;
-            radioButton18.Location = new Point(86, 6);
-            radioButton18.Name = "radioButton18";
-            radioButton18.Size = new Size(14, 13);
-            radioButton18.TabIndex = 3;
-            radioButton18.UseVisualStyleBackColor = true;
-            // 
-            // label107
-            // 
-            label107.AutoSize = true;
-            label107.Font = new Font("Segoe UI", 5F);
-            label107.Location = new Point(3, 6);
-            label107.Name = "label107";
-            label107.Size = new Size(81, 10);
-            label107.TabIndex = 0;
-            label107.Text = "Совесть\\Убеждённость";
-            // 
-            // MeritsLabel
-            // 
-            MeritsLabel.AutoSize = true;
-            MeritsLabel.Location = new Point(44, 0);
-            MeritsLabel.Name = "MeritsLabel";
-            MeritsLabel.Size = new Size(151, 15);
-            MeritsLabel.TabIndex = 0;
-            MeritsLabel.Text = "Достоинства и недостатки";
-            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -7161,6 +7148,14 @@
             Text = "VTM бот для кубов";
             characterPanel.ResumeLayout(false);
             characterPanel.PerformLayout();
+            MeritsOuterPanel.ResumeLayout(false);
+            MeritsOuterPanel.PerformLayout();
+            MeritsInnerPanel.ResumeLayout(false);
+            panel39.ResumeLayout(false);
+            panel39.PerformLayout();
+            panel41.ResumeLayout(false);
+            panel41.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             DisciplinesOuterPanel.ResumeLayout(false);
             DisciplinesOuterPanel.PerformLayout();
             DisciplinesInnerPanel.ResumeLayout(false);
@@ -7433,14 +7428,6 @@
             LogPanel.ResumeLayout(false);
             LogPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)debuffDicePoolNumeric).EndInit();
-            MeritsOuterPanel.ResumeLayout(false);
-            MeritsOuterPanel.PerformLayout();
-            MeritsInnerPanel.ResumeLayout(false);
-            panel39.ResumeLayout(false);
-            panel39.PerformLayout();
-            panel41.ResumeLayout(false);
-            panel41.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -7861,7 +7848,6 @@
         private Label DifficultyLabel;
         private NumericUpDown additionalAutoSuccessNumeric;
         private Label AdditionalAutoSuccessLabel;
-        private CheckBox DaredevilCheckBox;
         private Button RollDiceButton;
         private Panel LogPanel;
         private Label logLabel;

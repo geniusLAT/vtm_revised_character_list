@@ -303,11 +303,6 @@ public partial class CharacterForm : Form
         RollDiceButton.Enabled = true;
     }
 
-    private void DaredevilCheckBox_CheckedChanged(object sender, EventArgs e)
-    {
-        _daredevil = DaredevilCheckBox.Checked;
-    }
-
     private void SpecializationCheckBox_CheckedChanged(object sender, EventArgs e)
     {
         _specialization = SpecializationCheckBox.Checked;

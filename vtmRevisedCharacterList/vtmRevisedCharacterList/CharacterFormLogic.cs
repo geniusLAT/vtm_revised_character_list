@@ -730,6 +730,7 @@ public partial class CharacterForm : Form
             }
         }
 
+        _daredevil = false;
         foreach (var meritRating in _chosenCharacter.Merits)
         {
             var merit = meritRating as MeritEntity;
@@ -739,6 +740,11 @@ public partial class CharacterForm : Form
                 var sign = merit.Effect.MeritDicepoolEffect > 0 ? "+" : "-" ;
                 var d = Math.Abs(merit.Effect.MeritDicepoolEffect);
                 sb.Append($" {sign} {merit.Name} {d}");
+            }
+
+            if (merit.Effect.DaredevilRemoveOne && merit.Active)
+            {
+                _daredevil = true;
             }
         }
 
