@@ -14,6 +14,8 @@ public class DicesRollRequest
 
     public bool Specialization { get; set; }
 
+    public bool Hidden { get; set; }
+
     public RollResult? RollResult {
         get
         {

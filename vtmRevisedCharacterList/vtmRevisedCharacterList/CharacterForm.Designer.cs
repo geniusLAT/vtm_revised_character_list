@@ -620,6 +620,7 @@
             SpecializationCheckBox = new CheckBox();
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
+            HiddenMessage = new CheckBox();
             characterPanel.SuspendLayout();
             MeritsOuterPanel.SuspendLayout();
             MeritsInnerPanel.SuspendLayout();
@@ -7125,11 +7126,23 @@
             debuffDicePoolLabel.Text = "Штрафные кубы";
             debuffDicePoolLabel.Click += debuffDicePoolLabel_Click;
             // 
+            // HiddenMessage
+            // 
+            HiddenMessage.AutoSize = true;
+            HiddenMessage.Location = new Point(605, 698);
+            HiddenMessage.Name = "HiddenMessage";
+            HiddenMessage.Size = new Size(106, 19);
+            HiddenMessage.TabIndex = 19;
+            HiddenMessage.Text = "Тайные заявки";
+            HiddenMessage.UseVisualStyleBackColor = true;
+            HiddenMessage.CheckedChanged += HiddenMessage_CheckedChanged;
+            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 796);
+            Controls.Add(HiddenMessage);
             Controls.Add(debuffDicePoolLabel);
             Controls.Add(debuffDicePoolNumeric);
             Controls.Add(UpdateCharacterButton);
@@ -8031,5 +8044,6 @@
         private RadioButton radioButton18;
         private Label label107;
         private Label MeritsLabel;
+        private CheckBox HiddenMessage;
     }
 }
