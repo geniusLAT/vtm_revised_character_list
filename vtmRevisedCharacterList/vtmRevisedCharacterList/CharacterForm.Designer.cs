@@ -621,6 +621,7 @@
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
             HiddenMessage = new CheckBox();
+            CharacterManagmentButton = new Button();
             characterPanel.SuspendLayout();
             MeritsOuterPanel.SuspendLayout();
             MeritsInnerPanel.SuspendLayout();
@@ -795,6 +796,7 @@
             // 
             // characterPanel
             // 
+            characterPanel.Controls.Add(CharacterManagmentButton);
             characterPanel.Controls.Add(MeritsOuterPanel);
             characterPanel.Controls.Add(DisciplinesOuterPanel);
             characterPanel.Controls.Add(BackgroundsOuterPanel);
@@ -7137,6 +7139,17 @@
             HiddenMessage.UseVisualStyleBackColor = true;
             HiddenMessage.CheckedChanged += HiddenMessage_CheckedChanged;
             // 
+            // CharacterManagmentButton
+            // 
+            CharacterManagmentButton.Font = new Font("Segoe UI", 12F);
+            CharacterManagmentButton.Location = new Point(442, -15);
+            CharacterManagmentButton.Name = "CharacterManagmentButton";
+            CharacterManagmentButton.Size = new Size(30, 36);
+            CharacterManagmentButton.TabIndex = 21;
+            CharacterManagmentButton.Text = "...";
+            CharacterManagmentButton.UseVisualStyleBackColor = true;
+            CharacterManagmentButton.Click += CharacterManagmentButton_Click;
+            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -8045,5 +8058,6 @@
         private Label label107;
         private Label MeritsLabel;
         private CheckBox HiddenMessage;
+        private Button CharacterManagmentButton;
     }
 }

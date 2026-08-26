@@ -1001,7 +1001,8 @@ public partial class CharacterForm : Form
         task3.Wait();
         
         _adminStatus = task3.Result;
-        MessageBox.Show(_adminStatus.ToString());
+
+        CharacterManagmentButton.Visible = CharacterManagmentButton.Enabled = _adminStatus;
 
         //var character = new Character()
         //{

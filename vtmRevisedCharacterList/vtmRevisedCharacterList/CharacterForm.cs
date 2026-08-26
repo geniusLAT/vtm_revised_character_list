@@ -420,4 +420,9 @@ public partial class CharacterForm : Form
     {
         _hiddenMessage = HiddenMessage.Checked;
     }
+
+    private void CharacterManagmentButton_Click(object sender, EventArgs e)
+    {
+
+    }
 }
