@@ -16,7 +16,7 @@ public partial class CharacterForm : Form
     };
     private HttpClient? _httpClient;
 
-    GuiConfig? _config;
+    public GuiConfig? Config;
 
     private bool _adminStatus;
 
@@ -24,7 +24,7 @@ public partial class CharacterForm : Form
 
     internal CharacterManagment? CharacterManagmentOpenedForm = null;
 
-    List<CharacterListMember> _avaliableCharacters = new List<CharacterListMember>();
+    public List<CharacterListMember> AvaliableCharacters = new List<CharacterListMember>();
 
     AttributeVtm? _chosenAttribute;
 
@@ -929,14 +929,14 @@ public partial class CharacterForm : Form
 
     private async Task ChooseAnotherCharacter(int characterIndex)
     {
-        if (_config is null)
+        if (Config is null)
         {
             MessageBox.Show($"Ты куда его дел?", "А где config?", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.Close();
             return;
         }
 
-        var newCharacter = await GetCharacterAsync(_avaliableCharacters[characterIndex], _config.UserId);
+        var newCharacter = await GetCharacterAsync(AvaliableCharacters[characterIndex], Config.UserId);
 
         if (newCharacter is null)
         {
@@ -953,22 +953,22 @@ public partial class CharacterForm : Form
 
     public void StartIt()
     {
-        _config = GetConfig();
-        if (_config is null)
+        Config = GetConfig();
+        if (Config is null)
         {
             MessageBox.Show($"Ты куда его дел?", "А где config?", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.Close();
             return;
         }
-        UsernameLabel.Text = $"Игрок:{_config.UserName}";
+        UsernameLabel.Text = $"Игрок:{Config.UserName}";
 
         _httpClient = new HttpClient(handler)
         {
             //BaseAddress = new Uri("https://localhost:44320/")
-            BaseAddress = new Uri(_config.Path)
+            BaseAddress = new Uri(Config.Path)
         };
 
-        var task = Task.Run(() => GetCharacterListAsync(_config.UserId)); 
+        var task = Task.Run(() => GetCharacterListAsync(Config.UserId)); 
 
         //while server thinks
         ClearAttributeChoice();
@@ -979,19 +979,19 @@ public partial class CharacterForm : Form
 
         task.Wait();
 
-        var task3 = Task.Run(() => GetStatusAsync(_config.UserId));
+        var task3 = Task.Run(() => GetStatusAsync(Config.UserId));
 
 
-        _avaliableCharacters = task.Result;
-        MessageBox.Show($"Найдено персонажей: {_avaliableCharacters.Count.ToString()}");
+        AvaliableCharacters = task.Result;
+        MessageBox.Show($"Найдено персонажей: {AvaliableCharacters.Count.ToString()}");
 
-        if (_avaliableCharacters.Count > 0)
+        if (AvaliableCharacters.Count > 0)
         {
-            var task2 = Task.Run(() => GetCharacterAsync(_avaliableCharacters.First(), _config.UserId));
+            var task2 = Task.Run(() => GetCharacterAsync(AvaliableCharacters.First(), Config.UserId));
 
             //while server thinks
             characterComboBox.Items.Clear();
-            foreach (var character in _avaliableCharacters)
+            foreach (var character in AvaliableCharacters)
             {
                 characterComboBox.Items.Add(character.CharacterName);
             }
@@ -1163,14 +1163,14 @@ public partial class CharacterForm : Form
 
     public void UpdateCharacter()
     {
-        var characterGuid = _avaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
+        var characterGuid = AvaliableCharacters[characterComboBox.SelectedIndex].CharacterUuid;
 
         var newCharacter = GenerateChangedCharacter();
         CharacterUpdateRequest request = new()
         {
             CharacterToUpdate = newCharacter,
             CharacterUuid = characterGuid,
-            UserUuid = _config.UserId,
+            UserUuid = Config.UserId,
             Hidden = _hiddenMessage
         };
         var task = Task.Run(() => UpdateCharacterAsync(request));

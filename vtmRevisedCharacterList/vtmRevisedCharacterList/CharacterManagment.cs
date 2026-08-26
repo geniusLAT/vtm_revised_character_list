@@ -6,11 +6,19 @@ public partial class CharacterManagment : Form
     {
         _parentForm = form;
 
+        
         InitializeComponent();
+
+        Start();
     }
 
     private void CharacterManagment_FormClosed(object sender, FormClosedEventArgs e)
     {
         _parentForm.CharacterManagmentOpened = false;
+    }
+
+    private void InitRollButton_Click(object sender, EventArgs e)
+    {
+
     }
 }
