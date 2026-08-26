@@ -1398,6 +1398,7 @@ public partial class CharacterForm : Form
                     Checked = merit.Active
                 };
                 littlePanel.Controls.Add(checkbox);
+                checkbox.CheckedChanged += ActivateMeritCheckBox_CheckedChanged;
                 //MessageBox.Show($"+ {item.Name} can be activated");
             }
             else
@@ -1418,7 +1419,7 @@ public partial class CharacterForm : Form
 
     private void RemoveMeritButton_Click(object sender, EventArgs e)
     {
-        var meritGuiPanel  = meritGuiPanels.Where(button => button.Button == sender ).FirstOrDefault();
+        var meritGuiPanel  = meritGuiPanels.Where(panel => panel.Button == sender ).FirstOrDefault();
         if (meritGuiPanel is null)
         {
             return;
@@ -1426,6 +1427,20 @@ public partial class CharacterForm : Form
 
         //MessageBox.Show(meritGuiPanel.rating.Name);
         _chosenCharacter.Merits.Remove(meritGuiPanel.rating);
+
+        UpdateCharacter();
+    }
+
+    private void ActivateMeritCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+        var meritGuiPanel = meritGuiPanels.Where(panel => panel.CheckBox == sender).FirstOrDefault();
+        if (meritGuiPanel is null)
+        {
+            return;
+        }
+
+        //MessageBox.Show(meritGuiPanel.rating.Name);
+        meritGuiPanel.rating.Active = meritGuiPanel.CheckBox.Checked;
 
         UpdateCharacter();
     }
