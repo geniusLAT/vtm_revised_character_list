@@ -62,11 +62,14 @@ public partial class AddARatingForm : Form
             return;
         }
 
+
         ARating created = (ARating)Activator.CreateInstance(_type);
         created.Name = name;
         created.Rating = (uint)RatingNumeric.Value;
         _helper.ProcessCreatedItem(this, created);
         _collectionToAdd.Add(created);
+
+        var LastInCollection = _collectionToAdd.Last();
 
         _parentForm.RenderCharacter();
 

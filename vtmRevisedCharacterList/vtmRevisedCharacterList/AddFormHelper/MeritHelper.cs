@@ -52,6 +52,8 @@ public class MeritHelper : IAddFormHelper
         effect.DaredevilRemoveOne = form.RemoveOneCheckBox.Checked;
         effect.ExtraHealth = form.ExtraHealthCheckBox.Checked;
 
+        MessageBox.Show(JsonSerializer.Serialize(merit));
+
         merit.Effect = effect;
     }
 

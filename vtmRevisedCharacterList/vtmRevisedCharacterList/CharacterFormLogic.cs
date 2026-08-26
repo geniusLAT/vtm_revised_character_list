@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using vtmRevisedCharacterList.AddFormHelper;
 using vtmRevisedCharacterListEntities;
 
@@ -1172,7 +1173,7 @@ public partial class CharacterForm : Form
         {
             if (ratingPanel.Numeric.Value != ratingPanel.rating.Rating)
             {
-                character.SetRating(new()
+                character.SetRating(new RatingDto()
                 {
                     Name = ratingPanel.rating.Name,
                     Rating = (uint)ratingPanel.Numeric.Value,
@@ -1338,8 +1339,66 @@ public partial class CharacterForm : Form
 
     void RenderMerits()
     {
-        RenderCollectionGui(MeritsInnerPanel, _chosenCharacter.Merits);
-    }
+        var parentPanel = MeritsInnerPanel;
+        var collection = _chosenCharacter.Merits;
 
+        parentPanel.Controls.Clear();
+
+        for (int i = 0; i < collection.Count; i++)
+        {
+            ARating? item = collection[i];
+            MeritEntity? merit = item as MeritEntity;
+            if ( merit is null )
+            {
+                MessageBox.Show($"{item.GetType()}\n {item.Name} не достоинство или недостаток");
+                continue;
+            }
+            var littlePanel = new Panel()
+            {
+                Width = 207,//227
+                Height = 19,
+                //BackColor = Color.Green,
+                Location = new Point(23, 3 + i * 20)
+            };
+            //littlePanel.Click += ExampleBackGroundPanel_Click;
+            parentPanel.Controls.Add(littlePanel);
+            //81, 10
+
+            var label = new Label()
+            {
+                Width = 200,
+                Height = 10,
+                Text = item.Name,
+                Font = new("Segoe UI", 7),
+                Location = new Point(40, 4)
+            };
+            littlePanel.Controls.Add(label);
+
+            var removeButton = new Button()
+            {
+                Location = Location = new Point(15, 4),
+                Text = "-",
+
+                Font = new("Segoe UI", 7),
+                Width = 11
+            };
+            littlePanel.Controls.Add(removeButton);
+
+            if (merit.CanBeActivated)
+            {
+                var checkbox = new CheckBox()
+                {
+                    Checked = merit.Active
+                };
+                littlePanel.Controls.Add(checkbox);
+                //MessageBox.Show($"+ {item.Name} can be activated");
+            }
+            else
+            {
+                //MessageBox.Show($"- {item.Name} can not be activated");
+                //MessageBox.Show(JsonSerializer.Serialize(merit));
+            }
+        }
+    }
     #endregion
 }

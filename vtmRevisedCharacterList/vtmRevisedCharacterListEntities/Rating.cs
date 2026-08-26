@@ -1,6 +1,12 @@
-﻿namespace vtmRevisedCharacterListEntities;
+﻿using System.Text.Json.Serialization;
 
-public class ARating
+namespace vtmRevisedCharacterListEntities;
+
+[JsonDerivedType(typeof(MeritEntity), typeDiscriminator: "merit")]
+[JsonDerivedType(typeof(Background), typeDiscriminator: "background")]
+[JsonDerivedType(typeof(Discipline), typeDiscriminator: "discipline")]
+[JsonDerivedType(typeof(RatingDto), typeDiscriminator: "ratingDto")]
+public abstract class ARating
 {
     public required string Name { get; set; }
 
