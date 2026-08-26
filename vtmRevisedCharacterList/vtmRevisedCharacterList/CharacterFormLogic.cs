@@ -983,7 +983,9 @@ public partial class CharacterForm : Form
 
 
         AvaliableCharacters = task.Result;
-        MessageBox.Show($"Найдено персонажей: {AvaliableCharacters.Count.ToString()}");
+       
+        logLabel.Text += $"Найдено персонажей: {AvaliableCharacters.Count.ToString()}";
+        ScrollLogToBottom();
 
         if (AvaliableCharacters.Count > 0)
         {
