@@ -19,4 +19,12 @@ public partial class BloodBuffForm : Form
     {
         _parentForm.BloodBuffWindowOpened = false;
     }
+
+    private void DropBloodBuffButton_Click(object sender, EventArgs e)
+    {
+        StrenghtNumeric.Value 
+            = DexterityNumeric.Value 
+            = StaminaNumeric.Value 
+            = 0;
+    }
 }

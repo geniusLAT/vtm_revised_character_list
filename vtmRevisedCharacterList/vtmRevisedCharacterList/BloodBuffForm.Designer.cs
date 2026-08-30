@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             PhysicalAttributes = new Panel();
+            DropBloodBuffButton = new Button();
             StaminaPanel = new Panel();
             panel4 = new Panel();
             label3 = new Label();
@@ -74,6 +75,7 @@
             // 
             // PhysicalAttributes
             // 
+            PhysicalAttributes.Controls.Add(DropBloodBuffButton);
             PhysicalAttributes.Controls.Add(StaminaPanel);
             PhysicalAttributes.Controls.Add(DexterityPanel1);
             PhysicalAttributes.Controls.Add(StrenghtPanel);
@@ -82,6 +84,16 @@
             PhysicalAttributes.Name = "PhysicalAttributes";
             PhysicalAttributes.Size = new Size(230, 82);
             PhysicalAttributes.TabIndex = 2;
+            // 
+            // DropBloodBuffButton
+            // 
+            DropBloodBuffButton.Location = new Point(0, -4);
+            DropBloodBuffButton.Name = "DropBloodBuffButton";
+            DropBloodBuffButton.Size = new Size(61, 23);
+            DropBloodBuffButton.TabIndex = 11;
+            DropBloodBuffButton.Text = "Сброс";
+            DropBloodBuffButton.UseVisualStyleBackColor = true;
+            DropBloodBuffButton.Click += DropBloodBuffButton_Click;
             // 
             // StaminaPanel
             // 
@@ -468,5 +480,6 @@
         public NumericUpDown StaminaNumeric;
         public NumericUpDown DexterityNumeric;
         public NumericUpDown StrenghtNumeric;
+        private Button DropBloodBuffButton;
     }
 }
