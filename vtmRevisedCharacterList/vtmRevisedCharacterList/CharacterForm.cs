@@ -432,4 +432,9 @@ public partial class CharacterForm : Form
 
         RenderCharacter();
     }
+
+    private void OpenBloodBuffWindowButton_Click(object sender, EventArgs e)
+    {
+        OpenBloodBuffForm();
+    }
 }

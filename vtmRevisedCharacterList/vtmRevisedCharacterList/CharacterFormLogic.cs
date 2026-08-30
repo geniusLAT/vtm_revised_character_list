@@ -24,6 +24,10 @@ public partial class CharacterForm : Form
 
     internal CharacterManagment? CharacterManagmentOpenedForm = null;
 
+    internal bool BloodBuffWindowOpened = false;
+
+    internal BloodBuffForm? BloodBuffOpenedForm = null;
+
     public List<CharacterListMember> AvaliableCharacters = new List<CharacterListMember>();
 
     AttributeVtm? _chosenAttribute;
@@ -838,8 +842,11 @@ public partial class CharacterForm : Form
                 numeric.Enabled = true;
                 numeric.ValueChanged += CharacterNumeric_ValueChanged;
             }
-
-            SetButtonsForNum(GetAttributeButtons(attribute), attributeValue);
+            var attributeButtons = GetAttributeButtons(attribute);
+            if (attributeButtons is not null)
+            {
+                SetButtonsForNum(attributeButtons, attributeValue);
+            }
 
         }
 
@@ -1577,6 +1584,26 @@ public partial class CharacterForm : Form
 
         logLabel.Text += init + '\n';
         ScrollLogToBottom();
+    }
+
+    #endregion
+
+    #region BloodBuffForm
+
+    public void OpenBloodBuffForm()
+    {
+        if (BloodBuffWindowOpened)
+        {
+            BloodBuffOpenedForm.Invoke(new Action(() => BloodBuffOpenedForm.Activate()));
+            return;
+        }
+
+        Task.Run(() =>
+        {
+            BloodBuffWindowOpened = true;
+            BloodBuffOpenedForm = new BloodBuffForm(this);
+            BloodBuffOpenedForm.ShowDialog();
+        });
     }
 
     #endregion

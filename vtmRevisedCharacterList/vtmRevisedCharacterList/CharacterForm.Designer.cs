@@ -624,6 +624,7 @@
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
             HiddenMessage = new CheckBox();
+            OpenBloodBuffWindowButton = new Button();
             characterPanel.SuspendLayout();
             MeritsOuterPanel.SuspendLayout();
             MeritsInnerPanel.SuspendLayout();
@@ -6657,6 +6658,7 @@
             // 
             // PhysicalAttributes
             // 
+            PhysicalAttributes.Controls.Add(OpenBloodBuffWindowButton);
             PhysicalAttributes.Controls.Add(BloodBuffMode);
             PhysicalAttributes.Controls.Add(StaminaPanel);
             PhysicalAttributes.Controls.Add(DexterityPanel1);
@@ -7164,6 +7166,17 @@
             HiddenMessage.Text = "Тайные заявки";
             HiddenMessage.UseVisualStyleBackColor = true;
             HiddenMessage.CheckedChanged += HiddenMessage_CheckedChanged;
+            // 
+            // OpenBloodBuffWindowButton
+            // 
+            OpenBloodBuffWindowButton.Font = new Font("Segoe UI", 6F);
+            OpenBloodBuffWindowButton.Location = new Point(0, 3);
+            OpenBloodBuffWindowButton.Name = "OpenBloodBuffWindowButton";
+            OpenBloodBuffWindowButton.Size = new Size(67, 18);
+            OpenBloodBuffWindowButton.TabIndex = 22;
+            OpenBloodBuffWindowButton.Text = "Окно бафов";
+            OpenBloodBuffWindowButton.UseVisualStyleBackColor = true;
+            OpenBloodBuffWindowButton.Click += OpenBloodBuffWindowButton_Click;
             // 
             // CharacterForm
             // 
@@ -8076,5 +8089,6 @@
         private CheckBox HiddenMessage;
         private Button CharacterManagmentButton;
         private CheckBox BloodBuffMode;
+        private Button OpenBloodBuffWindowButton;
     }
 }
