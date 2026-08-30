@@ -425,4 +425,16 @@ public partial class CharacterForm : Form
     {
         OpenCharacterManagmentWindow();
     }
+
+    private void BloodBuffMode_CheckedChanged(object sender, EventArgs e)
+    {
+        _showBloodBuffs = BloodBuffMode.Checked;
+
+        RenderCharacter();
+    }
+
+    private void OpenBloodBuffWindowButton_Click(object sender, EventArgs e)
+    {
+        OpenBloodBuffForm();
+    }
 }

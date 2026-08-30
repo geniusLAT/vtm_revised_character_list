@@ -10,5 +10,8 @@ public enum AttributeVtm
     Appearance = 5,
     Perception = 6,
     Intelligance = 7,
-    Wits = 8
+    Wits = 8,
+    BloodBuffStrenght = 9,
+    BloodBuffDexterity = 10,
+    BloodBuffStamina = 11,
 }

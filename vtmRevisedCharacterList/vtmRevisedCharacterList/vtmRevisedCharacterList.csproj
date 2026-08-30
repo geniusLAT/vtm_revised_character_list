@@ -21,6 +21,9 @@
     <Compile Update="AddARatingFormLogic.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BloodBuffFormLogic.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CharacterManagmentLogic.cs">
       <SubType>Form</SubType>
     </Compile>

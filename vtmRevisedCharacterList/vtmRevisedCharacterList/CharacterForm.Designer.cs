@@ -576,6 +576,7 @@
             label10 = new Label();
             label11 = new Label();
             PhysicalAttributes = new Panel();
+            BloodBuffMode = new CheckBox();
             StaminaPanel = new Panel();
             panel4 = new Panel();
             label3 = new Label();
@@ -623,6 +624,7 @@
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
             HiddenMessage = new CheckBox();
+            OpenBloodBuffWindowButton = new Button();
             characterPanel.SuspendLayout();
             MeritsOuterPanel.SuspendLayout();
             MeritsInnerPanel.SuspendLayout();
@@ -6656,6 +6658,8 @@
             // 
             // PhysicalAttributes
             // 
+            PhysicalAttributes.Controls.Add(OpenBloodBuffWindowButton);
+            PhysicalAttributes.Controls.Add(BloodBuffMode);
             PhysicalAttributes.Controls.Add(StaminaPanel);
             PhysicalAttributes.Controls.Add(DexterityPanel1);
             PhysicalAttributes.Controls.Add(StrenghtPanel);
@@ -6665,6 +6669,18 @@
             PhysicalAttributes.Size = new Size(230, 82);
             PhysicalAttributes.TabIndex = 1;
             PhysicalAttributes.Paint += PhysicalAttributes_Paint;
+            // 
+            // BloodBuffMode
+            // 
+            BloodBuffMode.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BloodBuffMode.AutoSize = true;
+            BloodBuffMode.Location = new Point(173, 0);
+            BloodBuffMode.Name = "BloodBuffMode";
+            BloodBuffMode.Size = new Size(57, 19);
+            BloodBuffMode.TabIndex = 31;
+            BloodBuffMode.Text = "Бафы";
+            BloodBuffMode.UseVisualStyleBackColor = true;
+            BloodBuffMode.CheckedChanged += BloodBuffMode_CheckedChanged;
             // 
             // StaminaPanel
             // 
@@ -7150,6 +7166,17 @@
             HiddenMessage.Text = "Тайные заявки";
             HiddenMessage.UseVisualStyleBackColor = true;
             HiddenMessage.CheckedChanged += HiddenMessage_CheckedChanged;
+            // 
+            // OpenBloodBuffWindowButton
+            // 
+            OpenBloodBuffWindowButton.Font = new Font("Segoe UI", 6F);
+            OpenBloodBuffWindowButton.Location = new Point(0, 3);
+            OpenBloodBuffWindowButton.Name = "OpenBloodBuffWindowButton";
+            OpenBloodBuffWindowButton.Size = new Size(67, 18);
+            OpenBloodBuffWindowButton.TabIndex = 22;
+            OpenBloodBuffWindowButton.Text = "Окно бафов";
+            OpenBloodBuffWindowButton.UseVisualStyleBackColor = true;
+            OpenBloodBuffWindowButton.Click += OpenBloodBuffWindowButton_Click;
             // 
             // CharacterForm
             // 
@@ -8061,5 +8088,7 @@
         private Label MeritsLabel;
         private CheckBox HiddenMessage;
         private Button CharacterManagmentButton;
+        private CheckBox BloodBuffMode;
+        private Button OpenBloodBuffWindowButton;
     }
 }
