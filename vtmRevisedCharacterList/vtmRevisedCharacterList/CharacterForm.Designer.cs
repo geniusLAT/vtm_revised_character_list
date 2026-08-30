@@ -576,6 +576,7 @@
             label10 = new Label();
             label11 = new Label();
             PhysicalAttributes = new Panel();
+            OpenBloodBuffWindowButton = new Button();
             BloodBuffMode = new CheckBox();
             StaminaPanel = new Panel();
             panel4 = new Panel();
@@ -624,7 +625,6 @@
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
             HiddenMessage = new CheckBox();
-            OpenBloodBuffWindowButton = new Button();
             characterPanel.SuspendLayout();
             MeritsOuterPanel.SuspendLayout();
             MeritsInnerPanel.SuspendLayout();
@@ -6670,10 +6670,23 @@
             PhysicalAttributes.TabIndex = 1;
             PhysicalAttributes.Paint += PhysicalAttributes_Paint;
             // 
+            // OpenBloodBuffWindowButton
+            // 
+            OpenBloodBuffWindowButton.Font = new Font("Segoe UI", 6F);
+            OpenBloodBuffWindowButton.Location = new Point(0, 3);
+            OpenBloodBuffWindowButton.Name = "OpenBloodBuffWindowButton";
+            OpenBloodBuffWindowButton.Size = new Size(67, 18);
+            OpenBloodBuffWindowButton.TabIndex = 22;
+            OpenBloodBuffWindowButton.Text = "Окно бафов";
+            OpenBloodBuffWindowButton.UseVisualStyleBackColor = true;
+            OpenBloodBuffWindowButton.Click += OpenBloodBuffWindowButton_Click;
+            // 
             // BloodBuffMode
             // 
             BloodBuffMode.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BloodBuffMode.AutoSize = true;
+            BloodBuffMode.Checked = true;
+            BloodBuffMode.CheckState = CheckState.Checked;
             BloodBuffMode.Location = new Point(173, 0);
             BloodBuffMode.Name = "BloodBuffMode";
             BloodBuffMode.Size = new Size(57, 19);
@@ -7166,17 +7179,6 @@
             HiddenMessage.Text = "Тайные заявки";
             HiddenMessage.UseVisualStyleBackColor = true;
             HiddenMessage.CheckedChanged += HiddenMessage_CheckedChanged;
-            // 
-            // OpenBloodBuffWindowButton
-            // 
-            OpenBloodBuffWindowButton.Font = new Font("Segoe UI", 6F);
-            OpenBloodBuffWindowButton.Location = new Point(0, 3);
-            OpenBloodBuffWindowButton.Name = "OpenBloodBuffWindowButton";
-            OpenBloodBuffWindowButton.Size = new Size(67, 18);
-            OpenBloodBuffWindowButton.TabIndex = 22;
-            OpenBloodBuffWindowButton.Text = "Окно бафов";
-            OpenBloodBuffWindowButton.UseVisualStyleBackColor = true;
-            OpenBloodBuffWindowButton.Click += OpenBloodBuffWindowButton_Click;
             // 
             // CharacterForm
             // 

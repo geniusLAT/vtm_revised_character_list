@@ -44,7 +44,7 @@ public partial class CharacterForm : Form
 
     private bool _hiddenMessage = false;
 
-    private bool _showBloodBuffs = false;
+    private bool _useBloodBuffs = true;
 
     #region diceRolling
 
@@ -684,7 +684,7 @@ public partial class CharacterForm : Form
             _dicesToRoll += (int)attribute;
             sb.Append($" {RussianTranslator.TranslateAttribute(_chosenAttribute)} {attribute.ToString()}");
 
-            if (_showBloodBuffs)
+            if (_useBloodBuffs)
             {
                 var buffAttribute = Character.GetBuffAttribute(_chosenAttribute);
                 if (buffAttribute is not null)

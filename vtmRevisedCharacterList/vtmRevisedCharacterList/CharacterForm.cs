@@ -428,7 +428,7 @@ public partial class CharacterForm : Form
 
     private void BloodBuffMode_CheckedChanged(object sender, EventArgs e)
     {
-        _showBloodBuffs = BloodBuffMode.Checked;
+        _useBloodBuffs = BloodBuffMode.Checked;
 
         RenderCharacter();
     }
