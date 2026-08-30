@@ -53,7 +53,7 @@ public partial class BloodBuffForm : Form
             {
                 numeric.Value = attributeValue;
                 numeric.Enabled = true;
-                //numeric.ValueChanged += CharacterNumeric_ValueChanged;
+                numeric.ValueChanged += CharacterNumeric_ValueChanged;
             }
             var attributeButtons = GetAttributeButtons(attribute);
             if (attributeButtons is not null)
@@ -69,5 +69,10 @@ public partial class BloodBuffForm : Form
         BloodBuffStrenghtButtons = [SButton, SButton2, SButton3, SButton4, SButton5];
         BloodBuffDexterityButtons = [DexterityButton1, DexterityButton2, DexterityButton3, DexterityButton4, DexterityButton5];
         BloodBuffStaminaButtons = [StaminaButton1, StaminaButton2, StaminaButton3, StaminaButton4, StaminaButton5];
+    }
+
+    private void CharacterNumeric_ValueChanged(object sender, EventArgs e)
+    {
+        _parentForm.Invoke(new Action(() => _parentForm.MarkUnsavedChanges()));
     }
 }
