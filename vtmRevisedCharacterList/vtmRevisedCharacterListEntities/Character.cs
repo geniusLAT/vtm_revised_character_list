@@ -330,6 +330,27 @@ public class Character
 
         return 0;
     }
+
+    public static bool IsArtributeBuffable(AttributeVtm attribute) => 
+        attribute == AttributeVtm.Strenght 
+        || attribute == AttributeVtm.Dexterity 
+        || attribute == AttributeVtm.Stamina;
+
+    public static AttributeVtm? GetBuffAttribute(AttributeVtm? attribute)
+    {
+        switch (attribute)
+        {
+           
+            case AttributeVtm.Strenght:
+                return AttributeVtm.BloodBuffStrenght;
+            case AttributeVtm.Dexterity:
+                return AttributeVtm.BloodBuffDexterity;
+            case AttributeVtm.Stamina:
+                return AttributeVtm.BloodBuffStamina;
+        }
+        return null;
+    }
+
     public uint SetAbility(Ability ability, uint value)
     {
         switch (ability)

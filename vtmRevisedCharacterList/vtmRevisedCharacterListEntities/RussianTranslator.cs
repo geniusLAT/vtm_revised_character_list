@@ -107,6 +107,10 @@ public static class RussianTranslator
             AttributeVtm.Perception => "Восприятие",
             AttributeVtm.Intelligance => "Интеллект",
             AttributeVtm.Wits => "Сообразительность",
+            AttributeVtm.BloodBuffStrenght => "Бафф за кровь силы",
+            AttributeVtm.BloodBuffDexterity => "Бафф за кровь ловкости",
+            AttributeVtm.BloodBuffStamina => "Бафф за кровь выносливости",
+            null => "Неназванный аттрибут",
             _ => "Неназванный аттрибут",
         };
     }

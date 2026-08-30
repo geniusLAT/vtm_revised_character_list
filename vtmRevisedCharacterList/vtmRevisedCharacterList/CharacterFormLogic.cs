@@ -683,6 +683,20 @@ public partial class CharacterForm : Form
             var attribute = _chosenCharacter?.GetAttribute((AttributeVtm)_chosenAttribute) ?? 0;
             _dicesToRoll += (int)attribute;
             sb.Append($" {RussianTranslator.TranslateAttribute(_chosenAttribute)} {attribute.ToString()}");
+
+            if (_showBloodBuffs)
+            {
+                var buffAttribute = Character.GetBuffAttribute(_chosenAttribute);
+                if (buffAttribute is not null)
+                {
+                    var buffAttributeValue = _chosenCharacter?.GetAttribute((AttributeVtm)buffAttribute) ?? 0;
+                    if (buffAttributeValue != 0)
+                    {
+                        _dicesToRoll += (int)buffAttributeValue;
+                        sb.Append($" + {RussianTranslator.TranslateAttribute(buffAttribute)} {buffAttributeValue.ToString()}");
+                    }
+                }
+            }
         }
         if (_chosenAbility != null)
         {
