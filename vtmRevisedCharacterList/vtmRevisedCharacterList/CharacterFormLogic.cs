@@ -274,7 +274,7 @@ public partial class CharacterForm : Form
         }
     }
 
-    void SetButtonsForNum(RadioButton[] buttons, uint numToSet)
+    public void SetButtonsForNum(RadioButton[] buttons, uint numToSet)
     {
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -424,7 +424,7 @@ public partial class CharacterForm : Form
         _ => null
     };
 
-    RadioButton[]? GetAttributeButtons(AttributeVtm? attribute) => attribute switch
+    public RadioButton[]? GetAttributeButtons(AttributeVtm? attribute) => attribute switch
     {
         AttributeVtm.Strenght => StrenghtButtons,
         AttributeVtm.Dexterity => DexterityButtons,
@@ -497,16 +497,28 @@ public partial class CharacterForm : Form
         }
     }
 
-    NumericUpDown? GetAttributeNumeric(AttributeVtm? attribute)
+    public NumericUpDown? GetAttributeNumeric(AttributeVtm? attribute)
     {
         switch (attribute)
         {
             case AttributeVtm.BloodBuffStrenght:
-                return null;
+                if (!BloodBuffWindowOpened)
+                {
+                    return null;
+                }
+                return BloodBuffOpenedForm.StrenghtNumeric;
             case AttributeVtm.BloodBuffDexterity:
-                return null;
+                if (!BloodBuffWindowOpened)
+                {
+                    return null;
+                }
+                return BloodBuffOpenedForm.DexterityNumeric;
             case AttributeVtm.BloodBuffStamina:
-                return null;
+                if (!BloodBuffWindowOpened)
+                {
+                    return null;
+                }
+                return BloodBuffOpenedForm.StaminaNumeric;
             case AttributeVtm.Strenght:
                 return StrenghtNumeric;
             case AttributeVtm.Dexterity:
@@ -831,7 +843,12 @@ public partial class CharacterForm : Form
 
         RenderHealthCondition(character);
 
-        for (int i = 0; i < 12; i++)
+        if (BloodBuffWindowOpened)
+        {
+            BloodBuffOpenedForm.Invoke(new Action(() => BloodBuffOpenedForm.RenderBloodBuffs(character)));
+        }
+
+        for (int i = 0; i < 9; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
             uint attributeValue = character.GetAttribute(attribute);
@@ -1601,7 +1618,7 @@ public partial class CharacterForm : Form
         Task.Run(() =>
         {
             BloodBuffWindowOpened = true;
-            BloodBuffOpenedForm = new BloodBuffForm(this);
+            BloodBuffOpenedForm = new BloodBuffForm(this, _chosenCharacter);
             BloodBuffOpenedForm.ShowDialog();
         });
     }
