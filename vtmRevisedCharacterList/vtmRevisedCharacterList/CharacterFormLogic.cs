@@ -24,6 +24,10 @@ public partial class CharacterForm : Form
 
     internal CharacterManagment? CharacterManagmentOpenedForm = null;
 
+    internal bool BloodBuffWindowOpened = false;
+
+    internal BloodBuffForm? BloodBuffOpenedForm = null;
+
     public List<CharacterListMember> AvaliableCharacters = new List<CharacterListMember>();
 
     AttributeVtm? _chosenAttribute;
@@ -39,6 +43,8 @@ public partial class CharacterForm : Form
     private bool _unsavedChangesExist = false;
 
     private bool _hiddenMessage = false;
+
+    private bool _useBloodBuffs = true;
 
     #region diceRolling
 
@@ -268,7 +274,7 @@ public partial class CharacterForm : Form
         }
     }
 
-    void SetButtonsForNum(RadioButton[] buttons, uint numToSet)
+    public void SetButtonsForNum(RadioButton[] buttons, uint numToSet)
     {
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -418,7 +424,7 @@ public partial class CharacterForm : Form
         _ => null
     };
 
-    RadioButton[]? GetAttributeButtons(AttributeVtm? attribute) => attribute switch
+    public RadioButton[]? GetAttributeButtons(AttributeVtm? attribute) => attribute switch
     {
         AttributeVtm.Strenght => StrenghtButtons,
         AttributeVtm.Dexterity => DexterityButtons,
@@ -491,10 +497,28 @@ public partial class CharacterForm : Form
         }
     }
 
-    NumericUpDown? GetAttributeNumeric(AttributeVtm? attribute)
+    public NumericUpDown? GetAttributeNumeric(AttributeVtm? attribute)
     {
         switch (attribute)
         {
+            case AttributeVtm.BloodBuffStrenght:
+                if (!BloodBuffWindowOpened)
+                {
+                    return null;
+                }
+                return BloodBuffOpenedForm.StrenghtNumeric;
+            case AttributeVtm.BloodBuffDexterity:
+                if (!BloodBuffWindowOpened)
+                {
+                    return null;
+                }
+                return BloodBuffOpenedForm.DexterityNumeric;
+            case AttributeVtm.BloodBuffStamina:
+                if (!BloodBuffWindowOpened)
+                {
+                    return null;
+                }
+                return BloodBuffOpenedForm.StaminaNumeric;
             case AttributeVtm.Strenght:
                 return StrenghtNumeric;
             case AttributeVtm.Dexterity:
@@ -659,6 +683,20 @@ public partial class CharacterForm : Form
             var attribute = _chosenCharacter?.GetAttribute((AttributeVtm)_chosenAttribute) ?? 0;
             _dicesToRoll += (int)attribute;
             sb.Append($" {RussianTranslator.TranslateAttribute(_chosenAttribute)} {attribute.ToString()}");
+
+            if (_useBloodBuffs)
+            {
+                var buffAttribute = Character.GetBuffAttribute(_chosenAttribute);
+                if (buffAttribute is not null)
+                {
+                    var buffAttributeValue = _chosenCharacter?.GetAttribute((AttributeVtm)buffAttribute) ?? 0;
+                    if (buffAttributeValue != 0)
+                    {
+                        _dicesToRoll += (int)buffAttributeValue;
+                        sb.Append($" + {RussianTranslator.TranslateAttribute(buffAttribute)} {buffAttributeValue.ToString()}");
+                    }
+                }
+            }
         }
         if (_chosenAbility != null)
         {
@@ -819,6 +857,11 @@ public partial class CharacterForm : Form
 
         RenderHealthCondition(character);
 
+        if (BloodBuffWindowOpened)
+        {
+            BloodBuffOpenedForm.Invoke(new Action(() => BloodBuffOpenedForm.RenderBloodBuffs(character)));
+        }
+
         for (int i = 0; i < 9; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
@@ -830,8 +873,11 @@ public partial class CharacterForm : Form
                 numeric.Enabled = true;
                 numeric.ValueChanged += CharacterNumeric_ValueChanged;
             }
-
-            SetButtonsForNum(GetAttributeButtons(attribute), attributeValue);
+            var attributeButtons = GetAttributeButtons(attribute);
+            if (attributeButtons is not null)
+            {
+                SetButtonsForNum(attributeButtons, attributeValue);
+            }
 
         }
 
@@ -1227,7 +1273,7 @@ public partial class CharacterForm : Form
         character.CommonDamage = (uint)CommonDamageNumeric.Value;
         character.AggravatedDamage = (uint)AggravatedDamageNumeric.Value;
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 12; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
 
@@ -1569,6 +1615,26 @@ public partial class CharacterForm : Form
 
         logLabel.Text += init + '\n';
         ScrollLogToBottom();
+    }
+
+    #endregion
+
+    #region BloodBuffForm
+
+    public void OpenBloodBuffForm()
+    {
+        if (BloodBuffWindowOpened)
+        {
+            BloodBuffOpenedForm.Invoke(new Action(() => BloodBuffOpenedForm.Activate()));
+            return;
+        }
+
+        Task.Run(() =>
+        {
+            BloodBuffWindowOpened = true;
+            BloodBuffOpenedForm = new BloodBuffForm(this, _chosenCharacter);
+            BloodBuffOpenedForm.ShowDialog();
+        });
     }
 
     #endregion

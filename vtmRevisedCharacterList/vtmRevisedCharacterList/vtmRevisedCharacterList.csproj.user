@@ -4,6 +4,9 @@
     <Compile Update="AddARatingForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BloodBuffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>

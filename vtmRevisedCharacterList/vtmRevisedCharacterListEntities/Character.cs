@@ -18,6 +18,12 @@ public class Character
 
     public uint Stamina { get; set; }
 
+    public uint BloodBuffStrenght { get; set; }
+
+    public uint BloodBuffDexterity { get; set; }
+
+    public uint BloodBuffStamina { get; set; }
+
     #endregion
 
     #region Social
@@ -263,6 +269,12 @@ public class Character
     {
         switch (attribute)
         {
+            case AttributeVtm.BloodBuffStrenght:
+                return BloodBuffStrenght = value;
+            case AttributeVtm.BloodBuffDexterity:
+                return BloodBuffDexterity = value;
+            case AttributeVtm.BloodBuffStamina:
+                return BloodBuffStamina = value;
             case AttributeVtm.Strenght:
                 return Strenght = value;
             case AttributeVtm.Dexterity:
@@ -290,6 +302,12 @@ public class Character
     {
         switch (attribute)
         {
+            case AttributeVtm.BloodBuffStrenght:
+                return BloodBuffStrenght;
+            case AttributeVtm.BloodBuffDexterity:
+                return BloodBuffDexterity;
+            case AttributeVtm.BloodBuffStamina:
+                return BloodBuffStamina;
             case AttributeVtm.Strenght:
                 return Strenght;
             case AttributeVtm.Dexterity:
@@ -312,6 +330,27 @@ public class Character
 
         return 0;
     }
+
+    public static bool IsArtributeBuffable(AttributeVtm attribute) => 
+        attribute == AttributeVtm.Strenght 
+        || attribute == AttributeVtm.Dexterity 
+        || attribute == AttributeVtm.Stamina;
+
+    public static AttributeVtm? GetBuffAttribute(AttributeVtm? attribute)
+    {
+        switch (attribute)
+        {
+           
+            case AttributeVtm.Strenght:
+                return AttributeVtm.BloodBuffStrenght;
+            case AttributeVtm.Dexterity:
+                return AttributeVtm.BloodBuffDexterity;
+            case AttributeVtm.Stamina:
+                return AttributeVtm.BloodBuffStamina;
+        }
+        return null;
+    }
+
     public uint SetAbility(Ability ability, uint value)
     {
         switch (ability)
