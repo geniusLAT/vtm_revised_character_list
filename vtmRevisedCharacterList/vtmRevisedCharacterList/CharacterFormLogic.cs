@@ -40,6 +40,8 @@ public partial class CharacterForm : Form
 
     private bool _hiddenMessage = false;
 
+    private bool _showBloodBuffs = false;
+
     #region diceRolling
 
     int _dicesToRoll = 0;
@@ -495,6 +497,12 @@ public partial class CharacterForm : Form
     {
         switch (attribute)
         {
+            case AttributeVtm.BloodBuffStrenght:
+                return null;
+            case AttributeVtm.BloodBuffDexterity:
+                return null;
+            case AttributeVtm.BloodBuffStamina:
+                return null;
             case AttributeVtm.Strenght:
                 return StrenghtNumeric;
             case AttributeVtm.Dexterity:
@@ -819,7 +827,7 @@ public partial class CharacterForm : Form
 
         RenderHealthCondition(character);
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 12; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
             uint attributeValue = character.GetAttribute(attribute);
@@ -1227,7 +1235,7 @@ public partial class CharacterForm : Form
         character.CommonDamage = (uint)CommonDamageNumeric.Value;
         character.AggravatedDamage = (uint)AggravatedDamageNumeric.Value;
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 12; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
 

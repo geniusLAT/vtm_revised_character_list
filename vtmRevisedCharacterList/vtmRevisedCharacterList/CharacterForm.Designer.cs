@@ -576,6 +576,7 @@
             label10 = new Label();
             label11 = new Label();
             PhysicalAttributes = new Panel();
+            BloodBuffMode = new CheckBox();
             StaminaPanel = new Panel();
             panel4 = new Panel();
             label3 = new Label();
@@ -6656,6 +6657,7 @@
             // 
             // PhysicalAttributes
             // 
+            PhysicalAttributes.Controls.Add(BloodBuffMode);
             PhysicalAttributes.Controls.Add(StaminaPanel);
             PhysicalAttributes.Controls.Add(DexterityPanel1);
             PhysicalAttributes.Controls.Add(StrenghtPanel);
@@ -6665,6 +6667,18 @@
             PhysicalAttributes.Size = new Size(230, 82);
             PhysicalAttributes.TabIndex = 1;
             PhysicalAttributes.Paint += PhysicalAttributes_Paint;
+            // 
+            // BloodBuffMode
+            // 
+            BloodBuffMode.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BloodBuffMode.AutoSize = true;
+            BloodBuffMode.Location = new Point(173, 0);
+            BloodBuffMode.Name = "BloodBuffMode";
+            BloodBuffMode.Size = new Size(57, 19);
+            BloodBuffMode.TabIndex = 31;
+            BloodBuffMode.Text = "Бафы";
+            BloodBuffMode.UseVisualStyleBackColor = true;
+            BloodBuffMode.CheckedChanged += BloodBuffMode_CheckedChanged;
             // 
             // StaminaPanel
             // 
@@ -8061,5 +8075,6 @@
         private Label MeritsLabel;
         private CheckBox HiddenMessage;
         private Button CharacterManagmentButton;
+        private CheckBox BloodBuffMode;
     }
 }
