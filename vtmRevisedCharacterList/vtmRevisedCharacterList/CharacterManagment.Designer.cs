@@ -38,6 +38,7 @@
             AddNewUserButton = new Button();
             DeleteUserButton = new Button();
             SaveUserButton = new Button();
+            AddNewCharacterButton = new Button();
             LogPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -133,11 +134,22 @@
             SaveUserButton.UseVisualStyleBackColor = true;
             SaveUserButton.Click += SaveUserButton_Click;
             // 
+            // AddNewCharacterButton
+            // 
+            AddNewCharacterButton.Location = new Point(6, 473);
+            AddNewCharacterButton.Name = "AddNewCharacterButton";
+            AddNewCharacterButton.Size = new Size(308, 23);
+            AddNewCharacterButton.TabIndex = 22;
+            AddNewCharacterButton.Text = "Добавить нового персонажа";
+            AddNewCharacterButton.UseVisualStyleBackColor = true;
+            AddNewCharacterButton.Click += AddNewCharacterButton_Click;
+            // 
             // CharacterManagment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 647);
+            Controls.Add(AddNewCharacterButton);
             Controls.Add(SaveUserButton);
             Controls.Add(DeleteUserButton);
             Controls.Add(AddNewUserButton);
@@ -168,5 +180,6 @@
         private Button AddNewUserButton;
         private Button DeleteUserButton;
         private Button SaveUserButton;
+        private Button AddNewCharacterButton;
     }
 }

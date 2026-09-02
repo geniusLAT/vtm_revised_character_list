@@ -847,6 +847,8 @@ public partial class CharacterForm : Form
 
     public void RenderCharacter(Character character)
     {
+        characterComboBox.SelectedValue = character.CharacterName;
+
         _chosenCharacter = character;
 
         characterNameLabel.Text = character.CharacterName ?? "Новый персонаж";
@@ -931,6 +933,25 @@ public partial class CharacterForm : Form
 
     }
 
+    public void RenderCharacterExternal(Character character, Guid characterGuid)
+    {
+        var task = Task.Run(() => GetCharacterListAsync(Config.UserId));
+
+        ClearAttributeChoice();
+        ClearAbilityChoice();
+        task.Wait();
+        AvaliableCharacters = task.Result;
+
+        characterComboBox.SelectedIndexChanged -= characterComboBox_SelectedIndexChanged;
+
+        GenerateComboBox();
+
+        var characterInAvaliable = AvaliableCharacters.Where(character => character.CharacterUuid == characterGuid).FirstOrDefault();
+        var index = AvaliableCharacters.IndexOf(characterInAvaliable);
+        characterComboBox.SelectedIndex = index;
+        characterComboBox.SelectedIndexChanged += characterComboBox_SelectedIndexChanged;
+        RenderCharacter(character);
+    }
 
     public async Task RollDiceAsync()
     {
@@ -998,6 +1019,16 @@ public partial class CharacterForm : Form
 
     #region firstInit
 
+    public void GenerateComboBox()
+    {
+        characterComboBox.Items.Clear();
+        foreach (var character in AvaliableCharacters)
+        {
+            characterComboBox.Items.Add(character.CharacterName);
+        }
+        characterComboBox.SelectedIndex = 0;
+    }
+
     public void StartIt()
     {
         Config = GetConfig();
@@ -1031,7 +1062,7 @@ public partial class CharacterForm : Form
 
         AvaliableCharacters = task.Result;
        
-        logLabel.Text += $"Найдено персонажей: {AvaliableCharacters.Count.ToString()}";
+        logLabel.Text += $"Найдено персонажей: {AvaliableCharacters.Count.ToString()}\n";
         ScrollLogToBottom();
 
         if (AvaliableCharacters.Count > 0)
@@ -1039,12 +1070,7 @@ public partial class CharacterForm : Form
             var task2 = Task.Run(() => GetCharacterAsync(AvaliableCharacters.First(), Config.UserId));
 
             //while server thinks
-            characterComboBox.Items.Clear();
-            foreach (var character in AvaliableCharacters)
-            {
-                characterComboBox.Items.Add(character.CharacterName);
-            }
-            characterComboBox.SelectedIndex = 0;
+            GenerateComboBox();
             task2.Wait();
 
             _chosenCharacter = task2.Result;

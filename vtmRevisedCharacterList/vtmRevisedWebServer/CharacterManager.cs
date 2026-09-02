@@ -145,4 +145,32 @@ public static class CharacterManager
             return null;
         }
     }
+
+    public static CreateCharacterResult? CreateCharacter(Character newCharacter)
+    {
+        string filePath = string.Empty;
+        Guid? characterGuid = null;
+
+        while (File.Exists(filePath) || string.IsNullOrWhiteSpace(filePath))
+        {
+            characterGuid = Guid.NewGuid();
+            filePath = Path.Combine("characters", $"{characterGuid}.txt");
+        }
+
+        try
+        {
+            var newContent = JsonSerializer.Serialize(newCharacter);
+            File.WriteAllText(filePath, newContent);
+
+            return new()
+            {
+                CharacterUuid = (Guid)characterGuid,
+                CreatedCharacter = newCharacter
+            };
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
 }

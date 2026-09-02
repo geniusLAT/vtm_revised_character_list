@@ -36,4 +36,9 @@ public partial class CharacterManagment : Form
     {
         UpdateUser();
     }
+
+    private void AddNewCharacterButton_Click(object sender, EventArgs e)
+    {
+        OpenNewCharacterWindow();
+    }
 }
