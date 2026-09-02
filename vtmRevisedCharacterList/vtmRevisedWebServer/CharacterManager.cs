@@ -117,6 +117,37 @@ public static class CharacterManager
             return null;
         }
     }
+
+    public static bool DeleteUser(Guid userGuid)
+    {
+        string filePath = Path.Combine("userRights", $"{userGuid}.txt");
+
+        if (!File.Exists(filePath))
+        {
+            return false;
+        }
+
+        try
+        {
+            string content = File.ReadAllText(filePath);
+
+            UserEntity? oldUser = JsonSerializer.Deserialize<UserEntity>(content);
+
+            if (oldUser is null)
+            {
+                throw new ApplicationException("No such user");
+            }
+
+            File.Delete(filePath);
+
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+
     public static Guid? CreateUser(UserEntity newUser)
     {
         string filePath = string.Empty;

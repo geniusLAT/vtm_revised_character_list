@@ -65,5 +65,23 @@ namespace vtmRevisedWebServer.Controllers
             }
 
         }
+
+        [HttpDelete(Name = "DeleteUser")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(bool))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult CreateUser([FromBody] UserDeleteRequest request)
+        {
+            var adminGuid = CharacterManager.GetAdminGuid();
+            if (adminGuid == request.AdminUuid)
+            {
+                var guid = CharacterManager.DeleteUser(request.UserUuid);
+                return Ok(guid);
+            }
+            else
+            {
+                return Unauthorized();
+            }
+
+        }
     }
 }
