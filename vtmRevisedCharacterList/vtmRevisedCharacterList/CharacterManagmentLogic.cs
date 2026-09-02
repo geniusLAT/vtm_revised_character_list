@@ -227,6 +227,29 @@ public partial class CharacterManagment : Form
         return [];
     }
 
+    private async Task<Guid?> CreateUserAsync(Guid adminGuid, UserEntity userToCreate)
+    {
+        try
+        {
+            var request = new UserCreateRequest()
+            {
+                AdminUuid = adminGuid,
+                User = userToCreate
+            };
+
+            var response = await _parentForm.HttpClient.PostAsJsonAsync($"/User/create",request);
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<Guid>();
+            return responseRequest;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return null;
+    }
+
     #endregion
     private void RenderUsers()
     {
@@ -302,6 +325,24 @@ public partial class CharacterManagment : Form
     public void AddNewUser(string username)
     {
         MessageBox.Show($"Added {username}");
+
+        UserEntity userToCreate = new()
+        {
+            Name = username
+        };
+
+        var loadedUsersTask = Task.Run(async () => await CreateUserAsync(_parentForm.Config.UserId, userToCreate));
+        loadedUsersTask.Wait();
+        var newUserGuid = loadedUsersTask.Result;
+        if (newUserGuid is not null) {
+            users.Add(new()
+            {
+                User = userToCreate,
+                UserUuid = (Guid)newUserGuid
+            }); 
+        }
+
+        RenderUsers();
     }
 
     #endregion
