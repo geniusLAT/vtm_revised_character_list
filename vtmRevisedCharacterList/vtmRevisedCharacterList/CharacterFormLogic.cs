@@ -1062,7 +1062,7 @@ public partial class CharacterForm : Form
 
         AvaliableCharacters = task.Result;
        
-        logLabel.Text += $"Найдено персонажей: {AvaliableCharacters.Count.ToString()}";
+        logLabel.Text += $"Найдено персонажей: {AvaliableCharacters.Count.ToString()}\n";
         ScrollLogToBottom();
 
         if (AvaliableCharacters.Count > 0)
