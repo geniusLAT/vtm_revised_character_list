@@ -625,6 +625,7 @@
             debuffDicePoolNumeric = new NumericUpDown();
             debuffDicePoolLabel = new Label();
             HiddenMessage = new CheckBox();
+            ResetButton = new Button();
             characterPanel.SuspendLayout();
             MeritsOuterPanel.SuspendLayout();
             MeritsInnerPanel.SuspendLayout();
@@ -7180,11 +7181,22 @@
             HiddenMessage.UseVisualStyleBackColor = true;
             HiddenMessage.CheckedChanged += HiddenMessage_CheckedChanged;
             // 
+            // ResetButton
+            // 
+            ResetButton.Location = new Point(515, 715);
+            ResetButton.Name = "ResetButton";
+            ResetButton.Size = new Size(90, 23);
+            ResetButton.TabIndex = 20;
+            ResetButton.Text = "Сброс";
+            ResetButton.UseVisualStyleBackColor = true;
+            ResetButton.Click += ResetButton_Click;
+            // 
             // CharacterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 796);
+            Controls.Add(ResetButton);
             Controls.Add(HiddenMessage);
             Controls.Add(debuffDicePoolLabel);
             Controls.Add(debuffDicePoolNumeric);
@@ -8092,5 +8104,6 @@
         private Button CharacterManagmentButton;
         private CheckBox BloodBuffMode;
         private Button OpenBloodBuffWindowButton;
+        private Button ResetButton;
     }
 }

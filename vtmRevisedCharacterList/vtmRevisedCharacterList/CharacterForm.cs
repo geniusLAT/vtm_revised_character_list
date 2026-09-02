@@ -269,7 +269,8 @@ public partial class CharacterForm : Form
         if (_extraDicePool != 0)
         {
             ExtraDicePoolLabel.ForeColor = Color.Red;
-        }else
+        }
+        else
         {
             ExtraDicePoolLabel.ForeColor = Color.Black;
         }
@@ -468,5 +469,15 @@ public partial class CharacterForm : Form
     private void OpenBloodBuffWindowButton_Click(object sender, EventArgs e)
     {
         OpenBloodBuffForm();
+    }
+
+    private void ResetButton_Click(object sender, EventArgs e)
+    {
+        ClearAbilityChoice();
+        ClearAttributeChoice();
+        ClearOtherRollableChoice();
+        ClearRatingPanelChoice();
+
+        CalculateDices();
     }
 }
