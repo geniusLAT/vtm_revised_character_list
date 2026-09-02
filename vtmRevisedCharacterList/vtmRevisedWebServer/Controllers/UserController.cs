@@ -24,9 +24,9 @@ namespace vtmRevisedWebServer.Controllers
 
         [HttpGet(Name = "GetUser")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserEntity))]
-        public IActionResult GetUser([FromQuery] Guid adminGuid)
+        public IActionResult GetUser([FromQuery] Guid userGuid)
         {
-            var user = CharacterManager.GetUser(adminGuid);
+            var user = UserManager.GetUser(userGuid);
             return Ok(user);
         }
 
@@ -37,7 +37,7 @@ namespace vtmRevisedWebServer.Controllers
             var adminGuid = CharacterManager.GetAdminGuid();
             if (adminGuid == adminId)
             {
-                var users = CharacterManager.GetAllUsers();
+                var users = UserManager.GetAllUsers();
                 return Ok(users);
             }
             else
@@ -54,7 +54,7 @@ namespace vtmRevisedWebServer.Controllers
             var adminGuid = CharacterManager.GetAdminGuid();
             if (adminGuid == request.AdminUuid)
             {
-                var user = CharacterManager.UpdateUser(request.UserUuid, request.User);
+                var user = UserManager.UpdateUser(request.UserUuid, request.User);
                 return Ok(user);
             }
             else
@@ -71,7 +71,7 @@ namespace vtmRevisedWebServer.Controllers
             var adminGuid = CharacterManager.GetAdminGuid();
             if (adminGuid == request.AdminUuid)
             {
-                var guid = CharacterManager.CreateUser( request.User);
+                var guid = UserManager.CreateUser( request.User);
                 return Ok(guid);
             }
             else
@@ -89,7 +89,7 @@ namespace vtmRevisedWebServer.Controllers
             var adminGuid = CharacterManager.GetAdminGuid();
             if (adminGuid == request.AdminUuid)
             {
-                var guid = CharacterManager.DeleteUser(request.UserUuid);
+                var guid = UserManager.DeleteUser(request.UserUuid);
                 return Ok(guid);
             }
             else
