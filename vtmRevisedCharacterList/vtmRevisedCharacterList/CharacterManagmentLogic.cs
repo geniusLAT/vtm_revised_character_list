@@ -12,7 +12,7 @@ public partial class CharacterManagment : Form
 
     private List<Character> characters = [];
 
-    private List<UserEntity> users = [];
+    private List<UserGetResult> users = [];
 
     private List<GuiCharacterManagmentCharacterPanel> characterPanels = [];
 
@@ -210,14 +210,14 @@ public partial class CharacterManagment : Form
     #region Users
 
     #region Network
-    private async Task<List<UserEntity>> GetUsersAsync(Guid adminGuid)
+    private async Task<List<UserGetResult>> GetUsersAsync(Guid adminGuid)
     {
         try
         {
             var response = await _parentForm.HttpClient.GetAsync($"/User/all?adminId={adminGuid}");
             response.EnsureSuccessStatusCode();
 
-            var responseRequest = await response.Content.ReadFromJsonAsync<List<UserEntity>>();
+            var responseRequest = await response.Content.ReadFromJsonAsync<List<UserGetResult>>();
             return responseRequest;
         }
         catch (HttpRequestException ex)
@@ -249,7 +249,7 @@ public partial class CharacterManagment : Form
 
             var label = new Label()
             {
-                Text = user.Name,
+                Text = user.User.Name,
                 Width = 100,
                 Height = 20,
                 //BackColor = Color.BlueViolet,
@@ -259,7 +259,7 @@ public partial class CharacterManagment : Form
 
             userPanels.Add(new()
             {
-                User = user,
+                User = user.User,
                 Panel = panel,
                 Label = label
             }

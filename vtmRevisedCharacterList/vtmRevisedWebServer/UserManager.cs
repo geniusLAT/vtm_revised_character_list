@@ -5,18 +5,18 @@ namespace vtmRevisedWebServer;
 
 public static class UserManager
 {
-    public static UserEntity[] GetAllUsers()
+    public static UserGetResult[] GetAllUsers()
     {
         string folderPath = "userRights";
 
         if (!Directory.Exists(folderPath))
         {
-            return Array.Empty<UserEntity>();
+            return Array.Empty<UserGetResult>();
         }
 
         try
         {
-            List<UserEntity> users = new();
+            List<UserGetResult> users = new();
             foreach (string filePath in Directory.EnumerateFiles(folderPath, "*.txt"))
             {
                 string fileName = Path.GetFileNameWithoutExtension(filePath);
@@ -27,7 +27,11 @@ public static class UserManager
 
                 if (result != null)
                 {
-                    users.Add(result);
+                    users.Add(new()
+                    {
+                        User = result,
+                        UserUuid = new Guid(fileName),
+                    });
                 }
             }
 
@@ -35,7 +39,7 @@ public static class UserManager
         }
         catch (Exception)
         {
-            return Array.Empty<UserEntity>();
+            return Array.Empty<UserGetResult>();
         }
     }
 

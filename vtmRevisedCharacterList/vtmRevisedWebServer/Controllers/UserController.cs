@@ -31,7 +31,7 @@ namespace vtmRevisedWebServer.Controllers
         }
 
         [HttpGet("all", Name = "GetAllUsers")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<UserEntity>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<UserGetResult>))]
         public IActionResult GetAllUsers([FromQuery] Guid adminId)
         {
             var adminGuid = CharacterManager.GetAdminGuid();
