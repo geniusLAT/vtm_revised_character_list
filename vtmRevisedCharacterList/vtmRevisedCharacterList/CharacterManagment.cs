@@ -51,4 +51,9 @@ public partial class CharacterManagment : Form
     {
         OpenNewCharacterWindowForMakingCopy();
     }
+
+    private void ImportCharacterButton_Click(object sender, EventArgs e)
+    {
+        OpenImportCharacterForm();
+    }
 }

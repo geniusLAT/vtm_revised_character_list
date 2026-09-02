@@ -589,6 +589,12 @@ public partial class CharacterManagment : Form
         form.ShowDialog();
     }
 
+    private void OpenImportCharacterForm()
+    {
+        var form = new ImportCharacterForm(this);
+        form.ShowDialog();
+    }
+
     public void AddNewUser(string username)
     {
         UserEntity userToCreate = new()
