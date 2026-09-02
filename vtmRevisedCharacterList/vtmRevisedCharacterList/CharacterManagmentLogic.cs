@@ -252,11 +252,9 @@ public partial class CharacterManagment : Form
         SetUnsavedUserStatus(true);
     }
 
-    private void LoadUsers()
+    void OpenNewCharacterWindow()
     {
-        var loadedUsersTask = Task.Run(async () => await GetUsersAsync(_parentForm.Config.UserId));
-        loadedUsersTask.Wait();
-        users = loadedUsersTask.Result;
+
     }
 
     #region Users
@@ -359,6 +357,14 @@ public partial class CharacterManagment : Form
     }
 
     #endregion
+
+    private void LoadUsers()
+    {
+        var loadedUsersTask = Task.Run(async () => await GetUsersAsync(_parentForm.Config.UserId));
+        loadedUsersTask.Wait();
+        users = loadedUsersTask.Result;
+    }
+
     private void RenderUsers()
     {
         UserListPanel.Controls.Clear();
