@@ -40,6 +40,7 @@
             SaveUserButton = new Button();
             AddNewCharacterButton = new Button();
             DeleteChosenCharacterButton = new Button();
+            CopyCharacterButton = new Button();
             LogPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             // 
             // CharacterListPanel
             // 
+            CharacterListPanel.AutoScroll = true;
             CharacterListPanel.Location = new Point(6, 9);
             CharacterListPanel.Name = "CharacterListPanel";
             CharacterListPanel.Size = new Size(308, 429);
@@ -155,11 +157,22 @@
             DeleteChosenCharacterButton.UseVisualStyleBackColor = true;
             DeleteChosenCharacterButton.Click += DeleteChosenCharacterButton_Click;
             // 
+            // CopyCharacterButton
+            // 
+            CopyCharacterButton.Location = new Point(6, 573);
+            CopyCharacterButton.Name = "CopyCharacterButton";
+            CopyCharacterButton.Size = new Size(308, 23);
+            CopyCharacterButton.TabIndex = 24;
+            CopyCharacterButton.Text = "Скопировать данного персонажа";
+            CopyCharacterButton.UseVisualStyleBackColor = true;
+            CopyCharacterButton.Click += CopyCharacterButton_Click;
+            // 
             // CharacterManagment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 647);
+            Controls.Add(CopyCharacterButton);
             Controls.Add(DeleteChosenCharacterButton);
             Controls.Add(AddNewCharacterButton);
             Controls.Add(SaveUserButton);
@@ -194,5 +207,6 @@
         private Button SaveUserButton;
         private Button AddNewCharacterButton;
         private Button DeleteChosenCharacterButton;
+        private Button CopyCharacterButton;
     }
 }

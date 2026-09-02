@@ -46,4 +46,9 @@ public partial class CharacterManagment : Form
     {
         DeleteCharacter();
     }
+
+    private void CopyCharacterButton_Click(object sender, EventArgs e)
+    {
+        OpenNewCharacterWindowForMakingCopy();
+    }
 }
