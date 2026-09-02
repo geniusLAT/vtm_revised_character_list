@@ -81,6 +81,43 @@ public static class CharacterManager
         }
     }
 
+    public static UserUpdateResult? UpdateUser(Guid userGuid, UserEntity newUser)
+    {
+        string filePath = Path.Combine("userRights", $"{userGuid}.txt");
+
+        if (!File.Exists(filePath))
+        {
+            return null;
+        }
+
+        try
+        {
+            string content = File.ReadAllText(filePath);
+
+            UserEntity? oldUser = JsonSerializer.Deserialize<UserEntity>(content);
+
+            if (oldUser is null)
+            {
+                throw new ApplicationException("No such user");
+            }
+
+            var newContent = JsonSerializer.Serialize(newUser);
+            File.WriteAllText(filePath, newContent);
+
+            Console.WriteLine(oldUser!.Name);
+
+            return new()
+            {
+                UserUuid = userGuid,
+                UpdatedUser = newUser,
+            };
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
     public static Guid? GetAdminGuid()
     {
         string filePath = "admin.txt";

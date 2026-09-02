@@ -29,5 +29,23 @@ namespace vtmRevisedWebServer.Controllers
             var user = CharacterManager.GetUser(userId);
             return Ok(user);
         }
+
+        [HttpPost(Name = "UpdateUser")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult UpdateUser([FromBody] UserUpdateRequest request)
+        {
+            var adminGuid = CharacterManager.GetAdminGuid();
+            if (adminGuid == request.AdminUuid)
+            {
+                var user = CharacterManager.UpdateUser(request.UserUuid, request.User);
+                return Ok(user);
+            }
+            else
+            {
+                return Unauthorized();
+            }
+           
+        }
     }
 }
