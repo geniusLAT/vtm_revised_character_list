@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System.Net.Http;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using System.Text;
 using vtmRevisedCharacterListEntities;
 
@@ -19,6 +17,8 @@ public partial class CharacterManagment : Form
     private List<GuiCharacterManagmentUserPanel> userPanels = [];
 
     private GuiCharacterManagmentUserPanel? _chosenUserPanel;
+
+    private bool _unsavedUser = false;
 
     private void Start()
     {
@@ -122,9 +122,19 @@ public partial class CharacterManagment : Form
         _parentForm.Invoke(new Action(() => _parentForm.SendInit(message)));
     }
 
+    private void RenderUserRights()
+    {
+        foreach (var item in characterPanels)
+        {
+            item.UserRightCheckBox.CheckedChanged -= UserRightCheckox_CheckedChanged;
+            item.UserRightCheckBox.Visible = _chosenUserPanel is not null;
+            item.UserRightCheckBox.Checked = _chosenUserPanel?.User.AccessedCharacters.Contains(item.CharacterUuid) ?? false;
+            item.UserRightCheckBox.CheckedChanged += UserRightCheckox_CheckedChanged;
+        }
+    }
+
     private void RenderCharacters()
     {
-        MessageBox.Show("RenderCharacters");
         CharacterListPanel.Controls.Clear();
 
         for (int i = 0; i < characters.Count; i++)
@@ -237,6 +247,7 @@ public partial class CharacterManagment : Form
         {
             _chosenUserPanel.User.AccessedCharacters.Remove(panel.CharacterUuid);
         }
+        SetUnsavedUserStatus(true);
     }
 
     private void LoadUsers()
@@ -371,6 +382,8 @@ public partial class CharacterManagment : Form
 
     private void ChooseUserPanel(GuiCharacterManagmentUserPanel userPanel)
     {
+        if (_unsavedUser) return; //can not change if unsaved
+
         if (_chosenUserPanel is not null)
         {
             _chosenUserPanel.Panel.BackColor = Color.White;
@@ -379,14 +392,34 @@ public partial class CharacterManagment : Form
         _chosenUserPanel = userPanel;
         _chosenUserPanel.Panel.BackColor = Color.Blue;
         _chosenUserPanel.Label.ForeColor = Color.White;
-        UserNameTextBox.Text = _chosenUserPanel.User.Name;
 
-        RenderCharacters();
+        UserNameTextBox.TextChanged -= UserNameTextBox_TextChanged;
+        UserNameTextBox.Text = _chosenUserPanel.User.Name;
+        UserNameTextBox.TextChanged += UserNameTextBox_TextChanged;
+
+        RenderUserRights();
+    }
+
+    void SetUnsavedUserStatus(bool status)
+    {
+        _unsavedUser = status;
+
+        if (status)
+        {
+            _chosenUserPanel.Panel.BackColor = Color.Orange;
+        }
+        else
+        {
+            _chosenUserPanel.Panel.BackColor = Color.Blue;
+        }
+
     }
 
     private void UserNameTextBox_TextChanged(object sender, EventArgs e)
     {
         _chosenUserPanel.User.Name = UserNameTextBox.Text;
+        SetUnsavedUserStatus(true);
+
     }
 
     private void OpenAddNewUserForm()
