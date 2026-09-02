@@ -106,6 +106,27 @@ public static class CharacterManager
         }
     }
 
+    public static bool DeleteCharacter(Guid characterGuid)
+    {
+        string filePath = Path.Combine("characters", $"{characterGuid}.txt");
+
+        if (!File.Exists(filePath))
+        {
+            return false;
+        }
+
+        try
+        {
+            File.Delete(filePath);
+
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+
     public static CharacterUpdateResult? UpdateCharacter(Guid characterGuid, Character newCharacter)
     {
         string filePath = Path.Combine("characters", $"{characterGuid}.txt");

@@ -41,4 +41,9 @@ public partial class CharacterManagment : Form
     {
         OpenNewCharacterWindow();
     }
+
+    private void DeleteChosenCharacterButton_Click(object sender, EventArgs e)
+    {
+        DeleteCharacter();
+    }
 }

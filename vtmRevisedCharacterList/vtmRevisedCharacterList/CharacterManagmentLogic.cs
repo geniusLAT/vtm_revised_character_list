@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using vtmRevisedCharacterListEntities;
 
@@ -92,6 +93,31 @@ public partial class CharacterManagment : Form
         return null;
     }
 
+    public async Task<bool> DeleteCharacterAsync(Guid adminGuid, Guid characterGuid)
+    {
+        try
+        {
+            var deleteRequest = new CharacterDeleteRequest()
+            {
+                AdminUuid = adminGuid,
+                CharacterUuid = characterGuid
+            };
+
+            var request = new HttpRequestMessage(HttpMethod.Delete, "/Character/DeleteCharacter")
+            {
+                Content = JsonContent.Create(deleteRequest)
+            };
+
+            var response = await _parentForm.HttpClient.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return false;
+    }
+
     #endregion
 
     private void LoadCharacters()
@@ -176,6 +202,7 @@ public partial class CharacterManagment : Form
     private void RenderCharacters()
     {
         CharacterListPanel.Controls.Clear();
+        characterPanels.Clear();
 
         for (int i = 0; i < characters.Count; i++)
         {
@@ -289,6 +316,32 @@ public partial class CharacterManagment : Form
             _chosenUserPanel.User.AccessedCharacters.Remove(panel.CharacterUuid);
         }
         SetUnsavedUserStatus(true);
+    }
+
+    void DeleteCharacter()
+    {
+        if (_unsavedUser) return;
+
+        int selectedIndex = (int)_parentForm.characterComboBox.Invoke(new Func<int>(() => _parentForm.characterComboBox.SelectedIndex));
+
+        var uuid = _parentForm.AvaliableCharacters[selectedIndex].CharacterUuid;
+
+        var task = Task.Run(async () => await DeleteCharacterAsync(_parentForm.Config.UserId, uuid));
+        task.Wait();
+
+        _parentForm.AvaliableCharacters.Remove(_parentForm.AvaliableCharacters[selectedIndex]);
+
+        LoadCharacters();
+        RenderCharacters();
+
+        var foundCharacterPanel = characterPanels.Where(characterPanel =>  characterPanel.CharacterUuid == uuid).FirstOrDefault();
+        if (foundCharacterPanel is null)//render other character in case rendered one was removed
+        {
+            var firstOne = characterPanels.FirstOrDefault();
+            _parentForm.Invoke(new Action(() => _parentForm.RenderCharacterExternal(
+                firstOne.Character,
+                firstOne.CharacterUuid)));
+        }
     }
 
     void OpenNewCharacterWindow()

@@ -39,6 +39,7 @@
             DeleteUserButton = new Button();
             SaveUserButton = new Button();
             AddNewCharacterButton = new Button();
+            DeleteChosenCharacterButton = new Button();
             LogPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -144,11 +145,22 @@
             AddNewCharacterButton.UseVisualStyleBackColor = true;
             AddNewCharacterButton.Click += AddNewCharacterButton_Click;
             // 
+            // DeleteChosenCharacterButton
+            // 
+            DeleteChosenCharacterButton.Location = new Point(6, 544);
+            DeleteChosenCharacterButton.Name = "DeleteChosenCharacterButton";
+            DeleteChosenCharacterButton.Size = new Size(308, 23);
+            DeleteChosenCharacterButton.TabIndex = 23;
+            DeleteChosenCharacterButton.Text = "Удалить данного персонажа";
+            DeleteChosenCharacterButton.UseVisualStyleBackColor = true;
+            DeleteChosenCharacterButton.Click += DeleteChosenCharacterButton_Click;
+            // 
             // CharacterManagment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 647);
+            Controls.Add(DeleteChosenCharacterButton);
             Controls.Add(AddNewCharacterButton);
             Controls.Add(SaveUserButton);
             Controls.Add(DeleteUserButton);
@@ -181,5 +193,6 @@
         private Button DeleteUserButton;
         private Button SaveUserButton;
         private Button AddNewCharacterButton;
+        private Button DeleteChosenCharacterButton;
     }
 }
