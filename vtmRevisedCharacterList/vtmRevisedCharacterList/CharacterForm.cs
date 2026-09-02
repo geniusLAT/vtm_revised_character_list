@@ -266,6 +266,13 @@ public partial class CharacterForm : Form
     private void ExtraDicePoolNumeric_ValueChanged(object sender, EventArgs e)
     {
         _extraDicePool = (uint)(ExtraDicePoolNumeric.Value);
+        if (_extraDicePool != 0)
+        {
+            ExtraDicePoolLabel.ForeColor = Color.Red;
+        }else
+        {
+            ExtraDicePoolLabel.ForeColor = Color.Black;
+        }
         CalculateDices();
     }
 
