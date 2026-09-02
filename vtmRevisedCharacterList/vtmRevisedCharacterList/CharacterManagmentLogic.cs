@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using vtmRevisedCharacterListEntities;
@@ -648,6 +649,29 @@ public partial class CharacterManagment : Form
             RenderUsers();
             SetUnsavedUserStatus(false);
         }
+    }
+
+    #endregion
+
+    #region Config
+
+    void SaveConfigFile()
+    {
+        if (_chosenUserPanel is null || _unsavedUser) return;
+
+        var config = new GuiConfig()
+        {
+            Path = _parentForm.Config.Path,
+            UserName = _chosenUserPanel.User.Name,
+            UserId = _chosenUserPanel.UserUuid
+        };
+
+        Directory.CreateDirectory(_chosenUserPanel.User.Name);
+        var filePath = Path.Combine(_chosenUserPanel.User.Name, "config");
+
+        var newContent = JsonSerializer.Serialize(config);
+        File.WriteAllText(filePath, newContent);
+        MessageBox.Show($"Создан config для пользователя {_chosenUserPanel.User.Name}");
     }
 
     #endregion

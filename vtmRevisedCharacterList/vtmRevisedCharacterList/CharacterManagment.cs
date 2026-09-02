@@ -56,4 +56,9 @@ public partial class CharacterManagment : Form
     {
         OpenImportCharacterForm();
     }
+
+    private void GenerateConfigButton_Click(object sender, EventArgs e)
+    {
+        SaveConfigFile();
+    }
 }

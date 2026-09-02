@@ -42,6 +42,7 @@
             DeleteChosenCharacterButton = new Button();
             CopyCharacterButton = new Button();
             ImportCharacterButton = new Button();
+            GenerateConfigButton = new Button();
             LogPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -178,11 +179,22 @@
             ImportCharacterButton.UseVisualStyleBackColor = true;
             ImportCharacterButton.Click += ImportCharacterButton_Click;
             // 
+            // GenerateConfigButton
+            // 
+            GenerateConfigButton.Location = new Point(477, 501);
+            GenerateConfigButton.Name = "GenerateConfigButton";
+            GenerateConfigButton.Size = new Size(116, 23);
+            GenerateConfigButton.TabIndex = 26;
+            GenerateConfigButton.Text = "Config";
+            GenerateConfigButton.UseVisualStyleBackColor = true;
+            GenerateConfigButton.Click += GenerateConfigButton_Click;
+            // 
             // CharacterManagment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 647);
+            Controls.Add(GenerateConfigButton);
             Controls.Add(ImportCharacterButton);
             Controls.Add(CopyCharacterButton);
             Controls.Add(DeleteChosenCharacterButton);
@@ -221,5 +233,6 @@
         private Button DeleteChosenCharacterButton;
         private Button CopyCharacterButton;
         private Button ImportCharacterButton;
+        private Button GenerateConfigButton;
     }
 }
