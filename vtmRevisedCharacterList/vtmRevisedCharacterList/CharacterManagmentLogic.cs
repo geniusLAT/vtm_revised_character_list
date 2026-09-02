@@ -207,6 +207,9 @@ public partial class CharacterManagment : Form
         users = loadedUsersTask.Result;
     }
 
+    #region Users
+
+    #region Network
     private async Task<List<UserEntity>> GetUsersAsync(Guid adminGuid)
     {
         try
@@ -223,7 +226,8 @@ public partial class CharacterManagment : Form
         }
         return [];
     }
-    #region Users
+
+    #endregion
     private void RenderUsers()
     {
 
