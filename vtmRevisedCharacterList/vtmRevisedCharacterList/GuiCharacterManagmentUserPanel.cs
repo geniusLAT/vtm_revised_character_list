@@ -12,8 +12,12 @@ internal class GuiCharacterManagmentUserPanel
 {
     public required UserEntity User { get; set; }
 
+    public required Guid UserUuid { get; set; }
+
+
     #region GUI
     public required Panel Panel { get; set; }
+
     public required Label Label { get; set; }
 
     #endregion

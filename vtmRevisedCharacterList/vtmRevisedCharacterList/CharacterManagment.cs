@@ -26,4 +26,9 @@ public partial class CharacterManagment : Form
     {
         OpenAddNewUserForm();
     }
+
+    private void DeleteUserButton_Click(object sender, EventArgs e)
+    {
+        DeleteUser();
+    }
 }

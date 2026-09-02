@@ -12,6 +12,8 @@ internal class GuiCharacterManagmentCharacterPanel : IComparable<GuiCharacterMan
 {
     public required Character Character { get; set; }
 
+    public required Guid CharacterUuid { get; set; }
+
     public bool RollInit { get; set; }
 
     public bool Favorite { get; set; }
@@ -27,6 +29,8 @@ internal class GuiCharacterManagmentCharacterPanel : IComparable<GuiCharacterMan
     public required Button Button { get; set; }
 
     public required CheckBox InitCheckBox { get; set; }
+
+    public  required CheckBox UserRightCheckBox { get; set; }
 
     public required NumericUpDown NumericBonus { get; set; }
 

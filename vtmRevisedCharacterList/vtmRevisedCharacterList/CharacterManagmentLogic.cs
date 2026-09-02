@@ -10,7 +10,7 @@ public partial class CharacterManagment : Form
 {
     private CharacterForm _parentForm;
 
-    private List<Character> characters = [];
+    private List<CharacterExtended> characters = [];
 
     private List<UserGetResult> users = [];
 
@@ -78,9 +78,15 @@ public partial class CharacterManagment : Form
 
         Task.WaitAll(tasks);
 
-        foreach (var task in tasks)
+        for (int i = 0; i < tasks.Count; i++)
         {
-            characters.Add(task.Result);
+            Task<Character>? task = tasks[i];
+            characters.Add(new()
+            {
+                Character =task.Result,
+                Uuid = _parentForm.AvaliableCharacters[i].CharacterUuid
+            }
+                );
         }
         //MessageBox.Show($"loaded {characters.Count()}");
 
@@ -118,6 +124,9 @@ public partial class CharacterManagment : Form
 
     private void RenderCharacters()
     {
+        MessageBox.Show("RenderCharacters");
+        CharacterListPanel.Controls.Clear();
+
         for (int i = 0; i < characters.Count; i++)
         {
             var character = characters[i];
@@ -133,7 +142,7 @@ public partial class CharacterManagment : Form
 
             var label = new Label()
             {
-                Text = character.CharacterName,
+                Text = character.Character.CharacterName,
                 Width = 100,
                 Height = 20,
                 //BackColor = Color.BlueViolet,
@@ -168,7 +177,7 @@ public partial class CharacterManagment : Form
 
             var numericBonus = new NumericUpDown()
             {
-                Value = character.Dexterity,
+                Value = character.Character.Dexterity,
                 Minimum = -100,
                 Maximum = 100,
                 Width = 30,
@@ -177,16 +186,28 @@ public partial class CharacterManagment : Form
             panel.Controls.Add(numericBonus);
 
 
+            var userRightCheckBox = new CheckBox()
+            {
+                Location = new(260, 0),
+                Width = 20,
+                Visible = _chosenUserPanel is not null,
+                Checked = _chosenUserPanel?.User.AccessedCharacters.Contains(character.Uuid) ?? false
+            };
+            userRightCheckBox.CheckedChanged += UserRightCheckox_CheckedChanged;
+            panel.Controls.Add(userRightCheckBox);
+
             characterPanels.Add(new()
             {
-                Character = character,
+                Character = character.Character,
                 Panel = panel,
                 Label = label,
                 Button = button,
                 InitCheckBox = initCheckBox,
                 InitLabel = initLabel,
-                NumericBonus = numericBonus
-
+                NumericBonus = numericBonus,
+                UserRightCheckBox = userRightCheckBox,
+                CharacterUuid = character.Uuid
+                
             }
                 );
         }
@@ -198,6 +219,24 @@ public partial class CharacterManagment : Form
         if (panel is null) return;
 
         panel.RollInit = true;
+    }
+
+    private void UserRightCheckox_CheckedChanged(object sender, EventArgs e)
+    {
+        if (_chosenUserPanel is null)
+            return;
+
+        var panel = characterPanels.Where(guiPanel => guiPanel.UserRightCheckBox == sender).FirstOrDefault();
+        if (panel is null) return;
+
+        if (panel.UserRightCheckBox.Checked)
+        {
+            _chosenUserPanel.User.AccessedCharacters.Add(panel.CharacterUuid);
+        }
+        else
+        {
+            _chosenUserPanel.User.AccessedCharacters.Remove(panel.CharacterUuid);
+        }
     }
 
     private void LoadUsers()
@@ -250,12 +289,43 @@ public partial class CharacterManagment : Form
         return null;
     }
 
+    private async Task<bool> DeleteUserAsync(Guid adminGuid, Guid userUuid)
+    {
+        try
+        {
+            var deleteRequest = new UserDeleteRequest()
+            {
+                AdminUuid = adminGuid,
+                UserUuid = userUuid
+            };
+
+            var request = new HttpRequestMessage(HttpMethod.Delete, "/User")
+            {
+                Content = JsonContent.Create(deleteRequest) 
+            };
+
+            var response = await _parentForm.HttpClient.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<bool>();
+            return responseRequest;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return false;
+    }
+
     #endregion
     private void RenderUsers()
     {
-
+        UserListPanel.Controls.Clear();
+        UserNameTextBox.TextChanged -= UserNameTextBox_TextChanged;
+        UserNameTextBox.Text = string.Empty;
+        
         UserNameTextBox.TextChanged += UserNameTextBox_TextChanged;
-
+        _chosenUserPanel = null;
         for (int i = 0; i < users.Count; i++)
         {
             var user = users[i];
@@ -284,7 +354,8 @@ public partial class CharacterManagment : Form
             {
                 User = user.User,
                 Panel = panel,
-                Label = label
+                Label = label,
+                UserUuid = user.UserUuid
             }
                 );
         }
@@ -309,6 +380,8 @@ public partial class CharacterManagment : Form
         _chosenUserPanel.Panel.BackColor = Color.Blue;
         _chosenUserPanel.Label.ForeColor = Color.White;
         UserNameTextBox.Text = _chosenUserPanel.User.Name;
+
+        RenderCharacters();
     }
 
     private void UserNameTextBox_TextChanged(object sender, EventArgs e)
@@ -324,8 +397,6 @@ public partial class CharacterManagment : Form
 
     public void AddNewUser(string username)
     {
-        MessageBox.Show($"Added {username}");
-
         UserEntity userToCreate = new()
         {
             Name = username
@@ -340,6 +411,20 @@ public partial class CharacterManagment : Form
                 User = userToCreate,
                 UserUuid = (Guid)newUserGuid
             }); 
+        }
+
+        RenderUsers();
+    }
+
+    public void DeleteUser()
+    {
+        var loadedUsersTask = Task.Run(async () => await DeleteUserAsync(_parentForm.Config.UserId, _chosenUserPanel.UserUuid));
+        loadedUsersTask.Wait();
+        var success = loadedUsersTask.Result;
+        if (success)
+        {
+            var userToRemove = users.Where(user => user.UserUuid == _chosenUserPanel.UserUuid).FirstOrDefault();
+            users.Remove(userToRemove);
         }
 
         RenderUsers();

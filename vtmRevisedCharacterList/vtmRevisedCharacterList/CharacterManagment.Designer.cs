@@ -36,6 +36,7 @@
             UserNameTextBox = new TextBox();
             UserNameLabel = new Label();
             AddNewUserButton = new Button();
+            DeleteUserButton = new Button();
             LogPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -103,7 +104,7 @@
             // 
             // AddNewUserButton
             // 
-            AddNewUserButton.Location = new Point(322, 472);
+            AddNewUserButton.Location = new Point(320, 501);
             AddNewUserButton.Name = "AddNewUserButton";
             AddNewUserButton.Size = new Size(151, 23);
             AddNewUserButton.TabIndex = 19;
@@ -111,11 +112,22 @@
             AddNewUserButton.UseVisualStyleBackColor = true;
             AddNewUserButton.Click += AddNewUserButton_Click;
             // 
+            // DeleteUserButton
+            // 
+            DeleteUserButton.Location = new Point(320, 473);
+            DeleteUserButton.Name = "DeleteUserButton";
+            DeleteUserButton.Size = new Size(151, 23);
+            DeleteUserButton.TabIndex = 20;
+            DeleteUserButton.Text = "Удалить данного игрока";
+            DeleteUserButton.UseVisualStyleBackColor = true;
+            DeleteUserButton.Click += DeleteUserButton_Click;
+            // 
             // CharacterManagment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 647);
+            Controls.Add(DeleteUserButton);
             Controls.Add(AddNewUserButton);
             Controls.Add(UserNameLabel);
             Controls.Add(UserNameTextBox);
@@ -142,5 +154,6 @@
         private TextBox UserNameTextBox;
         private Label UserNameLabel;
         private Button AddNewUserButton;
+        private Button DeleteUserButton;
     }
 }
