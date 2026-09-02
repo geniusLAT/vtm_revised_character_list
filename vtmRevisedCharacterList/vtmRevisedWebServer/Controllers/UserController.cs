@@ -20,5 +20,12 @@ namespace vtmRevisedWebServer.Controllers
             var adminGuid = CharacterManager.GetAdminGuid();
             return Ok(adminGuid == userId);
         }
+
+        [HttpGet(Name = "GetUser")]
+        public IActionResult GetUser([FromQuery] Guid userId)
+        {
+            var adminGuid = CharacterManager.GetAdminGuid();
+            return Ok(adminGuid == userId);
+        }
     }
 }
