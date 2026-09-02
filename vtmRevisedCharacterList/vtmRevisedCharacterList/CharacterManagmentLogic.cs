@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using System.Text;
+using System.Windows.Forms;
 using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList;
@@ -66,8 +67,37 @@ public partial class CharacterManagment : Form
 
     }
 
+    #region Network
+
+    public async Task<CreateCharacterResult?> AddNewCharacterAsync(Guid adminGuid, Character character)
+    {
+        try
+        {
+            var request = new CreateCharacterRequest()
+            {
+                AdminUuid = adminGuid,
+                CharacterToCreate = character
+            };
+
+            var response = await _parentForm.HttpClient.PostAsJsonAsync($"/Character/CreateCharacter", request);
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<CreateCharacterResult>();
+            return responseRequest;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return null;
+    }
+
+    #endregion
+
     private void LoadCharacters()
     {
+        characters.Clear();
+
         List<Task<Character>> tasks = new List<Task<Character>>();
         for (int i = 0; i < _parentForm.AvaliableCharacters.Count; i++)
         {
@@ -135,6 +165,14 @@ public partial class CharacterManagment : Form
         }
     }
 
+    private void OpenCharacterButton_Click(object sender, EventArgs e)
+    {
+        var panel = characterPanels.Where(guiPanel => guiPanel.Button == sender).FirstOrDefault();
+        if (panel is null) return;
+
+        _parentForm.Invoke(new Action(() => _parentForm.RenderCharacterExternal(panel.Character, panel.CharacterUuid)));
+    }
+
     private void RenderCharacters()
     {
         CharacterListPanel.Controls.Clear();
@@ -167,6 +205,7 @@ public partial class CharacterManagment : Form
                 Width = 90,
                 Location = new(100, 0),
             };
+            button.Click += OpenCharacterButton_Click;
             panel.Controls.Add(button);
 
             var initCheckBox = new CheckBox()
@@ -254,7 +293,24 @@ public partial class CharacterManagment : Form
 
     void OpenNewCharacterWindow()
     {
+        if (_unsavedUser) return;
 
+        var form = new AddNewCharacterForm(this);
+        form.ShowDialog();
+    }
+
+    public void AddNewCharacter(Character character)
+    {
+        var task = Task.Run(async () => await AddNewCharacterAsync(_parentForm.Config.UserId, character));
+        task.Wait();
+        var result = task.Result;
+
+        var task2 = Task.Run(() => _parentForm.GetCharacterListAsync(_parentForm.Config.UserId));
+        task2.Wait();
+        _parentForm.AvaliableCharacters = task2.Result;
+
+        LoadCharacters();
+        RenderCharacters();
     }
 
     #region Users
