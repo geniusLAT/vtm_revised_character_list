@@ -47,5 +47,23 @@ namespace vtmRevisedWebServer.Controllers
             }
            
         }
+
+        [HttpPost("create", Name = "CreateUser")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Guid))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult CreateUser([FromBody] UserCreateRequest request)
+        {
+            var adminGuid = CharacterManager.GetAdminGuid();
+            if (adminGuid == request.AdminUuid)
+            {
+                var guid = CharacterManager.CreateUser( request.User);
+                return Ok(guid);
+            }
+            else
+            {
+                return Unauthorized();
+            }
+
+        }
     }
 }

@@ -117,6 +117,29 @@ public static class CharacterManager
             return null;
         }
     }
+    public static Guid? CreateUser(UserEntity newUser)
+    {
+        string filePath = string.Empty;
+        Guid? userGuid = null;
+
+        while (File.Exists(filePath) || string.IsNullOrWhiteSpace(filePath))
+        {
+            userGuid = Guid.NewGuid();
+            filePath = Path.Combine("userRights", $"{userGuid}.txt");
+        }
+
+        try
+        {
+            var newContent = JsonSerializer.Serialize(newUser);
+            File.WriteAllText(filePath, newContent);
+
+            return userGuid;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
 
     public static Guid? GetAdminGuid()
     {
