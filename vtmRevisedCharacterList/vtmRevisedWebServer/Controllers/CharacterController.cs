@@ -82,6 +82,23 @@ public class CharacterController : ControllerBase
         return characterUpdateResult;
     }
 
+    [HttpPost("CreateCharacter")]
+    public ActionResult<CreateCharacterResult> CreateCharacter([FromBody] CreateCharacterRequest request)
+    {
+        var adminGuid = CharacterManager.GetAdminGuid();
+        if (adminGuid != request.AdminUuid)
+        {
+           return Unauthorized();
+        }
+
+        var createCharacterResult = CharacterManager.CreateCharacter(request.CharacterToCreate);
+        if (createCharacterResult is null)
+        {
+            return NotFound();
+        }
+        return createCharacterResult;
+    }
+
     [HttpPost("GetCharacter")]
     public ActionResult<Character> GetCharacter([FromBody] CharacterRequest request)
     {
