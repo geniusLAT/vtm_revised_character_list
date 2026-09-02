@@ -285,6 +285,15 @@ public partial class CharacterForm : Form
     private void DifficultyNumeric_ValueChanged(object sender, EventArgs e)
     {
         _baseDifficulty = (uint)(DifficultyNumeric.Value);
+
+        if (_baseDifficulty != 6)
+        {
+            DifficultyLabel.ForeColor = Color.Red;
+        }
+        else
+        {
+            DifficultyLabel.ForeColor = Color.Black;
+        }
         CalculateDices();
     }
 
