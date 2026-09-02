@@ -6,7 +6,7 @@ public partial class CharacterManagment : Form
     {
         _parentForm = form;
 
-        
+
         InitializeComponent();
 
         Start();
@@ -20,5 +20,10 @@ public partial class CharacterManagment : Form
     private void InitRollButton_Click(object sender, EventArgs e)
     {
         RollInit();
+    }
+
+    private void AddNewUserButton_Click(object sender, EventArgs e)
+    {
+        OpenAddNewUserForm();
     }
 }

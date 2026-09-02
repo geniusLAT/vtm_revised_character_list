@@ -34,7 +34,7 @@ public partial class CharacterManagment : Form
 
         foreach (var character in characterPanels) {
 
-            if(character.LastRoundInit < 1)
+            if (character.LastRoundInit < 1)
             {
                 break;
             }
@@ -72,7 +72,7 @@ public partial class CharacterManagment : Form
             vtmRevisedCharacterListEntities.CharacterListMember? character = _parentForm.AvaliableCharacters[i];
 
             var loadedCharacter = Task.Run(async () => await _parentForm.GetCharacterAsync(character, _parentForm.Config.UserId));
-          
+
             tasks.Add(loadedCharacter);
         }
 
@@ -83,7 +83,7 @@ public partial class CharacterManagment : Form
             characters.Add(task.Result);
         }
         //MessageBox.Show($"loaded {characters.Count()}");
-        
+
     }
 
     private void RollInit()
@@ -202,9 +202,9 @@ public partial class CharacterManagment : Form
 
     private void LoadUsers()
     {
-        var loadedUsersTask = Task.Run(async () => await GetUsersAsync( _parentForm.Config.UserId));
+        var loadedUsersTask = Task.Run(async () => await GetUsersAsync(_parentForm.Config.UserId));
         loadedUsersTask.Wait();
-        users = loadedUsersTask.Result;      
+        users = loadedUsersTask.Result;
     }
 
     private async Task<List<UserEntity>> GetUsersAsync(Guid adminGuid)
@@ -226,6 +226,9 @@ public partial class CharacterManagment : Form
     #region Users
     private void RenderUsers()
     {
+
+        UserNameTextBox.TextChanged += UserNameTextBox_TextChanged;
+
         for (int i = 0; i < users.Count; i++)
         {
             var user = users[i];
@@ -278,6 +281,23 @@ public partial class CharacterManagment : Form
         _chosenUserPanel = userPanel;
         _chosenUserPanel.Panel.BackColor = Color.Blue;
         _chosenUserPanel.Label.ForeColor = Color.White;
+        UserNameTextBox.Text = _chosenUserPanel.User.Name;
+    }
+
+    private void UserNameTextBox_TextChanged(object sender, EventArgs e)
+    {
+        _chosenUserPanel.User.Name = UserNameTextBox.Text;
+    }
+
+    private void OpenAddNewUserForm()
+    {
+        var form = new AddNewUserForm(this);
+        form.ShowDialog();
+    }
+
+    public void AddNewUser(string username)
+    {
+        MessageBox.Show($"Added {username}");
     }
 
     #endregion
