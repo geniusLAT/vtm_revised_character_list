@@ -14,7 +14,8 @@ public partial class CharacterForm : Form
     {
         ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
     };
-    private HttpClient? _httpClient;
+    
+    public HttpClient? HttpClient;
 
     public GuiConfig? Config;
 
@@ -948,7 +949,7 @@ public partial class CharacterForm : Form
 
         try
         {
-            var response = await _httpClient.PostAsJsonAsync("Dice", request);
+            var response = await HttpClient.PostAsJsonAsync("Dice", request);
             response.EnsureSuccessStatusCode();
 
             DicesRollRequest? responseRequest = await response.Content.ReadFromJsonAsync<DicesRollRequest>();
@@ -1008,7 +1009,7 @@ public partial class CharacterForm : Form
         }
         UsernameLabel.Text = $"Игрок:{Config.UserName}";
 
-        _httpClient = new HttpClient(handler)
+        HttpClient = new HttpClient(handler)
         {
             //BaseAddress = new Uri("https://localhost:44320/")
             BaseAddress = new Uri(Config.Path)
@@ -1114,7 +1115,7 @@ public partial class CharacterForm : Form
     {
         try
         {
-            var response = await _httpClient.GetAsync($"/User/GetAdminStatus?userId={userId}");
+            var response = await HttpClient.GetAsync($"/User/GetAdminStatus?userId={userId}");
             response.EnsureSuccessStatusCode();
 
             var responseRequest = await response.Content.ReadFromJsonAsync<bool>();
@@ -1136,7 +1137,7 @@ public partial class CharacterForm : Form
 
         try
         {
-            var response = await _httpClient.PostAsJsonAsync("/Character/GetCharacterList", request);
+            var response = await HttpClient.PostAsJsonAsync("/Character/GetCharacterList", request);
             response.EnsureSuccessStatusCode();
 
             var responseRequest = await response.Content.ReadFromJsonAsync<List<CharacterListMember>>();
@@ -1160,7 +1161,7 @@ public partial class CharacterForm : Form
 
         try
         {
-            var response = await _httpClient.PostAsJsonAsync("/Character/GetCharacter", request);
+            var response = await HttpClient.PostAsJsonAsync("/Character/GetCharacter", request);
             response.EnsureSuccessStatusCode();
 
             var responseRequest = await response.Content.ReadFromJsonAsync<Character>();
@@ -1236,7 +1237,7 @@ public partial class CharacterForm : Form
     {
         try
         {
-            var response = await _httpClient.PostAsJsonAsync("/Character/UpdateCharacter", request);
+            var response = await HttpClient.PostAsJsonAsync("/Character/UpdateCharacter", request);
             response.EnsureSuccessStatusCode();
 
             var responseRequest = await response.Content.ReadFromJsonAsync<CharacterUpdateResult>();
@@ -1255,7 +1256,7 @@ public partial class CharacterForm : Form
     {
         try
         {
-            var response = await _httpClient.PostAsJsonAsync("/Message", request);
+            var response = await HttpClient.PostAsJsonAsync("/Message", request);
             response.EnsureSuccessStatusCode();
             return;
         }

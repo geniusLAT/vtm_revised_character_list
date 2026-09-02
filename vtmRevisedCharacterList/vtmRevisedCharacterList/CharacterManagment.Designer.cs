@@ -32,6 +32,7 @@
             CharacterListPanel = new Panel();
             LogPanel = new Panel();
             logLabel = new Label();
+            UserListPanel = new Panel();
             LogPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -74,11 +75,19 @@
             logLabel.TabIndex = 0;
             logLabel.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // UserListPanel
+            // 
+            UserListPanel.Location = new Point(320, 197);
+            UserListPanel.Name = "UserListPanel";
+            UserListPanel.Size = new Size(273, 241);
+            UserListPanel.TabIndex = 2;
+            // 
             // CharacterManagment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 647);
+            Controls.Add(UserListPanel);
             Controls.Add(LogPanel);
             Controls.Add(CharacterListPanel);
             Controls.Add(InitRollButton);
@@ -97,5 +106,6 @@
         private Panel CharacterListPanel;
         private Panel LogPanel;
         private Label logLabel;
+        private Panel UserListPanel;
     }
 }

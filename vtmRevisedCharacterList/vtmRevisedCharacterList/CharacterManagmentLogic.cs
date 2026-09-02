@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Text;
 using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedCharacterList;
@@ -9,12 +12,20 @@ public partial class CharacterManagment : Form
 
     private List<Character> characters = [];
 
+    private List<UserEntity> users = [];
+
     private List<GuiCharacterManagmentCharacterPanel> characterPanels = [];
+
+    private List<GuiCharacterManagmentUserPanel> userPanels = [];
+
+    private GuiCharacterManagmentUserPanel? _chosenUserPanel;
 
     private void Start()
     {
         LoadCharacters();
-        Render();
+        LoadUsers();
+        RenderCharacters();
+        RenderUsers();
     }
 
     private string FormMessage()
@@ -105,7 +116,7 @@ public partial class CharacterManagment : Form
         _parentForm.Invoke(new Action(() => _parentForm.SendInit(message)));
     }
 
-    private void Render()
+    private void RenderCharacters()
     {
         for (int i = 0; i < characters.Count; i++)
         {
@@ -181,7 +192,6 @@ public partial class CharacterManagment : Form
         }
     }
 
-
     private void InitCheckox_CheckedChanged(object sender, EventArgs e)
     {
         var panel = characterPanels.Where(guiPanel => guiPanel.InitCheckBox == sender).FirstOrDefault();
@@ -189,4 +199,86 @@ public partial class CharacterManagment : Form
 
         panel.RollInit = true;
     }
+
+    private void LoadUsers()
+    {
+        var loadedUsersTask = Task.Run(async () => await GetUsersAsync( _parentForm.Config.UserId));
+        loadedUsersTask.Wait();
+        users = loadedUsersTask.Result;      
+    }
+
+    private async Task<List<UserEntity>> GetUsersAsync(Guid adminGuid)
+    {
+        try
+        {
+            var response = await _parentForm.HttpClient.GetAsync($"/User/all?adminId={adminGuid}");
+            response.EnsureSuccessStatusCode();
+
+            var responseRequest = await response.Content.ReadFromJsonAsync<List<UserEntity>>();
+            return responseRequest;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return [];
+    }
+    #region Users
+    private void RenderUsers()
+    {
+        for (int i = 0; i < users.Count; i++)
+        {
+            var user = users[i];
+
+            var panel = new Panel()
+            {
+                BackColor = Color.White,
+                Width = 500,
+                Height = 20,
+                Location = new(0, 20 * i),
+            };
+            panel.Click += UserPanel_Clicked;
+            UserListPanel.Controls.Add(panel);
+
+            var label = new Label()
+            {
+                Text = user.Name,
+                Width = 100,
+                Height = 20,
+                //BackColor = Color.BlueViolet,
+            };
+            label.Click += UserPanel_Clicked;
+            panel.Controls.Add(label);
+
+            userPanels.Add(new()
+            {
+                User = user,
+                Panel = panel,
+                Label = label
+            }
+                );
+        }
+    }
+
+    private void UserPanel_Clicked(object sender, EventArgs e)
+    {
+        var panel = userPanels.Where(guiPanel => guiPanel.Label == sender || guiPanel.Panel == sender).FirstOrDefault();
+        if (panel is null) return;
+        ChooseUserPanel(panel);
+
+    }
+
+    private void ChooseUserPanel(GuiCharacterManagmentUserPanel userPanel)
+    {
+        if (_chosenUserPanel is not null)
+        {
+            _chosenUserPanel.Panel.BackColor = Color.White;
+            _chosenUserPanel.Label.ForeColor = Color.Black;
+        }
+        _chosenUserPanel = userPanel;
+        _chosenUserPanel.Panel.BackColor = Color.Blue;
+        _chosenUserPanel.Label.ForeColor = Color.White;
+    }
+
+    #endregion
 }
