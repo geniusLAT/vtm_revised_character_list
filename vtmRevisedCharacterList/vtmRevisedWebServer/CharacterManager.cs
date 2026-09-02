@@ -35,6 +35,40 @@ public static class CharacterManager
         }
     }
 
+    public static UserEntity[] GetAllUsers()
+    {
+        string folderPath = "userRights";
+
+        if (!Directory.Exists(folderPath))
+        {
+            return Array.Empty<UserEntity>();
+        }
+
+        try
+        {
+            List<UserEntity> users = new();
+            foreach (string filePath in Directory.EnumerateFiles(folderPath, "*.txt"))
+            {
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+
+                string content = File.ReadAllText(filePath);
+
+                var result = JsonSerializer.Deserialize<UserEntity>(content);
+
+                if (result != null)
+                {
+                    users.Add(result);
+                }
+            }
+
+            return users.ToArray();
+        }
+        catch (Exception)
+        {
+            return Array.Empty<UserEntity>();
+        }
+    }
+
     public static Guid[] GetUserRights(Guid userGuid)
     {
         string filePath = Path.Combine("userRights", $"{userGuid}.txt");

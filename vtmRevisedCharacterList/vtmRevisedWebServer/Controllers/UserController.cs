@@ -24,10 +24,26 @@ namespace vtmRevisedWebServer.Controllers
 
         [HttpGet(Name = "GetUser")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserEntity))]
-        public IActionResult GetUser([FromQuery] Guid userId)
+        public IActionResult GetUser([FromQuery] Guid adminGuid)
         {
-            var user = CharacterManager.GetUser(userId);
+            var user = CharacterManager.GetUser(adminGuid);
             return Ok(user);
+        }
+
+        [HttpGet("all", Name = "GetAllUsers")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<UserEntity>))]
+        public IActionResult GetAllUsers([FromQuery] Guid adminId)
+        {
+            var adminGuid = CharacterManager.GetAdminGuid();
+            if (adminGuid == adminId)
+            {
+                var users = CharacterManager.GetAllUsers();
+                return Ok(users);
+            }
+            else
+            {
+                return Unauthorized();
+            }
         }
 
         [HttpPost(Name = "UpdateUser")]
@@ -45,7 +61,6 @@ namespace vtmRevisedWebServer.Controllers
             {
                 return Unauthorized();
             }
-           
         }
 
         [HttpPost("create", Name = "CreateUser")]
