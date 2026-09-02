@@ -31,4 +31,9 @@ public partial class CharacterManagment : Form
     {
         DeleteUser();
     }
+
+    private void SaveUserButton_Click(object sender, EventArgs e)
+    {
+        UpdateUser();
+    }
 }

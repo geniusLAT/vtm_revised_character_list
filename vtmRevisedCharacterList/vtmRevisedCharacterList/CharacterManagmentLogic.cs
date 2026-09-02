@@ -26,6 +26,8 @@ public partial class CharacterManagment : Form
         LoadUsers();
         RenderCharacters();
         RenderUsers();
+
+        SetUnsavedUserStatus(false);
     }
 
     private string FormMessage()
@@ -328,6 +330,34 @@ public partial class CharacterManagment : Form
         return false;
     }
 
+    private async Task<bool> UpdateUserAsync(Guid adminGuid, Guid userUuid, UserEntity user)
+    {
+        try
+        {
+            var updateRequest = new UserUpdateRequest()
+            {
+                AdminUuid = adminGuid,
+                UserUuid = userUuid,
+                User = user
+            };
+
+            var request = new HttpRequestMessage(HttpMethod.Post, "/User")
+            {
+                Content = JsonContent.Create(updateRequest)
+            };
+
+            var response = await _parentForm.HttpClient.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            return true;
+        }
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show($"Ошибка сети или сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return false;
+    }
+
     #endregion
     private void RenderUsers()
     {
@@ -404,15 +434,23 @@ public partial class CharacterManagment : Form
     {
         _unsavedUser = status;
 
+        SaveUserButton.Enabled = status;
+        AddNewUserButton.Enabled = !status;
+
         if (status)
         {
-            _chosenUserPanel.Panel.BackColor = Color.Orange;
+            if (_chosenUserPanel is not null)
+            {
+                _chosenUserPanel.Panel.BackColor = Color.Orange;
+            }
         }
         else
         {
-            _chosenUserPanel.Panel.BackColor = Color.Blue;
+            if (_chosenUserPanel is not null)
+            {
+                _chosenUserPanel.Panel.BackColor = Color.Blue;
+            }
         }
-
     }
 
     private void UserNameTextBox_TextChanged(object sender, EventArgs e)
@@ -461,6 +499,26 @@ public partial class CharacterManagment : Form
         }
 
         RenderUsers();
+    }
+
+    public void UpdateUser()
+    {
+        if(_chosenUserPanel is null)
+            return;
+
+        var task = Task.Run(async () => await UpdateUserAsync(
+            _parentForm.Config.UserId, 
+            _chosenUserPanel.UserUuid, 
+            _chosenUserPanel.User)
+        );
+        task.Wait();
+        var success = task.Result;
+
+        if (success)
+        {
+            RenderUsers();
+            SetUnsavedUserStatus(false);
+        }
     }
 
     #endregion

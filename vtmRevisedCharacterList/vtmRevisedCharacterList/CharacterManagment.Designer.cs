@@ -37,6 +37,7 @@
             UserNameLabel = new Label();
             AddNewUserButton = new Button();
             DeleteUserButton = new Button();
+            SaveUserButton = new Button();
             LogPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -122,11 +123,22 @@
             DeleteUserButton.UseVisualStyleBackColor = true;
             DeleteUserButton.Click += DeleteUserButton_Click;
             // 
+            // SaveUserButton
+            // 
+            SaveUserButton.Location = new Point(477, 473);
+            SaveUserButton.Name = "SaveUserButton";
+            SaveUserButton.Size = new Size(116, 23);
+            SaveUserButton.TabIndex = 21;
+            SaveUserButton.Text = "Сохранить";
+            SaveUserButton.UseVisualStyleBackColor = true;
+            SaveUserButton.Click += SaveUserButton_Click;
+            // 
             // CharacterManagment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 647);
+            Controls.Add(SaveUserButton);
             Controls.Add(DeleteUserButton);
             Controls.Add(AddNewUserButton);
             Controls.Add(UserNameLabel);
@@ -155,5 +167,6 @@
         private Label UserNameLabel;
         private Button AddNewUserButton;
         private Button DeleteUserButton;
+        private Button SaveUserButton;
     }
 }
