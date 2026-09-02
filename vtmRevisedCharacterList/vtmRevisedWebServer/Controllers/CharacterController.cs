@@ -99,6 +99,20 @@ public class CharacterController : ControllerBase
         return createCharacterResult;
     }
 
+    [HttpDelete("DeleteCharacter")]
+    public ActionResult<bool> DeleteCharacter([FromBody] CharacterDeleteRequest request)
+    {
+        var adminGuid = CharacterManager.GetAdminGuid();
+        if (adminGuid != request.AdminUuid)
+        {
+            return Unauthorized();
+        }
+
+        var createCharacterResult = CharacterManager.DeleteCharacter(request.CharacterUuid);
+        
+        return createCharacterResult;
+    }
+
     [HttpPost("GetCharacter")]
     public ActionResult<Character> GetCharacter([FromBody] CharacterRequest request)
     {

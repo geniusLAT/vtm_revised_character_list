@@ -7975,7 +7975,7 @@
         private NumericUpDown debuffDicePoolNumeric;
         private Label debuffDicePoolLabel;
         private Label UsernameLabel;
-        private ComboBox characterComboBox;
+        public ComboBox characterComboBox;
         private Button UpdateCharacterButton;
         private Button CancelUpdateButton;
         private Panel HealthPanel;
