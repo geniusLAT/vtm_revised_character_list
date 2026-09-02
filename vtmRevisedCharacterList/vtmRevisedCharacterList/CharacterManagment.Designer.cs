@@ -41,6 +41,7 @@
             AddNewCharacterButton = new Button();
             DeleteChosenCharacterButton = new Button();
             CopyCharacterButton = new Button();
+            ImportCharacterButton = new Button();
             LogPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -167,11 +168,22 @@
             CopyCharacterButton.UseVisualStyleBackColor = true;
             CopyCharacterButton.Click += CopyCharacterButton_Click;
             // 
+            // ImportCharacterButton
+            // 
+            ImportCharacterButton.Location = new Point(6, 501);
+            ImportCharacterButton.Name = "ImportCharacterButton";
+            ImportCharacterButton.Size = new Size(308, 23);
+            ImportCharacterButton.TabIndex = 25;
+            ImportCharacterButton.Text = "Импортировать нового персонажа";
+            ImportCharacterButton.UseVisualStyleBackColor = true;
+            ImportCharacterButton.Click += ImportCharacterButton_Click;
+            // 
             // CharacterManagment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 647);
+            Controls.Add(ImportCharacterButton);
             Controls.Add(CopyCharacterButton);
             Controls.Add(DeleteChosenCharacterButton);
             Controls.Add(AddNewCharacterButton);
@@ -208,5 +220,6 @@
         private Button AddNewCharacterButton;
         private Button DeleteChosenCharacterButton;
         private Button CopyCharacterButton;
+        private Button ImportCharacterButton;
     }
 }
