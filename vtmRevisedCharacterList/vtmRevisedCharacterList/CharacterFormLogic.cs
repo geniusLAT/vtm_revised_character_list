@@ -39,7 +39,7 @@ public partial class CharacterForm : Form
 
     RatingGuiPanel? _chosenRatingGuiPanel;
 
-    Character? _chosenCharacter;
+    public Character? ChosenCharacter;
 
     private bool _unsavedChangesExist = false;
 
@@ -674,14 +674,14 @@ public partial class CharacterForm : Form
 
         if (_otherRollable != null)
         {
-            var other = _chosenCharacter?.GetOther((OtherRollable)_otherRollable) ?? 0;
+            var other = ChosenCharacter?.GetOther((OtherRollable)_otherRollable) ?? 0;
             _dicesToRoll += (int)other;
             sb.Append($" {RussianTranslator.TranslateOther(_otherRollable)} {other.ToString()}");
         }
 
         if (_chosenAttribute != null)
         {
-            var attribute = _chosenCharacter?.GetAttribute((AttributeVtm)_chosenAttribute) ?? 0;
+            var attribute = ChosenCharacter?.GetAttribute((AttributeVtm)_chosenAttribute) ?? 0;
             _dicesToRoll += (int)attribute;
             sb.Append($" {RussianTranslator.TranslateAttribute(_chosenAttribute)} {attribute.ToString()}");
 
@@ -690,7 +690,7 @@ public partial class CharacterForm : Form
                 var buffAttribute = Character.GetBuffAttribute(_chosenAttribute);
                 if (buffAttribute is not null)
                 {
-                    var buffAttributeValue = _chosenCharacter?.GetAttribute((AttributeVtm)buffAttribute) ?? 0;
+                    var buffAttributeValue = ChosenCharacter?.GetAttribute((AttributeVtm)buffAttribute) ?? 0;
                     if (buffAttributeValue != 0)
                     {
                         _dicesToRoll += (int)buffAttributeValue;
@@ -701,7 +701,7 @@ public partial class CharacterForm : Form
         }
         if (_chosenAbility != null)
         {
-            var ability = _chosenCharacter?.GetAbility((Ability)_chosenAbility) ?? 0;
+            var ability = ChosenCharacter?.GetAbility((Ability)_chosenAbility) ?? 0;
             _dicesToRoll += (int)ability;
             if (sb.Length > 0)
             {
@@ -743,7 +743,7 @@ public partial class CharacterForm : Form
 
         if (!_ignoreHealthCondition)
         {
-            var healthCondition = _chosenCharacter.GetHealthCondition();
+            var healthCondition = ChosenCharacter.GetHealthCondition();
             var healthConditionDebuff = 0;
             switch (healthCondition)
             {
@@ -784,7 +784,7 @@ public partial class CharacterForm : Form
         }
 
         _daredevil = false;
-        foreach (var meritRating in _chosenCharacter.Merits)
+        foreach (var meritRating in ChosenCharacter.Merits)
         {
             var merit = meritRating as MeritEntity;
             if (merit.Effect.MeritDicepoolEffect != 0 && merit.Active)
@@ -814,7 +814,7 @@ public partial class CharacterForm : Form
         {
             difficultyComment = $"{_baseDifficulty}{difficulty_sb} = {_difficulty}";
         }
-        var name = _chosenCharacter?.CharacterName ?? "Кто-то";
+        var name = ChosenCharacter?.CharacterName ?? "Кто-то";
         var daredevilCommentary = _daredevil ? ",сорвиголова " : string.Empty;
         var specializationCommentary = _specialization ? ",специализация " : string.Empty;
         var autoSuccessCommentary = _additionalAutoSuccess > 0 ? $", {_additionalAutoSuccess} автоуспехов" : string.Empty;
@@ -842,14 +842,14 @@ public partial class CharacterForm : Form
     }
     public void RenderCharacter()
     {
-        RenderCharacter(_chosenCharacter);
+        RenderCharacter(ChosenCharacter);
     }
 
     public void RenderCharacter(Character character)
     {
         characterComboBox.SelectedValue = character.CharacterName;
 
-        _chosenCharacter = character;
+        ChosenCharacter = character;
 
         characterNameLabel.Text = character.CharacterName ?? "Новый персонаж";
 
@@ -1011,8 +1011,8 @@ public partial class CharacterForm : Form
             MessageBox.Show($"А персонажа то как можно было потерять?", "Не знаю, что ты сделал - но больше так не делай...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
-        _chosenCharacter = newCharacter;
-        RenderCharacter(_chosenCharacter);
+        ChosenCharacter = newCharacter;
+        RenderCharacter(ChosenCharacter);
 
         //_avaliableCharacters = await GetCharacterListAsync(_config.UserId);
     }
@@ -1073,8 +1073,8 @@ public partial class CharacterForm : Form
             GenerateComboBox();
             task2.Wait();
 
-            _chosenCharacter = task2.Result;
-            RenderCharacter(_chosenCharacter);
+            ChosenCharacter = task2.Result;
+            RenderCharacter(ChosenCharacter);
         }
 
         task3.Wait();
@@ -1208,7 +1208,7 @@ public partial class CharacterForm : Form
 
     public void CancelUpdating()
     {
-        RenderCharacter(_chosenCharacter);
+        RenderCharacter(ChosenCharacter);
     }
 
     public void MarkUnsavedChanges()
@@ -1251,12 +1251,12 @@ public partial class CharacterForm : Form
         };
         var task = Task.Run(() => UpdateCharacterAsync(request));
         task.Wait();
-        _chosenCharacter = newCharacter;
+        ChosenCharacter = newCharacter;
 
         logLabel.Text += task.Result.ChangeLog + '\n';
         ScrollLogToBottom();
 
-        RenderCharacter(_chosenCharacter);
+        RenderCharacter(ChosenCharacter);
     }
 
     public async Task<CharacterUpdateResult?> UpdateCharacterAsync(CharacterUpdateRequest request)
@@ -1295,7 +1295,7 @@ public partial class CharacterForm : Form
 
     public Character GenerateChangedCharacter()
     {
-        Character character = JsonSerializer.Deserialize<Character>(JsonSerializer.Serialize(_chosenCharacter));
+        Character character = JsonSerializer.Deserialize<Character>(JsonSerializer.Serialize(ChosenCharacter));
 
         character.CommonDamage = (uint)CommonDamageNumeric.Value;
         character.AggravatedDamage = (uint)AggravatedDamageNumeric.Value;
@@ -1455,7 +1455,7 @@ public partial class CharacterForm : Form
     {
         var addWindow = new AddARatingForm(
             this, 
-            _chosenCharacter.Backgrounds, 
+            ChosenCharacter.Backgrounds, 
             typeof(Background),
             new BackGroundHelper()
             );
@@ -1464,7 +1464,7 @@ public partial class CharacterForm : Form
 
     void RenderBackGrounds()
     {
-        RenderCollectionGui(BackgroundsInnerPanel, _chosenCharacter.Backgrounds);
+        RenderCollectionGui(BackgroundsInnerPanel, ChosenCharacter.Backgrounds);
     }
 
     #endregion
@@ -1475,7 +1475,7 @@ public partial class CharacterForm : Form
     {
         var addWindow = new AddARatingForm(
             this,
-            _chosenCharacter.Disciplines,
+            ChosenCharacter.Disciplines,
             typeof(Discipline),
             new DisciplineHelper()
             );
@@ -1484,7 +1484,7 @@ public partial class CharacterForm : Form
 
     void RenderDisciplines()
     {
-        RenderCollectionGui(DisciplinesInnerPanel, _chosenCharacter.Disciplines);
+        RenderCollectionGui(DisciplinesInnerPanel, ChosenCharacter.Disciplines);
     }
 
     #endregion
@@ -1495,7 +1495,7 @@ public partial class CharacterForm : Form
     {
         var addWindow = new AddARatingForm(
             this,
-            _chosenCharacter.Merits,
+            ChosenCharacter.Merits,
             typeof(MeritEntity),
             new MeritHelper()
             );
@@ -1505,7 +1505,7 @@ public partial class CharacterForm : Form
     void RenderMerits()
     {
         var parentPanel = MeritsInnerPanel;
-        var collection = _chosenCharacter.Merits;
+        var collection = ChosenCharacter.Merits;
 
         meritGuiPanels.Clear();
         parentPanel.Controls.Clear();
@@ -1589,7 +1589,7 @@ public partial class CharacterForm : Form
         }
 
         //MessageBox.Show(meritGuiPanel.rating.Name);
-        _chosenCharacter.Merits.Remove(meritGuiPanel.rating);
+        ChosenCharacter.Merits.Remove(meritGuiPanel.rating);
 
         UpdateCharacter();
     }
@@ -1659,7 +1659,7 @@ public partial class CharacterForm : Form
         Task.Run(() =>
         {
             BloodBuffWindowOpened = true;
-            BloodBuffOpenedForm = new BloodBuffForm(this, _chosenCharacter);
+            BloodBuffOpenedForm = new BloodBuffForm(this, ChosenCharacter);
             BloodBuffOpenedForm.ShowDialog();
         });
     }

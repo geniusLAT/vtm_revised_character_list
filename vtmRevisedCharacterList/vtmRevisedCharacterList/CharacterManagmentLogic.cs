@@ -352,6 +352,14 @@ public partial class CharacterManagment : Form
         form.ShowDialog();
     }
 
+    void OpenNewCharacterWindowForMakingCopy()
+    {
+        if (_unsavedUser) return;
+
+        var form = new AddNewCharacterForm(this, _parentForm.ChosenCharacter);
+        form.ShowDialog();
+    }
+
     public void AddNewCharacter(Character character)
     {
         var task = Task.Run(async () => await AddNewCharacterAsync(_parentForm.Config.UserId, character));
