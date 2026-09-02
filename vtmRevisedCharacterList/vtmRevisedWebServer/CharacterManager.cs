@@ -56,10 +56,8 @@ public static class CharacterManager
         {
             string content = File.ReadAllText(filePath);
 
-            // Десериализуем JSON-массив в Guid[]
-            Guid[]? rights = JsonSerializer.Deserialize<Guid[]>(content);
+            Guid[]? rights = JsonSerializer.Deserialize<UserEntity>(content)?.AccessedCharacters.ToArray();
 
-            // Если файл содержал "null" или десериализация вернула null
             return rights ?? Array.Empty<Guid>();
         }
         catch (Exception)

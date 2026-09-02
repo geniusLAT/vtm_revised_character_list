@@ -1,1 +1,4 @@
-["a03594a7-5239-4d9c-a8e7-c2cc5fcda5e2"]
+{
+ "Name":"player 1",
+ "AccessedCharacters":["a03594a7-5239-4d9c-a8e7-c2cc5fcda5e2"]
+}
