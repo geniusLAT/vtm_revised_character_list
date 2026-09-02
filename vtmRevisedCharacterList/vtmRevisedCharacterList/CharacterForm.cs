@@ -266,6 +266,13 @@ public partial class CharacterForm : Form
     private void ExtraDicePoolNumeric_ValueChanged(object sender, EventArgs e)
     {
         _extraDicePool = (uint)(ExtraDicePoolNumeric.Value);
+        if (_extraDicePool != 0)
+        {
+            ExtraDicePoolLabel.ForeColor = Color.Red;
+        }else
+        {
+            ExtraDicePoolLabel.ForeColor = Color.Black;
+        }
         CalculateDices();
     }
 
@@ -278,12 +285,29 @@ public partial class CharacterForm : Form
     private void DifficultyNumeric_ValueChanged(object sender, EventArgs e)
     {
         _baseDifficulty = (uint)(DifficultyNumeric.Value);
+
+        if (_baseDifficulty != 6)
+        {
+            DifficultyLabel.ForeColor = Color.Red;
+        }
+        else
+        {
+            DifficultyLabel.ForeColor = Color.Black;
+        }
         CalculateDices();
     }
 
     private void additionalAutoSuccessNumeric_ValueChanged(object sender, EventArgs e)
     {
         _additionalAutoSuccess = (uint)(additionalAutoSuccessNumeric.Value);
+        if (_additionalAutoSuccess != 0)
+        {
+            AdditionalAutoSuccessLabel.ForeColor = Color.Red;
+        }
+        else
+        {
+            AdditionalAutoSuccessLabel.ForeColor = Color.Black;
+        }
         CalculateDices();
     }
 
@@ -350,6 +374,14 @@ public partial class CharacterForm : Form
     private void debuffDicePoolNumeric_ValueChanged(object sender, EventArgs e)
     {
         _debuffDicePool = (uint)debuffDicePoolNumeric.Value;
+        if (_debuffDicePool != 0)
+        {
+            debuffDicePoolLabel.ForeColor = Color.Red;
+        }
+        else
+        {
+            debuffDicePoolLabel.ForeColor = Color.Black;
+        }
         CalculateDices();
     }
 
