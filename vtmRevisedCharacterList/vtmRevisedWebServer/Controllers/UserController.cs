@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedWebServer.Controllers
 {
@@ -22,10 +23,11 @@ namespace vtmRevisedWebServer.Controllers
         }
 
         [HttpGet(Name = "GetUser")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserEntity))]
         public IActionResult GetUser([FromQuery] Guid userId)
         {
-            var adminGuid = CharacterManager.GetAdminGuid();
-            return Ok(adminGuid == userId);
+            var user = CharacterManager.GetUser(userId);
+            return Ok(user);
         }
     }
 }
