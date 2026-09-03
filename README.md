@@ -36,8 +36,7 @@ This application is provided free of charge.
 ### Dark Pack
 
 This project participates in the World of Darkness Dark Pack.
-
-![[https://images.ctfassets.net/u73tyf0fa8v1/3oBTHBZk9XmfcBlUPylvFh/673e4a6b14566548c03424ddf627b944/darkpack_logo2.png?w=1080&q=75&fm=webp]]
+![Dark Pack Logo](https://images.ctfassets.net/u73tyf0fa8v1/3oBTHBZk9XmfcBlUPylvFh/673e4a6b14566548c03424ddf627b944/darkpack_logo2.png?w=1080&q=75&fm=webp)
 
 Dark Pack Agreement:
 https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement
