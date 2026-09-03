@@ -1,10 +1,17 @@
-﻿using System.Text.Json;
+﻿using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Unicode;
 using vtmRevisedCharacterListEntities;
 
 namespace vtmRevisedWebServer;
 
 public static class CharacterManager
 {
+    private static JsonSerializerOptions options = new JsonSerializerOptions
+    {
+        Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
+    };
+
     public static Guid[] GetAllCharacters() 
     {
         string folderPath = "characters";
@@ -149,7 +156,7 @@ public static class CharacterManager
 
             var changeLog = ChangeLogGenerator.GenerateChangeLog(oldCharacter, newCharacter);
 
-            var newContent = JsonSerializer.Serialize(newCharacter);
+            var newContent = JsonSerializer.Serialize(newCharacter, options);
             File.WriteAllText(filePath, newContent);
 
             Console.WriteLine(oldCharacter!.CharacterName);
@@ -180,7 +187,7 @@ public static class CharacterManager
 
         try
         {
-            var newContent = JsonSerializer.Serialize(newCharacter);
+            var newContent = JsonSerializer.Serialize(newCharacter, options);
             File.WriteAllText(filePath, newContent);
 
             return new()
