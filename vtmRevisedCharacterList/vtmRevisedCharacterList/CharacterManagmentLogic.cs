@@ -506,6 +506,7 @@ public partial class CharacterManagment : Form
         
         UserNameTextBox.TextChanged += UserNameTextBox_TextChanged;
         _chosenUserPanel = null;
+        SetUserChosenStatus(false);
         for (int i = 0; i < users.Count; i++)
         {
             var user = users[i];
@@ -565,7 +566,7 @@ public partial class CharacterManagment : Form
         UserNameTextBox.TextChanged -= UserNameTextBox_TextChanged;
         UserNameTextBox.Text = _chosenUserPanel.User.Name;
         UserNameTextBox.TextChanged += UserNameTextBox_TextChanged;
-
+        SetUserChosenStatus(true);
         RenderUserRights();
     }
 
@@ -594,9 +595,18 @@ public partial class CharacterManagment : Form
 
     private void UserNameTextBox_TextChanged(object sender, EventArgs e)
     {
+        
         _chosenUserPanel.User.Name = UserNameTextBox.Text;
         SetUnsavedUserStatus(true);
 
+    }
+
+    void SetUserChosenStatus(bool status)
+    {
+        DeleteUserButton.Enabled =
+        UserNameTextBox.Enabled =
+        GenerateConfigButton.Enabled =
+        status;
     }
 
     private void OpenAddNewUserForm()
