@@ -1419,8 +1419,7 @@ public partial class CharacterForm : Form
                 Value = item.Rating,
                 Increment = 1,
                 Minimum = 0,
-                Width = 44,
-                Maximum = 5
+                Width = 44
 
             };
             littlePanel.Controls.Add(numeric);
