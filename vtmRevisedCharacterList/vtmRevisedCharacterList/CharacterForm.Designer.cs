@@ -587,7 +587,7 @@
             StaminaButton3 = new RadioButton();
             StaminaButton2 = new RadioButton();
             StaminaButton1 = new RadioButton();
-            label4 = new Label();
+            StaminaLabel = new Label();
             DexterityPanel1 = new Panel();
             panel2 = new Panel();
             label1 = new Label();
@@ -597,7 +597,7 @@
             DexterityButton3 = new RadioButton();
             DexterityButton2 = new RadioButton();
             DexterityButton1 = new RadioButton();
-            label2 = new Label();
+            DexterityLabel = new Label();
             StrenghtPanel = new Panel();
             DexterityPanel = new Panel();
             DextrerityLabel = new Label();
@@ -6705,7 +6705,7 @@
             StaminaPanel.Controls.Add(StaminaButton3);
             StaminaPanel.Controls.Add(StaminaButton2);
             StaminaPanel.Controls.Add(StaminaButton1);
-            StaminaPanel.Controls.Add(label4);
+            StaminaPanel.Controls.Add(StaminaLabel);
             StaminaPanel.Location = new Point(3, 61);
             StaminaPanel.Name = "StaminaPanel";
             StaminaPanel.Size = new Size(227, 19);
@@ -6796,15 +6796,15 @@
             StaminaButton1.TabStop = true;
             StaminaButton1.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // StaminaLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(3, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(87, 15);
-            label4.TabIndex = 0;
-            label4.Text = "Выносливость";
-            label4.Click += StaminaPanel_Click;
+            StaminaLabel.AutoSize = true;
+            StaminaLabel.Location = new Point(3, 0);
+            StaminaLabel.Name = "StaminaLabel";
+            StaminaLabel.Size = new Size(87, 15);
+            StaminaLabel.TabIndex = 0;
+            StaminaLabel.Text = "Выносливость";
+            StaminaLabel.Click += StaminaPanel_Click;
             // 
             // DexterityPanel1
             // 
@@ -6815,7 +6815,7 @@
             DexterityPanel1.Controls.Add(DexterityButton3);
             DexterityPanel1.Controls.Add(DexterityButton2);
             DexterityPanel1.Controls.Add(DexterityButton1);
-            DexterityPanel1.Controls.Add(label2);
+            DexterityPanel1.Controls.Add(DexterityLabel);
             DexterityPanel1.Location = new Point(3, 39);
             DexterityPanel1.Name = "DexterityPanel1";
             DexterityPanel1.Size = new Size(227, 19);
@@ -6899,15 +6899,15 @@
             DexterityButton1.TabIndex = 3;
             DexterityButton1.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // DexterityLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(3, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(58, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Ловкость";
-            label2.Click += DexterityPanel_Click;
+            DexterityLabel.AutoSize = true;
+            DexterityLabel.Location = new Point(3, 0);
+            DexterityLabel.Name = "DexterityLabel";
+            DexterityLabel.Size = new Size(58, 15);
+            DexterityLabel.TabIndex = 0;
+            DexterityLabel.Text = "Ловкость";
+            DexterityLabel.Click += DexterityPanel_Click;
             // 
             // StrenghtPanel
             // 
@@ -7517,7 +7517,7 @@
         private RadioButton DexterityButton3;
         private RadioButton DexterityButton2;
         private RadioButton DexterityButton1;
-        private Label label2;
+        private Label DexterityLabel;
         private Panel DexterityPanel;
         private Label DextrerityLabel;
         private NumericUpDown StrenghtNumeric;
@@ -7537,7 +7537,7 @@
         private RadioButton StaminaButton3;
         private RadioButton StaminaButton2;
         private RadioButton StaminaButton1;
-        private Label label4;
+        private Label StaminaLabel;
         private Panel panel5;
         private Panel AppearancePanel;
         private Panel panel7;

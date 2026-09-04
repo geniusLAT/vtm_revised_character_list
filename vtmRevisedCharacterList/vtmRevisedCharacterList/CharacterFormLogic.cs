@@ -871,6 +871,10 @@ public partial class CharacterForm : Form
             BloodBuffOpenedForm.Invoke(new Action(() => BloodBuffOpenedForm.RenderBloodBuffs(character)));
         }
 
+        StrenghtLabel.ForeColor = character.GetAttribute(AttributeVtm.BloodBuffStrenght) == 0 ? Color.Black : Color.Green;
+        DexterityLabel.ForeColor = character.GetAttribute(AttributeVtm.BloodBuffDexterity) == 0 ? Color.Black : Color.Green;
+        StaminaLabel.ForeColor = character.GetAttribute(AttributeVtm.BloodBuffStamina) == 0 ? Color.Black : Color.Green;
+
         for (int i = 0; i < 9; i++)
         {
             AttributeVtm attribute = (AttributeVtm)i;
@@ -887,7 +891,6 @@ public partial class CharacterForm : Form
             {
                 SetButtonsForNum(attributeButtons, attributeValue);
             }
-
         }
 
         for (int i = 0; i < 30; i++)
