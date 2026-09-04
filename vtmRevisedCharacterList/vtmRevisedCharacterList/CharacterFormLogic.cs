@@ -849,6 +849,12 @@ public partial class CharacterForm : Form
     {
         characterComboBox.SelectedValue = character.CharacterName;
 
+        if (BloodBuffWindowOpened)
+        {
+            BloodBuffWindowOpened = false;
+            BloodBuffOpenedForm?.Invoke(new Action(() => BloodBuffOpenedForm?.Close()));
+        }
+
         ChosenCharacter = character;
 
         characterNameLabel.Text = character.CharacterName ?? "Новый персонаж";
