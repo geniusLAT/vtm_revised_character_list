@@ -61,6 +61,7 @@
             SButton = new RadioButton();
             StrenghtLabel = new Label();
             PhysicalAttributesLabel = new Label();
+            BloodBuffMode = new CheckBox();
             PhysicalAttributes.SuspendLayout();
             StaminaPanel.SuspendLayout();
             panel4.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // PhysicalAttributes
             // 
+            PhysicalAttributes.Controls.Add(BloodBuffMode);
             PhysicalAttributes.Controls.Add(DropBloodBuffButton);
             PhysicalAttributes.Controls.Add(StaminaPanel);
             PhysicalAttributes.Controls.Add(DexterityPanel1);
@@ -417,6 +419,19 @@
             PhysicalAttributesLabel.TabIndex = 0;
             PhysicalAttributesLabel.Text = "Бафы за кровь";
             // 
+            // BloodBuffMode
+            // 
+            BloodBuffMode.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BloodBuffMode.AutoSize = true;
+            BloodBuffMode.Checked = true;
+            BloodBuffMode.CheckState = CheckState.Checked;
+            BloodBuffMode.Location = new Point(170, -1);
+            BloodBuffMode.Name = "BloodBuffMode";
+            BloodBuffMode.Size = new Size(57, 19);
+            BloodBuffMode.TabIndex = 32;
+            BloodBuffMode.Text = "Бафы";
+            BloodBuffMode.UseVisualStyleBackColor = true;
+            // 
             // BloodBuffForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -481,5 +496,6 @@
         public NumericUpDown DexterityNumeric;
         public NumericUpDown StrenghtNumeric;
         private Button DropBloodBuffButton;
+        private CheckBox BloodBuffMode;
     }
 }
