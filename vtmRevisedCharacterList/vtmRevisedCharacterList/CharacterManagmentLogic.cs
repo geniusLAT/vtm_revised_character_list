@@ -603,8 +603,10 @@ public partial class CharacterManagment : Form
 
     void SetUserChosenStatus(bool status)
     {
-        DeleteUserButton.Enabled = status;
-        UserNameTextBox.Enabled = status;
+        DeleteUserButton.Enabled =
+        UserNameTextBox.Enabled =
+        GenerateConfigButton.Enabled =
+        status;
     }
 
     private void OpenAddNewUserForm()
