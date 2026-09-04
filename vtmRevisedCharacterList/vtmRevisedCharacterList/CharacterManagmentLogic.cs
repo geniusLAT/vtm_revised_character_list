@@ -352,7 +352,6 @@ public partial class CharacterManagment : Form
             var firstOne = characterPanels.FirstOrDefault();
             if (firstOne is null)
             {
-                DeleteChosenCharacterButton.Enabled = false;
                 return;
             }
             _parentForm.Invoke(new Action(() => _parentForm.RenderCharacterExternal(
