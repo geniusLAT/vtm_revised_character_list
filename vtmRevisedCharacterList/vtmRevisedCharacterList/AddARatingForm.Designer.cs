@@ -38,13 +38,13 @@
             AddButton = new Button();
             DefaultOptionsPanel = new Panel();
             MeritSettingPanel = new Panel();
+            CanBeActivatedCheckBox = new CheckBox();
             RemoveOneCheckBox = new CheckBox();
             ExtraHealthCheckBox = new CheckBox();
             label2 = new Label();
             label1 = new Label();
             MeritDicepoolNumeric = new NumericUpDown();
             MeritDiffiultyNumeric = new NumericUpDown();
-            CanBeActivatedCheckBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)RatingNumeric).BeginInit();
             MeritSettingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MeritDicepoolNumeric).BeginInit();
@@ -61,7 +61,7 @@
             // RatingNumeric
             // 
             RatingNumeric.Location = new Point(386, 11);
-            RatingNumeric.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
+            RatingNumeric.Maximum = new decimal(new int[] { 15, 0, 0, 0 });
             RatingNumeric.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             RatingNumeric.Name = "RatingNumeric";
             RatingNumeric.Size = new Size(41, 23);
@@ -156,6 +156,16 @@
             MeritSettingPanel.Size = new Size(137, 398);
             MeritSettingPanel.TabIndex = 22;
             // 
+            // CanBeActivatedCheckBox
+            // 
+            CanBeActivatedCheckBox.AutoSize = true;
+            CanBeActivatedCheckBox.Location = new Point(5, 182);
+            CanBeActivatedCheckBox.Name = "CanBeActivatedCheckBox";
+            CanBeActivatedCheckBox.Size = new Size(109, 19);
+            CanBeActivatedCheckBox.TabIndex = 29;
+            CanBeActivatedCheckBox.Text = "Активируемый";
+            CanBeActivatedCheckBox.UseVisualStyleBackColor = true;
+            // 
             // RemoveOneCheckBox
             // 
             RemoveOneCheckBox.AutoSize = true;
@@ -210,16 +220,6 @@
             MeritDiffiultyNumeric.Name = "MeritDiffiultyNumeric";
             MeritDiffiultyNumeric.Size = new Size(41, 23);
             MeritDiffiultyNumeric.TabIndex = 23;
-            // 
-            // CanBeActivatedCheckBox
-            // 
-            CanBeActivatedCheckBox.AutoSize = true;
-            CanBeActivatedCheckBox.Location = new Point(5, 182);
-            CanBeActivatedCheckBox.Name = "CanBeActivatedCheckBox";
-            CanBeActivatedCheckBox.Size = new Size(109, 19);
-            CanBeActivatedCheckBox.TabIndex = 29;
-            CanBeActivatedCheckBox.Text = "Активируемый";
-            CanBeActivatedCheckBox.UseVisualStyleBackColor = true;
             // 
             // AddARatingForm
             // 
