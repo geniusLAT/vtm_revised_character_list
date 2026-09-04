@@ -290,6 +290,17 @@ public partial class CharacterManagment : Form
             }
                 );
         }
+
+        if (characterPanels.Count > 0)
+        {
+            DeleteChosenCharacterButton.Enabled = 
+            CopyCharacterButton.Enabled = true;
+        }
+        else
+        {
+            DeleteChosenCharacterButton.Enabled =
+                CopyCharacterButton.Enabled = false;
+        }
     }
 
     private void InitCheckox_CheckedChanged(object sender, EventArgs e)
@@ -339,6 +350,11 @@ public partial class CharacterManagment : Form
         if (foundCharacterPanel is null)//render other character in case rendered one was removed
         {
             var firstOne = characterPanels.FirstOrDefault();
+            if (firstOne is null)
+            {
+                DeleteChosenCharacterButton.Enabled = false;
+                return;
+            }
             _parentForm.Invoke(new Action(() => _parentForm.RenderCharacterExternal(
                 firstOne.Character,
                 firstOne.CharacterUuid)));
