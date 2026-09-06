@@ -431,6 +431,7 @@
             BloodBuffMode.TabIndex = 32;
             BloodBuffMode.Text = "Бафы";
             BloodBuffMode.UseVisualStyleBackColor = true;
+            BloodBuffMode.CheckedChanged += BloodBuffMode_CheckedChanged;
             // 
             // BloodBuffForm
             // 

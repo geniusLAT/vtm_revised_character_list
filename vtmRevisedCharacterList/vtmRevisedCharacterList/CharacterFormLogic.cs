@@ -1672,5 +1672,10 @@ public partial class CharacterForm : Form
         });
     }
 
+    public void SyncBloodModeCheckBoxStatus (bool status)
+    {
+        BloodBuffMode.Checked = status;
+    }
+
     #endregion
 }
