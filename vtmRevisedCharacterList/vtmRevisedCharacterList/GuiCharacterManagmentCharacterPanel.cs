@@ -51,8 +51,6 @@ internal class GuiCharacterManagmentCharacterPanel : IComparable<GuiCharacterMan
         var randomNumber = rnd.Next(0, 2);
         if (randomNumber == 0) return -1;
         else return 1;
-
-            return 0;
     }
 
     #endregion
