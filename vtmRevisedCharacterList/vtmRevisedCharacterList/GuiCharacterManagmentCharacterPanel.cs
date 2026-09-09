@@ -44,7 +44,15 @@ internal class GuiCharacterManagmentCharacterPanel : IComparable<GuiCharacterMan
         if (LastRoundInit > other.LastRoundInit) return -1;
         if (LastRoundInit < other.LastRoundInit) return 1;
 
-        return 0;
+        if (NumericBonus.Value > other.NumericBonus.Value) return -1;
+        if (NumericBonus.Value < other.NumericBonus.Value) return 1;
+
+        var rnd = new Random();
+        var randomNumber = rnd.Next(0, 2);
+        if (randomNumber == 0) return -1;
+        else return 1;
+
+            return 0;
     }
 
     #endregion
