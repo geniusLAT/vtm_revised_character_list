@@ -38,7 +38,11 @@ internal class GuiCharacterManagmentCharacterPanel : IComparable<GuiCharacterMan
     {
         if (this.Favorite && !other.Favorite) return 1;
 
-        if(LastRoundInit > other.LastRoundInit) return -1;
+        if (this.RollInit && !other.RollInit) return -1;
+        if (!this.RollInit && other.RollInit) return 1;
+
+        if (LastRoundInit > other.LastRoundInit) return -1;
+        if (LastRoundInit < other.LastRoundInit) return 1;
 
         return 0;
     }
