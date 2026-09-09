@@ -308,7 +308,7 @@ public partial class CharacterManagment : Form
         var panel = characterPanels.Where(guiPanel => guiPanel.InitCheckBox == sender).FirstOrDefault();
         if (panel is null) return;
 
-        panel.RollInit = true;
+        panel.RollInit = panel.InitCheckBox.Checked;
     }
 
     private void UserRightCheckox_CheckedChanged(object sender, EventArgs e)
